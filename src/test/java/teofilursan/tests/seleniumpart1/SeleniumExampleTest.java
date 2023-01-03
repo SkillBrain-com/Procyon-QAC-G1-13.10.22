@@ -1,14 +1,15 @@
 package teofilursan.tests.seleniumpart1;
 
-import teofilursan.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import teofilursan.driver.BrowserManager;
 
 public class SeleniumExampleTest {
 
     public static void main(String[] args) {
         basicPageTest();
+        elementAttributePageTest();
     }
 
     public static void basicPageTest() {
@@ -18,5 +19,19 @@ public class SeleniumExampleTest {
         firstLink.click();
         System.out.println("Current url is : " + driver.getCurrentUrl());
         driver.quit();
+    }
+
+    public static void elementAttributePageTest() {
+        WebDriver driver = BrowserManager.createChromeDriver();
+        driver.get("https://testpages.herokuapp.com/styled/index.html");
+        WebElement secondLink = driver.findElement(By.id("altid"));
+        secondLink.click();
+        System.out.println("Current url is : " + driver.getCurrentUrl());
+        driver.quit();
+    }
+
+    public static void setup() {
+        WebDriver driver = BrowserManager.createChromeDriver();
+        driver.get("https://testpages.herokuapp.com/styled/index.html");
     }
 }
