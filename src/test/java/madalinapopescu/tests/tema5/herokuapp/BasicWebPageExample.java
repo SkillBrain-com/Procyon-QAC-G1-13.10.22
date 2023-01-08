@@ -2,6 +2,7 @@ package madalinapopescu.tests.tema5.herokuapp;
 
 import madalinapopescu.driver.BrowserManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
