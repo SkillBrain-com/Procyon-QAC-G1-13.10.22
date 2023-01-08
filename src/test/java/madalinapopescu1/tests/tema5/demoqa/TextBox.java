@@ -1,6 +1,6 @@
-package madalinapopescu.tests.tema5.demoqa;
+package madalinapopescu1.tests.tema5.demoqa;
 
-import madalinapopescu.driver.BrowserManager;
+import madalinapopescu1.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
