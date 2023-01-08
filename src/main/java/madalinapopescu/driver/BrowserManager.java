@@ -1,4 +1,4 @@
-package madalinapopescu1.driver;
+package madalinapopescu.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
