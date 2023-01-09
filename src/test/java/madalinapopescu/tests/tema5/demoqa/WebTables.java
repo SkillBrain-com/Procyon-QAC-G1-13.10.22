@@ -4,11 +4,9 @@ import madalinapopescu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 public class WebTables {
     public static void main(String[] args) {
         goToWebTables();
-
     }
     public static void goToWebTables(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
@@ -39,7 +37,6 @@ public class WebTables {
         SubmitButton.click();
         WebElement deleteIcon = driver.findElement(By.cssSelector(" span[id='delete-record-4']"));
         deleteIcon.click();
-
         driver.quit();
     }
 }

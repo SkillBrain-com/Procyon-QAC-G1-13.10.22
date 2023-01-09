@@ -10,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TextBox {
     public static void main(String[] args) {
         goToTextBox();
-
     }
     public static void goToTextBox() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
@@ -37,7 +36,6 @@ public class TextBox {
         permanentAddress.sendKeys("Cei sapte pitici");
         WebElement submitButton = driver.findElement(By.id("submit"));
         submitButton.sendKeys(Keys.ENTER);
-
         driver.quit();
 
     }

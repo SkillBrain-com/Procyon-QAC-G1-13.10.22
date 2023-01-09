@@ -4,11 +4,9 @@ import madalinapopescu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 public class CheckBox {
     public static void main(String[] args) {
         goToCheckBox();
-
     }
     public static void goToCheckBox(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
