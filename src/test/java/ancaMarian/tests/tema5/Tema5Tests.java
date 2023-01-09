@@ -6,8 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Tema5Tests {
     public static void main(String[] args) {
         ChromeDriver driver = BrowserManager.createDriver();
+        //primul Link din tema de pe platforma
+        checkFirstPage(driver);
+        //al doilea link din platforma
+        checkSecondPage(driver);
+    }
+    public static void checkFirstPage(ChromeDriver driver){
         HerokuApp page = new HerokuApp("https://testpages.herokuapp.com/styled/index.html", driver);
-//primul Link din tema de pe platforma
         page.checkFirstLink();
         System.out.println(page.checkFirstLinkPageTitle());
         System.out.println(page.checkFirstLinkPageExplanation());
@@ -35,9 +40,8 @@ public class Tema5Tests {
         System.out.println(page.checkFourthLinkPageTitle());
         System.out.println(page.checkFourthLinkPageExplanation());
         System.out.println(page.checkFourthLinkTable());
-
-
-        //al doilea link din platforma
+    }
+    public static void checkSecondPage(ChromeDriver driver){
         DemoQA page2 = new DemoQA("https://demoqa.com/elements", driver);
         page2.checkTextBox();
         page2.enterFullName();

@@ -10,16 +10,13 @@ public class DemoQA {
     private static String url;
     private static ChromeDriver driver = null;
 
-
     DemoQA(String url, ChromeDriver driver) {
         this.url = url;
         this.driver = driver;
         driver.get(url);
     }
-
-
     public static void checkTextBox() {
-        WebElement textBox = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[1]/span"));
+        WebElement textBox = driver.findElement(By.xpath("//*[@id='item-0']/span"));
         textBox.click();
     }
 
@@ -46,6 +43,11 @@ public class DemoQA {
 
     public static void enterPermanentAddress() {
         WebElement permanentAddress = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[4]/div[2]/textarea"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Scroll down till the bottom of the page
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+
         permanentAddress.click();
         permanentAddress.clear();
         permanentAddress.sendKeys("cea mai dulce casa");
@@ -53,13 +55,6 @@ public class DemoQA {
 
     public static void submitButton() {
         WebElement clickSubmitButton = driver.findElement(By.cssSelector("#submit"));
-        //imi apareau add-uri si nu ma lasa sa dau click pe Submit, de aia am bagat Actions
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(clickSubmitButton).perform();
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        //Scroll down till the bottom of the page
-        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         clickSubmitButton.click();
     }
 
@@ -123,21 +118,21 @@ public class DemoQA {
     }
 
     public static void addEmail() {
-        WebElement email = driver.findElement(By.xpath("//*[@id=\"userEmail\"]"));
+        WebElement email = driver.findElement(By.xpath("//*[@id='userEmail']"));
         email.click();
         email.clear();
         email.sendKeys("anamaria@gmail.com");
     }
 
     public static void addAge() {
-        WebElement age = driver.findElement(By.xpath("//*[@id=\"age\"]"));
+        WebElement age = driver.findElement(By.xpath("//*[@id='age']"));
         age.click();
         age.clear();
         age.sendKeys("22");
     }
 
     public static void addSalary() {
-        WebElement salary = driver.findElement(By.xpath("//*[@id=\"salary\"]"));
+        WebElement salary = driver.findElement(By.xpath("//*[@id='salary']"));
         salary.click();
         salary.clear();
         salary.sendKeys("2200");
@@ -145,14 +140,14 @@ public class DemoQA {
 
     public static void addDepartment() {
 
-        WebElement department = driver.findElement(By.xpath("//*[@id=\"department\"]"));
+        WebElement department = driver.findElement(By.xpath("//*[@id='department']"));
         department.click();
         department.clear();
         department.sendKeys("boss");
     }
 
     public static void clickSubmitButton() {
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+        WebElement submitButton = driver.findElement(By.xpath("//*[@id='submit']"));
         submitButton.click();
     }
 
@@ -209,14 +204,4 @@ public class DemoQA {
         firstLink.click();
         driver.switchTo().window(originalWindow);
     }
-
-
-
 }
-
-
-
-
-
-
-

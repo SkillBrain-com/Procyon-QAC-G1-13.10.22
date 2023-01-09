@@ -42,13 +42,11 @@ public class HerokuApp {
         WebElement returnToIndex = driver.findElement(By.linkText("Index"));
         returnToIndex.click();
     }
-
     //second link
     public static void checkSecondLink(){
         WebElement secondLink = driver.findElement(By.id("elementattributestest"));
         secondLink.click();
     }
-
 
     public static String checkSecondLinkPageTitle(){
         WebElement secondLinkPageTitle = driver.findElement(By.cssSelector("div h1"));
@@ -59,7 +57,6 @@ public class HerokuApp {
         WebElement secondLinkPageExplanation = driver.findElement(By.className("explanation"));
         return secondLinkPageExplanation.getText();
     }
-
 
     public static String checkSecondLinkFirstParagraphTitle(){
         WebElement secondLinkFirstParagraphTitle = driver.findElement(By.cssSelector("div+h2"));
@@ -148,4 +145,3 @@ public class HerokuApp {
         return fourthLinkTable.getText();
     }
 }
-
