@@ -1,3 +1,5 @@
+package cosminsechel.tests.seleniumpart1;
+
 import org.bouncycastle.asn1.eac.CertificateHolderAuthorization;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

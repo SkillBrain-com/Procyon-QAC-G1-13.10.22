@@ -1,3 +1,6 @@
+package cosminsechel.tests.seleniumpart1;
+
+import cosminsechel.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;

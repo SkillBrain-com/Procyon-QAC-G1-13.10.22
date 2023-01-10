@@ -1,3 +1,5 @@
+package cosminsechel.driver;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
