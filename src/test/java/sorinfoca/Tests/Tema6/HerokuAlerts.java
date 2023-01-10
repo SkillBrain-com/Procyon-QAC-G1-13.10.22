@@ -54,7 +54,7 @@ public class HerokuAlerts {
         System.out.println("Am acceptat alerta");
     }
 
-    public static void closeBrowser(){
+    public static void closeBrowser() {
         driver.quit();
         System.out.println("Am inchis browserul");
     }
