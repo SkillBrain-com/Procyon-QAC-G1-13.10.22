@@ -10,7 +10,7 @@ import teofilursan.driver.BrowserManager;
 public class AlertExample {
 
     public static void main(String[] args) {
-        openAndSubmitAlert();
+      //  openAndSubmitAlert();
     }
 
     static void openAndSubmitAlert() {

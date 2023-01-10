@@ -9,7 +9,7 @@ import teofilursan.driver.BrowserManager;
     class ActionsExample {
 
     public static void main(String[] args) {
-        doubleClickOnElement();
+        //doubleClickOnElement();
     }
 
     static void doubleClickOnElement() {

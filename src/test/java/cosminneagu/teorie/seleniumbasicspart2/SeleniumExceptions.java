@@ -9,7 +9,7 @@ import teofilursan.driver.BrowserManager;
 public class SeleniumExceptions {
 
     public static void main(String[] args) {
-        noSuchElementException();
+        //noSuchElementException();
         System.out.println("Am executat cu succes functia main.");
     }
 

@@ -11,7 +11,7 @@ public class JavaExceptions {
         //checkedException();
         //uncheckedException();
         //recursiv(5,1);
-        fun();
+        //fun();
         System.out.println("Am executat functia main");
     }
 
