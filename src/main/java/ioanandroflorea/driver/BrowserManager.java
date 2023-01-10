@@ -1,4 +1,4 @@
-package teofilursan.driver;
+package ioanandroflorea.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
