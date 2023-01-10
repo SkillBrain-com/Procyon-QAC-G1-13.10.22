@@ -22,7 +22,7 @@ public class HerokuAlerts {
 
         navigateToHerokuHomePage();  //1.
         try {
-            openAlert();        //2.   // aici prindem alerta intrun try
+            openAlert();        //2.   // aici prindem alerta intrun try catch finally
         } catch (NoSuchElementException e) {     //iar in catch prindem screenshot
             FileUtils.takeScreenshot(driver, "alert");
         } finally{
@@ -63,4 +63,5 @@ public class HerokuAlerts {
     }
 }
 
-//pt a se salva ce am facut acum : git status
+//pt a se salva ce am facut acum : git status -> Vezi in Untracked -> dit add -> git commit (dupa fiecare lucru) -> git push (fara pull rewuest)
+//iar pt main : git status -> e ok -> git pull (pt a face update pe main)
