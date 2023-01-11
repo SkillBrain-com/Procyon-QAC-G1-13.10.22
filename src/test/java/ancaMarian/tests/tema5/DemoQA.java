@@ -21,28 +21,28 @@ public class DemoQA {
     }
 
     public static void enterFullName() {
-        WebElement fullName = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[1]/div[2]/input"));
+        WebElement fullName = driver.findElement(By.id("userName"));
         fullName.click();
         fullName.clear();
         fullName.sendKeys("Pop Maria");
     }
 
     public static void enterEmail() {
-        WebElement email = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[2]/div[2]/input"));
+        WebElement email = driver.findElement(By.id("userEmail"));
         email.click();
         email.clear();
         email.sendKeys("popmaria@gmail.com");
     }
 
     public static void enterCurrentAddress() {
-        WebElement currentAddress = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[3]/div[2]/textarea"));
+        WebElement currentAddress = driver.findElement(By.id("currentAddress"));
         currentAddress.click();
         currentAddress.clear();
         currentAddress.sendKeys("casa mea dulce de acasa");
     }
 
     public static void enterPermanentAddress() {
-        WebElement permanentAddress = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[4]/div[2]/textarea"));
+        WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         //Scroll down till the bottom of the page
@@ -74,7 +74,7 @@ public class DemoQA {
     }
 
     public static void deselect() {
-        WebElement deselectFolder = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/ol/li/ol/li[1]/ol/li[1]/span/label/span[1]"));
+        WebElement deselectFolder = driver.findElement(By.cssSelector("#tree-node-notes+.rct-checkbox"));
         deselectFolder.click();
     }
 
@@ -84,7 +84,7 @@ public class DemoQA {
     }
 
     public static void checkRadioButton() {
-        WebElement radioButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[3]"));
+        WebElement radioButton = driver.findElement(By.id("item-2"));
         radioButton.click();
     }
 
@@ -94,7 +94,7 @@ public class DemoQA {
     }
 
     public static void checkWebTables() {
-        WebElement webTables = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[4]/span"));
+        WebElement webTables = driver.findElement(By.id("item-3"));
         webTables.click();
     }
 
@@ -104,14 +104,14 @@ public class DemoQA {
     }
 
     public static void addFirstName() {
-        WebElement firstName = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/div[1]/div[2]/input"));
+        WebElement firstName = driver.findElement(By.id("firstName"));
         firstName.click();
         firstName.clear();
         firstName.sendKeys("Ana");
     }
 
     public static void addLastName() {
-        WebElement lastName = driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/form/div[2]/div[2]/input"));
+        WebElement lastName = driver.findElement(By.id("lastName"));
         lastName.click();
         lastName.clear();
         lastName.sendKeys("Maria");
@@ -139,7 +139,6 @@ public class DemoQA {
     }
 
     public static void addDepartment() {
-
         WebElement department = driver.findElement(By.xpath("//*[@id='department']"));
         department.click();
         department.clear();
@@ -176,7 +175,7 @@ public class DemoQA {
     }
 
     public static void buttons() {
-        WebElement buttons = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[5]/span"));
+        WebElement buttons = driver.findElement(By.id("item-4"));
         buttons.click();
     }
 
@@ -185,19 +184,25 @@ public class DemoQA {
         Actions actionDoubleClick = new Actions(driver);
         actionDoubleClick.doubleClick(doubleClickButton).perform();
     }
+
     public static void rightClick(){
         WebElement rightClickButton = driver.findElement(By.id("rightClickBtn"));
         Actions rightClick = new Actions(driver);
         rightClick.contextClick(rightClickButton).perform();
     }
+
     public static void clickButton(){
         WebElement clickButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button"));
         clickButton.click();
     }
+
     public static void links(){
-        WebElement link = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[6]/span"));
+        WebElement link = driver.findElement(By.id("item-5"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         link.click();
     }
+
     public static void openFirstLink(){
         WebElement firstLink = driver.findElement(By.id("simpleLink"));
         String originalWindow = driver.getWindowHandle();

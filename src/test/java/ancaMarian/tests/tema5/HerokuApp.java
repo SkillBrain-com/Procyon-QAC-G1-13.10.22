@@ -38,6 +38,7 @@ public class HerokuApp {
         WebElement firstLinkSecondParagraph = driver.findElement(By.id("para2"));
         return firstLinkSecondParagraph.getText();
     }
+
     public void returnToIndex(){
         WebElement returnToIndex = driver.findElement(By.linkText("Index"));
         returnToIndex.click();
@@ -82,6 +83,7 @@ public class HerokuApp {
         WebElement secondLinkSecondParagraph = driver.findElement(By.cssSelector(".inline-explanation:last-of-type"));
         return secondLinkSecondParagraph.getText();
     }
+
     public static String checkSecondLinkSecondParagraphAttributes(){
         WebElement secondLinkSecondParagraphAttributes = driver.findElement(By.cssSelector("p#jsattributes"));
         return secondLinkSecondParagraphAttributes.getText();
@@ -130,6 +132,7 @@ public class HerokuApp {
         WebElement fourthLink = driver.findElement(By.id("tablestest"));
         fourthLink.click();
     }
+
     public static String checkFourthLinkPageTitle(){
         WebElement fourthLinkPageTitle = driver.findElement(By.cssSelector("div h1"));
         return fourthLinkPageTitle.getText();
