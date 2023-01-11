@@ -22,9 +22,13 @@ public class HerokuAlerts {
             getTextOfAlert();
             inputTextInAlert();
             handleDifferentTypeOfAlert();
+            findNonexistentElement();
         } catch (NoAlertPresentException e) {
             FileUtils.takeScreenshot(driver, "alert");
             System.out.println("No alert present");
+        } catch (NoSuchElementException e) {
+            FileUtils.takeScreenshot(driver, "nonexistent_element");
+            System.out.println("Could not find the element with id 'nonexistent-element'");
         } finally {
             closeBrowser();
         }
@@ -86,11 +90,21 @@ public class HerokuAlerts {
             System.out.println("Unknown type of alert: " + alertText);
         }
     }
-        public static void closeBrowser() {
-            driver.quit();
-            System.out.println("Am inchis browserul");
+
+    public static void findNonexistentElement() {
+        try {
+            WebElement nonExistentElement = driver.findElement(By.id("nonexistent-element"));
+        } catch (NoSuchElementException e) {
+            FileUtils.takeScreenshot(driver, "nonexistent_element");
+            System.out.println("Could not find the element with id 'nonexistent-element'");
         }
     }
 
+    public static void closeBrowser() {
+        driver.quit();
+        System.out.println("Closed the browser");
+    }
+
+}
 
 
