@@ -1,10 +1,13 @@
 package sorinfoca.Tests.Tema6;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
+
+import java.io.File;
+import java.io.IOException;
 
 public class HerokuForms {
 
@@ -12,11 +15,20 @@ public class HerokuForms {
 
     public static void main(String[] args) throws InterruptedException {
         navigateToHerokuHomePage();
-        fillOutForm();
-        scrollToSubmitButton();
-        submitForm();
-        closeBrowser();
-
+        try {
+            fillOutForm();
+            scrollToSubmitButton();
+            submitForm();
+        } catch (NoSuchElementException e) {
+            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            try {
+                FileUtils.copyFile(screenshot, new File("screenshot.png"));
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+        } finally {
+            closeBrowser();
+        }
     }
 
     public static void navigateToHerokuHomePage() {
@@ -47,15 +59,11 @@ public class HerokuForms {
         Thread.sleep(3000);
     }
 
-
-
     public static void scrollToSubmitButton() {
-        WebElement submitButton = driver.findElement(By
-                .xpath("//input[@type='submit']"));
+        WebElement submitButton = driver.findElement(By.xpath("//input[@type='submit']"));
         Actions actions = new Actions(driver);
         actions.moveToElement(submitButton).build().perform();
     }
-
     public static void submitForm() {
         driver.findElement(By.xpath("//input[@type='submit']")).click();
         System.out.println("Form submitted");
@@ -65,5 +73,4 @@ public class HerokuForms {
         driver.quit();
         System.out.println("Am inchis browserul");
     }
-
 }
