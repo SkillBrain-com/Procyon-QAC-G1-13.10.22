@@ -5,7 +5,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
-
 import java.io.File;
 import java.io.IOException;
 
