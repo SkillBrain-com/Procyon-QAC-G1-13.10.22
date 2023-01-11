@@ -13,6 +13,4 @@ public class BrowserManager {
 
         driver.quit(); //inchide driverul
     }
-
-
 }

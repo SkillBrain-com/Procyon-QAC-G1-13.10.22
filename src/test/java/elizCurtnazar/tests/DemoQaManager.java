@@ -82,7 +82,7 @@ public class DemoQaManager {
     }
 
 
-    public void WebTablesLink(String link) {
+    public void webTablesLink(String link) {
 
         String urlBase = "https://demoqa.com/";
         driver.get(urlBase + link);
@@ -120,7 +120,7 @@ public class DemoQaManager {
     }
 
 
-    public void ButtonsLink(String link) {
+    public void buttonsLink(String link) {
         String urlBase = "https://demoqa.com/";
         driver.get(urlBase + link);
 
@@ -129,7 +129,7 @@ public class DemoQaManager {
 
     }
 
-    public WebElement LinkElementLink(String link) {
+    public WebElement linkElementLink(String link) {
         String urlBase = "https://demoqa.com/";
         driver.get(urlBase + link);
 
@@ -142,10 +142,13 @@ public class DemoQaManager {
         WebElement homeLink = driver.findElement(By.id("simpleLink"));
         homeLink.click();
         return homeLink;
+    }
 
-
+    public static void closeBrowser(){
+        driver.quit();
     }
 }
+
 //       WebElement webTable = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[4]"));
 //       webTable.click();
 //       Actions actions = new Actions(driver);

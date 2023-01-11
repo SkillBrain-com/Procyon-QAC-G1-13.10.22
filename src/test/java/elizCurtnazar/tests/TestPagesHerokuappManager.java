@@ -68,4 +68,8 @@ public class TestPagesHerokuappManager {
         System.out.println("M-am reintors pe pagina initiala");
     }
 
+    public static void closeBrowser(){
+        driver.quit();
+    }
+
 }
