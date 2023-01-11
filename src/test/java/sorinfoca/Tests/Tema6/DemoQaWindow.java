@@ -3,11 +3,11 @@ package sorinfoca.Tests.Tema6;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -21,7 +21,7 @@ public class DemoQaWindow {
             clickNewTabButton();
             interactWithElementsOnParentTab();
         } catch (NoSuchElementException e) {
-            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File screenshot = driver.getScreenshotAs(OutputType.FILE);
             System.err.println("Error occurred while interacting with elements on the page. Error message: " + e.getMessage());
             System.err.println("Taking screenshot...");
             try {
