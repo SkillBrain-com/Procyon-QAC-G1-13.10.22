@@ -1,11 +1,15 @@
 package sorinfoca.Tests.Tema6;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
-
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 public class DemoQaWindow {
@@ -13,42 +17,85 @@ public class DemoQaWindow {
 
     public static void main(String[] args) {
         navigateToDemoQaWindowPage();
-        clickNewTabButton();
-        closeBrowser();
-
+        try {
+            clickNewTabButton();
+            interactWithElementsOnParentTab();
+        } catch (NoSuchElementException e) {
+            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            System.err.println("Error occurred while interacting with elements on the page. Error message: " + e.getMessage());
+            System.err.println("Taking screenshot...");
+            try {
+                org.apache.commons.io.FileUtils.copyFile(screenshot, new File("screenshot.png"));
+                System.err.println("Screenshot saved to screenshot.png");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } finally {
+            closeBrowser();
+        }
     }
 
     public static void navigateToDemoQaWindowPage() {
         driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/browser-windows");
-        System.out.println("Am deschis Demo QA window page");
+        System.out.println("Navigated to Demo QA window page");
     }
 
     public static void clickNewTabButton() {
-        //get parent tab id
         String parentTab = driver.getWindowHandle();
         WebElement newTabButton = driver.findElement(By.id("tabButton"));
-        //open new tab
         newTabButton.click();
-        //get tab list ids
         Set<String> tabs = driver.getWindowHandles();
         for (String tab : tabs) {
-            //switch focus to tab and get heading textclose the tab
             if(!tab.equals(parentTab)) {
-                driver.switchTo().window(tab); //schimb focusul de la tabul pe care l-am deschis
+                driver.switchTo().window(tab);
                 WebElement newTabHeading = driver.findElement(By.id("sampleHeading"));
-                System.out.println("Text de pe noul tab" + newTabHeading.getText());
+                System.out.println("Text on the new tab: " + newTabHeading.getText());
                 driver.close();
             }
         }
-        //swith back to parent tab to be able to make other actions
         driver.switchTo().window(parentTab);
-        System.out.println("Am facut scroll catre submit button");
+    }
+
+    public static void interactWithElementsOnParentTab() {
+        WebElement clickElementButton = driver.findElement(By.id("click"));
+        clickElementButton.click();
+        WebElement generateAlertButton = driver.findElement(By.id("alert"));
+        generateAlertButton.click();
+        String alertText = driver.switchTo().alert().getText();
+        System.out.println("Alert text: " + alertText);
+        driver.switchTo().alert().accept();
+        WebElement switchToTabButton = driver.findElement(By.id("newTab"));
+        switchToTabButton.click();
+        String childTab = driver.getWindowHandle();
+        Set<String> tabs = driver.getWindowHandles();
+        for (String tab : tabs) {
+            if(!tab.equals(childTab)) {
+                driver.switchTo().window(tab);
+                WebElement childTabHeading = driver.findElement(By.id("childTab"));
+                System.out.println("Text on the child tab: " + childTabHeading.getText());
+                driver.close();
+            }
+        }
+        driver.switchTo().window(childTab);
+        WebElement mouseHoverButton = driver.findElement(By.id("mousehover"));
+        Actions action = new Actions(driver);
+        action.moveToElement(mouseHoverButton).perform();
+        WebElement mouseHoverText = driver.findElement(By.id("mousehovertext"));
+        System.out.println("Mouse hover text: " + mouseHoverText.getText());
+        WebElement draggableButton = driver.findElement(By.id("draggable"));
+        WebElement droppableButton = driver.findElement(By.id("droppable"));
+        action.dragAndDrop(draggableButton, droppableButton).build().perform();
+        WebElement droppedText = driver.findElement(By.id("dropped"));
+        System.out.println("Dropped text: " + droppedText.getText());
+        WebElement sliderButton = driver.findElement(By.id("slider"));
+        action.dragAndDropBy(sliderButton, 50, 0).build().perform();
+        WebElement sliderText = driver.findElement(By.id("sliderValue"));
+        System.out.println("Slider text: " + sliderText.getText());
     }
     public static void closeBrowser() {
         driver.quit();
-        System.out.println("Am inchis browserul");
+        System.out.println("Closed browser");
     }
-
 }
 
