@@ -24,7 +24,7 @@ public class RadioButton {
         radioButtonImpressive.click();
 
 
-        //driver.quit();
+        driver.quit();
 
 
 
