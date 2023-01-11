@@ -8,11 +8,13 @@ public class Tema5Tests {
         ChromeDriver driver = BrowserManager.createDriver();
         //primul Link din tema de pe platforma
         checkFirstPage(driver);
-        //al doilea link din platforma
+//        //al doilea link din platforma
         checkSecondPage(driver);
     }
+
     public static void checkFirstPage(ChromeDriver driver){
         HerokuApp page = new HerokuApp("https://testpages.herokuapp.com/styled/index.html", driver);
+        BrowserManager.maximizeWindow(driver);
         page.checkFirstLink();
         System.out.println(page.checkFirstLinkPageTitle());
         System.out.println(page.checkFirstLinkPageExplanation());
@@ -41,6 +43,7 @@ public class Tema5Tests {
         System.out.println(page.checkFourthLinkPageExplanation());
         System.out.println(page.checkFourthLinkTable());
     }
+
     public static void checkSecondPage(ChromeDriver driver){
         DemoQA page2 = new DemoQA("https://demoqa.com/elements", driver);
         page2.checkTextBox();
@@ -70,7 +73,6 @@ public class Tema5Tests {
         page2.delete();
         page2.buttons();
         page2.doubleClick();
-        page2.rightClick();
         page2.rightClick();
         page2.clickButton();
         page2.links();

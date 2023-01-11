@@ -10,8 +10,11 @@ public class BrowserManager {
         return new ChromeDriver();
     }
 
+    public static void maximizeWindow(ChromeDriver driver){
+        driver.manage().window().maximize();
+    }
+
     public static void closeChromeDriver(ChromeDriver driver){
         driver.quit();
     }
 }
-

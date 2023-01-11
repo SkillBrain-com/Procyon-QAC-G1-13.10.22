@@ -183,17 +183,20 @@ public class DemoQA {
         WebElement doubleClickButton = driver.findElement(By.id("doubleClickBtn"));
         Actions actionDoubleClick = new Actions(driver);
         actionDoubleClick.doubleClick(doubleClickButton).perform();
+        System.out.println("S-a facut double click-ul");
     }
 
     public static void rightClick(){
         WebElement rightClickButton = driver.findElement(By.id("rightClickBtn"));
         Actions rightClick = new Actions(driver);
         rightClick.contextClick(rightClickButton).perform();
+        System.out.println("s-a facut right click-ul");
     }
 
     public static void clickButton(){
-        WebElement clickButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button"));
+        WebElement clickButton = driver.findElement(By.xpath("//button[text()='Click Me']"));
         clickButton.click();
+        System.out.println("s-a facut click-ul");
     }
 
     public static void links(){
