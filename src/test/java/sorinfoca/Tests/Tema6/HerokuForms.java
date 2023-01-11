@@ -6,8 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
 
-import static sorinfoca.Tests.Tema6.HerokuAlerts.closeBrowser;
-
 public class HerokuForms {
 
     static ChromeDriver driver = null;
