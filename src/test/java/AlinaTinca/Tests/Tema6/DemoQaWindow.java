@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import teofilursan.driver.BrowserManager;
 
 import java.util.Set;
+
+//Ex2 and 3 Ex
 public class DemoQaWindow {
 
     static ChromeDriver driver = null;
@@ -52,5 +54,5 @@ public class DemoQaWindow {
     }
 }
 
-    //vezi pe Github codul scris pt aici
+
 

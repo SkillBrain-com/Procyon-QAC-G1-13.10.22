@@ -11,6 +11,7 @@ import javax.swing.*;
 import static AlinaTinca.Tests.Tema6.HerokuAlerts.closeBrowser;
 import static AlinaTinca.Tests.Tema6.HerokuAlerts.driver;
 
+//Ex 2
 public class HerokuForms {
 
     static ChromeDriver driver = null;
@@ -26,7 +27,6 @@ public class HerokuForms {
         driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
 
     }
-
 
         public static void scrollToSubmitButton() {
             WebElement submitButton = driver.findElement(By

@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 import java.io.IOException;
-
+//EX 1
 public class HerokuAlerts {
 
     static ChromeDriver driver = null;
@@ -20,13 +20,13 @@ public class HerokuAlerts {
 //        acceptAlert();
 //        closeBrowser();
 
-        navigateToHerokuHomePage();  //1.
+        navigateToHerokuHomePage();
         try {
-            openAlert();        //2.   // aici prindem alerta intrun try catch finally
-        } catch (NoSuchElementException e) {     //iar in catch prindem screenshot
+            openAlert();
+        } catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "alert");
         } finally{
-                closeBrowser();   //3. 4. try-cath
+                closeBrowser();
             }
     }
 
@@ -63,5 +63,3 @@ public class HerokuAlerts {
     }
 }
 
-//pt a se salva ce am facut acum : git status -> Vezi in Untracked -> dit add -> git commit (dupa fiecare lucru) -> git push (fara pull rewuest)
-//iar pt main : git status -> e ok -> git pull (pt a face update pe main)
