@@ -11,15 +11,15 @@ import java.util.List;
 
 public class TestAlDoileaSite {
     public static void main(String[] args) {
-        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
-        //TextBox(driver);
-        //CheckBox(driver);
-        //RadioButton(driver);
-        //WebTables(driver);
-        //Buttons(driver);
+        TextBoxCase();
+        CheckBoxCase();
+        RadioButtonCase();
+        WebTablesCase();
+        ButtonsCase();
 
     }
-    public static void TextBox(ChromeDriver driver){
+    public static void TextBoxCase(){
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/elements");
         driver.manage().window().fullscreen();
         WebElement textBox = driver.findElement(By.id("item-0"));
@@ -41,8 +41,9 @@ public class TestAlDoileaSite {
         submitElement.click();
         driver.quit();
     }
-    public static void CheckBox(ChromeDriver driver){
+    public static void CheckBoxCase(){
         // Navigheaza catre pagina "https://demoqa.com/checkbox"
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/checkbox");
         driver.manage().window().fullscreen();
         WebElement expandButton = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/div/button[1]"));
@@ -70,14 +71,16 @@ public class TestAlDoileaSite {
         colapseButton.click();
         driver.quit();
     }
-    public static void RadioButton(ChromeDriver driver) {
+    public static void RadioButtonCase() {
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/radio-button");
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("document.getElementById('impressiveRadio').click();");
         jse.executeScript("document.getElementById('yesRadio').click();");
         driver.quit();
     }
-    public static void WebTables(ChromeDriver driver){
+    public static void WebTablesCase(){
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/webtables");
         driver.manage().window().fullscreen();
         WebElement addButton = driver.findElement(By.id("addNewRecordButton"));
@@ -102,7 +105,8 @@ public class TestAlDoileaSite {
 
 
     }
-    public static void Buttons(ChromeDriver driver){
+    public static void ButtonsCase(){
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/buttons");
         driver.manage().window().fullscreen();
         Actions action = new Actions(driver);

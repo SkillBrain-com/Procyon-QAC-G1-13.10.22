@@ -9,14 +9,13 @@ import java.util.List;
 
 public class TestPrimulSite {
     public static void main(String[] args) {
-        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
-        testPrimulLink(driver);
-        //testAlDoileaLink(driver);
-        //testAlTreileaLink(driver);
-        //testAlPatruleaLink(driver);
-
+        testPrimulLink();
+        testAlDoileaLink();
+        testAlTreileaLink();
+        testAlPatruleaLink();
     }
-    public static void testPrimulLink(ChromeDriver driver){
+    public static void testPrimulLink(){
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement BasicExampleLink = driver.findElement(By.id("basicpagetest"));
         BasicExampleLink.click();
@@ -38,7 +37,8 @@ public class TestPrimulSite {
         }
         driver.quit();
     }
-    public static void testAlDoileaLink(ChromeDriver driver){
+    public static void testAlDoileaLink(){
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement ElementAtributeLink  = driver.findElement(By.id("elementattributestest"));
         ElementAtributeLink.click();
@@ -62,9 +62,9 @@ public class TestPrimulSite {
         button.click();
         System.out.printf("\n" + button.getText());
         driver.quit();
-
     }
-    public static void testAlTreileaLink(ChromeDriver driver){
+    public static void testAlTreileaLink(){
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement LocatorsLink = driver.findElement(By.id("findbytest"));
         LocatorsLink.click();
@@ -87,7 +87,8 @@ public class TestPrimulSite {
         }
         driver.quit();
     }
-    public static void testAlPatruleaLink(ChromeDriver driver){
+    public static void testAlPatruleaLink(){
+        ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement tableTestPage = driver.findElement(By.id("tablestest"));
         tableTestPage.click();
@@ -97,21 +98,22 @@ public class TestPrimulSite {
         System.out.println(text2.getText());
         WebElement text3 = driver.findElement(By.cssSelector("#mytable caption"));
         System.out.println(text3.getText());
-        String table[][] = new String[5][2];
-        for(int i = 1 ; i <= 5; i++){
-            for(int j = 1 ; j <= 2; j++){
-                if(i == 1) {
-                    WebElement text = driver.findElement(By.xpath("//table//tr["+i+"]//th["+j+"]"));
-                    table[i-1][j-1] = text.getText();
-                    System.out.println(text.getText() + " ");
+        List<WebElement> tableRows = driver.findElements(By.xpath("//tr"));
+        for (int i = 0 ; i<=tableRows.size(); i++){
+            if(i == 1){
+                List<WebElement> tableCollums = driver.findElements(By.xpath("//tr["+i+"]//th"));
+                for(int j=0; j<tableCollums.size(); j++){
+                    System.out.println(tableCollums.get(j).getText());
                 }
-                else {
-                    WebElement text = driver.findElement(By.xpath("//table//tr["+i+"]//td["+j+"]"));
-                    table[i-1][j-1] = text.getText();
-                    System.out.println(text.getText() + " ");
+            }
+            else {
+                List<WebElement> tableColums = driver.findElements(By.xpath("//tr["+i+"]//td"));
+                for(int j=0; j<tableColums.size(); j++){
+                    System.out.println(tableColums.get(j).getText());
                 }
             }
         }
         driver.quit();
     }
+
 }
