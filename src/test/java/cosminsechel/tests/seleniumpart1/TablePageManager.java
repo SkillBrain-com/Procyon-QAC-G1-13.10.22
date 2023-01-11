@@ -13,9 +13,7 @@ import java.util.List;
 public class TablePageManager {
     private static String url; // pagina pe care lucram
     private static ChromeDriver driver = null; // salvam instanta de chrome pe care o vom folosi in tate emtodele din clasa
-
     private static String idTabelInitial;
-
 
     TablePageManager(String url,ChromeDriver driver) // constructor
     {

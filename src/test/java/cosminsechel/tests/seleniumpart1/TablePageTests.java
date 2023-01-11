@@ -33,9 +33,6 @@ public class TablePageTests {
         String jsonFormated = tablePage.createJson(name,age);
         System.out.println(jsonFormated);
         tablePage.changeTableData(jsonFormated);
-
-
-
         BrowserManager.closeChromeDriver(driver);
     }
 }
