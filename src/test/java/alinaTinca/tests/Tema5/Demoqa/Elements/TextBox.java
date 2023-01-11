@@ -1,13 +1,13 @@
 package alinaTinca.tests.Tema5.Demoqa.Elements;
 
-import AlinaTinca.BrowserManagerClass;
+import AlinaTinca.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TextBoxClass {
+public class TextBox {
 
     public static void main(String[] args) {
         goToTheTextBoxAndCheckIt("Georgiana Alina","test@test.com","Bucharest","Romania");
@@ -16,17 +16,17 @@ public class TextBoxClass {
 
     public static void goToTheTextBoxAndCheckIt(String fullNameInput, String EmailInput, String currentAddressInput, String permanentAddressInput) {
         //create the method called goToTheBoxAndCheckIt that goes to the section called Text Box and it identifies and makes several operations there
-        ChromeDriver driver = BrowserManagerClass.createChromeDriver();
+        ChromeDriver driver = BrowserManager.createChromeDriver();
         //create and configure the Chrome browser page settings
         driver.get("https://demoqa.com/text-box");
         //go to Demoqa URL
-        WebElement TextBoxSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[1]"));
+        WebElement textBoxSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[1]"));
         //search the section called Text Box from the section called Elements
-        TextBoxSection.click();
+        textBoxSection.click();
         //click on the section calles Text Box
         WebElement fullNameField = driver.findElement(By.id("userName"));
         //search the Full Name field
-        WebElement EmailField = driver.findElement(By.id("userEmail"));
+        WebElement emailField = driver.findElement(By.id("userEmail"));
         //search the E-mail field
         WebElement currentAddressField = driver.findElement(By.id("currentAddress"));
         //search the Current Address field
@@ -40,13 +40,13 @@ public class TextBoxClass {
         //introduce new full name
         fullNameField.sendKeys(Keys.TAB);
         //pass to the next field
-        EmailField.click();
+        emailField.click();
         //click on the E-mail field
-        EmailField.clear();
+        emailField.clear();
         //clear the previous data from the Email filed
-        EmailField.sendKeys(EmailInput);
+        emailField.sendKeys(EmailInput);
         //introduce new email
-        EmailField.sendKeys(Keys.TAB);
+        emailField.sendKeys(Keys.TAB);
         //pass to the next field
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");

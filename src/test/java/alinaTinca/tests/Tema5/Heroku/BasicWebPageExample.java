@@ -1,12 +1,11 @@
 package alinaTinca.tests.Tema5.Heroku;
 
-import AlinaTinca.BrowserManagerClass;
+import AlinaTinca.BrowserManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BasicWebPageExampleClass {
+public class BasicWebPageExample {
 
     public static void main(String[] args) {
         goToBasicWebPage();
@@ -15,7 +14,7 @@ public class BasicWebPageExampleClass {
 
     public static void goToBasicWebPage() {
         //create a method called goToBasicWebPage that goes to the link called Basic Web Page from this URL and identifies several elements from there
-        ChromeDriver driver = BrowserManagerClass.createChromeDriver();
+        ChromeDriver driver = BrowserManager.createChromeDriver();
         //create and configure the Chrome browser page settings
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         //go to Heroku URL

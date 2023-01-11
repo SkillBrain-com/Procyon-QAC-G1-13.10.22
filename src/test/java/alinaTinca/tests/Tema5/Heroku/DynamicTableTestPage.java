@@ -1,11 +1,11 @@
 package alinaTinca.tests.Tema5.Heroku;
 
-import AlinaTinca.BrowserManagerClass;
+import AlinaTinca.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DynamicTableTestPageClass {
+public class DynamicTableTestPage {
 
     public static void main(String[] args) {
         goToTheDynamicTableTestPage();
@@ -15,13 +15,13 @@ public class DynamicTableTestPageClass {
     }
     public static void goToTheDynamicTableTestPage() {
         //create a method called goToTheDynamicTableTestPage that goes to the link called The Dynamic Table Test Page from this URL and makes different operations there
-        ChromeDriver driver = BrowserManagerClass.createChromeDriver();
+        ChromeDriver driver = BrowserManager.createChromeDriver();
         //create and configure the Chrome browser page settings
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         //go to the Heroku URL
-        WebElement Link4TDynamicTable = driver.findElement(By.id("dynamictablestest"));
+        WebElement link4TDynamicTable = driver.findElement(By.id("dynamictablestest"));
         //search the 5th link
-        Link4TDynamicTable.click();
+        link4TDynamicTable.click();
         //click on the 5th link
         WebElement firstParagraph = driver.findElement(By.cssSelector(".explanation"));
         //search the first paragraph
@@ -43,7 +43,7 @@ public class DynamicTableTestPageClass {
 
     public static void getTableData(String captionInput, String idInput) {
         //create a method called getTableData that checks if it finds the Caption and Id fields from this page and introduces data inside
-        ChromeDriver driver = BrowserManagerClass.createChromeDriver();
+        ChromeDriver driver = BrowserManager.createChromeDriver();
         //create and set the Chrome browser page
         driver.get("https://testpages.herokuapp.com/styled/tag/dynamic-table.html");
         //go to Heroku URL
@@ -51,6 +51,8 @@ public class DynamicTableTestPageClass {
         //search the button called Table Data
         buttonTableData.click();
         //click on the button called Table Data
+//        driver.close();
+        //close the driver instance
         WebElement newCaptionInput = driver.findElement(By.id("caption"));
         //search the Caption field
         WebElement newIdInput = driver.findElement(By.id("tableid"));

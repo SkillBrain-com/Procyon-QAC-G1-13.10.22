@@ -1,11 +1,12 @@
 package alinaTinca.tests.Tema5.Heroku;
 
-import AlinaTinca.BrowserManagerClass;
+import AlinaTinca.BrowserManager;
+import AlinaTinca.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ElementAttributesExamplesClass {
+public class ElementAttributesExamples {
 
     public static void main(String[] args) {
         goToElementAttributesExample();
@@ -14,7 +15,7 @@ public class ElementAttributesExamplesClass {
 
     public static void goToElementAttributesExample(){
         //create the method called goToElementAttributesExample that goes to the link called Element Attributes Example from this URL and identifies several elements from there
-        ChromeDriver driver = BrowserManagerClass.createChromeDriver();
+        ChromeDriver driver = BrowserManager.createChromeDriver();
         //create and configure the Chrome browser page settings
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         //go to Heroku URL
@@ -36,9 +37,9 @@ public class ElementAttributesExamplesClass {
         //search the second paragraph
         System.out.println("The second paragraph has the following content: " + secondParagraph.getText());
         //display the message from the second paragraph
-        WebElement AtitleFromTheSecondParagraph= driver.findElement(By.id("domattributes"));
+        WebElement atitleFromTheSecondParagraph= driver.findElement(By.id("domattributes"));
         //search the title from the second paragraph
-        System.out.println("The title located under of the second paragraph has the following content: " + AtitleFromTheSecondParagraph.getText());
+        System.out.println("The title located under of the second paragraph has the following content: " + atitleFromTheSecondParagraph.getText());
         //display the title located under of the second paragraph
         WebElement titleFromTheThirdParagraph = driver.findElement(By.xpath("//h2[text()='Dynamic JavaScript Added']"));
         //search the title from the third paragraph

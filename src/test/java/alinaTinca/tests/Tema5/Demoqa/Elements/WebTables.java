@@ -1,12 +1,14 @@
 package alinaTinca.tests.Tema5.Demoqa.Elements;
 
-import AlinaTinca.BrowserManagerClass;
+import AlinaTinca.BrowserManager;
+import AlinaTinca.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
-public class WebTablesClass {
+public class WebTables {
 
     public static void main(String[] args) {
         goToTheWebTables("Jon","Smith","test@test.com","40","60000","Marketing");
@@ -15,17 +17,17 @@ public class WebTablesClass {
 
     public static void goToTheWebTables(String firstName, String lastName, String email, String age, String salary, String department){
         //create a method called goToTheWebTables that identifies several elements from Web Tables section and makes operations on these elements
-        ChromeDriver driver = BrowserManagerClass.createChromeDriver();
+        ChromeDriver driver = BrowserManager.createChromeDriver();
         //create and configure the Chrome browser page settings
         driver.get("https://demoqa.com/webtables");
         //go to the Demoqa URL
-        WebElement WebTablesSection = driver.findElement(By.cssSelector("#item-3"));
+        WebElement webTablesSection = driver.findElement(By.cssSelector("#item-3"));
         //find the section called Web Tables
-        WebTablesSection.click();
+        webTablesSection.click();
         //click on the section called Web Tables
-        WebElement AddButton = driver.findElement(By.cssSelector("#addNewRecordButton"));
+        WebElement addButton = driver.findElement(By.cssSelector("#addNewRecordButton"));
         //find the Add Button
-        AddButton.click();
+        addButton.click();
         //click on the Add Button
         WebElement firstNameField = driver.findElement(By.cssSelector("input[placeholder='First Name']"));
         //find the First Name field
@@ -63,14 +65,20 @@ public class WebTablesClass {
         //click on this field
         departmentField.sendKeys(department);
         //introduce new department
-        WebElement SubmitButton = driver.findElement(By.cssSelector("button[id='submit']"));
+        WebElement submitButton = driver.findElement(By.cssSelector("button[id='submit']"));
         //find the button called Submit
-        SubmitButton.click();
+        submitButton.click();
         //click on Submit button
         WebElement deleteIcon = driver.findElement(By.cssSelector(" span[id='delete-record-4']"));
         //find the Bin element gaseste iconul Bin (si sterge randul 4 adaugat anterior)
+        Actions actions = new Actions(driver);
+        //create a object of type Actions
+        actions.moveToElement(deleteIcon).build().perform();
+        //scroll to the delete icon
         deleteIcon.click();
         //click on the Bin icon
+        System.out.println("I scrolled to the delete icon");
+        //display the below message
         WebElement editIcon = driver.findElement(By.cssSelector("span[id='edit-record-2']"));
         //find the Edit icon
         editIcon.click();
@@ -119,17 +127,17 @@ public class WebTablesClass {
         //find the Department field
         inputDepartmentField.click();
         //click on the Salary field
-        WebElement ButtonSubmit = driver.findElement(By.cssSelector("button[type='submit']"));
+        WebElement buttonSubmit = driver.findElement(By.cssSelector("button[type='submit']"));
         //find the Submit button
-        ButtonSubmit.click();
+        buttonSubmit.click();
         //click on the Submit button
-        WebElement TypeToSearchButton = driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
+        WebElement typeToSearchButton = driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
         //find the Search button (pt a cauta numele Amalia care tocmai ce a fost editat)
-        TypeToSearchButton.click();
+        typeToSearchButton.click();
         //click on the thin button
-        TypeToSearchButton.sendKeys("Cierra");
+        typeToSearchButton.sendKeys("Cierra");
         //introduce Cierra name for find it
-        TypeToSearchButton.sendKeys(Keys.ENTER);
+        typeToSearchButton.sendKeys(Keys.ENTER);
         //introduce Enter
         driver.quit();
         //close the Chrome browser page
