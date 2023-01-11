@@ -1,3 +1,6 @@
+package elizCurtnazar.tests;
+
+import elizCurtnazar.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BothPagesTests {
