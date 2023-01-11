@@ -46,6 +46,8 @@ public class WebTables {
         submitButton.click();
         System.out.println("All information was successfully submitted!");
 
+        driver.quit();
+
 
 
 
