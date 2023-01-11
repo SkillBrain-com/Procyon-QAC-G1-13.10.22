@@ -7,20 +7,30 @@ import teofilursan.driver.BrowserManager;
 
 public class CheckBox {
 
-
     public static void main(String[] args) {
-            goToCheckbox();
+        goToCheckbox1();
+
     }
 
+    public static void goToCheckbox1() {
 
-
-    public static void goToCheckbox(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/checkbox");
-        WebElement checkBox = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[2]/span"));
+
+        WebElement checkBox = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div/ol/li/span/label/span[1]"));
         checkBox.click();
-        WebElement chkBox= driver.findElement(By.cssSelector(".rct-checkbox svg[stroke='currentColor']"));
-        chkBox.click();
+
+
+        WebElement expandPlusSign =driver.findElement(By.cssSelector("html > body > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > button:first-of-type"));
+        //WebElement expandPlusSign =driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div/button[1]"));
+        expandPlusSign.click();
+
         driver.quit();
-}
-}
+
+
+    }
+
+            }
+
+
+
