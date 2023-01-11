@@ -1,4 +1,4 @@
-package AndreeaG.tests.tema5;
+package AndreeaG.tests.tema5.Heroku;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
