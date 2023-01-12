@@ -10,18 +10,8 @@
         </groups>
 
         <classes>
-            <class name="teofilursan.teorie.altpachet.AltTest" />
-        </classes>
-    </test>
-
-    <test name="DemoTests">
-        <classes>
             <class name="teofilursan.teorie.DemoQaInputs"/>
-            <class name="teofilursan.teorie.TestNgAnnotations">
-                <methods>
-                    <exclude name="test2"></exclude>
-                </methods>
-            </class>
+            <class name="teofilursan.teorie.TestNgAnnotations"/>
         </classes>
     </test>
 </suite>
