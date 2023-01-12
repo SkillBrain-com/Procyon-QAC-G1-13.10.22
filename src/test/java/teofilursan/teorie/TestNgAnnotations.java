@@ -34,12 +34,12 @@ public class TestNgAnnotations {
         System.out.println("After suite");
     }
 
-    @BeforeGroups
+    @BeforeGroups(groups = "test2")
     public void beforeGroups() {
         System.out.println("Before groups");
     }
 
-    @AfterGroups
+    @AfterGroups(groups = "test2")
     public void afterGroups() {
         System.out.println("After groups");
     }
@@ -57,5 +57,10 @@ public class TestNgAnnotations {
     @Test
     public void test() {
         System.out.println("Test method");
+    }
+
+    @Test(groups = "test2")
+    public void test2() {
+        System.out.println("Test method 2");
     }
 }
