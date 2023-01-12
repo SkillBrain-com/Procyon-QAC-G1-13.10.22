@@ -6,12 +6,30 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import teofilursan.driver.BrowserManager;
 
 public class DemoQaInputs {
     ChromeDriver driver;
+
+    @DataProvider(name = "formDetails")
+    public Object[][] fullDetails(){
+        return new Object[][]{
+                {"Teofil Ursan", "teofil@test.com", 1},
+                {"Teo", "tefil@test.com", 2},
+                {"Teofil Ursan", "teofil@test.com", 1},
+                {"Teo", "tefil@test.com", 2},
+                {"Teofil Ursan", "teofil@test.com", 1},
+                {"Teo", "tefil@test.com", 2}
+        };
+    }
+
+    @Test(dataProvider = "formDetails")
+    public void test2(String name, String email, int index) {
+        System.out.println(name +" " + email + " " + index);
+    }
 
     @Test
     public void test1() {
