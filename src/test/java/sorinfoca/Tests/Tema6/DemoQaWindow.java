@@ -1,13 +1,14 @@
 package sorinfoca.Tests.Tema6;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
 import sorinfoca.utils.FileUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Set;
 
 public class DemoQaWindow {
@@ -20,14 +21,8 @@ public class DemoQaWindow {
             clickNewTabButton();
             interactWithElementsOnParentTab();
         } catch (NoAlertPresentException e) {
-            FileUtils.takeScreenshot(driver, "alert");
+            FileUtils.takeScreenshot(driver, "window");
             System.out.println("No alert present");
-            try {
-                org.apache.commons.io.FileUtils.copyFile(screenshot, new File("screenshot.png"));
-                System.err.println("Screenshot saved to screenshot.png");
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
         } finally {
             closeBrowser();
         }
