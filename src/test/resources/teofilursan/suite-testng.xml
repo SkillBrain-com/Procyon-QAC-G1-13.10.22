@@ -10,7 +10,11 @@
     <test name="DemoTests">
         <classes>
             <class name="teofilursan.teorie.DemoQaInputs"/>
-            <class name="teofilursan.teorie.TestNgAnnotations"/>
+            <class name="teofilursan.teorie.TestNgAnnotations">
+                <methods>
+                    <exclude name="test2"></exclude>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
