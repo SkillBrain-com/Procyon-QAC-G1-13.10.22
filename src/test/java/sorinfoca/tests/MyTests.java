@@ -4,13 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import sorinfoca.driver.DriverSetup;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class MyTests extends TestConfig {
 
-    WebDriver driver;
+    WebDriver driver = new ChromeDriver();
 
     @BeforeEach
     public void beforeEach() {
