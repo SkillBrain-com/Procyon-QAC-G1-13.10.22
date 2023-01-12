@@ -11,5 +11,6 @@ public class BrowserManager {
     }
 
     public static void closeChromeDriver(ChromeDriver driver) {
+        driver.quit();
     }
 }

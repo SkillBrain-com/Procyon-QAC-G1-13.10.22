@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Test {
     public static void main(String[] args ) throws InterruptedException {
         BrowserManager.createDriver();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = BrowserManager.createDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         driver.manage().window().maximize();
 
@@ -39,7 +39,5 @@ public class Test {
         System.out.println(p2page.getText());
         WebElement button = driver.findElement(By.className("styled-click-button"));
         button.click();
-
-
     }
 }
