@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import teofilursan.driver.BrowserManager;
 
 public class DemoQaInputs {
@@ -21,7 +22,8 @@ public class DemoQaInputs {
         writeCurrentAddress();
         writePermanentAddress();
         clickOnSubmitButton();
-        verifySubmittedDetails();
+        //verifySubmittedDetails();
+        verifySubmittedDetailsSoftAssert();
         driver.quit();
     }
 
@@ -61,5 +63,14 @@ public class DemoQaInputs {
         Assert.assertEquals(nameParagraph.getText(), "Name:Teofil Ursan", "Values are different for name!");
         WebElement emailParagraph = driver.findElement(By.id("email"));
         Assert.assertTrue(emailParagraph.getText().equals("Email:teo@test.com"), "Email is not correct!");
+    }
+
+    public void verifySubmittedDetailsSoftAssert() {
+        SoftAssert softAssert = new SoftAssert();
+        WebElement nameParagraph = driver.findElement(By.id("name"));
+        softAssert.assertEquals(nameParagraph.getText(), "Name:Teofil Ursan", "Values are different for name!");
+        WebElement emailParagraph = driver.findElement(By.id("email"));
+        softAssert.assertTrue(emailParagraph.getText().equals("Email:teo@test.com"), "Email is not correct!");
+        softAssert.assertAll();
     }
 }
