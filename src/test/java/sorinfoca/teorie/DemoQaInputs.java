@@ -1,13 +1,34 @@
 package sorinfoca.teorie;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import teofilursan.driver.BrowserManager;
 
 public class DemoQaInputs {
     ChromeDriver driver;
+
+    @DataProvider(name = "formDetails")
+    public Object[][] fullDetails(){
+        return new Object[][]{
+                {"Teofil Ursan", "teofil@test.com", 1},
+                {"Teo", "tefil@test.com", 2},
+                {"Teofil Ursan", "teofil@test.com", 1},
+                {"Teo", "tefil@test.com", 2},
+                {"Teofil Ursan", "teofil@test.com", 1},
+                {"Teo", "tefil@test.com", 2}
+        };
+    }
+
+    @Test(dataProvider = "formDetails")
+    public void test2(String name, String email, int index) {
+        System.out.println(name +" " + email + " " + index);
+    }
 
     @Test
     public void test1() {
@@ -18,6 +39,8 @@ public class DemoQaInputs {
         writeCurrentAddress();
         writePermanentAddress();
         clickOnSubmitButton();
+        //verifySubmittedDetails();
+        verifySubmittedDetailsSoftAssert();
         driver.quit();
     }
 
@@ -45,6 +68,26 @@ public class DemoQaInputs {
 
     public void clickOnSubmitButton() {
         WebElement submitButton = driver.findElement(By.id("submit"));
-        submitButton.click();
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(submitButton).build().perform();
+//        submitButton.click();
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", submitButton);
+    }
+
+    public void verifySubmittedDetails() {
+        WebElement nameParagraph = driver.findElement(By.id("name"));
+        Assert.assertEquals(nameParagraph.getText(), "Name:Teofil Ursan", "Values are different for name!");
+        WebElement emailParagraph = driver.findElement(By.id("email"));
+        Assert.assertTrue(emailParagraph.getText().equals("Email:teo@test.com"), "Email is not correct!");
+    }
+
+    public void verifySubmittedDetailsSoftAssert() {
+        SoftAssert softAssert = new SoftAssert();
+        WebElement nameParagraph = driver.findElement(By.id("name"));
+        softAssert.assertEquals(nameParagraph.getText(), "Name:Teofil Ursan", "Values are different for name!");
+        WebElement emailParagraph = driver.findElement(By.id("email"));
+        softAssert.assertTrue(emailParagraph.getText().equals("Email:teo@test.com"), "Email is not correct!");
+        softAssert.assertAll();
     }
 }
