@@ -17,6 +17,7 @@ public class DemoQaInputs {
         writeEmail();
         writeCurrentAddress();
         writePermanentAddress();
+        clickOnSubmitButton();
         driver.quit();
     }
 
@@ -40,5 +41,10 @@ public class DemoQaInputs {
         WebElement permanentAddressInput = driver
                 .findElement(By.id("permanentAddress"));
         permanentAddressInput.sendKeys("Iasi");
+    }
+
+    public void clickOnSubmitButton() {
+        WebElement submitButton = driver.findElement(By.id("submit"));
+        submitButton.click();
     }
 }
