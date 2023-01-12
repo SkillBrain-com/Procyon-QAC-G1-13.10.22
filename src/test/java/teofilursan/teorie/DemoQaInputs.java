@@ -1,6 +1,7 @@
 package teofilursan.teorie;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -48,9 +49,11 @@ public class DemoQaInputs {
 
     public void clickOnSubmitButton() {
         WebElement submitButton = driver.findElement(By.id("submit"));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(submitButton).build().perform();
-        submitButton.click();
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(submitButton).build().perform();
+//        submitButton.click();
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", submitButton);
     }
 
     public void verifySubmittedDetails() {
