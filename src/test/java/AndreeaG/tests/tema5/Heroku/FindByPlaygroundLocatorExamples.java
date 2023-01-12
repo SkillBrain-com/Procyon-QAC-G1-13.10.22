@@ -20,13 +20,6 @@ public class FindByPlaygroundLocatorExamples {
 
         WebElement jumpToPara17 = driver.findElement(By.id("a43"));
         jumpToPara17.click();
-
-
         driver.quit();
-
-
-
-
-
     }
 }

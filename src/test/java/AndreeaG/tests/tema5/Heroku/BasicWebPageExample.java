@@ -41,14 +41,7 @@ public class BasicWebPageExample {
             WebElement returnToIndex = driver.findElement(By.linkText("Index"));
             returnToIndex.click();
 
-
-
-
             driver.quit();
-
-
-
         }
-
 }
 

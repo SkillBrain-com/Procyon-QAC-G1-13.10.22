@@ -8,9 +8,7 @@ import teofilursan.driver.BrowserManager;
 public class RadioButton {
 
     public static void main(String[] args) {
-
         radioButton();
-
     }
 
     public static void radioButton(){
@@ -18,23 +16,12 @@ public class RadioButton {
 
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/radio-button");
-        WebElement radioButtonYes = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/label"));
-        WebElement radioButtonImpressive =driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/label"));
-        radioButtonYes.click();
-        radioButtonImpressive.click();
 
+         WebElement radioButtonYes = driver.findElement(By.xpath("//label[@class='custom-control-label' and @for='yesRadio']"));
+         radioButtonYes.click();
 
+         WebElement radioButtonImpressive =driver.findElement(By.xpath("//label[@class='custom-control-label' and @for='impressiveRadio']"));
+         radioButtonImpressive.click();
         driver.quit();
-
-
-
     }
-
-
-
-
-
-
-
-
 }

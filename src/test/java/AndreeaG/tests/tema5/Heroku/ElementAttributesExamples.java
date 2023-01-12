@@ -12,8 +12,6 @@ public class ElementAttributesExamples {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get ("https://testpages.herokuapp.com/styled/attributes-test.html");
 
-
-
         WebElement findTitle = driver.findElement(By.tagName("h1"));
         System.out.println("Title displays  " + findTitle.getText());
 
@@ -36,8 +34,6 @@ public class ElementAttributesExamples {
 
         WebElement addAnthrAttributeGreenbtn = driver.findElement(By.className("styled-click-button"));
         addAnthrAttributeGreenbtn.click();
-
-       driver.quit();
-
+        driver.quit();
     }
 }

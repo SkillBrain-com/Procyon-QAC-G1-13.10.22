@@ -19,10 +19,6 @@ public class HTMLTableTag {
 
 
 
-
-
-
-
         WebElement titleTextTag = driver.findElement(By.tagName("h1"));
         System.out.println("TITLE displays:  " + titleTextTag.getText());
 
@@ -41,12 +37,6 @@ public class HTMLTableTag {
         List<WebElement> firstRowColumns =firstRow.findElements(By.cssSelector("th"));
         System.out.println("Header1 is: " + firstRowColumns.get(0).getText());
         System.out.println("Header2 is: " + firstRowColumns.get(1).getText());
-
-driver.quit();
-
-
-
-
-
+        driver.quit();
     }
 }

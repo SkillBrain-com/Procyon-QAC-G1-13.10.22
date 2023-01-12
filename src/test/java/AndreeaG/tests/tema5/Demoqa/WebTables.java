@@ -9,8 +9,6 @@ public class WebTables {
 
     public static void main(String[] args) {
         accessWebTables();
-
-
     }
 
     public static void accessWebTables() {
@@ -45,13 +43,6 @@ public class WebTables {
         WebElement submitButton = driver.findElement(By.id("submit"));
         submitButton.click();
         System.out.println("All information was successfully submitted!");
-
         driver.quit();
-
-
-
-
-
-
     }
 }

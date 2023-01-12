@@ -55,16 +55,7 @@ public class Links {
         WebElement notFoundLink = driver.findElement(By.id("invalid-url"));
         System.out.println("Not found link displays:  " + notFoundLink.getText());
         notFoundLink.click();
-
-
-
         driver.close();
         driver.quit();
     }
-
-
-
-
-
-
 }
