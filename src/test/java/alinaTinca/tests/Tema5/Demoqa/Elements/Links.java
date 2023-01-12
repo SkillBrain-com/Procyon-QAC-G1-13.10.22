@@ -23,7 +23,7 @@ public class Links {
         //find the Links section
         linksSection.click();
         //click on this section
-        WebElement createdLink = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/p[3]/a"));
+        WebElement createdLink = driver.findElement(By.partialLinkText("Created"));
         //find the third link called Created
         createdLink.click();
         //click on this link

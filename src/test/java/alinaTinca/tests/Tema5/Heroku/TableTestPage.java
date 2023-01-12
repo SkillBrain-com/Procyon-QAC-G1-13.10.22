@@ -72,8 +72,6 @@ public class TableTestPage {
         System.out.println("The browser closed!");
         //display the above message
     }
-
 }
-
 
 

@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
+
 public class Buttons {
 
     public static void main(String[] args) {
@@ -13,7 +16,8 @@ public class Buttons {
         //check if the method called goToTheButtons is done successfully
 
     }
-    public static void goToTheButtons(){
+
+    public static void goToTheButtons() {
         //create a method called goToTheButtons that goes to the Buttons sections and interacts with a button
         ChromeDriver driver = BrowserManager.createChromeDriver();
         //create and configure the Chrome browser page setting
@@ -23,11 +27,12 @@ public class Buttons {
         //find the Buttons section
         buttonsSection.click();
         //click on this section
-        WebElement clickMeButtons = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button"));
-        //find the last button called Click Me
-        clickMeButtons.click();
-        //click on this button
-        System.out.println("This button is called: " + clickMeButtons.getText());
+
+        WebElement clickMeButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button"));
+        //find the Click Me button
+        clickMeButton.click();
+        //click on Click Me button
+        System.out.println("This button is called: " + clickMeButton.getText());
         //display the message from this button
         driver.quit();
         //close the Chrome browser page
