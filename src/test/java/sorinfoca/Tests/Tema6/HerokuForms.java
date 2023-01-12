@@ -1,12 +1,13 @@
 package sorinfoca.Tests.Tema6;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
+
 import java.io.File;
-import java.io.IOException;
 
 public class HerokuForms {
 
@@ -19,14 +20,9 @@ public class HerokuForms {
             fillOutForm();
             scrollToSubmitButton();
             submitForm();
-        } catch (NoAlertPresentException e) {
+        } catch (NoSuchElementException e) {
             sorinfoca.utils.FileUtils.takeScreenshot(driver, "alert");
             System.out.println("No alert present");
-            try {
-                FileUtils.copyFile(screenshot, new File("screenshot.png"));
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            }
         } finally {
             closeBrowser();
         }

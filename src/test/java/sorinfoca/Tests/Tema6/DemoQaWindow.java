@@ -1,7 +1,7 @@
 package sorinfoca.Tests.Tema6;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -20,7 +20,7 @@ public class DemoQaWindow {
         try {
             clickNewTabButton();
             interactWithElementsOnParentTab();
-        } catch (NoAlertPresentException e) {
+        } catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "window");
             System.out.println("No alert present");
         } finally {
