@@ -58,6 +58,8 @@ public class DemoQaInputs {
 
     public void verifySubmittedDetails() {
         WebElement nameParagraph = driver.findElement(By.id("name"));
-        Assert.assertEquals(nameParagraph.getText(), "Name:A", "Values are different");
+        Assert.assertEquals(nameParagraph.getText(), "Name:Teofil Ursan", "Values are different for name!");
+        WebElement emailParagraph = driver.findElement(By.id("email"));
+        Assert.assertTrue(emailParagraph.getText().equals("Email:teo@test.com"), "Email is not correct!");
     }
 }
