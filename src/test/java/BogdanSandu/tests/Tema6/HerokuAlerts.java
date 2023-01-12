@@ -32,7 +32,7 @@ public class HerokuAlerts {
         secondAlertText();
 //        acceptAlert();
         cancelSecondAlert();
-//        secondAlertAfterCancel();
+        secondAlertAfterCancel();
 //        scrollToSubmitButton();
         closeBrwoser();
 
@@ -116,9 +116,10 @@ public class HerokuAlerts {
     }
 
     public static void secondAlertAfterCancel(){
-        WebElement secondText = driver.findElement(By.id("confirmexplanation"));
-        secondText.getText();
-        System.out.println("Textul dupa cancel: \"" + secondText.getText() +"\"");
+//        WebElement secondText = driver.findElement(By.id("confirmexplanation"));
+//        secondText.getText();
+//        System.out.println("Textul dupa cancel: \"" + secondText.getText() +"\"");
+        System.out.println("Textul dupa cancel: \"" + driver.findElement(By.id("confirmexplanation")).getText() + "\"");
     }
 
     public static void scrollToSubmitButton() {
