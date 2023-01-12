@@ -3,6 +3,7 @@ package teofilursan.teorie;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import teofilursan.driver.BrowserManager;
@@ -47,6 +48,8 @@ public class DemoQaInputs {
 
     public void clickOnSubmitButton() {
         WebElement submitButton = driver.findElement(By.id("submit"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(submitButton).build().perform();
         submitButton.click();
     }
 
