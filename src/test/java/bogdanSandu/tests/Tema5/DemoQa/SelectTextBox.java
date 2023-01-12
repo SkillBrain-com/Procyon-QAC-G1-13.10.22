@@ -5,17 +5,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GetInformation {
+public class SelectTextBox {
+
     public static void main(String[] args) {
 
-        getInfo();
+        selectTextBox();
     }
 
-    public static void getInfo(){
+    public static void selectTextBox() {
         ChromeDriver driver = BrowserManager.createDriverAndGetPage();
-        driver.get("https://demoqa.com/text-box");
-        WebElement getInfo = driver.findElement(By.cssSelector("#output > div"));
-        System.out.println("Info: " + getInfo.getText());
+        driver.get("https://demoqa.com/elements");
+        WebElement textBox = driver.findElement(By.cssSelector("#item-0"));
+        textBox.click();
         driver.quit();
     }
 }
