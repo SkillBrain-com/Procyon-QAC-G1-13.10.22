@@ -3,6 +3,7 @@ package teofilursan.teorie;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import teofilursan.driver.BrowserManager;
 
@@ -18,6 +19,7 @@ public class DemoQaInputs {
         writeCurrentAddress();
         writePermanentAddress();
         clickOnSubmitButton();
+        verifySubmittedDetails();
         driver.quit();
     }
 
@@ -46,5 +48,10 @@ public class DemoQaInputs {
     public void clickOnSubmitButton() {
         WebElement submitButton = driver.findElement(By.id("submit"));
         submitButton.click();
+    }
+
+    public void verifySubmittedDetails() {
+        WebElement nameParagraph = driver.findElement(By.id("name"));
+        Assert.assertEquals(nameParagraph.getText(), "Name:A", "Values are different");
     }
 }
