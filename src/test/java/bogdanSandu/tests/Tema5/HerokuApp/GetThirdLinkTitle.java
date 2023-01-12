@@ -15,7 +15,7 @@ public class GetThirdLinkTitle {
     public static void getThirdLinkTitle(){
         ChromeDriver driver = BrowserManager.createDriverAndGetPage();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
-        WebElement thirdLinkPageTitle = driver.findElement(By.xpath("//*[@id=\"findbytest\"]"));
+        WebElement thirdLinkPageTitle = driver.findElement(By.xpath("//*[@id=\'findbytest\']"));
         System.out.println("Third link title is: \"" + thirdLinkPageTitle.getText() + "\"");
         driver.quit();
     }

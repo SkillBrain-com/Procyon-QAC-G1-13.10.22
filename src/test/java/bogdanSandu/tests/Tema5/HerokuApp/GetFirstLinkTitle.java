@@ -15,7 +15,7 @@ public class GetFirstLinkTitle {
     public static void getFirstLinkTitle(){
         ChromeDriver driver = BrowserManager.createDriverAndGetPage();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
-        WebElement linkTitle = driver.findElement(By.xpath("//*[@id=\"basicpagetest\"]"));
+        WebElement linkTitle = driver.findElement(By.xpath("//*[@id=\'basicpagetest\']"));
         System.out.println("First link title is: \"" + linkTitle.getText() + "\"");
         driver.quit();
     }
