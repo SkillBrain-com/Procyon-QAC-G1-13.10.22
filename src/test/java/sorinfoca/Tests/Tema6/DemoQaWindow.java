@@ -1,28 +1,27 @@
 package sorinfoca.Tests.Tema6;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import sorinfoca.driver.BrowserManager;
+import sorinfoca.utils.FileUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
 public class DemoQaWindow {
     static ChromeDriver driver = null;
+    private static File screenshot;
 
     public static void main(String[] args) {
         navigateToDemoQaWindowPage();
         try {
             clickNewTabButton();
             interactWithElementsOnParentTab();
-        } catch (NoSuchElementException e) {
-            File screenshot = driver.getScreenshotAs(OutputType.FILE);
-            System.err.println("Error occurred while interacting with elements on the page. Error message: " + e.getMessage());
-            System.err.println("Taking screenshot...");
+        } catch (NoAlertPresentException e) {
+            FileUtils.takeScreenshot(driver, "alert");
+            System.out.println("No alert present");
             try {
                 org.apache.commons.io.FileUtils.copyFile(screenshot, new File("screenshot.png"));
                 System.err.println("Screenshot saved to screenshot.png");

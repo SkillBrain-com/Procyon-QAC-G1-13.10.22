@@ -11,6 +11,7 @@ import java.io.IOException;
 public class HerokuForms {
 
     static ChromeDriver driver = null;
+    private static File screenshot;
 
     public static void main(String[] args) throws InterruptedException {
         navigateToHerokuHomePage();
@@ -18,8 +19,9 @@ public class HerokuForms {
             fillOutForm();
             scrollToSubmitButton();
             submitForm();
-        } catch (NoSuchElementException e) {
-            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        } catch (NoAlertPresentException e) {
+            sorinfoca.utils.FileUtils.takeScreenshot(driver, "alert");
+            System.out.println("No alert present");
             try {
                 FileUtils.copyFile(screenshot, new File("screenshot.png"));
             } catch (IOException ioe) {
