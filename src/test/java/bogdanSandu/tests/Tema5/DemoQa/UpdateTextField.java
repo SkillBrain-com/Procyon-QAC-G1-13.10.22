@@ -2,8 +2,10 @@ package bogdanSandu.tests.Tema5.DemoQa;
 
 import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class UpdateTextField {
 
@@ -32,6 +34,9 @@ public class UpdateTextField {
         permanentAddress.clear();
         permanentAddress.sendKeys("Str. Abc, No.2");
         WebElement clickSubmitButton = driver.findElement(By.id("submit"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(clickSubmitButton);
+        actions.perform();
         clickSubmitButton.click();
         driver.quit();
     }
