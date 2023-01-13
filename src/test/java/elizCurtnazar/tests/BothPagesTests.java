@@ -6,9 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BothPagesTests {
     public static void main(String[] args) {
         ChromeDriver driver = BrowserManager.createDriver();
-        TestPagesHerokuappManager herokuapp = new TestPagesHerokuappManager("https://testpages.herokuapp.com/styled/index.html", driver);
-        DemoQaManager demoqaPage = new DemoQaManager("https://demoqa.com/elements", driver);
 
+        DemoQaManager demoqaPage = new DemoQaManager("https://demoqa.com/elements", driver);
 
         demoqaPage.selectTextBox();
         demoqaPage.selectCheckBox();
@@ -16,6 +15,9 @@ public class BothPagesTests {
         demoqaPage.webTablesLink("webtables");
         demoqaPage.buttonsLink("buttons");
         demoqaPage.linkElementLink("links");
+
+
+        TestPagesHerokuappManager herokuapp = new TestPagesHerokuappManager("https://testpages.herokuapp.com/styled/index.html", driver);
 
         herokuapp.goToTheFirstPage();
         herokuapp.goToTheSecondPage();

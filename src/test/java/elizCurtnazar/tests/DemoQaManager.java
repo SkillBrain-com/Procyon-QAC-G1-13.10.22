@@ -149,6 +149,8 @@ public class DemoQaManager {
     }
 }
 
+
+// URMEAZA NISTE VARIANTE CARE AM INCERCAT, SI NU LE AM STERS CA SA MI RAMANA IN ISTORIC.
 //       WebElement webTable = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[4]"));
 //       webTable.click();
 //       Actions actions = new Actions(driver);
