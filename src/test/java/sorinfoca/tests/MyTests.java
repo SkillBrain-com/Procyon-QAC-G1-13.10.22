@@ -12,63 +12,44 @@ public class MyTests extends TestConfig {
 
     WebDriver driver;
 
-    @DataProvider(name = "formDetails")
-    public Object[][] fullDetails(){
-        return new Object[][]{
-                {"Foca Sorin", "sorinfoca@test.com", 1},
-                {"Sorin", "sorinf@test.com", 2},
-                {"Foca Sorin", "sorinfoca@test.com", 1},
-                {"Sorin", "sorinf@test.com", 2},
-                {"Foca Sorin", "sorinfpca@test.com", 1},
-                {"Sorin", "sorinf@test.com", 2}
+    @DataProvider(name = "LoginDataProvider")
+    public static Object[][] loginData() {
+        return new Object[][] {
+                {"John Doe", "ThisIsNotAPassword", true},
+                {"invalid_username", "invalid_password", false},
         };
     }
 
-    @Test(dataProvider = "formDetails")
-    public void test2(String name, String email, int index) {
-        System.out.println(name +" " + email + " " + index);
+    @DataProvider(name = "AppointmentDataProvider")
+    public static Object[][] AppointmentData() {
+        return new Object[][] {
+                {"10/10/23", "Comentariu pozitiv", true},
+                {"", "Comentariu negativ", false},
+        };
     }
 
-    @Test
-    public void test1() {
+    @Test(dataProvider = "LoginDataProvider")
+    public void testLogin(String username, String password, boolean shouldPass) {
         driver = BrowserManager.createChromeDriver();
-        testValidLogin();
-        testInvalidLogin();
-        testRedirectToLogin();
-        testPositiveBookingScenario();
-        testNegativeBookingScenario();
-        testHomeButton();
+        driver.get(getBaseUrl());
+        driver.findElement(By.cssSelector("#menu-toggle")).click();
+        driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
+        driver.findElement(By.cssSelector("#txt-username")).sendKeys(username);
+        driver.findElement(By.name("password")).sendKeys(password);
+        driver.findElement(By.xpath("//button[text()='Login']")).click();
+        if(shouldPass) {
+            assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment",driver.getCurrentUrl());
+            logOut();
+        }
+        else {
+            assertTrue(driver.findElement(By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")).isDisplayed());
+        }
         driver.quit();
     }
 
-    public void testValidLogin() {
-        driver.get(getBaseUrl());
-        driver.findElement(By.cssSelector("#menu-toggle")).click();
-        driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
-        driver.findElement(By.cssSelector("#txt-username")).sendKeys("John Doe");
-        driver.findElement(By.name("password")).sendKeys("ThisIsNotAPassword");
-        driver.findElement(By.xpath("//button[text()='Login']")).click();
-        assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment",driver.getCurrentUrl());
-        logOut();
-    }
-
-    public void testInvalidLogin() {
-        driver.get(getBaseUrl());
-        driver.findElement(By.cssSelector("#menu-toggle")).click();
-        driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
-        driver.findElement(By.name("password")).sendKeys("invalid_password");
-        driver.findElement(By.id("txt-username")).sendKeys("invalid_username");
-        driver.findElement(By.xpath("//button[text()='Login']")).click();
-        assertTrue(driver.findElement(By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")).isDisplayed());
-    }
-
-    public void testRedirectToLogin() {
-        driver.get(getBaseUrl());
-        driver.findElement(By.cssSelector("#btn-make-appointment")).click();
-        assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login",driver.getCurrentUrl());
-    }
-
-    public void testPositiveBookingScenario() {
+    @Test(dataProvider = "AppointmentDataProvider")
+    public void testAppointment(String data, String comentariu, boolean shouldPass){
+        driver = BrowserManager.createChromeDriver();
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
@@ -77,24 +58,31 @@ public class MyTests extends TestConfig {
         driver.findElement(By.xpath("//button[text()='Login']")).click();
         driver.findElement(By.cssSelector("#chk_hospotal_readmission")).click();
         driver.findElement(By.cssSelector("#radio_program_medicaid")).click();
-        driver.findElement(By.cssSelector("#txt_visit_date")).sendKeys("10/10/23");
-        driver.findElement(By.cssSelector("#txt_comment")).sendKeys("Commentariu test");
+        driver.findElement(By.name("visit_date")).sendKeys(data);
+        driver.findElement(By.cssSelector("#txt_comment")).sendKeys(comentariu);
         driver.findElement(By.xpath("//*[@id=\"btn-book-appointment\"]")).click();
-        assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
-        logOut();
+        if(shouldPass) {
+            assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
+            logOut();
+        }
+        else {
+            assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
+        }
+        driver.quit();
     }
 
-    public void testNegativeBookingScenario() {
+    @Test
+    public void test1() {
+        driver = BrowserManager.createChromeDriver();
+        testRedirectToLogin();
+        testHomeButton();
+        driver.quit();
+    }
+
+    public void testRedirectToLogin() {
         driver.get(getBaseUrl());
-        driver.findElement(By.cssSelector("#menu-toggle")).click();
-        driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
-        driver.findElement(By.cssSelector("#txt-username")).sendKeys("John Doe");
-        driver.findElement(By.name("password")).sendKeys("ThisIsNotAPassword");
-        driver.findElement(By.xpath("//button[text()='Login']")).click();
-        driver.findElement(By.cssSelector("#radio_program_medicaid")).click();
-        driver.findElement(By.cssSelector("#txt_comment")).sendKeys("Commentariu test negativ");
-        driver.findElement(By.xpath("//button[text()='Book Appointment']")).click();
-        assertTrue(driver.findElement(By.cssSelector("#txt_visit_date")).isDisplayed());
+        driver.findElement(By.cssSelector("#btn-make-appointment")).click();
+        assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login",driver.getCurrentUrl());
     }
 
     public void testHomeButton() {

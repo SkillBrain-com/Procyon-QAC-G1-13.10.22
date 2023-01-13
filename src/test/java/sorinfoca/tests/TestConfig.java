@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 public class TestConfig {
+
     private static String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
     private ChromeDriver driver;
 
@@ -12,14 +13,10 @@ public class TestConfig {
     }
 
     @BeforeTest
-    public void beforeTest() {
-        System.out.println("Before test");
-    }
+    public void beforeTest() { System.out.println("Before test"); }
 
     @AfterTest
-    public void afterTest() {
-        System.out.println("After test");
-    }
+    public void afterTest() { System.out.println("After test"); }
 
     @BeforeClass
     public void beforeClass() {
@@ -37,14 +34,16 @@ public class TestConfig {
     }
 
     @BeforeMethod
-    public void beforeMethod() {
+    public void setup() {
+ //     driver = BrowserManager.createChromeDriver();
+ //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         System.out.println("Before method");
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("After method");
-        driver.quit();
+  //    driver.quit();
     }
 }
 
