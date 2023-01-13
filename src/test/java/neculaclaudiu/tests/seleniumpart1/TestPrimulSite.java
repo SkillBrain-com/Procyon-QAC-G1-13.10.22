@@ -37,6 +37,7 @@ public class TestPrimulSite {
         }
         driver.quit();
     }
+
     public static void testAlDoileaLink(){
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
@@ -63,6 +64,7 @@ public class TestPrimulSite {
         System.out.printf("\n" + button.getText());
         driver.quit();
     }
+
     public static void testAlTreileaLink(){
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
@@ -87,6 +89,7 @@ public class TestPrimulSite {
         }
         driver.quit();
     }
+
     public static void testAlPatruleaLink(){
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
@@ -115,5 +118,4 @@ public class TestPrimulSite {
         }
         driver.quit();
     }
-
 }

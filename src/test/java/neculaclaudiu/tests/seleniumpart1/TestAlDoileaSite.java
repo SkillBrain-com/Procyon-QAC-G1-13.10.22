@@ -11,14 +11,14 @@ import java.util.List;
 
 public class TestAlDoileaSite {
     public static void main(String[] args) {
-        TextBoxCase();
-        CheckBoxCase();
-        RadioButtonCase();
-        WebTablesCase();
-        ButtonsCase();
+        textBoxCase();
+        checkBoxCase();
+        radioButtonCase();
+        webTablesCase();
+        buttonsCase();
 
     }
-    public static void TextBoxCase(){
+    public static void textBoxCase(){
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/elements");
         driver.manage().window().fullscreen();
@@ -41,7 +41,8 @@ public class TestAlDoileaSite {
         submitElement.click();
         driver.quit();
     }
-    public static void CheckBoxCase(){
+
+    public static void checkBoxCase(){
         // Navigheaza catre pagina "https://demoqa.com/checkbox"
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/checkbox");
@@ -71,7 +72,8 @@ public class TestAlDoileaSite {
         colapseButton.click();
         driver.quit();
     }
-    public static void RadioButtonCase() {
+
+    public static void radioButtonCase() {
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/radio-button");
         JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -79,7 +81,8 @@ public class TestAlDoileaSite {
         jse.executeScript("document.getElementById('yesRadio').click();");
         driver.quit();
     }
-    public static void WebTablesCase(){
+
+    public static void webTablesCase(){
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/webtables");
         driver.manage().window().fullscreen();
@@ -105,7 +108,8 @@ public class TestAlDoileaSite {
 
 
     }
-    public static void ButtonsCase(){
+
+    public static void buttonsCase(){
         ChromeDriver driver = ChromeDriverManager.createChromeDriver();
         driver.get("https://demoqa.com/buttons");
         driver.manage().window().fullscreen();
