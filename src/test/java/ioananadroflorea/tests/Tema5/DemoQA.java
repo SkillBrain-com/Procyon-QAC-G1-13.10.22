@@ -54,7 +54,7 @@ public class DemoQA {
         driver.get("https://demoqa.com/elements");
         WebElement radioButton = driver.findElement(By.id("item-2"));
         radioButton.click();
-        WebElement radioButtonAnswer = driver.findElement(By.id("impressiveRadio"));
+        WebElement radioButtonAnswer = driver.findElement(By.xpath("//label[@for='yesRadio']"));
         radioButtonAnswer.click();
         driver.quit();
     }

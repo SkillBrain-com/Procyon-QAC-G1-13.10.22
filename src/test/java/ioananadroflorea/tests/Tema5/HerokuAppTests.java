@@ -18,7 +18,7 @@ public class HerokuAppTests {
     public static void goToBasicWebPageAndCheckElements() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
-        WebElement firstLink = driver.findElement(By.className("basicpagetest"));
+        WebElement firstLink = driver.findElement(By.id("basicpagetest"));
         System.out.println("Primul link are textul: " + firstLink.getText());
         firstLink.click();
         WebElement lastParagraph = driver.findElement(By.className("sub"));
