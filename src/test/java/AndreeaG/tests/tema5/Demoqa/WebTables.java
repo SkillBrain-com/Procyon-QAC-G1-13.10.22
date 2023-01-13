@@ -9,6 +9,7 @@ public class WebTables {
     public static void main(String[] args) {
         accessWebTables();
     }
+
     public static void accessWebTables() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/webtables");

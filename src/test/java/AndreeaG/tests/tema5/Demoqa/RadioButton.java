@@ -10,6 +10,7 @@ public class RadioButton {
     public static void main(String[] args) {
         radioButton();
     }
+
     public static void radioButton(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/radio-button");

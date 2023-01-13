@@ -12,6 +12,7 @@ public class TextBox {
         goToCurrentAddress();
         goToPermanentAddress();
         submitButton(); }
+
     private static void goToTextBox() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/text-box");
@@ -19,12 +20,14 @@ public class TextBox {
         userName.sendKeys("Ana Norwich");
         driver.quit();
     }
+
     public static void goToEmail() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/text-box");
         WebElement userEmail = driver.findElement(By.id("userEmail"));
         userEmail.sendKeys("ANorwich@gmail.com");
         driver.quit(); }
+
     public static void goToCurrentAddress() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/text-box");
@@ -32,6 +35,7 @@ public class TextBox {
         currentAddress.sendKeys(" str. Eroilor, Timisoara");
         driver.quit();
     }
+
     public static void goToPermanentAddress() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/text-box");
@@ -39,6 +43,7 @@ public class TextBox {
         permanentAddress.sendKeys(" str.Noway, China");
         driver.quit();
     }
+
     public static void submitButton() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/text-box");

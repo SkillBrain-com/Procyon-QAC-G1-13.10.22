@@ -9,6 +9,7 @@ import java.util.List;
 
 
 public class HTMLTableTag {
+
     public static void main(String[] args) {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get ("https://testpages.herokuapp.com/styled/tag/table.html");

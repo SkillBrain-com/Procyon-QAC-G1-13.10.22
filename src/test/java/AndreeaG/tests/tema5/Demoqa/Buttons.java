@@ -10,6 +10,7 @@ public class Buttons {
     public static void main(String[] args) {
      clickButtons();
     }
+
     public static void clickButtons(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/buttons");

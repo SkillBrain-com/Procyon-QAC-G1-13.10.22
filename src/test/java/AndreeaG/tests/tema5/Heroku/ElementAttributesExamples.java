@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import teofilursan.driver.BrowserManager;
 
 public class ElementAttributesExamples {
+
     public static void main(String[] args) {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get ("https://testpages.herokuapp.com/styled/attributes-test.html");
