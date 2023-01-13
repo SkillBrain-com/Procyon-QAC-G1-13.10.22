@@ -3,8 +3,12 @@ package sorinfoca.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+import sorinfoca.driver.BrowserManager;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -30,8 +34,21 @@ public class MyTests extends TestConfig {
         System.out.println(name +" " + email + " " + index);
     }
 
-    @Test(dataProvider = "formDetails")
-    public void testValidLogin(String username, String password) {
+    @Test
+    public void test1() {
+        driver = BrowserManager.createChromeDriver();
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+        testValidLogin();
+        testInvalidLogin();
+        testRedirectToLogin();
+        testPositiveBookingScenario();
+        testNegativeBookingScenario();
+        testHomeButton();
+        //verifySubmittedDetails();
+        verifySubmittedDetailsSoftAssert();
+        driver.quit();
+    }
+    public void testValidLogin() {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
@@ -41,26 +58,22 @@ public class MyTests extends TestConfig {
         assertTrue(driver.findElement(By.cssSelector("#menu-toggle")).isDisplayed());
     }
 
-    @Test
     public void testInvalidLogin() {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
-        driver.findElement(By.cssSelector("#txt-username")).sendKeys("invalid_username");
+        driver.findElement(By.name("username")).sendKeys("invalid_username");
         driver.findElement(By.name("password")).sendKeys("invalid_password");
         driver.findElement(By.xpath("//button[text()='Login']")).click();
         assertTrue(driver.findElement(By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")).isDisplayed());
     }
 
-    @Test
     public void testRedirectToLogin() {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#btn-make-appointment")).click();
         assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login",driver.getCurrentUrl());
-        }
+    }
 
-
-    @Test
     public void testPositiveBookingScenario() {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
@@ -76,7 +89,6 @@ public class MyTests extends TestConfig {
         assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
     }
 
-    @Test
     public void testNegativeBookingScenario() {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
@@ -90,11 +102,22 @@ public class MyTests extends TestConfig {
         assertTrue(driver.findElement(By.cssSelector("#txt_visit_date")).isDisplayed());
     }
 
-    @Test
     public void testHomeButton() {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(3) > a")).click();
         assertEquals(getBaseUrl() , driver.getCurrentUrl());
+    }
+
+    public void verifySubmittedDetails() {
+        WebElement nameParagraph = driver.findElement(By.id("name"));
+        Assert.assertEquals(nameParagraph.getText(), "Name:Foca Sorin", "Values are different for name!");
+    }
+
+    public void verifySubmittedDetailsSoftAssert() {
+        SoftAssert softAssert = new SoftAssert();
+        WebElement nameParagraph = driver.findElement(By.id("name"));
+        softAssert.assertEquals(nameParagraph.getText(), "Name:Foca Sorin", "Values are different for name!");
+        softAssert.assertAll();
     }
 }
