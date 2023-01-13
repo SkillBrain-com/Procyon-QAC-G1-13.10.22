@@ -7,8 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Demoqatema {
+    static ChromeDriver driver;
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = BrowserManager.createDriver();
+        driver = BrowserManager.createDriver();
         driver.get("https://demoqa.com/elements");
         driver.manage().window().maximize();
         driver.findElement(By.id("item-0")).click();
@@ -21,12 +22,13 @@ public class Demoqatema {
 
         }else{
             System.out.println("checkbox not selected ");
-            closeBrowser();
+            
         }
-
+        BrowserManager.closeChromeDriver(driver);
 
     }
 
-    private static void closeBrowser() {
-    }
+
+
+
 }
