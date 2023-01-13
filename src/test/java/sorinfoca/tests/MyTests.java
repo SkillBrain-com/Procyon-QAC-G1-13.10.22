@@ -1,23 +1,16 @@
 package sorinfoca.tests;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import sorinfoca.driver.BrowserManager;
-
+import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class MyTests extends TestConfig {
 
     WebDriver driver = new ChromeDriver();
-
-    @BeforeEach
-    public void beforeEach() {
-        driver = BrowserManager.createChromeDriver();
-    }
 
     @Test
     public void testValidLogin() {
