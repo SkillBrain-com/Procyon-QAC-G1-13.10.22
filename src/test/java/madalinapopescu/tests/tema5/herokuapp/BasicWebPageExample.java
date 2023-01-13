@@ -7,8 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class BasicWebPageExample {
     public static void main(String[] args) {
-        goToBasicWebPage();
-    }
+        goToBasicWebPage();}
     public static void goToBasicWebPage() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");

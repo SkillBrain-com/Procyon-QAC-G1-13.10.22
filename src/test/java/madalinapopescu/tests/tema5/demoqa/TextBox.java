@@ -37,6 +37,5 @@ public class TextBox {
         WebElement submitButton = driver.findElement(By.id("submit"));
         submitButton.sendKeys(Keys.ENTER);
         driver.quit();
-
     }
 }

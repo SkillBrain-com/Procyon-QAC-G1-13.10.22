@@ -33,6 +33,5 @@ public class ElmentAttrbutesExamples {
             System.out.println("Butonul a fost apasat");
         }
         driver.quit();
-
     }
 }
