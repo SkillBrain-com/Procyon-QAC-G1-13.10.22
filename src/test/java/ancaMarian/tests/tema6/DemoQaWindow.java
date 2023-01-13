@@ -2,6 +2,7 @@ package ancaMarian.tests.tema6;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import teofilursan.driver.BrowserManager;
@@ -12,9 +13,11 @@ public class DemoQaWindow {
 
     static ChromeDriver driver = null;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         navigateToDemoQAWindowPage();
         clickOnNewTabButton();
+        clickOnNewWindowButton();
+        clickOnNewWindowMessageButton();
         closeBrowser();
     }
 
@@ -38,13 +41,48 @@ public class DemoQaWindow {
                 //switch focus to new tab
                 driver.switchTo().window(tab);
                 WebElement newTabHeading = driver.findElement(By.id("sampleHeading"));
-                System.out.println("Text de pe noul tab " + newTabHeading.getText());
+                System.out.println("Text de pe noul tab: " + newTabHeading.getText());
                 driver.close();
             }
         }
         //switch back to parent tab to be able to make other actions
         driver.switchTo().window(parentTab);
-        System.out.println("Am facut click pe new tab button");
+        System.out.println("Am facut click pe new tab button.");
+    }
+
+    public static void clickOnNewWindowButton() {
+        String parentWindow = driver.getWindowHandle();
+        WebElement newWindowButton = driver.findElement(By.id("windowButton"));
+        newWindowButton.click();
+        Set<String> windows = driver.getWindowHandles();
+        for (String window : windows) {
+            if (!window.equals(parentWindow)) {
+                driver.switchTo().window(window);
+                WebElement newTabHeading = driver.findElement(By.id("sampleHeading"));
+                System.out.println("Text de pe noul window: " + newTabHeading.getText());
+                driver.close();
+            }
+        }
+        driver.switchTo().window(parentWindow);
+        System.out.println("Am facut click pe New Window.");
+    }
+
+    public static void clickOnNewWindowMessageButton() throws InterruptedException {
+        String parentWindow = driver.getWindowHandle();
+        WebElement newWindowMessageButton = driver.findElement(By.id("messageWindowButton"));
+        newWindowMessageButton.click();
+        Set<String> windows = driver.getWindowHandles();
+        for (String window : windows) {
+            if (!window.equals(parentWindow)) {
+                driver.switchTo().window(window);
+                Thread.sleep(2000);
+//                WebElement newWindowMessageText = driver.findElement(By.tagName("body"));
+//                System.out.println("Text de pe noul window message: " + newWindowMessageText.getText());
+                driver.close();
+            }
+        }
+        driver.switchTo().window(parentWindow);
+        System.out.println("Am facut click pe New Window Message.");
     }
 
     public static void closeBrowser() {

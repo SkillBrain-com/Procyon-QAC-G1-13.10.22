@@ -2,6 +2,7 @@ package ancaMarian.tests.tema6;
 
 import ancaMarian.utils.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +23,7 @@ public class HerokuForms {
         addFile();
         selectCheckbox();
         deselectCheckbox();
+        scrollToTheBottomOfThePage();
         selectRadioItem();
         selectFromMultipleValues();
         selectFromDropdownList();
@@ -32,7 +34,7 @@ public class HerokuForms {
             goBackToFormPage();
         } catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "ElementNotFound");
-            System.out.println("Nu s-a gasit elementul pe pagina. S-a salvat un screenshot.");
+            System.out.println("Nu s-a gasit elementul pe pagina. S-a salvat un screenshot cu denumirea ElementNotFound.");
         } finally {
             closeBrowser();}
     }
@@ -74,7 +76,7 @@ public class HerokuForms {
 
     public static void addFile(){
         WebElement uploadFile = driver.findElement(By.name("filename"));
-        uploadFile.sendKeys("/Users/ancapatriciamarian/Desktop/procyon/Logs/alertNotFound.png");
+        uploadFile.sendKeys("/Users/ancapatriciamarian/Desktop/procyon/src/text.txt");
         System.out.println("Am adagat un fisier.");
     }
 
@@ -90,6 +92,11 @@ public class HerokuForms {
         deselectCheckbox.click();
         Thread.sleep(2000);
         System.out.println("Am deselectat un checkbox.");
+    }
+
+    public static void scrollToTheBottomOfThePage(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
 
     public static void selectRadioItem() throws InterruptedException {
