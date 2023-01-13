@@ -1,10 +1,12 @@
 package BogdanSandu.tests.Tema6;
 
 import BogdanSandu.driver.BrowserManager;
+import BogdanSandu.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class DemoQaWindow {
@@ -13,13 +15,22 @@ public class DemoQaWindow {
 
     public static void main(String[] args) {
         navigateToDemoQAWindowPage();
-        clickOnNewTabButton();
-        closeBrowser();
+        try {
+            clickOnNewTabButton();
+            clickOnNewWindow();
+            closeBrowser();
+        }catch (NoSuchElementException e) {
+            FileUtils.takeScreenshot(driver, "Browser_window");
+        }finally {
+            closeBrowser();
+        }
+
     }
 
     public static void navigateToDemoQAWindowPage() {
         driver = BrowserManager.createDriverAndGetPage();
         driver.get("https://demoqa.com/browser-windows");
+        driver.manage().window().maximize();
         System.out.println("Am deschis Demo QA window page!");
     }
 
@@ -45,6 +56,24 @@ public class DemoQaWindow {
         driver.switchTo().window(parentTab);
         System.out.println("Am facut click pe new tab button");
     }
+
+    public static void clickOnNewWindow() {
+        String parentTab = driver.getWindowHandle();
+        WebElement newWindowButton = driver.findElement(By.id("windowButton"));
+        newWindowButton.click();
+        Set<String> tabs = driver.getWindowHandles();
+        for (String tab : tabs) {
+            if(!tab.equals(parentTab)) {
+                driver.switchTo().window(tab);
+                WebElement newWindowHeading = driver.findElement(By.id("sampleHeading"));
+                System.out.println("Text de pe noul window " + newWindowHeading.getText());
+                driver.close();
+            }
+        }
+        driver.switchTo().window(parentTab);
+        System.out.println("Am facut click pe new window button");
+    }
+
 
     public static void closeBrowser() {
         driver.quit();

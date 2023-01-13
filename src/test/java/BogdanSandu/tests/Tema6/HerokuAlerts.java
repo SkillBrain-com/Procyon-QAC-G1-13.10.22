@@ -35,8 +35,8 @@ public class HerokuAlerts {
         }catch (NoAlertPresentException e){
             FileUtils.takeScreenshot(driver, "alert");
         }catch (NoSuchElementException e){
-            FileUtils.takeScreenshot(driver, "inexistentElement");
-            System.out.println("Element inexistent");
+            FileUtils.takeScreenshot(driver, "Alert");
+
         }finally {
             closeBrwoser();
         }

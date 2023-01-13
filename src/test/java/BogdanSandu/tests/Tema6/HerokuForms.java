@@ -29,7 +29,7 @@ public class HerokuForms {
             closeBrowser();
             tryToFindElement();
         }catch (NoSuchElementException e){
-            FileUtils.takeScreenshot(driver, "alert");
+            FileUtils.takeScreenshot(driver, "Forms");
         }finally {
             closeBrowser();
         }
