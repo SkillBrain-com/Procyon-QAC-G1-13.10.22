@@ -39,6 +39,8 @@ public class DynamicTableTestPage {
         //search the button called Table Data
         buttonTableData.click();
         //click on the button called Table Data
+        driver.quit();
+        //close the driver instance
     }
 
     public static void getTableData(String captionInput, String idInput) {

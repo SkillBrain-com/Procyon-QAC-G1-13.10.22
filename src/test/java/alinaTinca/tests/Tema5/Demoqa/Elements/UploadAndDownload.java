@@ -21,7 +21,7 @@ public class UploadAndDownload {
         //create and configure the Chrome browser page settings
         driver.get("https://demoqa.com/upload-download");
         //go to this URL
-        WebElement uploadAndDownloadSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[8]/span"));
+        WebElement uploadAndDownloadSection = driver.findElement(By.xpath("//span[text()='Upload and Download']"));
         //find the section called Upload and Download
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].scrollIntoView();", uploadAndDownloadSection);

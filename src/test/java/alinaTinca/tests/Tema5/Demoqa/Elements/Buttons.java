@@ -27,8 +27,7 @@ public class Buttons {
         //find the Buttons section
         buttonsSection.click();
         //click on this section
-
-        WebElement clickMeButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button"));
+        WebElement clickMeButton = driver.findElement(By.xpath("//button[text()='Click Me']"));
         //find the Click Me button
         clickMeButton.click();
         //click on Click Me button

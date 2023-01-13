@@ -23,7 +23,7 @@ public class DynamicProperties {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
         //scroll on the page
-        WebElement dynamicProprietiesSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[9]/span"));
+        WebElement dynamicProprietiesSection = driver.findElement(By.xpath("//span[text()='Dynamic Properties']"));
         //find the section called Dynamic Proprieties Section
         dynamicProprietiesSection.click();
         //click on this section

@@ -20,7 +20,7 @@ public class TextBox {
         //create and configure the Chrome browser page settings
         driver.get("https://demoqa.com/text-box");
         //go to Demoqa URL
-        WebElement textBoxSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[1]"));
+        WebElement textBoxSection = driver.findElement(By.xpath("//span[text()='Text Box']"));
         //search the section called Text Box from the section called Elements
         textBoxSection.click();
         //click on the section calles Text Box

@@ -18,7 +18,7 @@ public class CheckBox {
         //create and configure the Chome browser page settings
         driver.get("https://demoqa.com/checkbox");
         //go to the Demoaq URL
-        WebElement checkBoxSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[2]/span"));
+        WebElement checkBoxSection = driver.findElement(By.xpath("//span[text()='Check Box']"));
         //find the section called Check Box
         checkBoxSection.click();
         //click on the Check Box section
