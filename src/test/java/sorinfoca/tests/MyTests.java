@@ -3,25 +3,25 @@ package sorinfoca.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class MyTests extends TestConfig {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
 
     @DataProvider(name = "formDetails")
     public Object[][] fullDetails(){
         return new Object[][]{
                 {"Foca Sorin", "sorinfoca@test.com", 1},
                 {"Sorin", "sorinf@test.com", 2},
-                {"Foca Sorin", "sorinf@test.com", 1},
+                {"Foca Sorin", "sorinfoca@test.com", 1},
                 {"Sorin", "sorinf@test.com", 2},
-                {"Foca Sorin", "sorinf@test.com", 1},
-                {"Sorin", "sorinfoca@test.com", 2}
+                {"Foca Sorin", "sorinfpca@test.com", 1},
+                {"Sorin", "sorinf@test.com", 2}
         };
     }
 
@@ -31,7 +31,7 @@ public class MyTests extends TestConfig {
     }
 
     @Test(dataProvider = "formDetails")
-    public void testValidLogin() {
+    public void testValidLogin(String username, String password) {
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
