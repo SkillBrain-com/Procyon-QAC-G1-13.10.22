@@ -38,7 +38,7 @@ public class HerokuAlerts {
             FileUtils.takeScreenshot(driver, "Alert");
 
         }finally {
-            closeBrwoser();
+            BrowserManager.closeBrowser(driver);
         }
     }
 
@@ -142,10 +142,5 @@ public class HerokuAlerts {
             FileUtils.takeScreenshot(driver, "inexistentElement");
             System.out.println("Nu exista elementul cautat!");
         }
-    }
-
-    public static void closeBrwoser(){
-        driver.quit();
-        System.out.println("Am inchis browserul!");
     }
 }

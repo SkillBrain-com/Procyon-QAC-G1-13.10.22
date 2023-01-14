@@ -2,10 +2,7 @@ package BogdanSandu.tests.Tema6;
 
 import BogdanSandu.driver.BrowserManager;
 import BogdanSandu.utils.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.print.PrintOptions;
@@ -26,12 +23,13 @@ public class HerokuForms {
         try {
             fillFormDetails();
             scrollToSubmitButton();
-            closeBrowser();
             tryToFindElement();
+        }catch (NoAlertPresentException e){
+            FileUtils.takeScreenshot(driver, "alertForms");
         }catch (NoSuchElementException e){
             FileUtils.takeScreenshot(driver, "Forms");
         }finally {
-            closeBrowser();
+            BrowserManager.closeBrowser(driver);
         }
     }
 
@@ -74,10 +72,5 @@ public class HerokuForms {
         actions.moveToElement(submitButton).build().perform();
         submitButton.click();
         System.out.println("Am facut scroll catre submit button");
-    }
-
-    public static void closeBrowser () {
-        driver.quit();
-        System.out.println("Am inchis browserul!");
     }
 }

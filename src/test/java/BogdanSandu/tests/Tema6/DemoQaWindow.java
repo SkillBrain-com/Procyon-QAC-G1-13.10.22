@@ -3,6 +3,7 @@ package BogdanSandu.tests.Tema6;
 import BogdanSandu.driver.BrowserManager;
 import BogdanSandu.utils.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,11 +19,12 @@ public class DemoQaWindow {
         try {
             clickOnNewTabButton();
             clickOnNewWindow();
-            closeBrowser();
+        }catch (NoAlertPresentException e){
+            FileUtils.takeScreenshot(driver, "alertDemoQa");
         }catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "Browser_window");
         }finally {
-            closeBrowser();
+            BrowserManager.closeBrowser(driver);
         }
 
     }
@@ -72,11 +74,5 @@ public class DemoQaWindow {
         }
         driver.switchTo().window(parentTab);
         System.out.println("Am facut click pe new window button");
-    }
-
-
-    public static void closeBrowser() {
-        driver.quit();
-        System.out.println("Am inchis browserul!");
     }
 }
