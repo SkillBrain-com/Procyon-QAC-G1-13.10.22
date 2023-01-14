@@ -9,39 +9,79 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
-//EX 1
-public class HerokuAlerts {
 
-    //INCOMPLET, DE REVENIT
+//EX1
+public class HerokuAlerts {
 
     static ChromeDriver driver = null;
 
     public static void main(String[] args) throws IOException {
+
+    //Test1
         navigateToHerokuHomePage();
         openAlertsPage();
-//        firstParagraph();
-//        getInstructionsForAlertButtons();
+        firstParagraph();
+        getInstructionsForAlertButtons();
+        closeBrowser();
 
-//        openAlertForFirstButton();
-//        acceptAlert();
-//        openAlertForSecondButton();
-//        dismissAlert();
+    //Test2
+        navigateToHerokuHomePage();
+        openAlertsPage();
+        openAlertForFirstButton();
+        acceptAlert();
+        openAlertForSecondButton();
+        dismissAlert();
+        openAlertForThirdButton();
+        dismissAlert();
+        closeBrowser();
 
-//        openAlertForThirdButton();
+    //Test3
+        navigateToHerokuHomePage();
+        //go to Heroku Home Page
+        try{
+            openAlertForFirstButton();
+          //go to the first alert button and identify the exception
+        } catch (NoSuchElementException e) {
+            FileUtils.takeScreenshot(driver, "Alert for the first button");
+          //call this method and take a screenshot for exception with the above message
+            System.out.println("It should take a screenshot for the exception identified");
+          //display the above message
+        } finally {
+            closeBrowser();
+            //close the driver instance
+        }
 
-//        acceptAlert();
-//        closeBrowser();
+    //Test4
+        navigateToHerokuHomePage();
+        //go to the second alert button
+        try{
+            openAlertForSecondButton();
+            //go to the second alert button and identify the exception
+        }catch(NoSuchElementException e){
+           FileUtils.takeScreenshot(driver, "Alert for the second button");
+            //call this method and take the screenshot for exception with the above message
+           System.out.println("It should take a screenshot for the exception identified");
+            //display the above message
+        }finally {
+            closeBrowser();
+            //close the driver instance
+        }
 
-
-
-//        navigateToHerokuHomePage();
-//        try {
-//            openAlert();
-//        } catch (NoSuchElementException e) {
-//            FileUtils.takeScreenshot(driver, "alert");
-//        } finally{
-//                closeBrowser();
-//            }
+    //Test5
+        navigateToHerokuHomePage();
+        //go to the third alert button
+        try{
+            openAlertForThirdButton();
+            //go to the third alert button and identify the exception
+        } catch (NoSuchElementException e){
+            FileUtils.takeScreenshot(driver, "Alert for the third button");
+            //call this method and take the screenshot for exception with the above message
+            System.out.println("It should take a screenshot for the exception identified");
+            //display the above message
+        }finally {
+            closeBrowser();
+            //close the driver instance
+        }
     }
 
     public static void navigateToHerokuHomePage() {
@@ -49,9 +89,8 @@ public class HerokuAlerts {
         //create the driver instance
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         //go to the above URL
-        System.out.println("This URL has been opened!");
+        System.out.println("Heroku index page has been opened!");
         //display the above message
-
     }
 
     public static void openAlertsPage(){
@@ -73,29 +112,18 @@ public class HerokuAlerts {
     public static void getInstructionsForAlertButtons() {
         WebElement messageForFirstAlertButton = driver.findElement(By.xpath("//*[contains(text(),'The following button will display an alert when clicked.')]"));
         //find the instruction for the first alert button
+        System.out.println("Some instructions about the three alerts on the page will follow: ");
+        //display the above message
         System.out.println("The first alert button has the following instruction: " + messageForFirstAlertButton.getText());
         //display the instruction for the first alert button
-//        WebElement firstAlertButton = driver.findElement(By.xpath("//input[@value='Show alert box']"));
-//        //find the first alert button
-//        System.out.println("The first alert button contents the following message: " + firstAlertButton.getText());
-//        //display the message of the first alert button
         WebElement messageForSecondAlertButton = driver.findElement(By.xpath("//*[contains(text(),'The following button will display a confirm dialog when clicked.')]"));
         //find the instruction for the second alert button
         System.out.println("The second alert button has the following instruction: " + messageForSecondAlertButton.getText());
         //display the instruction for the first alert button
-//        WebElement secondAlertButton = driver.findElement(By.id("confirmexample"));
-//        //find the second alert button
-//        System.out.println("The second alert button contents the following message: " + secondAlertButton.getText());
-//        //display the message of the second alert button
         WebElement messageForThirdAlertButton = driver.findElement(By.xpath("//*[contains(text(),'The following button will display a prompt dialog when clicked.')]"));
         //find the instruction for the second alert button
         System.out.println("The third alert button has the following instruction: " + messageForThirdAlertButton.getText());
         //display the instruction for the first alert button
-//        WebElement thirdAlertButton = driver.findElement(By.id("promptexample"));
-//        //find the third alert button
-//        System.out.println("The third alert button contents the following message: " + thirdAlertButton.getText());
-//        //display the message of the third alert button
-
     }
 
     public static void openAlertForFirstButton() {
@@ -107,17 +135,16 @@ public class HerokuAlerts {
         //display the above message
         Alert firstAlert = driver.switchTo().alert();
         //create the alert for the first alert and switch to it
-        System.out.println("The message displayed after the alert openes is: " +firstAlert.getText());
-        //display the message after the alert openes
+        System.out.println("The message displayed after opening the alert: " +firstAlert.getText());
+        //show the message after opening the alert
     }
-
 
     public static void acceptAlert() {
         Alert firstAlert = driver.switchTo().alert();
         //create the alert for the first alert and switch to it
         firstAlert.accept();
         //click on OK button when the alert is opened
-        System.out.println("The alert has been accepted");
+        System.out.println("The alert has been accepted!");
         //The alert has been accepted
     }
 
@@ -130,36 +157,34 @@ public class HerokuAlerts {
         //display the above message
         Alert secondAlert = driver.switchTo().alert();
         //create the alert for the second alert and switch to it
-        System.out.println("The message displayed after the alert openes is: " +secondAlert.getText());
-        //display the message after the alert openes
-
+        System.out.println("The message displayed after opening the alert: " +secondAlert.getText());
+        //show the message after opening the alert
     }
 
    public static void dismissAlert () {
-        Alert secondAlert = driver.switchTo().alert();
-        //create the alert for the second alert and switch to it
-        secondAlert.dismiss();
+        Alert dismissAlert = driver.switchTo().alert();
+        //create the alert and switch to it
+        dismissAlert.dismiss();
         //click on Cancel button when the alert is opened
-        System.out.println("The alert has been dissmised");
+        System.out.println("The alert has been dissmised!");
         //The alert has been dissmised
-
    }
-//    DE REVENIT
 
-//    public static void openAlertForThirdButton () {
-//        WebElement thirdAlertButton = driver.findElement(By.id("promptexample"));
-//        //find the third alert button
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(thirdAlertButton).build().perform();
-//        //scroll to the third alert button
-//        thirdAlertButton.click();
-//        //click on the third alert button
-//        Alert thirdAlert = driver.switchTo().alert();
-//        thirdAlert.sendKeys("new message");
-////      thirdAlertButton.sendKeys("new message");     //de revenit
-//        System.out.println("Click on the third alert button");
-//        //display the above message
-//    }
+    public static void openAlertForThirdButton () {
+        WebElement thirdAlertButton = driver.findElement(By.id("promptexample"));
+        //find the third alert button
+        Actions actions = new Actions(driver);
+        actions.moveToElement(thirdAlertButton).build().perform();
+        //scroll to the third alert button
+        thirdAlertButton.click();
+        //click on the third alert button
+        System.out.println("Click on the third alert button");
+        //display the above message
+        Alert thirdAlert = driver.switchTo().alert();
+        //create the alert for the third alert and switch to it
+        System.out.println("The message displayed after opening the alert: " + thirdAlert.getText());
+        //show the message after opening the alert
+    }
 
     public static void closeBrowser(){
         driver.quit();

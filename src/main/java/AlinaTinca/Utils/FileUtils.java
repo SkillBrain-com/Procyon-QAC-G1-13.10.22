@@ -15,9 +15,8 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.copyFile(source, new File(destinationFile));
         } catch (IOException e) {
-            System.out.println("Nu am reusit sa fac screenshout-ul");
-           e.printStackTrace();
+            System.out.println("The screenshot could not be done");
+            e.printStackTrace();
         }
-
     }
 }
