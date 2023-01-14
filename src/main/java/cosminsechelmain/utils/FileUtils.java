@@ -2,7 +2,6 @@ package cosminsechelmain.utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -14,7 +13,7 @@ public class FileUtils {
         try {
             org.apache.commons.io.FileUtils.copyFile(source, new File(destinationFile));
         } catch (IOException e) {
-            System.out.println(" Nu am reusit sa fac screenshotul");
+            System.out.println("Nu am reusit sa fac screenshotul");
             e.printStackTrace();
         }
     }
