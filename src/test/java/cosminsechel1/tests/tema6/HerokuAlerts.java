@@ -101,6 +101,6 @@ public class HerokuAlerts {
 
     public static void closeBrowser() {
         driver.quit();
-        System.out.println("Closed the browser");
+        System.out.println("Closed the browser.");
     }
 }
