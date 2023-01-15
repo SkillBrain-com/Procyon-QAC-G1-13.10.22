@@ -24,7 +24,7 @@ public class MyTests extends TestConfig {
     @DataProvider(name = "AppointmentDataProvider")
     public static Object[][] AppointmentData() {
         return new Object[][] {
-                {"10/10/23", "Comentariu pozitiv", true},
+                {"10/10/23", "Comentariu pozitiv",true},
                 {"", "Comentariu negativ", false},
         };
     }
