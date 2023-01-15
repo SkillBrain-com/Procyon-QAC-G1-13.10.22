@@ -1,47 +1,54 @@
 package madalinapopescu.tests.tema6;
-
 import madalinapopescu.driver.BrowserManager;
 import madalinapopescu.utils.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.io.File;
 import java.io.IOException;
-
+import static madalinapopescu.tests.tema6.DemoQaWindow.closeBrowser;
 public class HerokuAlerts {
     static ChromeDriver driver = null;
-
     public static void main(String[] args) throws IOException {
 //        navigateToHerokuHomePage();
 //        openAlertsPage();
-//        openAlert();
-//        acceptAlert();
+//        openFirstAlert();
+//        openSecondAlert();
+//        getAlertText();
+//        dismissAlert();
+////        acceptAlert();
+//        openThirdAlert();
 //        closeBrowser();
 
-        navigateToHerokuHomePage();
+
+         navigateToHerokuHomePage();
         try {
-            openAlert();
+            openSecondAlert();
         } catch (NoSuchElementException e){
             FileUtils.takeScreenshot(driver,"alert");
         } finally {
             closeBrowser();
         }
-
     }
-
-    public static void navigateToHerokuHomePage(){
+    public static void navigateToHerokuHomePage() {
         driver = BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         System.out.println("Am deschis Heroku index page");
     }
-    public static void openAlertsPage(){
+    public static void openAlertsPage() {
         WebElement alertsLink = driver.findElement(By.id("alerttest"));
         alertsLink.click();
         System.out.println("Am navigat catre alerts page");
     }
-    public static void openAlert(){
+    public static void openFirstAlert() {
+        WebElement firstAlertButton = driver.findElement(By.id("alertexamples"));
+        firstAlertButton.click();
+        Alert firstAlert = driver.switchTo().alert();
+        System.out.println("Textul din prima alerta este: " + firstAlert.getText());
+        firstAlert.accept();
+    }
+    public static void openSecondAlert(){
         WebElement secondAlertButton = driver.findElement(By.xpath("//input[@id='confirmexample']"));
-      secondAlertButton.click();
+        secondAlertButton.click();
         System.out.println("Am dat clic pe secondAlertButton");
     }
     public static void acceptAlert(){
@@ -49,8 +56,27 @@ public class HerokuAlerts {
         sendAlert.accept();
         System.out.println("Am acceptat alerta");
     }
-    public static void closeBrowser(){
-        driver.quit();
-        System.out.println("Am inchis browserul");
+    public static void dismissAlert() {
+        Alert secondAlert = driver.switchTo().alert();
+        secondAlert.dismiss();
+        System.out.println("Am anulat a doua alerta!");
     }
-}
+    public static void getAlertText(){
+        Alert secondAlert = driver.switchTo().alert();
+        System.out.println("Textul din a doua alerta este: " + secondAlert.getText());
+    }
+    public static void openThirdAlert() {
+        WebElement clickThirdAlertButton = driver.findElement(By.id("promptexample"));
+        clickThirdAlertButton.click();
+        Alert thirdAlert = driver.switchTo().alert();
+        System.out.println("Textul din a3-a alerta este: " + thirdAlert.getText());
+        thirdAlert.sendKeys("Textul meu!");
+        thirdAlert.accept();
+        System.out.println("Am introdus in text in a 3-a alerta");
+    }
+        public static void closeBrowser(){
+            driver.quit();
+            System.out.println("Am inchis browserul");
+        }
+    }
+
