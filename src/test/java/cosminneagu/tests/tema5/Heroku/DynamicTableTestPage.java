@@ -37,7 +37,7 @@ public class DynamicTableTestPage {
         WebElement buttonTableData = driver.findElement(By.xpath("//summary[text()='Table Data']"));
 
         buttonTableData.click();
-
+        driver.quit();
     }
 
     public static void getTableData(String captionInput, String idInput) {
