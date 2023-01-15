@@ -4,9 +4,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 public class TestConfig {
-
+    protected ChromeDriver driver = null;
     private static String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
-    private ChromeDriver driver;
+//  private ChromeDriver driver;
 
     public static String getBaseUrl() {
         return baseUrl;
