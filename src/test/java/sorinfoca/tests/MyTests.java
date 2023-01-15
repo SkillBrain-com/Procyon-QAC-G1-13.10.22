@@ -1,10 +1,11 @@
-package sorinfoca.tests;
+package sorinfoca.Tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import sorinfoca.driver.BrowserManager;
+
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 

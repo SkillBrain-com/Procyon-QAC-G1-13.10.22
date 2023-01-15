@@ -16,8 +16,8 @@
 
     <test name="DemoTests">
         <classes>
-            <class name="sorinfoca.tests.MyTests"/>
-            <class name="sorinfoca.tests.TestConfig">
+            <class name="sorinfoca.Tests.MyTests"/>
+            <class name="sorinfoca.Tests.TestConfig">
                 <methods>
                     <exclude name="test2"></exclude>
                 </methods>

@@ -1,9 +1,10 @@
-package sorinfoca.tests;
+package sorinfoca.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 public class TestConfig {
+
     protected ChromeDriver driver = null;
     private static String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
 //  private ChromeDriver driver;
