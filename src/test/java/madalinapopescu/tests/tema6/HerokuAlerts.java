@@ -9,22 +9,20 @@ import static madalinapopescu.tests.tema6.DemoQaWindow.closeBrowser;
 public class HerokuAlerts {
     static ChromeDriver driver = null;
     public static void main(String[] args) throws IOException {
-//        navigateToHerokuHomePage();
-//        openAlertsPage();
-//        openFirstAlert();
-//        openSecondAlert();
-//        getAlertText();
-//        dismissAlert();
-////        acceptAlert();
-//        openThirdAlert();
-//        closeBrowser();
-
-
-         navigateToHerokuHomePage();
+        navigateToHerokuHomePage();
+        openAlertsPage();
         try {
+            openFirstAlert();
             openSecondAlert();
+            getAlertText();
+            dismissAlert();
+            openThirdAlert();
+            findElementNonexistent();
         } catch (NoSuchElementException e){
-            FileUtils.takeScreenshot(driver,"alert");
+//            FileUtils.takeScreenshot(driver,"alert");
+            FileUtils.takeScreenshot(driver, "alba-ca-zapada");
+            System.out.println("Am intrat in blocul de catch");
+            System.out.println("Nu exista nici un element cu id 'alba-ca-zapada'");
         } finally {
             closeBrowser();
         }
@@ -74,6 +72,11 @@ public class HerokuAlerts {
         thirdAlert.accept();
         System.out.println("Am introdus in text in a 3-a alerta");
     }
+        public static void findElementNonexistent() {
+            WebElement nonExistentElement = driver.findElement(By.id("alba-ca-zapada"));
+            nonExistentElement.click();
+            System.out.println("Caut un element cu id `alba-ca-zapada");
+        }
         public static void closeBrowser(){
             driver.quit();
             System.out.println("Am inchis browserul");
