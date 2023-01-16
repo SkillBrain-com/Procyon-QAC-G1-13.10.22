@@ -9,6 +9,7 @@
     <test name="DemoTests">
         <classes>
             <class name="sorinfoca.Tests.Tema7.MyTests"/>
+            <class name="sorinfoca.Tests.Tema7.TestConfig"/>
         </classes>
     </test>
 </suite>
