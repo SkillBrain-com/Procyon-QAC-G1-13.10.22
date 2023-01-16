@@ -12,7 +12,7 @@ import java.io.IOException;
 public class HerokuAlerts {
     static ChromeDriver driver = null;
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException, NoSuchElementException {
         navigateToHerokuHomePage();
         openAlertsPage();
         openFirstAlert();
@@ -22,7 +22,6 @@ public class HerokuAlerts {
         openThirdAlert();
         completeThirdAlert();
         scrollToSubmitButton();
-        closeBrowser();
 
 
         navigateToHerokuHomePage();
@@ -30,8 +29,9 @@ public class HerokuAlerts {
         }catch (NoSuchElementException e){
             FileUtils.takeScreenshot(driver, "alert");
         }finally {
-            closeBrowser();
+            BrowserManager.closeBrowser(driver);
         }
+
     }
     public static void navigateToHerokuHomePage(){
         driver = BrowserManager.createChromeDriver();
@@ -88,9 +88,4 @@ public class HerokuAlerts {
         submitButton.click();
         System.out.println("Am facut scroll catre Submit.");
         }
-
-        public static void closeBrowser(){
-        driver.quit();
-        System.out.println("Am inchis browserul.");
-    }
 }

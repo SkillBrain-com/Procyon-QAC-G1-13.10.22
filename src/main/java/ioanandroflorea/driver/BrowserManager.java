@@ -8,4 +8,7 @@ public class BrowserManager {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
+    public static void closeBrowser(ChromeDriver driver) {
+        driver.quit();
+    }
 }
