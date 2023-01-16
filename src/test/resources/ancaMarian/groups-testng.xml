@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteTestNG" verbose="1" >
+    <test name="AltTest1" >
+        <groups>
+            <run>
+                <exclude name="brokenTests"  />
+                <include name="test2"  />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="ancaMarian.teorie.DemoQaInputs"/>
+            <class name="ancaMarian.teorie.TestNGAnnotations"/>
+        </classes>
+    </test>
+</suite>
