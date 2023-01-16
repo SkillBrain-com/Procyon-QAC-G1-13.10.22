@@ -11,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.File;
 public class HerokuForms {
     static ChromeDriver driver = null;
-    private static File screenshot;
 
     public static void main(String[] args) throws InterruptedException {
         navigateToHerokuHomePage();
