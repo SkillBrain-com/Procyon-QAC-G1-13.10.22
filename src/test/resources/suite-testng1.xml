@@ -3,14 +3,12 @@
 <suite name="SuitaTestNG" verbose="1" >
     <test name="AltTest1" >
         <classes>
-            <class name="sorinfoca.altpachet.AltTest" />
         </classes>
     </test>
 
     <test name="DemoTests">
         <classes>
-            <class name="sorinfoca.Tests.MyTests"/>
-            <class name="sorinfoca.Tests.TestConfig"/>
+            <class name="sorinfoca.Tests.Tema7.MyTests"/>
         </classes>
     </test>
 </suite>

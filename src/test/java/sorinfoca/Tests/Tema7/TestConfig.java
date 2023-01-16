@@ -1,4 +1,4 @@
-package sorinfoca.Tests;
+package sorinfoca.Tests.Tema7;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -7,7 +7,6 @@ public class TestConfig {
 
     protected ChromeDriver driver = null;
     private static String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
-//  private ChromeDriver driver;
 
     public static String getBaseUrl() {
         return baseUrl;
@@ -36,15 +35,12 @@ public class TestConfig {
 
     @BeforeMethod
     public void setup() {
- //     driver = BrowserManager.createChromeDriver();
- //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         System.out.println("Before method");
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("After method");
-  //    driver.quit();
     }
 }
 

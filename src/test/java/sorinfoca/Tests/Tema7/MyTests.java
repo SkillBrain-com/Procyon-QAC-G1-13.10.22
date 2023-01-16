@@ -1,4 +1,4 @@
-package sorinfoca.Tests;
+package sorinfoca.Tests.Tema7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,7 @@ public class MyTests extends TestConfig {
 
     WebDriver driver;
 
-    @DataProvider(name = "LoginDataProvider")
+    @DataProvider(name = "loginDataProvider")
     public static Object[][] loginData() {
         return new Object[][] {
                 {"John Doe", "ThisIsNotAPassword", true},
@@ -21,15 +21,15 @@ public class MyTests extends TestConfig {
         };
     }
 
-    @DataProvider(name = "AppointmentDataProvider")
-    public static Object[][] AppointmentData() {
+    @DataProvider(name = "appointmentDataProvider")
+    public static Object[][] appointmentData() {
         return new Object[][] {
                 {"10/10/23", "Comentariu pozitiv", true},
                 {"", "Comentariu negativ", false},
         };
     }
 
-    @Test(dataProvider = "LoginDataProvider")
+    @Test(dataProvider = "loginDataProvider")
     public void testLogin(String username, String password, boolean shouldPass) {
         driver = BrowserManager.createChromeDriver();
         driver.get(getBaseUrl());
@@ -48,7 +48,7 @@ public class MyTests extends TestConfig {
         driver.quit();
     }
 
-    @Test(dataProvider = "AppointmentDataProvider")
+    @Test(dataProvider = "appointmentDataProvider")
     public void testAppointment(String data, String comentariu, boolean shouldPass){
         driver = BrowserManager.createChromeDriver();
         driver.get(getBaseUrl());
