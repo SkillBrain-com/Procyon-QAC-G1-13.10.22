@@ -1,9 +1,9 @@
-package cosminsechel1.tests.tema6;
+package cosminsechel.tests.tema6;
 
+import cosminsechel.driver.BrowserManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import cosminsechelmain.driver.BrowserManager;
-import cosminsechelmain.utils.FileUtils;
+import cosminsechel.utils.FileUtils;
 import java.io.IOException;
 
 public class HerokuAlerts {
@@ -34,7 +34,7 @@ public class HerokuAlerts {
     }
 
     public static void navigateToHerokuHomePage() {
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         System.out.println("Opened Heroku index page");
     }

@@ -1,11 +1,12 @@
-package cosminsechel1.tests.tema6;
+package cosminsechel.tests.tema6;
 
+import cosminsechel.driver.BrowserManager;
+import cosminsechel.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import cosminsechelmain.driver.BrowserManager;
 
 import java.io.File;
 
@@ -21,7 +22,7 @@ public class HerokuForms {
             scrollToSubmitButton();
             submitForm();
         } catch (NoSuchElementException e) {
-            cosminsechelmain.utils.FileUtils.takeScreenshot(driver, "alert");
+            FileUtils.takeScreenshot(driver, "alert");
             System.out.println("No alert present");
         } finally {
             closeBrowser();
@@ -29,7 +30,7 @@ public class HerokuForms {
     }
 
     public static void navigateToHerokuHomePage() {
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         System.out.println("Am deschis Heroku Forms page");
     }

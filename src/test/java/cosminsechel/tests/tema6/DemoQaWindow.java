@@ -1,12 +1,12 @@
-package cosminsechel1.tests.tema6;
+package cosminsechel.tests.tema6;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import cosminsechelmain.driver.BrowserManager;
-import cosminsechelmain.utils.FileUtils;
+import cosminsechel.utils.FileUtils;
+import cosminsechel.driver.BrowserManager;
 
 import java.io.File;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class DemoQaWindow {
     }
 
     public static void navigateToDemoQaWindowPage() {
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         driver.get("https://demoqa.com/browser-windows");
         System.out.println("Navigated to Demo QA window page");
     }
