@@ -1,4 +1,4 @@
-package AlinaTinca.Tests.Tema6;
+package AlinaTinca.tests.Tema6;
 
 import AlinaTinca.Utils.FileUtils;
 import org.openqa.selenium.By;
@@ -37,6 +37,7 @@ public class DemoQaWindow {
         }finally {
             closeBrowser();
         }
+
     }
 
     public static void navigateToDemoQAWindowPage() {
@@ -58,7 +59,7 @@ public class DemoQaWindow {
         Set<String> tabs = driver.getWindowHandles();
         for (String tab : tabs) {
             //switch focus to new tab, get heading text and close the tab
-            if(!tab.equals(parentTab)) {
+            if (!tab.equals(parentTab)) {
                 //switch focus to new tab
                 driver.switchTo().window(tab);
                 WebElement newTabHeading = driver.findElement(By.id("sampleHeading"));
@@ -73,17 +74,17 @@ public class DemoQaWindow {
         //display the above message
     }
 
-    public static void clickOnNewWindowButton(){
+    public static void clickOnNewWindowButton() {
         String parentWindow = driver.getWindowHandle();
         //go to window which openes
         WebElement newWindowButton = driver.findElement(By.id("windowButton"));
-        //find the New Window button
+        //find the New Window button from the main window
         newWindowButton.click();
         //click on New Window button
         Set<String> newTabs = driver.getWindowHandles();
-        for(String tab: newTabs) {
+        for (String tab : newTabs) {
             //switch focus to new tab, get heading text and close the tab
-            if (!tab.equals(parentWindow)){
+            if (!tab.equals(parentWindow)) {
                 //switch focus to new tab
                 driver.switchTo().window(tab);
                 WebElement newTabtex = driver.findElement(By.id("sampleHeading"));
@@ -103,9 +104,9 @@ public class DemoQaWindow {
         newWindowMessage.click();
         String parentWindow = driver.getWindowHandle();
         Set<String> newWindows = driver.getWindowHandles();
-        for (String window: newWindows) {
-            if (!window.equals(parentWindow)) {
-                driver.switchTo().window(window);
+        for (String newWindow: newWindows) {
+            if (!newWindow.equals(parentWindow)) {
+                driver.switchTo().window(newWindow);
                 break;
             }
         }

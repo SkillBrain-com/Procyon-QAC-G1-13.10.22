@@ -7,6 +7,7 @@ public class BrowserManager {
 
     public static ChromeDriver createChromeDriver() {
         WebDriverManager.chromedriver().setup();
+        //create and configure Chrome browser page settings
         return new ChromeDriver();
     }
 }
