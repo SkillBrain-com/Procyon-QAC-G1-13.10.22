@@ -1,9 +1,9 @@
 package cosminsecheltema7.Tests.teofilursan.tests.seleniumpart1;
 
-import teofilursan.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import teofilursan.driver.BrowserManager;
 
 public class SeleniumExampleTest {
 
