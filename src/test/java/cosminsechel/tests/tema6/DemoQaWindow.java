@@ -12,8 +12,6 @@ import java.io.File;
 import java.util.Set;
 public class DemoQaWindow {
     static ChromeDriver driver = null;
-    private static File screenshot;
-
     public static void main(String[] args) {
         navigateToDemoQaWindowPage();
         try {

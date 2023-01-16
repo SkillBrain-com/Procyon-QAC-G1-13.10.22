@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
-
 public class HerokuForms {
     static ChromeDriver driver = null;
     private static File screenshot;
