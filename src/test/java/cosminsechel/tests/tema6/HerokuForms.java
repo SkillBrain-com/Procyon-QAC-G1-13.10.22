@@ -11,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.File;
 
 public class HerokuForms {
-
     static ChromeDriver driver = null;
     private static File screenshot;
 
@@ -25,7 +24,7 @@ public class HerokuForms {
             FileUtils.takeScreenshot(driver, "alert");
             System.out.println("No alert present");
         } finally {
-            closeBrowser();
+            BrowserManager.closeChromeDriver(driver);
         }
     }
 
@@ -67,8 +66,5 @@ public class HerokuForms {
         System.out.println("Form submitted");
     }
 
-    public static void closeBrowser() {
-        driver.quit();
-        System.out.println("Am inchis browserul");
-    }
+
 }

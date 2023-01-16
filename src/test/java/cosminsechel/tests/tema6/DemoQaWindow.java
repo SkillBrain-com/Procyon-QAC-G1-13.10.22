@@ -10,7 +10,6 @@ import cosminsechel.driver.BrowserManager;
 
 import java.io.File;
 import java.util.Set;
-
 public class DemoQaWindow {
     static ChromeDriver driver = null;
     private static File screenshot;
@@ -24,7 +23,7 @@ public class DemoQaWindow {
             FileUtils.takeScreenshot(driver, "window");
             System.out.println("No alert present");
         } finally {
-            closeBrowser();
+            BrowserManager.closeChromeDriver(driver);
         }
     }
 
@@ -86,8 +85,6 @@ public class DemoQaWindow {
         WebElement sliderText = driver.findElement(By.id("sliderValue"));
         System.out.println("Slider text: " + sliderText.getText());
     }
-    public static void closeBrowser() {
-        driver.quit();
-        System.out.println("Closed browser");
-    }
+
+
 }

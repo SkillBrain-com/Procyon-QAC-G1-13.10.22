@@ -29,7 +29,7 @@ public class HerokuAlerts {
             FileUtils.takeScreenshot(driver, "nonexistent_element");
             System.out.println("Could not find the element with id 'nonexistent-element'");
         } finally {
-            closeBrowser();
+            BrowserManager.closeChromeDriver(driver);
         }
     }
 
@@ -99,8 +99,5 @@ public class HerokuAlerts {
         }
     }
 
-    public static void closeBrowser() {
-        driver.quit();
-        System.out.println("Closed the browser.");
-    }
+
 }
