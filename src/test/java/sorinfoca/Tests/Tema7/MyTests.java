@@ -96,5 +96,6 @@ public class MyTests extends TestConfig {
     public void logOut() {
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(6) > a")).click();
+        assertTrue(driver.findElement(By.cssSelector("#login-form")).isDisplayed());
     }
 }

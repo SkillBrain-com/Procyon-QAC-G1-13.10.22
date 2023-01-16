@@ -2,6 +2,7 @@ package sorinfoca.Tests.Tema7;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import sorinfoca.driver.BrowserManager;
 
 public class TestConfig {
 
@@ -36,11 +37,13 @@ public class TestConfig {
     @BeforeMethod
     public void setup() {
         System.out.println("Before method");
+        driver = BrowserManager.createChromeDriver();
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("After method");
+        driver.quit();
     }
 }
 
