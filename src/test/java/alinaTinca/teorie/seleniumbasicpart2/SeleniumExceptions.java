@@ -1,6 +1,6 @@
 package alinaTinca.teorie.seleniumbasicpart2;
 
-import AlinaTinca.BrowserManager;
+import AlinaTinca.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
