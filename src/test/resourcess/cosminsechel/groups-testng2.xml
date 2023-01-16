@@ -10,14 +10,14 @@
         </groups>
 
         <classes>
-            <class name="cosminsecheltema7.altpachet.AltTest" />
+            <class name="cosminsechel.tests.tema7.altpachet.AltTest" />
         </classes>
     </test>
 
     <test name="DemoTests">
         <classes>
-            <class name="cosminsecheltema7.Tests.MyTests"/>
-            <class name="cosminsecheltema7.Tests.TestConfig">
+            <class name="cosminsechel.tests.tema7.Tests.MyTests"/>
+            <class name="cosminsechel.tests.tema7.Tests.TestConfig">
                 <methods>
                     <exclude name="test2"></exclude>
                 </methods>

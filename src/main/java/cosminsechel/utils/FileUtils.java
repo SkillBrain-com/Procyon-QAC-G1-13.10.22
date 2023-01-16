@@ -1,4 +1,4 @@
-package cosminsecheltema7.utils;
+package cosminsechel.utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;

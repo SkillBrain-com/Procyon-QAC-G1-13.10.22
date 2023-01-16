@@ -1,4 +1,4 @@
-package cosminsecheltema7.Tests.teofilursan.tests.seleniumpart1;
+package teofilursan.tests.seleniumpart1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

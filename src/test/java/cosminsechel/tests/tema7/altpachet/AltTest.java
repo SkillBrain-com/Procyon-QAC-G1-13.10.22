@@ -1,4 +1,4 @@
-package cosminsecheltema7.altpachet;
+package cosminsechel.tests.tema7.altpachet;
 
 import org.testng.annotations.Test;
 

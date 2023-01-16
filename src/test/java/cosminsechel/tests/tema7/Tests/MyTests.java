@@ -1,4 +1,4 @@
-package cosminsecheltema7.Tests;
+package cosminsechel.tests.tema7.Tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
