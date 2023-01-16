@@ -23,7 +23,6 @@ public class HerokuAlerts {
         completeThirdAlert();
         scrollToSubmitButton();
 
-
         navigateToHerokuHomePage();
         try {openAlertsPage();
         }catch (NoSuchElementException e){
@@ -38,21 +37,25 @@ public class HerokuAlerts {
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         System.out.println("Am deschis Heroku index page.");
     }
+
     public static void openAlertsPage(){
         WebElement alertsLink = driver.findElement(By.id("alerttest"));
         alertsLink.click();
         System.out.println("Am navigat catre AlertsPage.");
     }
+
     public static void openFirstAlert() {
         WebElement firstAlertButton = driver.findElement(By.id("alertexamples"));
         firstAlertButton.click();
         System.out.println("Am deschis prima alerta.");
     }
+
     public static void acceptFirstAlert() {
         Alert firstAlert = driver.switchTo().alert();
         firstAlert.accept();
         System.out.println("Am acceptat prima alerta.");
     }
+
     public static void openSecondAlert() throws InterruptedException{
         WebElement secondAlertButton = driver.findElement(By.xpath("//input[@id='confirmexample']"));
         Thread.sleep(2000);

@@ -24,9 +24,6 @@ public class DemoQA {
         } finally {
             BrowserManager.closeBrowser(driver);
         }
-
-        BrowserManager.closeBrowser(driver);
-
     }
 
     public static void navigateToDemoQAWindowPage() {

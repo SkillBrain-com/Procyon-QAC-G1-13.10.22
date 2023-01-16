@@ -30,6 +30,7 @@ public class HerokuForms {
         driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         System.out.println("Heroku Forms Page opened.");
     }
+
     public static void fillFormElements() {
         WebElement username = driver.findElement(By.name("username"));
         username.sendKeys("John Doe");
@@ -55,6 +56,7 @@ public class HerokuForms {
         thirdDropDownItem.click();
         System.out.println("Drop down Item 3 selected.");
     }
+
     public static void selectSubmitButton() {
         WebElement submitButton = driver.findElement(By.xpath("//input[@type='submit']"));
         Actions actions = new Actions(driver);
@@ -62,5 +64,4 @@ public class HerokuForms {
         submitButton.click();
         System.out.println("I've scrolled to Submit button and selected it.");
     }
-
 }
