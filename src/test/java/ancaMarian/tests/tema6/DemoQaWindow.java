@@ -1,10 +1,10 @@
 package ancaMarian.tests.tema6;
 
+import ancaMarian.utils.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import teofilursan.driver.BrowserManager;
 
 import java.util.Set;
@@ -16,9 +16,21 @@ public class DemoQaWindow {
     public static void main(String[] args) throws InterruptedException {
         navigateToDemoQAWindowPage();
         clickOnNewTabButton();
+        closeBrowser();
+        navigateToDemoQAWindowPage();
         clickOnNewWindowButton();
+        closeBrowser();
+        navigateToDemoQAWindowPage();
         clickOnNewWindowMessageButton();
         closeBrowser();
+        navigateToDemoQAWindowPage();
+        try {
+            clickOnNonExistingTable();
+        } catch (NoSuchElementException e){
+            FileUtils.takeScreenshot(driver, "ElementNotFound");
+            System.out.println("Nu s-a gasit elementul pe pagina. S-a salvat un screenshot.");
+        } finally {
+            closeBrowser();}
     }
 
     public static void navigateToDemoQAWindowPage() {
@@ -83,6 +95,11 @@ public class DemoQaWindow {
         }
         driver.switchTo().window(parentWindow);
         System.out.println("Am facut click pe New Window Message.");
+    }
+
+    public static void clickOnNonExistingTable() {
+        WebElement nonExistingTable = driver.findElement(By.id("table"));
+        nonExistingTable.click();
     }
 
     public static void closeBrowser() {
