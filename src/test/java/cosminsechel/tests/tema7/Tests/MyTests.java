@@ -1,10 +1,11 @@
 package cosminsechel.tests.tema7.Tests;
 
+import cosminsechel.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import cosminsecheltema7.driver.BrowserManager;
+import cosminsechel.driver.BrowserManager;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -31,7 +32,7 @@ public class MyTests extends TestConfig {
 
     @Test(dataProvider = "LoginDataProvider")
     public void testLogin(String username, String password, boolean shouldPass) {
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
@@ -54,7 +55,7 @@ public class MyTests extends TestConfig {
 
     @Test(dataProvider = "AppointmentDataProvider")
     public void testAppointment(String data, String comentariu, boolean shouldPass){
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
@@ -78,7 +79,7 @@ public class MyTests extends TestConfig {
 
     @Test
     public void test1() {
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         testRedirectToLogin();
         testHomeButton();
         driver.quit();
