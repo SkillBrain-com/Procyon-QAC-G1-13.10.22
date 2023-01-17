@@ -18,7 +18,7 @@ public class Configurations {
 
     @AfterMethod
     public void closeDriver() {
-        driver.quit();
+        if (driver!=null) {driver.quit();}
         System.out.println("Am inchis browserul.");
     }
 

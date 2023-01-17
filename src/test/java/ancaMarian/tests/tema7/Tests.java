@@ -12,7 +12,8 @@ public class Tests extends Configurations {
     public Object[][] loginDetails(){
         return new Object[][]{
                 {"John Doe", "ThisIsNotAPassword", true},
-                {"WrongUsername", "WrongPassword", false}
+                {"WrongUsername", "WrongPassword", false},
+                {"", "", false}
         };
     }
 
@@ -43,9 +44,9 @@ public class Tests extends Configurations {
         WebElement loginSubmitButton = driver.findElement(By.id("btn-login"));
         loginSubmitButton.click();
         if (testShouldPass){
-            Assert.assertEquals ("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
+            Assert.assertEquals (driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/#appointment");
         } else {
-            Assert.assertEquals ("Login failed! Please ensure the username and password are valid.", driver.findElement(By.xpath("//*[@id='login']/div/div/div[1]/p[2]")).getText());
+            Assert.assertEquals (driver.findElement(By.xpath("//*[@id='login']/div/div/div[1]/p[2]")).getText(), "Login failed! Please ensure the username and password are valid.");
         }
     }
 
@@ -54,7 +55,7 @@ public class Tests extends Configurations {
         driver.get(url);
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
         makeAppointmentButton.click();
-        Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login", driver.getCurrentUrl());
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/profile.php#login");
     }
 
     @Test(dataProvider = "appointmentDetails")
@@ -77,9 +78,9 @@ public class Tests extends Configurations {
         WebElement bookAppointmentButton = driver.findElement(By.id("btn-book-appointment"));
         bookAppointmentButton.click();
         if (testShouldPass) {
-            Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary", driver.getCurrentUrl());
+            Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/appointment.php#summary");
         } else {
-        Assert.assertNotEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary", driver.getCurrentUrl());}
+        Assert.assertNotEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/appointment.php#summary");}
     }
 
    @Test
@@ -102,7 +103,7 @@ public class Tests extends Configurations {
         menuButton.click();
         WebElement homeFromMenuInHomePage = driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[2]/a"));
         homeFromMenuInHomePage.click();
-        Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/", driver.getCurrentUrl());
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
 
     public void returnToHomepageFromLoginPage() {
@@ -115,7 +116,7 @@ public class Tests extends Configurations {
         menuButtonFromLoginPage.click();
         WebElement homeFromMenuInLoginPage = driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[2]/a"));
         homeFromMenuInLoginPage.click();
-        Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/", driver.getCurrentUrl());
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
 
     public void returnToHomepageFromAppointmentFormPage() {
@@ -134,7 +135,7 @@ public class Tests extends Configurations {
         menuButton.click();
         WebElement homeFromMenuInAppointmentFormPage = driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[2]/a"));
         homeFromMenuInAppointmentFormPage.click();
-        Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/", driver.getCurrentUrl());
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
 
     public void returnToHomepageFromAppointmentConfirmationPage() {
@@ -155,8 +156,10 @@ public class Tests extends Configurations {
         comment.sendKeys("comment");
         WebElement bookAppointmentButton = driver.findElement(By.id("btn-book-appointment"));
         bookAppointmentButton.click();
-        WebElement goToHomepageButton = driver.findElement(By.xpath("//*[@id='summary']/div/div/div[7]/p/a"));
-        goToHomepageButton.click();
-        Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/", driver.getCurrentUrl());
+        WebElement menuButton = driver.findElement(By.id("menu-toggle"));
+        menuButton.click();
+        WebElement homeButtonFromMenuInAppointmentConfirmationPage = driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[2]/a"));
+        homeButtonFromMenuInAppointmentConfirmationPage.click();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
     }
