@@ -19,7 +19,6 @@ public class DemoQaWindow {
         try {
             clickOnNewTabButton();
             clickOnNewWindow();
-        }catch (NoAlertPresentException e){
             FileUtils.takeScreenshot(driver, "alertDemoQa");
         }catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "Browser_window");

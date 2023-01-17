@@ -91,12 +91,6 @@ public class HerokuAlerts {
         System.out.println("Textul alertei nr.2: \"" + secondAlert.getText() + "\"");
     }
 
-//    public static void acceptAlert(){
-//        Alert secondAlert = driver.switchTo().alert();
-//        secondAlert.accept();
-//        System.out.println("Am dat acceptat alerta!");
-//    }
-
     public static void cancelSecondAlert(){
         Alert secondAlert = driver.switchTo().alert();
         secondAlert.dismiss();

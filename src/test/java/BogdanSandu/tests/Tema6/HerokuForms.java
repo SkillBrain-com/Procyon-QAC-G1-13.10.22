@@ -24,7 +24,6 @@ public class HerokuForms {
             fillFormDetails();
             scrollToSubmitButton();
             tryToFindElement();
-        }catch (NoAlertPresentException e){
             FileUtils.takeScreenshot(driver, "alertForms");
         }catch (NoSuchElementException e){
             FileUtils.takeScreenshot(driver, "Forms");
