@@ -1,4 +1,4 @@
-package BogdanSandu.tests.Tema6;
+package bogdanSandu.tests.Tema6;
 
 import BogdanSandu.driver.BrowserManager;
 import BogdanSandu.utils.FileUtils;
@@ -19,7 +19,6 @@ public class DemoQaWindow {
         try {
             clickOnNewTabButton();
             clickOnNewWindow();
-            FileUtils.takeScreenshot(driver, "alertDemoQa");
         }catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "Browser_window");
         }finally {
