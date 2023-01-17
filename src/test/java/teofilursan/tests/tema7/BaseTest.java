@@ -12,6 +12,7 @@ public class BaseTest {
     @BeforeMethod(groups = "redirect")
     public void initChromeBrowser() {
         driver = BrowserManager.createChromeDriver();
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
         System.out.println("Executed before method");
     }
 

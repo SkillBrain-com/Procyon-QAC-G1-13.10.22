@@ -18,7 +18,6 @@ public class CuraHealthcareLoginTests extends BaseTest {
 
     @Test(dataProvider = "loginDataProvider", groups = "login")
     public void loginWithCredentials(String username, String password, String credentialsType) {
-        driver.get("https://katalon-demo-cura.herokuapp.com/");
         WebElement menu = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
         menu.click();
         WebElement loginLink = driver.findElement(By.linkText("Login"));
@@ -46,7 +45,6 @@ public class CuraHealthcareLoginTests extends BaseTest {
 
     @Test(groups = "redirect")
     public void verifyRedirectToLoginWhenUserNotLoggedIn() {
-        driver.get("https://katalon-demo-cura.herokuapp.com/");
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
         makeAppointmentButton.click();
         Assert.assertEquals(driver.getCurrentUrl(),
