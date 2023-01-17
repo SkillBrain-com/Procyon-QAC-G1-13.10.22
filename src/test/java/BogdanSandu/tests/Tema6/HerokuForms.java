@@ -1,5 +1,6 @@
 package BogdanSandu.tests.Tema6;
 
+import BogdanSandu.driver.BrowserManager;
 import BogdanSandu.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -26,12 +27,12 @@ public class HerokuForms {
         }catch (NoSuchElementException e){
             FileUtils.takeScreenshot(driver, "Forms");
         }finally {
-            bogdanSandu.driver.BrowserManager.closeBrowser(driver);
+            BrowserManager.closeBrowser(driver);
         }
     }
 
     public static void navigateToHerokuFormsPage () {
-        driver = bogdanSandu.driver.BrowserManager.createDriverAndGetPage();
+        driver = BrowserManager.createDriverAndGetPage();
         driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         driver.manage().window().maximize();
         System.out.println("Am deschis Heroku Forms page!");
