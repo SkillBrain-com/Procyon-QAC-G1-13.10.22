@@ -9,13 +9,13 @@ public class BaseTest {
 
     protected ChromeDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(groups = "redirect")
     public void initChromeBrowser() {
         driver = BrowserManager.createChromeDriver();
         System.out.println("Executed before method");
     }
 
-    @AfterMethod
+    @AfterMethod(groups = "redirect")
     public void quitDriver() {
         if (driver!=null) {
             driver.quit();
