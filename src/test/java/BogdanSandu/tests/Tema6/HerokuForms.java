@@ -1,15 +1,13 @@
 package BogdanSandu.tests.Tema6;
 
-import BogdanSandu.driver.BrowserManager;
 import BogdanSandu.utils.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.print.PrintOptions;
 import org.openqa.selenium.support.ui.Select;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import static BogdanSandu.tests.Tema6.HerokuAlerts.tryToFindElement;
@@ -28,12 +26,12 @@ public class HerokuForms {
         }catch (NoSuchElementException e){
             FileUtils.takeScreenshot(driver, "Forms");
         }finally {
-            BrowserManager.closeBrowser(driver);
+            bogdanSandu.driver.BrowserManager.closeBrowser(driver);
         }
     }
 
     public static void navigateToHerokuFormsPage () {
-        driver = BrowserManager.createDriverAndGetPage();
+        driver = bogdanSandu.driver.BrowserManager.createDriverAndGetPage();
         driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         driver.manage().window().maximize();
         System.out.println("Am deschis Heroku Forms page!");
