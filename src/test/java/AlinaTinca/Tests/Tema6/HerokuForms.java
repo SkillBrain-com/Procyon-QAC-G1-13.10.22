@@ -1,9 +1,7 @@
-package AlinaTinca.Tests.Tema6;
+package alinatinca.Tests.Tema6;
 
-import AlinaTinca.Utils.FileUtils;
-import AlinaTinca.driver.BrowserManager;
-import com.beust.ah.A;
-import net.bytebuddy.asm.Advice;
+import alinatinca.Utils.FileUtils;
+import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -12,13 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.*;
-
-import java.security.Key;
 import java.util.List;
-
-import static AlinaTinca.Tests.Tema6.HerokuAlerts.closeBrowser;
-import static AlinaTinca.Tests.Tema6.HerokuAlerts.driver;
 
 //Ex-2
 public class HerokuForms {
@@ -113,9 +105,9 @@ public class HerokuForms {
         //find the TextArea Comment field
         WebElement fileUpload = driver.findElement(By.cssSelector("input[name='filename']"));
         //find the Filename field
-        List <WebElement> checkBoxes = (List<WebElement>) driver.findElement(By.name("checkboxes[]"));
+        List <WebElement> checkBoxes = (List<WebElement>) driver.findElements(By.name("checkboxes[]"));
         //find the list for the Checkbox Items
-        List <WebElement> radioButtons = (List<WebElement>) driver.findElement(By.name("radioval"));
+        List <WebElement> radioButtons = (List<WebElement>) driver.findElements(By.name("radioval"));
         //find the list for the Radio Items
         Select multipleSelectValue = new Select(driver.findElement(By.name("multipleselect[]")));
         //find the list for Multiple Select Values

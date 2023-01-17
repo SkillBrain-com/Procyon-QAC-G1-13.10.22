@@ -1,9 +1,8 @@
-package AlinaTinca.Utils;
+package alinatinca.Utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import javax.imageio.IIOException;
 import java.io.File;
 import java.io.IOException;
 

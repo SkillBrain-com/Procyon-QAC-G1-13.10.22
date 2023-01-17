@@ -1,14 +1,12 @@
-package AlinaTinca.tests.Tema6;
+package alinatinca.tests.Tema6;
 
-import AlinaTinca.Utils.FileUtils;
+import alinatinca.Utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import teofilursan.driver.BrowserManager;
 
-import javax.naming.NamingEnumeration;
 import java.util.Set;
 
 //Ex3

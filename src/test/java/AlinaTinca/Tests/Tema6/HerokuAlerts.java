@@ -1,13 +1,11 @@
-package AlinaTinca.Tests.Tema6;
+package alinatinca.Tests.Tema6;
 
-import AlinaTinca.Utils.FileUtils;
-import AlinaTinca.driver.BrowserManager;
-import com.beust.ah.A;
+import alinatinca.Utils.FileUtils;
+import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import java.io.File;
 import java.io.IOException;
 
 //EX1
