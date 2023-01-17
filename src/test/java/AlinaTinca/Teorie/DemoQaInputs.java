@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import teofilursan.driver.BrowserManager;
+import alinatinca.driver.BrowserManager;
 
 @Test
 public class DemoQaInputs {
