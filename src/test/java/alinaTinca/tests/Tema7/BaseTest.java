@@ -8,27 +8,25 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import tincaalina.BrowserManager;
 
-public abstract class BaseTest {
+public class BaseTest {
 
-    ChromeDriver driver = null;
-
-    public String url = "https://katalon-demo-cura.herokuapp.com/";
+    protected ChromeDriver driver;
+    //create a driver attribute protected
 
     @BeforeMethod
-    public void beforeMethod(){
-       driver = BrowserManager.createChromeDriver();
-       //create the driver instance
-       System.out.println("Driver instance has been created!");
-       //display the above message
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void afterMethod(){
+    public void initChromeBrowser(){
+        driver = BrowserManager.createChromeDriver();
+        //create the driver instance
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+        //go to CuraHealthcare page
+        System.out.println("Executed before method!");
+}
+    @AfterMethod
+    public void quitDriver(){
         if(driver != null){
-        driver.quit();
-        //Driver instance has been closed
-        System.out.println("Driver instance has been closed!");
-        //display the above message
+            driver.quit();
+            //close the driver instance
         }
+        System.out.println("Executed after method!");
     }
 }
