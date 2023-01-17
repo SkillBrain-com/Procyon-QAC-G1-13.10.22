@@ -3,12 +3,11 @@ package AndreeaG.tests.tema7;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CuraHealthCareLogin  extends BaseTest{
-     @DataProvider
-     public Object [] [] loginDataProvider
+    // @DataProvider
+     //public Object [] [] loginDataProvider
     @Test
     public void loginWithValidCredentials(){
         driver.get("https://katalon-demo-cura.herokuapp.com/");
