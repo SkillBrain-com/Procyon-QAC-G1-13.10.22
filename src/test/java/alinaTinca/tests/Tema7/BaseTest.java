@@ -10,20 +10,25 @@ import tincaalina.BrowserManager;
 
 public abstract class BaseTest {
 
-    protected ChromeDriver driver = null;
+    ChromeDriver driver = null;
+
+    public String url = "https://katalon-demo-cura.herokuapp.com/";
 
     @BeforeMethod
-    public void beforeMethod() {
-        driver = BrowserManager.createChromeDriver();
-        driver.get("https://katalon-demo-cura.herokuapp.com/");
-        System.out.println("Katalon Demo Cura page has been opened!");
+    public void beforeMethod(){
+       driver = BrowserManager.createChromeDriver();
+       //create the driver instance
+       System.out.println("Driver instance has been created!");
+       //display the above message
     }
 
     @AfterMethod(alwaysRun = true)
-    public void afterMethod() {
-        if (driver != null) {
-            driver.quit();
-            System.out.println("Driver instance has been closed!");
+    public void afterMethod(){
+        if(driver != null){
+        driver.quit();
+        //Driver instance has been closed
+        System.out.println("Driver instance has been closed!");
+        //display the above message
         }
     }
 }
