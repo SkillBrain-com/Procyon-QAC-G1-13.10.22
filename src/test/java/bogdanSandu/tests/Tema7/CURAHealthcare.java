@@ -2,77 +2,58 @@ package bogdanSandu.tests.Tema7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class CURAHealthcare extends TestBase {
 
-    @Test
-    public void login() {
-        // go to login page
-        WebElement menu = driver.findElement(By.id("menu-toggle"));
-        menu.click();
-        System.out.println("Click on menu");
-        WebElement menuLogin = driver.findElement(By.xpath("//*[@id=\"sidebar-wrapper\"]/ul/li[3]/a"));
-        menuLogin.click();
-        System.out.println("Click on login menu");
-        // access elements of login page
-        WebElement username = driver.findElement(By.id("txt-username"));
-        WebElement password = driver.findElement(By.id("txt-password"));
-        WebElement login = driver.findElement(By.id("btn-login"));
-        // enter login data
-        username.sendKeys("John Doe");
-        System.out.println("Completed username");
-        password.sendKeys("ThisIsNotAPassword");
-        System.out.println("Completed password");
-        login.click();
-
-        String actualUrl = driver.getCurrentUrl();
-        String expectedUrl = "https://katalon-demo-cura.herokuapp.com/#appointment";
-        try {
-            Assert.assertEquals(expectedUrl,actualUrl);
-        }
-        catch (AssertionError e) {
-            System.out.println("Login failed!");
-        }
+    @DataProvider(name = "data-set")
+    public Object[][] loginDataProvider(){
+        return new Object[][]{
+                {"valid", "John Doe", "ThisIsNotAPassword",},
+                {"invalid", "John Do", "ThisIsNotAPassword",}
+        };
     }
 
-    @Test
-    public void invalidLogin(){
-        WebElement menu = driver.findElement(By.id("menu-toggle"));
-        menu.click();
+    @Test(dataProvider = "data-set")
+    public void login(String type, String username, String password) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        driver.findElement(By.id("menu-toggle")).click();
         System.out.println("Click on menu");
-        WebElement menuLogin = driver.findElement(By.xpath("//*[@id=\"sidebar-wrapper\"]/ul/li[3]/a"));
-        menuLogin.click();
+        driver.findElement(By.xpath("//*[@id=\"sidebar-wrapper\"]/ul/li[3]/a")).click();
         System.out.println("Click on login menu");
-        // access elements of login page
-        WebElement username = driver.findElement(By.id("txt-username"));
-        WebElement password = driver.findElement(By.id("txt-password"));
-        WebElement login = driver.findElement(By.id("btn-login"));
-        // enter login data
-        username.sendKeys("Invalid Username");
-        System.out.println("Completed username with invalid name");
-        password.sendKeys("ThisIsNotAPassword");
-        System.out.println("Completed password");
-        login.click();
-
-        String actualUrl = driver.getCurrentUrl();
-        String expectedUrl = "https://katalon-demo-cura.herokuapp.com/#appointment";
-        try {
-            Assert.assertEquals(expectedUrl,actualUrl);
-        }
-        catch (AssertionError e) {
-            System.out.println("Login failed!");
-        }
+        driver.findElement(By.id("txt-username")).sendKeys(username);
+        driver.findElement(By.id("txt-password")).sendKeys(password);
+        driver.findElement(By.id("btn-login")).click();
+        if(type.equals("valid")){
+            wait.until(ExpectedConditions.presenceOfElementLocated(
+                    By.cssSelector("#appointment > div > div > div > h2")));
+        }else
+            wait.until(ExpectedConditions.presenceOfElementLocated(
+                    By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")));
     }
 
-    @Test
-    public void makeAppointment(){
-        driver.get("https://katalon-demo-cura.herokuapp.com/#appointment");
+    public void completeDetailsForAppointment(){
+        driver.findElement(By.id("txt-username")).sendKeys("John Doe");
+        driver.findElement(By.id("txt-password")).sendKeys("ThisIsNotAPassword");
+        driver.findElement(By.id("btn-login")).click();
+    }
+
+    @Test(dataProvider = "data-set")
+    public void makeAppointment(String type, String username, String password){
         WebElement appointment = driver.findElement(By.id("btn-make-appointment"));
         appointment.click();
-        login();
+//        completeDetailsForAppointment();
+        driver.findElement(By.id("txt-username")).sendKeys(username);
+        driver.findElement(By.id("txt-password")).sendKeys(password);
+        driver.findElement(By.id("btn-login")).click();
         Select facility = new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByVisibleText("Tokyo CURA Healthcare Center");
         System.out.println("Select facility");
@@ -93,4 +74,5 @@ public class CURAHealthcare extends TestBase {
         System.out.println("Clisk on booking appointment");
 
     }
+
 }

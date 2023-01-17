@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 public abstract class TestBase {
 
-    static ChromeDriver driver = null;
+    protected ChromeDriver driver;
 
     @BeforeMethod
     public void openCURAHealthPage() {
