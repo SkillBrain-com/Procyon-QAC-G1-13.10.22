@@ -1,6 +1,6 @@
 package elizCurtnazar.tests.tema6;
 
-import org.apache.commons.io.FileUtils;
+import elizCurtnazar.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.OutputType;
@@ -28,9 +28,11 @@ public class DemoQaWindow {
             System.out.println("Am intrat in blocul de try.");
         } catch (Exception | Error e) {
             System.out.println("Am prins o exceptie in blocul de catch.");
-            File file = driver.getScreenshotAs(OutputType.FILE);
-            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza3.png");
-            FileUtils.copyFile(file, destinationFile);
+            FileUtils.takeScreenshot(driver, "New Window Message");
+            //alta varianta
+//            File file = driver.getScreenshotAs(OutputType.FILE);
+//            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza3.png");
+//            FileUtils.copyFile(file, destinationFile);
         } finally {
             driver.close();
             System.out.println("Am inchis pagina de pe blocu de finally.");

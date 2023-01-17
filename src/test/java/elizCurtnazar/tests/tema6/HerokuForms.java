@@ -1,7 +1,6 @@
 package elizCurtnazar.tests.tema6;
 
-import elizCurtnazar.driver.BrowserManager;
-import org.apache.commons.io.FileUtils;
+import elizCurtnazar.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
@@ -9,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.support.ui.Select;
+import teofilursan.driver.BrowserManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,9 +39,11 @@ public class HerokuForms {
 //            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza2.png");
 //            FileUtils.copyFile(file, destinationFile);
         } finally {
-            File file = driver.getScreenshotAs(OutputType.FILE);
-            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza2.png");
-            FileUtils.copyFile(file, destinationFile);
+            FileUtils.takeScreenshot(driver, "radio item");
+            //alta varianta de rezolvare
+//            File file = driver.getScreenshotAs(OutputType.FILE);
+//            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza2.png");
+//            FileUtils.copyFile(file, destinationFile);
             System.out.println("Am facut screenshot de pe blocul de finally.");
             //ALTA VARIANTA DE REZOLVARE
 //            driver.quit();
@@ -84,7 +86,7 @@ public class HerokuForms {
 
     public static void chooseFile() {
         WebElement file = driver.findElement(By.name("filename"));
-        file.sendKeys("C:\\Users\\Deniz\\Desktop\\eliz\\git.txt");
+        file.sendKeys("D:\\git procyon\\Procyon-QAC-G1-13.10.22\\src\\test\\java\\elizCurtnazar\\tests\\tema6\\HerokuFormsFile.txt");
         System.out.println("Am adaugat un fisier.");
     }
 

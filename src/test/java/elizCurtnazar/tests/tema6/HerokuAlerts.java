@@ -1,7 +1,7 @@
 package elizCurtnazar.tests.tema6;
 
 import elizCurtnazar.driver.BrowserManager;
-import org.apache.commons.io.FileUtils;
+import elizCurtnazar.utils.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -27,9 +27,11 @@ public class HerokuAlerts {
 
         } catch (NoSuchElementException e) {
             System.out.println("Am intrat pe blocul de catch");
-            File file = driver.getScreenshotAs(OutputType.FILE);
-            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza.png");
-            FileUtils.copyFile(file, destinationFile);
+            FileUtils.takeScreenshot(driver, "Fake Alert page");
+            //alta variante de rezolvare
+//            File file = driver.getScreenshotAs(OutputType.FILE);
+//            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza.png");
+//            FileUtils.copyFile(file, destinationFile);
 
         } finally {
             driver.close();
@@ -53,7 +55,7 @@ public class HerokuAlerts {
         }
 
         public static void navigateToHerokuHomePage () {
-            driver = BrowserManager.createChromeDriver();
+            driver = BrowserManager.createDriver();
             driver.get("https://testpages.herokuapp.com/styled/index.html");
             System.out.println("Am deschis Heroku index page!");
         }
