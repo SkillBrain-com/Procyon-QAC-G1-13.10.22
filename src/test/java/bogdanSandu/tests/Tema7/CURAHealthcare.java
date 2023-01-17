@@ -4,22 +4,16 @@ import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class CURAHealthcare {
+public class CURAHealthcare extends TestBase {
     static ChromeDriver driver = null;
 
-    @BeforeMethod
-    public void openCURAHealthPage() {
-        //open home page
-        driver = BrowserManager.createDriverAndGetPage();
-        driver.get("https://katalon-demo-cura.herokuapp.com/");
-        driver.manage().window().maximize();
-        System.out.println("Am deschis CURA Healthcare Service page");
-    }
+
 
     @Test
     public void login() {
@@ -65,7 +59,7 @@ public class CURAHealthcare {
         WebElement login = driver.findElement(By.id("btn-login"));
         // enter login data
         username.sendKeys("Invalid Username");
-        System.out.println("Completed username");
+        System.out.println("Completed username with invalid name");
         password.sendKeys("ThisIsNotAPassword");
         System.out.println("Completed password");
         login.click();
@@ -80,9 +74,30 @@ public class CURAHealthcare {
         }
     }
 
-    @AfterMethod
-    public void closeBrowser(){
-        driver.quit();
-        System.out.println("Am inchis browser-ul");
+    @Test
+    public void makeAppointment(){
+        driver.get("https://katalon-demo-cura.herokuapp.com/#appointment");
+        WebElement appointment = driver.findElement(By.id("btn-make-appointment"));
+        appointment.click();
+        login();
+        Select facility = new Select(driver.findElement(By.xpath("//*[@id=\'combo_facility\']")));
+        facility.selectByVisibleText("Tokyo CURA Healthcare Center");
+        System.out.println("Select facility");
+        WebElement applyForHospitalReadmission = driver.findElement(By.id("chk_hospotal_readmission"));
+        applyForHospitalReadmission.click();
+        System.out.println("Select: Apply for hospital readmission");
+        WebElement medicare = driver.findElement(By.id("radio_program_medicare"));
+        medicare.click();
+        System.out.println("Select program for healtcare");
+        WebElement visitDate = driver.findElement(By.id("txt_visit_date"));
+
+        System.out.println("Select date");
+        WebElement comment = driver.findElement(By.id("txt_comment"));
+        comment.sendKeys("Test comment");
+        System.out.println("Complete on comment section");
+        WebElement bookAppointment = driver.findElement(By.id("btn-book-appointment"));
+        bookAppointment.click();
+        System.out.println("Clisk on booking appointment");
+
     }
 }
