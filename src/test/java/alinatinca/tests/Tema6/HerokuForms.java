@@ -135,7 +135,7 @@ public class HerokuForms {
         //fill the TextArea Comment field with the above text
         textAreaComment.sendKeys(Keys.TAB);
         //Go to the next field with TAB
-        fileUpload.sendKeys("E:\\Alina\\Screenshot.png");
+        fileUpload.sendKeys("E:\\Alina work Git\\Git_Risingstars\\Procyon-QAC-G1-13.10.22\\src\\test\\java\\alinatinca\\tests\\Tema6\\forUpload");
         //fill the Filename field with the above photo
         checkBoxes.get(1).click();
         //get the second item from the Checkbox Items list and click on it
