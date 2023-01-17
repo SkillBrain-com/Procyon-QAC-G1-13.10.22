@@ -1,4 +1,4 @@
-package alinatinca.Tests.Tema6;
+package alinatinca.tests.Tema6;
 
 import alinatinca.Utils.FileUtils;
 import alinatinca.driver.BrowserManager;
