@@ -10,7 +10,7 @@
         </groups>
 
         <classes>
-            <class name="cosminsechel.tests.tema7.altpachet.AltTest" />
+
         </classes>
     </test>
 

@@ -3,7 +3,7 @@
 <suite name="SuitaTestNG" verbose="1" >
     <test name="AltTest1" >
         <classes>
-            <class name="cosminsechel.tests.tema7.altpachet.AltTest" />
+
         </classes>
     </test>
 
