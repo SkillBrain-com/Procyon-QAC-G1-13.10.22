@@ -1,19 +1,12 @@
 package bogdanSandu.tests.Tema7;
 
-import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class CURAHealthcare extends TestBase {
-    static ChromeDriver driver = null;
-
-
 
     @Test
     public void login() {
@@ -80,7 +73,7 @@ public class CURAHealthcare extends TestBase {
         WebElement appointment = driver.findElement(By.id("btn-make-appointment"));
         appointment.click();
         login();
-        Select facility = new Select(driver.findElement(By.xpath("//*[@id=\'combo_facility\']")));
+        Select facility = new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByVisibleText("Tokyo CURA Healthcare Center");
         System.out.println("Select facility");
         WebElement applyForHospitalReadmission = driver.findElement(By.id("chk_hospotal_readmission"));

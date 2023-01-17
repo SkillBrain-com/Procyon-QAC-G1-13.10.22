@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class TestBase {
+public abstract class TestBase {
 
     static ChromeDriver driver = null;
 
@@ -18,7 +18,7 @@ public class TestBase {
         System.out.println("Am deschis CURA Healthcare Service page");
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void closeBrowser(){
         driver.quit();
         System.out.println("Close browser");
