@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import sorinfoca.driver.BrowserManager;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -31,7 +30,6 @@ public class MyTests extends TestConfig {
 
     @Test(dataProvider = "loginDataProvider")
     public void testLogin(String username, String password, boolean shouldPass) {
-        driver = BrowserManager.createChromeDriver();
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
@@ -45,12 +43,10 @@ public class MyTests extends TestConfig {
         else {
             assertTrue(driver.findElement(By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")).isDisplayed());
         }
-        driver.quit();
     }
 
     @Test(dataProvider = "appointmentDataProvider")
     public void testAppointment(String data, String comentariu, boolean shouldPass){
-        driver = BrowserManager.createChromeDriver();
         driver.get(getBaseUrl());
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(4) > a")).click();
@@ -69,15 +65,12 @@ public class MyTests extends TestConfig {
         else {
             assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
         }
-        driver.quit();
     }
 
     @Test
     public void test1() {
-        driver = BrowserManager.createChromeDriver();
         testRedirectToLogin();
         testHomeButton();
-        driver.quit();
     }
 
     public void testRedirectToLogin() {
