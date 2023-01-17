@@ -1,16 +1,12 @@
 package sorinfoca.Tests.Tema7;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class MyTests extends TestConfig {
-
-    WebDriver driver;
 
     @DataProvider(name = "loginDataProvider")
     public static Object[][] loginData() {
@@ -38,7 +34,6 @@ public class MyTests extends TestConfig {
         driver.findElement(By.xpath("//button[text()='Login']")).click();
         if(shouldPass) {
             assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment",driver.getCurrentUrl());
-            logOut();
         }
         else {
             assertTrue(driver.findElement(By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")).isDisplayed());
@@ -60,7 +55,6 @@ public class MyTests extends TestConfig {
         driver.findElement(By.xpath("//*[@id=\"btn-book-appointment\"]")).click();
         if(shouldPass) {
             assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
-            logOut();
         }
         else {
             assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
@@ -89,6 +83,6 @@ public class MyTests extends TestConfig {
     public void logOut() {
         driver.findElement(By.cssSelector("#menu-toggle")).click();
         driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(6) > a")).click();
-        assertTrue(driver.findElement(By.cssSelector("#login-form")).isDisplayed());
+        assertTrue(driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(6) > a")).isDisplayed());
     }
 }
