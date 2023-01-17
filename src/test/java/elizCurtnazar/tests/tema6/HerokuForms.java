@@ -93,7 +93,7 @@ public class HerokuForms {
         checkboxes.get(0).click();
         checkboxes.get(2).click();
         System.out.println("Am ales doar checkbox 1.");
-        System.out.println("Checkbox 1 is enabled " + checkboxes.get(0).isEnabled());
+        System.out.println("Checkbox 1 is enabled: " + checkboxes.get(0).isEnabled());
     }
 
 //    public static void radioItems() {

@@ -26,7 +26,7 @@ public class DemoQaWindow {
         try {
             clickNewWindowMessage();
             System.out.println("Am intrat in blocul de try.");
-        } catch (Exception e) {
+        } catch (Exception | Error e) {
             System.out.println("Am prins o exceptie in blocul de catch.");
             File file = driver.getScreenshotAs(OutputType.FILE);
             File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza3.png");
@@ -118,7 +118,7 @@ public class DemoQaWindow {
         for (String tab : tabs3) {
             if (!tab.equals(parentTab3)) {
                 driver.switchTo().window(tab);
-                WebElement textNewTab = driver.findElement(By.xpath("/html/body"));
+                WebElement textNewTab = driver.findElement(By.xpath("//body[text()='Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.']"));
                 System.out.println(textNewTab.getText());
                 driver.close();
             }
