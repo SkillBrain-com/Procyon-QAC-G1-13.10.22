@@ -1,7 +1,6 @@
 package alinaTinca.tests.Tema5.Heroku;
 
-import AlinaTinca.BrowserManager;
-import AlinaTinca.BrowserManager;
+import AlinaTinca.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

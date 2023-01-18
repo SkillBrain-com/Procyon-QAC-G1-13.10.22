@@ -13,7 +13,7 @@ public class BaseTest {
     protected ChromeDriver driver;
     //create a driver attribute protected
 
-    @BeforeMethod
+    @BeforeMethod(groups = "redirect")
     public void initChromeBrowser(){
         driver = BrowserManager.createChromeDriver();
         //create the driver instance
@@ -21,7 +21,7 @@ public class BaseTest {
         //go to CuraHealthcare page
         System.out.println("Executed before method!");
 }
-    @AfterMethod
+    @AfterMethod(groups = "redirect")
     public void quitDriver(){
         if(driver != null){
             driver.quit();
