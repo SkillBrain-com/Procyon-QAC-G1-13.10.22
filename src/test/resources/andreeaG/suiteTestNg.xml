@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteTestNG" verbose="1" >
+    <test name="AltTest1" >
+        <classes>
+            <class name="andreeaG.Teorie.altpachet.AltTest" />
+        </classes>
+    </test>
+
+    <test name="DemoTest">
+        <classes>
+            <class name="andreeaG.Teorie.DemoQaInputs"/>
+            <class name="andreeaG.Teorie.TestNGAnnotations"/>
+        </classes>
+    </test>
+</suite>
