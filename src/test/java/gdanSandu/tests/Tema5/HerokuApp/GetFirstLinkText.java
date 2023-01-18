@@ -1,6 +1,6 @@
-package bogdanSandu.tests.Tema5.HerokuApp;
+package gdanSandu.tests.Tema5.HerokuApp;
 
-import bogdanSandu.driver.BrowserManager;
+import ogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

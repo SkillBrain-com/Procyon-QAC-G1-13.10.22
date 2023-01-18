@@ -1,4 +1,4 @@
-package BogdanSandu.tests.Tema6;
+package gdanSandu.tests.Tema6;
 
 
 import BogdanSandu.driver.BrowserManager;
