@@ -25,24 +25,24 @@ public class Demoqa {
 
     public void writeFullName() {
 
-        WebElement fullNameinput = driver.findElement(By.id("userName"));
-        fullNameinput.sendKeys("Anamaria");
+        WebElement fullNameInput = driver.findElement(By.id("userName"));
+        fullNameInput.sendKeys("Teofil Ursan");
     }
 
     public void writeEmail() {
 
         WebElement emailInput = driver.findElement(By.id("userEmail"));
-        emailInput.sendKeys("a@test.com");
+        emailInput.sendKeys("teo@test.com");
     }
 
 
-    public void writeCurrentAddy() {
-        WebElement currentAddress = driver.findElement(By.id("currentAddress"));
-        currentAddress.sendKeys("Iasi");
+    public void writeCurrentAddress() {
+        WebElement currentAddressInput = driver.findElement(By.id("currentAddress"));
+        currentAddressInput.sendKeys("Iasi");
     }
 
     public void writePermanentAddy() {
-        WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
-        permanentAddress.sendKeys("Iasi");
+        WebElement permanentAddressInput = driver.findElement(By.id("permanentAddress"));
+        permanentAddressInput.sendKeys("Iasi");
     }
 }
