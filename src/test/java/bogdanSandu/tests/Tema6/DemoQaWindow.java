@@ -1,9 +1,8 @@
-package gdanSandu.tests.Tema6;
+package bogdanSandu.tests.Tema6;
 
 import BogdanSandu.driver.BrowserManager;
 import BogdanSandu.utils.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 

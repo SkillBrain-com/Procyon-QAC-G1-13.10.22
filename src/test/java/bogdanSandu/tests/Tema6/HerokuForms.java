@@ -1,4 +1,4 @@
-package gdanSandu.tests.Tema6;
+package bogdanSandu.tests.Tema6;
 
 import BogdanSandu.driver.BrowserManager;
 import BogdanSandu.utils.FileUtils;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-import static gdanSandu.tests.Tema6.HerokuAlerts.tryToFindElement;
+import static bogdanSandu.tests.Tema6.HerokuAlerts.tryToFindElement;
 
 public class HerokuForms {
 

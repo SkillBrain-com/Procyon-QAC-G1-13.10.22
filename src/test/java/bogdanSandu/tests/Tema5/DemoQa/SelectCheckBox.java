@@ -1,6 +1,6 @@
-package gdanSandu.tests.Tema5.DemoQa;
+package bogdanSandu.tests.Tema5.DemoQa;
 
-import ogdanSandu.driver.BrowserManager;
+import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
