@@ -14,7 +14,7 @@ public class HerokuAlerts {
 
     public static void main(String[] args) throws IOException, InterruptedException, NoSuchElementException {
         navigateToHerokuHomePage();
-        openAlertsPage();
+        try {openAlertsPage();
         openFirstAlert();
         acceptFirstAlert();
         openSecondAlert();
@@ -22,9 +22,6 @@ public class HerokuAlerts {
         openThirdAlert();
         completeThirdAlert();
         scrollToSubmitButton();
-
-        navigateToHerokuHomePage();
-        try {openAlertsPage();
         }catch (NoSuchElementException e){
             FileUtils.takeScreenshot(driver, "alert");
         }finally {
