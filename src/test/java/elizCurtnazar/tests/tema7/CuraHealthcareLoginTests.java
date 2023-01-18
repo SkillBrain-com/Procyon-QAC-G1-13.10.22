@@ -62,7 +62,7 @@ public class CuraHealthcareLoginTests extends BaseTest {
                 "Shouldn't navigate to appointment page!");//optional
     }
 
-    @Test(dataProvider = "loginDataProvider")
+    @Test(dataProvider = "loginDataProvider", groups = "login")
     public void loginWithCredentials(String username, String password, String credentialsType) {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         WebElement menu = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
@@ -88,6 +88,15 @@ public class CuraHealthcareLoginTests extends BaseTest {
                     "Login failed! Please ensure the username and password are valid.",
                     "Shouldn't navigate to appointment page!");
         }
+    }
+
+    @Test(groups = "redirect")
+    public void verifyRedirectToLoginWhenUserNotLoggedIn() {
+        WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
+        makeAppointmentButton.click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://katalon-demo-cura.herokuapp.com/profile.php#login",
+                "User is not redirected to login page when not logged in!");
     }
 
 }

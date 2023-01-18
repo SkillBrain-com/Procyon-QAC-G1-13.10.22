@@ -9,14 +9,15 @@ public class BaseTest {
 
     protected ChromeDriver driver;
 
-    @BeforeMethod //ruleaza iniante de orice metoda de test
+    @BeforeMethod(groups = "redirect") //ruleaza iniante de orice metoda de test
     public void initChromeBrowser() {
         driver = BrowserManager.createDriver();//initializarea
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
         System.out.println("Executed before method");
 
     }
 
-    @AfterMethod
+    @AfterMethod(groups = "redirect")
     public void quitDriver() {
         if(driver!=null) {
             driver.quit();
