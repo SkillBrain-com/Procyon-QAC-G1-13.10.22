@@ -70,7 +70,7 @@ public class HerokuAlerts {
         System.out.println("Textul din a3-a alerta este: " + thirdAlert.getText());
         thirdAlert.sendKeys("Textul meu!");
         thirdAlert.accept();
-        System.out.println("Am introdus in text in a 3-a alerta");
+        System.out.println("Am introdus un text in a 3-a alerta");
     }
         public static void findElementNonexistent() {
             WebElement nonExistentElement = driver.findElement(By.id("alba-ca-zapada"));

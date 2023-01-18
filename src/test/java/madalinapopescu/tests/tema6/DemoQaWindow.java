@@ -1,6 +1,8 @@
 package madalinapopescu.tests.tema6;
 import madalinapopescu.driver.BrowserManager;
+import madalinapopescu.utils.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -12,9 +14,16 @@ public class DemoQaWindow {
 
     public static void main(String[] args) {
         navigateToDemoQAWindowPage();
-        clickOnNewTabButton();
-        clickOnNewWindowButton();
-        closeBrowser();
+        try{
+            clickOnNewTabButton();
+            clickOnNewWindowButton();
+            clickOnNewWindowMessageButton();
+        }catch (NoSuchElementException e){
+            FileUtils.takeScreenshot(driver, "new-message");
+            System.out.println("Am intrat in blocul de catch!");
+        }finally {
+            closeBrowser();
+        }
     }
 
     public static void navigateToDemoQAWindowPage() {
@@ -61,6 +70,22 @@ public class DemoQaWindow {
         }
         driver.switchTo().window(parentTab);
         System.out.println("Am facut click pe new window button");
+    }
+    public static void clickOnNewWindowMessageButton(){
+        WebElement newWindowMessage = driver.findElement(By.id("messageWindowButton"));
+        newWindowMessage.click();
+        String parentWindow = driver.getWindowHandle();
+        Set<String> newWindows = driver.getWindowHandles();
+        for (String newWindow: newWindows) {
+            if (!newWindow.equals(parentWindow)) {
+                driver.switchTo().window(newWindow);
+                break;
+            }
+        }
+        driver.switchTo().window(parentWindow);
+        System.out.println(driver.findElement(By.xpath("//body[text()='Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.']")).getText());
+        driver.close();
+        System.out.println("Am facut click pe butonul New Window Message");
     }
         public static void closeBrowser () {
             driver.quit();
