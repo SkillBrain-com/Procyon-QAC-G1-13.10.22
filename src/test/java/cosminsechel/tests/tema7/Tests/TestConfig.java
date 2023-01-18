@@ -2,12 +2,12 @@ package cosminsechel.tests.tema7.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import sorinfoca.driver.BrowserManager;
 
 public class TestConfig {
 
     protected ChromeDriver driver = null;
     private static String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
-
 
     public static String getBaseUrl() {
         return baseUrl;
@@ -36,14 +36,13 @@ public class TestConfig {
 
     @BeforeMethod
     public void setup() {
-        //     driver = BrowserManager.createChromeDriver();
-        //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         System.out.println("Before method");
+        driver = BrowserManager.createChromeDriver();
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("After method");
-        //    driver.quit();
+        driver.quit();
     }
 }
