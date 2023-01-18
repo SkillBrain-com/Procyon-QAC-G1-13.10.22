@@ -1,4 +1,4 @@
-package AndreeaG.tests.tema5.Demoqa;
+package andreeaG.tests.tema5.Demoqa;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

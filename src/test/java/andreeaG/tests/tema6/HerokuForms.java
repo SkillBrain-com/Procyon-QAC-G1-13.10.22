@@ -1,7 +1,7 @@
-package AndreeaG.tests.tema6;
+package andreeaG.tests.tema6;
 
-import AndreeaG.driver.BrowserManager;
-import AndreeaG.utils.fileUtils;
+import andreeaG.driver.BrowserManager;
+import andreeaG.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -29,7 +29,7 @@ public class HerokuForms {
             dropdownMenu();
             scrollToSubmitButton();
         } catch (NoSuchElementException e) {
-            fileUtils.takeScreenshot(driver, "screengrab");
+            FileUtils.takeScreenshot(driver, "screengrab");
             System.out.println("Printscreen done");
         } finally {
             closeBrowser();

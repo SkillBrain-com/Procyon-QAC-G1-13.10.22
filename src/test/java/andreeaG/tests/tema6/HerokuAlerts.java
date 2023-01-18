@@ -1,7 +1,7 @@
-package AndreeaG.tests.tema6;
+package andreeaG.tests.tema6;
 
-import AndreeaG.driver.BrowserManager;
-import AndreeaG.utils.fileUtils;
+import andreeaG.driver.BrowserManager;
+import andreeaG.utils.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
@@ -27,7 +27,7 @@ public class HerokuAlerts {
             closeBrowser();
 
         } catch (NoSuchElementException e) {
-            fileUtils.takeScreenshot(driver, "alert");
+            FileUtils.takeScreenshot(driver, "alert");
         } finally {
             closeBrowser();
         }

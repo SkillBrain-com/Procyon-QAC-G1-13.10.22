@@ -1,4 +1,4 @@
-package AndreeaG.utils;
+package andreeaG.utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.io.IOException;
 
-public class fileUtils {
+public class FileUtils {
 
     public static void takeScreenshot(ChromeDriver driver, String fileName) {
 

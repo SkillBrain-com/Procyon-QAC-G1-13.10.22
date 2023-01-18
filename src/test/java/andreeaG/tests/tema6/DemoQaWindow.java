@@ -1,7 +1,7 @@
-package AndreeaG.tests.tema6;
+package andreeaG.tests.tema6;
 
-import AndreeaG.driver.BrowserManager;
-import AndreeaG.utils.fileUtils;
+import andreeaG.driver.BrowserManager;
+import andreeaG.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,7 @@ public class DemoQaWindow {
         try {
             clickOnNewWindowMessage();
         } catch (NoSuchElementException e) {
-            fileUtils.takeScreenshot(driver, "no such element");
+            FileUtils.takeScreenshot(driver, "no such element");
         } finally {
             closeBrowser();        }
     }
