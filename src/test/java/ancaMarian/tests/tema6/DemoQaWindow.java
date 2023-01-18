@@ -1,45 +1,38 @@
 package ancaMarian.tests.tema6;
 
+import ancaMarian.driver.BrowserManager;
 import ancaMarian.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import teofilursan.driver.BrowserManager;
 
 import java.util.Set;
 
 public class DemoQaWindow {
 
-    static ChromeDriver driver = null;
-
     public static void main(String[] args) throws InterruptedException {
-        navigateToDemoQAWindowPage();
-        clickOnNewTabButton();
-        closeBrowser();
-        navigateToDemoQAWindowPage();
-        clickOnNewWindowButton();
-        closeBrowser();
-        navigateToDemoQAWindowPage();
-        clickOnNewWindowMessageButton();
-        closeBrowser();
-        navigateToDemoQAWindowPage();
+        ChromeDriver driver = BrowserManager.createDriver();
+        navigateToDemoQAWindowPage(driver);
+        clickOnNewTabButton(driver);
+        clickOnNewWindowButton(driver);
+        clickOnNewWindowMessageButton(driver);
         try {
-            clickOnNonExistingTable();
-        } catch (NoSuchElementException e){
+            clickOnNonExistingTable(driver);
+        } catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "ElementNotFound");
             System.out.println("Nu s-a gasit elementul pe pagina. S-a salvat un screenshot.");
         } finally {
-            closeBrowser();}
+            BrowserManager.closeChromeDriver(driver);
+        }
     }
 
-    public static void navigateToDemoQAWindowPage() {
-        driver = BrowserManager.createChromeDriver();
+    public static void navigateToDemoQAWindowPage(ChromeDriver driver) {
         driver.get("https://demoqa.com/browser-windows");
         System.out.println("Am deschis Demo QA window page!");
     }
 
-    public static void clickOnNewTabButton() {
+    public static void clickOnNewTabButton(ChromeDriver driver) {
         //get parent tab id
         String parentTab = driver.getWindowHandle();
         WebElement newTabButton = driver.findElement(By.id("tabButton"));
@@ -49,7 +42,7 @@ public class DemoQaWindow {
         Set<String> tabs = driver.getWindowHandles();
         for (String tab : tabs) {
             //switch focus to new tab, get heading text and close the tab
-            if(!tab.equals(parentTab)) {
+            if (!tab.equals(parentTab)) {
                 //switch focus to new tab
                 driver.switchTo().window(tab);
                 WebElement newTabHeading = driver.findElement(By.id("sampleHeading"));
@@ -62,7 +55,7 @@ public class DemoQaWindow {
         System.out.println("Am facut click pe new tab button.");
     }
 
-    public static void clickOnNewWindowButton() {
+    public static void clickOnNewWindowButton(ChromeDriver driver) {
         String parentWindow = driver.getWindowHandle();
         WebElement newWindowButton = driver.findElement(By.id("windowButton"));
         newWindowButton.click();
@@ -79,7 +72,7 @@ public class DemoQaWindow {
         System.out.println("Am facut click pe New Window.");
     }
 
-    public static void clickOnNewWindowMessageButton() throws InterruptedException {
+    public static void clickOnNewWindowMessageButton(ChromeDriver driver) throws InterruptedException {
         String parentWindow = driver.getWindowHandle();
         WebElement newWindowMessageButton = driver.findElement(By.id("messageWindowButton"));
         newWindowMessageButton.click();
@@ -97,14 +90,8 @@ public class DemoQaWindow {
         System.out.println("Am facut click pe New Window Message.");
     }
 
-    public static void clickOnNonExistingTable() {
+    public static void clickOnNonExistingTable(ChromeDriver driver) {
         WebElement nonExistingTable = driver.findElement(By.id("table"));
         nonExistingTable.click();
     }
-
-    public static void closeBrowser() {
-        driver.quit();
-        System.out.println("Am inchis browserul!");
-    }
 }
-

@@ -10,68 +10,61 @@ import java.io.IOException;
 
 
 public class HerokuAlerts {
-    static ChromeDriver driver = null;
 
     public static void main(String[] args) throws InterruptedException {
-    navigateToHerokuHomePage();
-    maximizeWindow(driver);
-    openAlertsPage();
-    openFirstAlert();
-    acceptFirstAlert();
-    openSecondAlert();
-    acceptAlert();
-    openThirdAlert();
-    completeThirdAlert();
-    closeBrowser();
-
-    navigateToHerokuHomePage();
+        ChromeDriver driver = BrowserManager.createDriver();
+        navigateToHerokuHomePage(driver);
+        BrowserManager.maximizeWindow(driver);
+        openAlertsPage(driver);
+        openFirstAlert(driver);
+        acceptFirstAlert(driver);
+        openSecondAlert(driver);
+        acceptAlert(driver);
+        openThirdAlert(driver);
+        completeThirdAlert(driver);
+        navigateToHerokuHomePage(driver);
     try {
-        openSecondAlert();
+        openSecondAlert(driver);
     } catch (NoSuchElementException e){
         FileUtils.takeScreenshot(driver, "alertNotFound");
         System.out.println("Nu s-a gasit elementul pe pagina. S-a salvat un screenshot.");
         } finally {
-        closeBrowser();}
+        BrowserManager.closeChromeDriver(driver);}
     }
 
-    public static void navigateToHerokuHomePage(){
-        driver = BrowserManager.createChromeDriver();
+    public static void navigateToHerokuHomePage(ChromeDriver driver){
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         System.out.println("Am deschis Heroku index page.");
     }
 
-    public static void maximizeWindow(ChromeDriver driver){
-        driver.manage().window().maximize();
-    }
-
-    public static void openAlertsPage(){
+    public static void openAlertsPage(ChromeDriver driver){
         WebElement alertsLink = driver.findElement(By.id("alerttest"));
         alertsLink.click();
         System.out.println("Am deschis Alert page.");
     }
 
-    public static void openFirstAlert() throws InterruptedException {
+    public static void openFirstAlert(ChromeDriver driver) throws InterruptedException {
         WebElement firstAlertButton = driver.findElement(By.xpath("//input[@id='alertexamples']"));
         firstAlertButton.click();
         Thread.sleep(2000);
         System.out.println("Am deschis prima alerta.");
     }
 
-    public static void acceptFirstAlert() throws InterruptedException {
+    public static void acceptFirstAlert(ChromeDriver driver) throws InterruptedException {
         Alert firstAlert = driver.switchTo().alert();
         firstAlert.accept();
         Thread.sleep(2000);
         System.out.println("Am acceptat prima alerta.");
     }
 
-    public static void openSecondAlert() throws InterruptedException {
+    public static void openSecondAlert(ChromeDriver driver) throws InterruptedException {
         WebElement secondAlertButton = driver.findElement(By.xpath("//input[@id='confirmexample']"));
         Thread.sleep(2000);
         secondAlertButton.click();
         System.out.println("Am deschis a doua alerta.");
     }
 
-    public static void acceptAlert() throws InterruptedException {
+    public static void acceptAlert(ChromeDriver driver) throws InterruptedException {
         Alert secondAlert = driver.switchTo().alert();
         Thread.sleep(2000);
         secondAlert.accept();
@@ -83,13 +76,13 @@ public class HerokuAlerts {
         }
     }
 
-    public static void openThirdAlert() {
+    public static void openThirdAlert(ChromeDriver driver) {
         WebElement thirdAlertButton = driver.findElement(By.xpath("//input[@id='promptexample']"));
         thirdAlertButton.click();
         System.out.println("Am deschis a treia alerta.");
     }
 
-    public static void completeThirdAlert() throws InterruptedException {
+    public static void completeThirdAlert(ChromeDriver driver) throws InterruptedException {
         Thread.sleep(5000);
         Alert thirdAlert = driver.switchTo().alert();
         Thread.sleep(2000);
@@ -105,10 +98,5 @@ public class HerokuAlerts {
             System.out.println("nu s-a efectuat schimbarea!");
         }
         Thread.sleep(2000);
-    }
-
-    public static void closeBrowser(){
-        driver.quit();
-        System.out.println("Am inchis browserul.");
     }
 }
