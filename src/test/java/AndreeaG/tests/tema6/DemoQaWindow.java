@@ -1,7 +1,7 @@
 package AndreeaG.tests.tema6;
 
 import AndreeaG.driver.BrowserManager;
-import AndreeaG.utils.FileUtils;
+import AndreeaG.utils.fileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -20,11 +20,9 @@ public class DemoQaWindow {
         try {
             clickOnNewWindowMessage();
         } catch (NoSuchElementException e) {
-            ;
-            FileUtils.takeScreenshot(driver, "no such element");
+            fileUtils.takeScreenshot(driver, "no such element");
         } finally {
-            driver.close();
-        }
+            closeBrowser();        }
     }
 
     public static void navigateToDemoQAWindowPage() {
@@ -108,7 +106,3 @@ public class DemoQaWindow {
         System.out.println("Browser closed!");
     }
 }
-
-
-
-

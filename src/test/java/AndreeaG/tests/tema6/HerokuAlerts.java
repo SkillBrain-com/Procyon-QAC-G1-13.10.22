@@ -1,10 +1,10 @@
 package AndreeaG.tests.tema6;
 
 import AndreeaG.driver.BrowserManager;
-import AndreeaG.utils.FileUtils;
+import AndreeaG.utils.fileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchWindowException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -27,16 +27,11 @@ public class HerokuAlerts {
             closeBrowser();
 
         } catch (NoSuchElementException e) {
-            FileUtils.takeScreenshot(driver, "alert");
-        } catch (NoSuchWindowException e) {
-            FileUtils.takeScreenshot(driver, "alert");
-
+            fileUtils.takeScreenshot(driver, "alert");
         } finally {
-            //closeBrowser();
+            closeBrowser();
         }
     }
-
-
 
     public static void navigateToHerokuHomePage() {
         driver = BrowserManager.createChromeDriver();
@@ -93,9 +88,3 @@ public class HerokuAlerts {
             System.out.println("Am inchis browserul!");
         }
     }
-
-
-
-
-
-

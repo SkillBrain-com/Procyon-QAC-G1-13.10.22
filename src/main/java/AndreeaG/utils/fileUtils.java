@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.io.IOException;
 
-public class FileUtils {
+public class fileUtils {
 
     public static void takeScreenshot(ChromeDriver driver, String fileName) {
 
@@ -21,8 +21,6 @@ public class FileUtils {
         }
        }
 
-    public static void copyFile(File source, File file) {
-    }
 }
 
 
