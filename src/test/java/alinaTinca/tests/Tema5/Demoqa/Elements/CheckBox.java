@@ -1,6 +1,6 @@
 package alinaTinca.tests.Tema5.Demoqa.Elements;
 
-import AlinaTinca.driver.BrowserManager;
+import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
