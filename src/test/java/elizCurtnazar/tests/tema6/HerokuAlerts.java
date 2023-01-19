@@ -34,10 +34,10 @@ public class HerokuAlerts {
 //            FileUtils.copyFile(file, destinationFile);
 
         } finally {
-            driver.close();
+            closeBrowser();
             System.out.println("Am inchis pagina de pe blocul de finally");
         }
-        closeBrowser();
+
 
 //        EXEMPLU DIN ORE
 //        navigateToHerokuHomePage();

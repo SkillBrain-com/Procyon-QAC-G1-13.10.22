@@ -86,8 +86,9 @@ public class HerokuForms {
 
     public static void chooseFile() {
         WebElement file = driver.findElement(By.name("filename"));
-        file.sendKeys("D:\\git procyon\\Procyon-QAC-G1-13.10.22\\src\\test\\java\\elizCurtnazar\\tests\\tema6\\HerokuFormsFile.txt");
-        System.out.println("Am adaugat un fisier.");
+        fileUpload.sendKeys(System.getProperty("user.dir") + "\\src\\test\\java\\elizCurtnazar\\tests\\tema6\\HerokuFormsFile.txt");
+//        file.sendKeys("D:\\git procyon\\Procyon-QAC-G1-13.10.22\\src\\test\\java\\elizCurtnazar\\tests\\tema6\\HerokuFormsFile.txt");
+//        System.out.println("Am adaugat un fisier.");
     }
 
     public static void checkboxItems() {

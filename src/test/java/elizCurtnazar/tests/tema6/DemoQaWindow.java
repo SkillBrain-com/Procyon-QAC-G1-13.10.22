@@ -34,10 +34,10 @@ public class DemoQaWindow {
 //            File destinationFile = new File("C:\\Users\\Deniz\\IdeaProjects\\poza3.png");
 //            FileUtils.copyFile(file, destinationFile);
         } finally {
-            driver.close();
+            closeBrowser();
             System.out.println("Am inchis pagina de pe blocu de finally.");
         }
-        closeBrowser();
+
 
     }
 
