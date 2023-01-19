@@ -2,15 +2,15 @@ package bogdanSandu.tests.Tema7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
+
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class CURAHealthcare extends TestBase {
 
@@ -35,9 +35,18 @@ public class CURAHealthcare extends TestBase {
         if(type.equals("valid")){
             wait.until(ExpectedConditions.presenceOfElementLocated(
                     By.cssSelector("#appointment > div > div > div > h2")));
+            driver.getCurrentUrl();
         }else
             wait.until(ExpectedConditions.presenceOfElementLocated(
                     By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")));
+    }
+
+   @DataProvider (name = "appointmentData")
+    public Object [][] appointmentInfo(){
+            return new Object[][]{
+            {"01.01.2023","Test",true},
+            {"01.01","Test",false},
+        };
     }
 
     public void completeDetailsForAppointment(){
@@ -46,14 +55,12 @@ public class CURAHealthcare extends TestBase {
         driver.findElement(By.id("btn-login")).click();
     }
 
-    @Test(dataProvider = "data-set")
-    public void makeAppointment(String type, String username, String password){
+    @Test(dataProvider = "appointmentData")
+    public void makeAppointment(String data, String comment, boolean pass){
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
         WebElement appointment = driver.findElement(By.id("btn-make-appointment"));
         appointment.click();
-//        completeDetailsForAppointment();
-        driver.findElement(By.id("txt-username")).sendKeys(username);
-        driver.findElement(By.id("txt-password")).sendKeys(password);
-        driver.findElement(By.id("btn-login")).click();
+        completeDetailsForAppointment();
         Select facility = new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByVisibleText("Tokyo CURA Healthcare Center");
         System.out.println("Select facility");
@@ -64,15 +71,18 @@ public class CURAHealthcare extends TestBase {
         medicare.click();
         System.out.println("Select program for healtcare");
         WebElement visitDate = driver.findElement(By.id("txt_visit_date"));
-
+        visitDate.sendKeys(data);
         System.out.println("Select date");
-        WebElement comment = driver.findElement(By.id("txt_comment"));
-        comment.sendKeys("Test comment");
+        WebElement commentField = driver.findElement(By.id("txt_comment"));
+        commentField.sendKeys(comment);
         System.out.println("Complete on comment section");
         WebElement bookAppointment = driver.findElement(By.id("btn-book-appointment"));
         bookAppointment.click();
         System.out.println("Clisk on booking appointment");
-
+        if (pass){
+            assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
+        }else {
+            assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary",driver.getCurrentUrl());
+        }
     }
-
 }
