@@ -1,8 +1,8 @@
 package bogdanSandu.tests.Tema6;
 
 
-import BogdanSandu.driver.BrowserManager;
-import BogdanSandu.utils.FileUtils;
+import bogdanSandu.driver.BrowserManager;
+import bogdanSandu.utils.FileUtils;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

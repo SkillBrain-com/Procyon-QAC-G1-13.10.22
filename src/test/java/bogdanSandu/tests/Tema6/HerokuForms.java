@@ -1,7 +1,7 @@
 package bogdanSandu.tests.Tema6;
 
-import BogdanSandu.driver.BrowserManager;
-import BogdanSandu.utils.FileUtils;
+import bogdanSandu.driver.BrowserManager;
+import bogdanSandu.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
