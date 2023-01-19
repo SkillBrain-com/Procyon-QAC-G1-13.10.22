@@ -58,10 +58,10 @@ public class MakeAppoitmentScenariosTests extends BaseTest{
         //find the hospital readmission checkbox
         applyForHospitalButton.click();
         //click on it
-//        List<WebElement> healthcareProgramButton = driver.findElements(By.id("radio_program_medicaid"));
-//        //find the Healthcare Program radiobuttons
-//        healthcareProgramButton.get(1).click();
-//        //click on it
+        List<WebElement> healthcareProgramButton = driver.findElements(By.cssSelector("label[for='chk_hospotal_readmission']"));
+        //find the Healthcare Program radiobuttons
+        healthcareProgramButton.get(1);
+        //click on it
         WebElement chooseData = driver.findElement(By.id("txt_visit_date"));
         //find the Visit Date field
         chooseData.sendKeys(data);
