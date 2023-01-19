@@ -1,4 +1,4 @@
-package ioanadroflorea.tests.Tema6;
+package ioanandroflorea.tests.Tema6;
 
 import ioanandroflorea.driver.BrowserManager;
 import ioanandroflorea.utils.FileUtils;
@@ -6,7 +6,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import java.io.File;
 import java.io.IOException;
 
 public class HerokuAlerts {

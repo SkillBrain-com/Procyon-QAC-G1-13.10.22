@@ -1,4 +1,4 @@
-package ioananadroflorea.tests.Tema5;
+package ioanandroflorea.tests.Tema5;
 
 import ioanaandroflorea.driver.BrowserManager;
 import org.openqa.selenium.By;
