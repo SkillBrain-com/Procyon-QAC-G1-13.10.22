@@ -1,4 +1,4 @@
-package BogdanSandu.utils;
+package bogdanSandu.utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
