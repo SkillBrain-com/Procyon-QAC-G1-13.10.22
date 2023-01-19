@@ -11,14 +11,15 @@ import java.util.Set;
 
 public class DemoQaWindow {
 
+    static ChromeDriver driver = null;
+
     public static void main(String[] args) throws InterruptedException {
-        ChromeDriver driver = BrowserManager.createDriver();
-        navigateToDemoQAWindowPage(driver);
-        clickOnNewTabButton(driver);
-        clickOnNewWindowButton(driver);
-        clickOnNewWindowMessageButton(driver);
+        navigateToDemoQAWindowPage();
+        clickOnNewTabButton();
+        clickOnNewWindowButton();
+        clickOnNewWindowMessageButton();
         try {
-            clickOnNonExistingTable(driver);
+            clickOnNonExistingTable();
         } catch (NoSuchElementException e) {
             FileUtils.takeScreenshot(driver, "ElementNotFound");
             System.out.println("Nu s-a gasit elementul pe pagina. S-a salvat un screenshot.");
@@ -27,12 +28,13 @@ public class DemoQaWindow {
         }
     }
 
-    public static void navigateToDemoQAWindowPage(ChromeDriver driver) {
+    public static void navigateToDemoQAWindowPage() {
+        driver = BrowserManager.createDriver();
         driver.get("https://demoqa.com/browser-windows");
         System.out.println("Am deschis Demo QA window page!");
     }
 
-    public static void clickOnNewTabButton(ChromeDriver driver) {
+    public static void clickOnNewTabButton() {
         //get parent tab id
         String parentTab = driver.getWindowHandle();
         WebElement newTabButton = driver.findElement(By.id("tabButton"));
@@ -55,7 +57,7 @@ public class DemoQaWindow {
         System.out.println("Am facut click pe new tab button.");
     }
 
-    public static void clickOnNewWindowButton(ChromeDriver driver) {
+    public static void clickOnNewWindowButton() {
         String parentWindow = driver.getWindowHandle();
         WebElement newWindowButton = driver.findElement(By.id("windowButton"));
         newWindowButton.click();
@@ -72,7 +74,7 @@ public class DemoQaWindow {
         System.out.println("Am facut click pe New Window.");
     }
 
-    public static void clickOnNewWindowMessageButton(ChromeDriver driver) throws InterruptedException {
+    public static void clickOnNewWindowMessageButton() throws InterruptedException {
         String parentWindow = driver.getWindowHandle();
         WebElement newWindowMessageButton = driver.findElement(By.id("messageWindowButton"));
         newWindowMessageButton.click();
@@ -90,7 +92,7 @@ public class DemoQaWindow {
         System.out.println("Am facut click pe New Window Message.");
     }
 
-    public static void clickOnNonExistingTable(ChromeDriver driver) {
+    public static void clickOnNonExistingTable() {
         WebElement nonExistingTable = driver.findElement(By.id("table"));
         nonExistingTable.click();
     }
