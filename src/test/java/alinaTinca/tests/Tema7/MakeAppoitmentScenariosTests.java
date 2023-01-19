@@ -54,11 +54,11 @@ public class MakeAppoitmentScenariosTests extends BaseTest{
         //find the Facility Field
         multipleSelectValueFacility.selectByValue("Tokyo CURA Healthcare Center");
         //select the first item
-//        WebElement applyForHospitalButton = driver.findElement(By.id("checkbox-inline"));
-//        //find the hospital readmission checkbox
-//        applyForHospitalButton.click();
-//        //click on it
-//        List<WebElement> healthcareProgramButton = driver.findElements(By.xpath("//input[@value='Medicaid']"));
+        WebElement applyForHospitalButton = driver.findElement(By.className("checkbox-inline"));
+        //find the hospital readmission checkbox
+        applyForHospitalButton.click();
+        //click on it
+//        List<WebElement> healthcareProgramButton = driver.findElements(By.id("radio_program_medicaid"));
 //        //find the Healthcare Program radiobuttons
 //        healthcareProgramButton.get(1).click();
 //        //click on it
