@@ -1,4 +1,4 @@
-package elizCurtnazar.tests;
+package elizCurtnazar.tests.tema5;
 
 import elizCurtnazar.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -1,4 +1,4 @@
-package elizCurtnazar.tests;
+package elizCurtnazar.tests.tema5;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
