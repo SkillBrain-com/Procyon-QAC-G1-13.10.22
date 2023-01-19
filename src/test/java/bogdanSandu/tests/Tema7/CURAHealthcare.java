@@ -85,4 +85,19 @@ public class CURAHealthcare extends TestBase {
             assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary",driver.getCurrentUrl());
         }
     }
+
+    @Test
+    public void redirectToLogin() {
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+        driver.findElement(By.cssSelector("#btn-make-appointment")).click();
+        assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login",driver.getCurrentUrl());
+    }
+
+    @Test
+    public void homeButton() {
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+        driver.findElement(By.cssSelector("#menu-toggle")).click();
+        driver.findElement(By.cssSelector("#sidebar-wrapper > ul > li:nth-child(3) > a")).click();
+        assertEquals("https://katalon-demo-cura.herokuapp.com/", driver.getCurrentUrl());
+    }
 }
