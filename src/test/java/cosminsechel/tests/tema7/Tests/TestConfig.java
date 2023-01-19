@@ -2,7 +2,7 @@ package cosminsechel.tests.tema7.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-import sorinfoca.driver.BrowserManager;
+import cosminsechel.driver.BrowserManager;
 
 public class TestConfig {
 
@@ -37,12 +37,12 @@ public class TestConfig {
     @BeforeMethod
     public void setup() {
         System.out.println("Before method");
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("After method");
-        driver.quit();
+        BrowserManager.closeChromeDriver(driver);
     }
 }
