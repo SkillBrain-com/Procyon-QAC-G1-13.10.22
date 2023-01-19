@@ -1,4 +1,4 @@
-package ioanadroflorea.tests.Tema6;
+package ioanandroflorea.tests.Tema6;
 
 import ioanandroflorea.driver.BrowserManager;
 import ioanandroflorea.utils.FileUtils;
