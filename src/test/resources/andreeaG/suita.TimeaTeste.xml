@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suita.TimeaTeste" verbose="1" >
+    <test name="AltTest1" >
+
+        <groups>
+            <run>
+                <include name="Grupul 1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="andreeaG.Teorie.timeaSB.TimeaSB" />
+        </classes>
+    </test>
+
+    <test name="DemoTests">
+        <classes>
+            <class name="andreeaG.Teorie.timeaSB.TimeaSB"/>
+            <class name="andreeaG.Teorie.timeaSB.TimeaAnnotations">
+                <methods>
+                    <exclude name="test2"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

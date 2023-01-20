@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TimeaTeste" verbose="1" >
+    <test name="TesteTeorie din explicatie Timea" >
+        <groups>
+            <run>
+                <exclude name="brokenTests"  />
+                <include name="Grupul 1"  />
+            </run>
+        </groups>
+<classes>
+    <class name="andreeaG.Teorie.timeaSB.TimeaSB"></class>
+</classes>
+
+    </test>
+
+</suite>
