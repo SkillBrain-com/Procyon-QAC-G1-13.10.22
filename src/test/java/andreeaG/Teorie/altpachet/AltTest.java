@@ -1,13 +1,12 @@
 package andreeaG.Teorie.altpachet;
 
+
 import org.testng.annotations.Test;
 
 public class AltTest {
 
-        @Test
-        public void writeMessage() {
-            System.out.println("mesajul meu din AltTest Class");
-        }
-
+    @Test(groups = "brokenTests")
+    public void writeMessage() {
+        System.out.println("Mesajul meu din AltTest class!");
     }
-
+}
