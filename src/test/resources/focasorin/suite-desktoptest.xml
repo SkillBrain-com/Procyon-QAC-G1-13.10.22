@@ -1,0 +1,15 @@
+<suite name="Desktop Test Suite">
+    <test name="Desktop Test">
+        <classes>
+            <class name="sorinfoca.Tests.Tema8.TestPage.TestPages">
+                <methods>
+                    <include name="testBasicAjax"/>
+                    <include name="testJavaScriptRedirect"/>
+                    <include name="testRefresh"/>
+                    <include name="testDynamicButtonsSimple"/>
+                    <include name="testDynamicButtonsDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
