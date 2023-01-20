@@ -55,7 +55,8 @@ public class HerokuForms {
         }
         public static void fileUploadDetails () {
             WebElement fileUpload = driver.findElement(By.name("filename"));
-            System.out.println("Imediat ma prind si cum sa pun un atasament");
+            fileUpload.sendKeys("C:\\Users\\pmada\\IdeaProjects\\Git-Procyon\\Procyon-QAC-G1-13.10.22\\Logs\\formularul-completat.png");
+            System.out.println("Am incarcat poza cu fomrularul-completat");
         }
         public static void checkBoxesDetails () {
             List<WebElement> checkboxes = driver.findElements(By.name("checkboxes[]"));
