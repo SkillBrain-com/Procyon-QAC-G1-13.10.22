@@ -77,11 +77,11 @@ public class CuraHealthcareLoginTests extends BaseTest {
         commentText.sendKeys(comm);
         WebElement bookAppointment = driver.findElement(By.id("btn-book-appointment"));
         bookAppointment.click();
-//        if (testpass) {
-//            assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
-//        } else {
-//            Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
-//        }
+        if (test) {
+            assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
+        } else {
+            Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
+        }
     }
     @Test
     public void returnToHomePageFromMenu() {
