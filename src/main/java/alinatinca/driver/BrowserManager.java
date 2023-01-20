@@ -25,7 +25,7 @@ public class BrowserManager {
 
     public static ChromeDriver createChromeDriverForMobile(){
         Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Iphone X");
+        mobileEmulation.put("deviceName", "iPhone X");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         return new ChromeDriver(chromeOptions);
