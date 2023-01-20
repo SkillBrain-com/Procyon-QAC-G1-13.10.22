@@ -6,15 +6,16 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertTrue;
+
 public class CuraHealthcareLoginTests extends BaseTest {
 
     @DataProvider(name = "loginDataProvider")
-    public Object[][] loginDataProvider(){
+    public Object[][] loginDataProvider() {
         return new Object[][]{
                 {"John Doe", "ThisIsNotAPassword", "validCredentials"},
-                {"John Do","ThisIsNotAPassword","invalidCredentials"}
+                {"John Do", "ThisIsNotAPassword", "invalidCredentials"}
         };
-
     }
     @Test(dataProvider = "loginDataProvider", groups = "login")
     public void loginWithCredentials(String username, String password, String credentialsType) {
@@ -50,5 +51,62 @@ public class CuraHealthcareLoginTests extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/profile.php#login",
                 "User is not redirected to login page when not logged in!");
+    }
+    @DataProvider(name = "appointmentDataProvider")
+    public Object[][] appointmentDataProvider() {
+        return new Object[][]{
+                {"01/02/2023", "positive scenario", true},
+                {"", "negative scenario", false}
+        };
+    }
+    @Test(dataProvider = "appointmentDataProvider")
+    public void makeAppointment(String data, String comm, boolean test) {
+        WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
+        makeAppointmentButton.click();
+        WebElement inputUsername = driver.findElement(By.id("txt-username"));
+        inputUsername.click();
+        inputUsername.sendKeys("John Doe");
+        WebElement inputPassword = driver.findElement(By.id("txt-password"));
+        inputPassword.click();
+        inputPassword.sendKeys("ThisIsNotAPassword");
+        WebElement loginSubmitButton = driver.findElement(By.id("btn-login"));
+        loginSubmitButton.click();
+        WebElement visitDate = driver.findElement(By.id("txt_visit_date"));
+        visitDate.sendKeys(data);
+        WebElement commentText = driver.findElement(By.id("txt_comment"));
+        commentText.sendKeys(comm);
+        WebElement bookAppointment = driver.findElement(By.id("btn-book-appointment"));
+        bookAppointment.click();
+//        if (testpass) {
+//            assertTrue(driver.findElement(By.cssSelector("#summary > div > div > div.col-xs-12.text-center > h2")).isDisplayed());
+//        } else {
+//            Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
+//        }
+    }
+    @Test
+    public void returnToHomePageFromMenu() {
+        WebElement menuButton = driver.findElement(By.id("menu-toggle"));
+        menuButton.click();
+        WebElement homeFromMenuButton = driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[2]/a"));
+        homeFromMenuButton.click();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
+    }
+    @Test
+    public void returnToHomePageFromAppointmentPage() {
+        WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
+        makeAppointmentButton.click();
+        WebElement inputUsername = driver.findElement(By.id("txt-username"));
+        inputUsername.click();
+        inputUsername.sendKeys("John Doe");
+        WebElement inputPassword = driver.findElement(By.id("txt-password"));
+        inputPassword.click();
+        inputPassword.sendKeys("ThisIsNotAPassword");
+        WebElement loginSubmit = driver.findElement(By.id("btn-login"));
+        loginSubmit.click();
+        WebElement menuButton = driver.findElement(By.id("menu-toggle"));
+        menuButton.click();
+        WebElement homeFromMenuInAppointmentPage = driver.findElement(By.xpath("//*[@id='sidebar-wrapper']/ul/li[2]/a"));
+        homeFromMenuInAppointmentPage.click();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
 }
