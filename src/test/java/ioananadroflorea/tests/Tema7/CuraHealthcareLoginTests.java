@@ -17,6 +17,7 @@ public class CuraHealthcareLoginTests extends BaseTest {
                 {"John Do", "ThisIsNotAPassword", "invalidCredentials"}
         };
     }
+
     @Test(dataProvider = "loginDataProvider", groups = "login")
     public void loginWithCredentials(String username, String password, String credentialsType) {
         WebElement menu = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
@@ -52,6 +53,7 @@ public class CuraHealthcareLoginTests extends BaseTest {
                 "https://katalon-demo-cura.herokuapp.com/profile.php#login",
                 "User is not redirected to login page when not logged in!");
     }
+
     @DataProvider(name = "appointmentDataProvider")
     public Object[][] appointmentDataProvider() {
         return new Object[][]{
@@ -59,6 +61,7 @@ public class CuraHealthcareLoginTests extends BaseTest {
                 {"", "negative scenario", false}
         };
     }
+
     @Test(dataProvider = "appointmentDataProvider")
     public void makeAppointment(String data, String comm, boolean test) {
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
@@ -83,6 +86,7 @@ public class CuraHealthcareLoginTests extends BaseTest {
             Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
         }
     }
+
     @Test
     public void returnToHomePageFromMenu() {
         WebElement menuButton = driver.findElement(By.id("menu-toggle"));
@@ -91,6 +95,7 @@ public class CuraHealthcareLoginTests extends BaseTest {
         homeFromMenuButton.click();
         Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
+
     @Test
     public void returnToHomePageFromAppointmentPage() {
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
