@@ -1,6 +1,7 @@
-package andreeaG.teorie.seleniumBasics3;
+package andreeaG.teorie.seleniumBasics3.Test;
 
 import andreeaG.driver.BrowserManager;
+import andreeaG.teorie.seleniumBasics3.PageObject.EmagHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

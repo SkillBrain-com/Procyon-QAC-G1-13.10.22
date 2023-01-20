@@ -1,4 +1,4 @@
-package andreeaG.teorie.seleniumBasics3;
+package andreeaG.teorie.seleniumBasics3.PageObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
