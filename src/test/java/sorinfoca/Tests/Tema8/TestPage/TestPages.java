@@ -1,13 +1,9 @@
 package sorinfoca.Tests.Tema8.TestPage;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import sorinfoca.Tests.Tema8.pages.*;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -15,20 +11,6 @@ import static org.testng.AssertJUnit.assertTrue;
 public class TestPages {
     private static WebDriver driver;
     private static WebDriverWait wait;
-
-    private ChromeOptions mobileEmulation() {
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Nexus 5");
-        ChromeOptions mobileOptions = new ChromeOptions();
-        mobileOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-        return mobileOptions;
-    }
-
-    private ChromeOptions desktopEmulation() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        return options;
-    }
 
     @Test(groups = "desktop")
     public void testBasicAjax() {

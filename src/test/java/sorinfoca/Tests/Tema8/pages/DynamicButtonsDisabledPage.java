@@ -23,4 +23,4 @@ public class DynamicButtonsDisabledPage {
         return driver.findElement(By.id("message")).getText();
     }
 }
-}
+
