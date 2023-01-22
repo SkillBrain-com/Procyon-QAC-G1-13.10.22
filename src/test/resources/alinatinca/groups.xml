@@ -6,9 +6,9 @@
         <groups>
             <run>
                 <include name="login"  />
-                <include name="redirect"  />
+                <exclude name="redirect"  />
                 <include name="app"  />
-                <include name="homePage"  />
+                <exclude name="homePage"  />
             </run>
         </groups>
         <classes>
