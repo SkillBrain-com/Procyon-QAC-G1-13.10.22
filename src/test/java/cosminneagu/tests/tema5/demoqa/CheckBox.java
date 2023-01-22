@@ -1,4 +1,4 @@
-package cosminneagu.teorie.demoqa;
+package cosminneagu.tests.tema5.demoqa;
 
 import cosminneagu.driver.BrowserManager;
 import org.openqa.selenium.By;
@@ -13,8 +13,8 @@ public class CheckBox {
     public static void goToTheCheckBox(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/checkbox");
-        WebElement CheckBoxSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[2]/span"));
-        CheckBoxSection.click();
+        WebElement checkBoxSection = driver.findElement(By.xpath("//span[text()='Check Box']"));
+        checkBoxSection.click();
         WebElement checkBox = driver.findElement(By.cssSelector(".rct-checkbox svg[stroke='currentColor']"));
         checkBox.click();
         driver.quit();

@@ -1,4 +1,4 @@
-package cosminneagu.teorie.demoqa;
+package cosminneagu.tests.tema5.demoqa;
 
 import cosminneagu.driver.BrowserManager;
 import org.openqa.selenium.By;
@@ -18,8 +18,8 @@ public class BrokenLinksImages {
 
         driver.get("https://demoqa.com/broken");
 
-        WebElement BrokenLinksImagesSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[7]/span"));
-        BrokenLinksImagesSection.click();
+        WebElement brokenLinksImagesSection = driver.findElement(By.xpath("//div[@Class='element-list collapse show']/ul/li[7]"));
+        brokenLinksImagesSection.click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
         WebElement lastLink = driver.findElement(By.xpath("//a[@href='http://the-internet.herokuapp.com/status_codes/500']"));

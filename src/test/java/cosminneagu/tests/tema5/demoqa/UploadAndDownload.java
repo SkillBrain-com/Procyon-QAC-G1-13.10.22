@@ -1,4 +1,4 @@
-package cosminneagu.teorie.demoqa;
+package cosminneagu.tests.tema5.demoqa;
 
 import cosminneagu.driver.BrowserManager;
 import org.openqa.selenium.By;
