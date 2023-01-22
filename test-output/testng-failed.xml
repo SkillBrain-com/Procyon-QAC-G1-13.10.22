@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Procyon-QAC-G1-13.10.22(failed)">
     <classes>
-      <class name="AndreeaG.tests.tema7.CuraHealthCareLogin">
+      <class name="andreeaG.tests.tema7.CuraHealthCareLogin">
         <methods>
+          <include name="HomeButtonwhenLoggedInHistory"/>
           <include name="initChromeBrowser"/>
-          <include name="makeAppointmentPage" invocation-numbers="1"/>
+          <include name="quitDriver"/>
         </methods>
-      </class> <!-- AndreeaG.tests.tema7.CuraHealthCareLogin -->
+      </class> <!-- andreeaG.tests.tema7.CuraHealthCareLogin -->
     </classes>
   </test> <!-- Procyon-QAC-G1-13.10.22(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

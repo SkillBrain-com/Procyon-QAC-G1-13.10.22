@@ -5,15 +5,17 @@
     <groups>
       <run>
         <include name="redirect"/>
+        <include name="Home Button"/>
         <exclude name="login"/>
       </run>
     </groups>
     <classes>
-      <class name="AndreeaG.tests.tema7.CuraHealthCareLogin">
+      <class name="andreeaG.tests.tema7.CuraHealthCareLogin">
         <methods>
           <include name="verifyRedirectToLoginWhenUserNotLoggedIn"/>
+          <include name="HomeButtonwhenLoggedInHistory"/>
         </methods>
-      </class> <!-- AndreeaG.tests.tema7.CuraHealthCareLogin -->
+      </class> <!-- andreeaG.tests.tema7.CuraHealthCareLogin -->
     </classes>
   </test> <!-- CuraHealthTests(failed) -->
 </suite> <!-- Failed suite [GroupsTestNG] -->

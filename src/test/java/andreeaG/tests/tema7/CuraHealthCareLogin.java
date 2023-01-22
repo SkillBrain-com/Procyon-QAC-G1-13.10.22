@@ -1,4 +1,4 @@
-package AndreeaG.tests.tema7;
+package andreeaG.tests.tema7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -54,7 +54,6 @@ public class CuraHealthCareLogin extends BaseTest {
     }
 
 
-
     @DataProvider(name = "appointmentData")
     public Object[][] appointmentData() {
         return new Object[][]{
@@ -62,11 +61,12 @@ public class CuraHealthCareLogin extends BaseTest {
                 {"05/10/1990", "Unsuccessful", false}
         };
     }
-    @Test (dataProvider = "appointmentData")
-    public void makeAppointmentPage (String data, String comment, boolean testSuccess){
+
+    @Test(dataProvider = "appointmentData")
+    public void makeAppointmentPage(String data, String comment, boolean testSuccess) {
         WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
         makeAppointmentButton.click();
-        WebElement userNameBox= driver.findElement(By.id("txt-username"));
+        WebElement userNameBox = driver.findElement(By.id("txt-username"));
         userNameBox.sendKeys("John Doe");
         WebElement passwordBox = driver.findElement(By.id("txt-password"));
         passwordBox.sendKeys("ThisIsNotAPassword");
@@ -86,14 +86,48 @@ public class CuraHealthCareLogin extends BaseTest {
         commentBox.sendKeys(comment);
         WebElement apptBookButton = driver.findElement(By.id("btn-book-appointment"));
         apptBookButton.click();
-        if(testSuccess) {
+        if (testSuccess) {
             Assert.assertEquals(driver.getCurrentUrl(),
                     "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
                     "Appointment booked!");
-        }else{
+        } else {
             Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary", driver.getCurrentUrl());
         }
+    }
 
+    @Test(groups = "Home Button")
+    public void HomeButtonwhenLoggedInHistory() {
+        driver.get("https://katalon-demo-cura.herokuapp.com/history.php#history");
+        WebElement purpleRightButton = driver.findElement(By.id("menu-toggle"));
+        purpleRightButton.click();
+        WebElement homeButton = driver.findElement(By.xpath(
+                "//a[normalize-space()='Home']"));
+        homeButton.click();
+        Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/",driver.getCurrentUrl());
+    }
+
+    @Test(groups = "Home Button")
+    public void HomeButtonwhenLoggedInProfile() {
+        driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#profile");
+        WebElement purpleRightButton = driver.findElement(By.id("menu-toggle"));
+        purpleRightButton.click();
+        WebElement homeButton = driver.findElement(By.xpath("//a[normalize-space()='Home']"));
+        homeButton.click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://katalon-demo-cura.herokuapp.com/",
+                "Redirected to Home page!");
+    }
+
+    @Test(groups = "Home Button")
+    public void HomeButtonFromMakeAppointmentPage() {
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+        WebElement purpleRightButton = driver.findElement(By.id("menu-toggle"));
+        purpleRightButton.click();
+        WebElement homeButton = driver.findElement(By.cssSelector("nav[id='sidebar-wrapper'] li:nth-child(2) a:nth-child(1)"));
+        homeButton.click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://katalon-demo-cura.herokuapp.com/",
+                "Redirected to Home page!");
     }
 
 }

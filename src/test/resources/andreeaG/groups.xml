@@ -5,12 +5,14 @@
     <test name="CuraHealthTests">
         <groups>
             <run>
-                <exclude name="login"  />
+                <include name="login"  />
                 <include name="redirect"  />
+                <include name="Home Button"/>
             </run>
         </groups>
         <classes>
-            <class name="AndreeaG.tests.tema7.CuraHealthCareLogin"/>
+            <class name="andreeaG.tests.tema7.CuraHealthCareLogin"/>
+            <class name="andreeaG.tests.tema7.ReturnToHomeButton"/>
         </classes>
     </test>
 </suite>

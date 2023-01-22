@@ -4,7 +4,8 @@
 
     <test name="CuraHealthTests">
         <classes>
-            <class name="AndreeaG.tests.tema7.CuraHealthCareLogin"/>
+            <class name="andreeaG.tests.tema7.CuraHealthCareLogin"/>
+            <class name="andreeaG.tests.tema7.ReturnToHomeButton"/>
         </classes>
     </test>
 </suite>

@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_Suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +103,17 @@
                     <div class="method-list-content passed suite-Default_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_Suite" title="AndreeaG.tests.tema7.CuraHealthCareLogin" class="method navigator-link" hash-for-method="makeAppointmentPage(03/02/2023, Successful Appointment, true)">makeAppointmentPage(03/02/2023, Successful Appointment, true)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_Suite" title="andreeaG.tests.tema7.ReturnToHomeButton" class="method navigator-link" hash-for-method="HomeButtonFromMakeAppointmentPage">HomeButtonFromMakeAppointmentPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_Suite" title="AndreeaG.tests.tema7.CuraHealthCareLogin" class="method navigator-link" hash-for-method="makeAppointmentPage(05/10/1990, Unsuccessful, false)">makeAppointmentPage(05/10/1990, Unsuccessful, false)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_Suite" title="andreeaG.tests.tema7.ReturnToHomeButton" class="method navigator-link" hash-for-method="HomeButtonwhenLoggedInHistory">HomeButtonwhenLoggedInHistory</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_Suite" title="andreeaG.tests.tema7.ReturnToHomeButton" class="method navigator-link" hash-for-method="HomeButtonwhenLoggedInProfile">HomeButtonwhenLoggedInProfile</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_Suite -->
@@ -126,23 +131,28 @@
           <div class="suite-Default_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">AndreeaG.tests.tema7.CuraHealthCareLogin</span>
+              <span class="class-name">andreeaG.tests.tema7.ReturnToHomeButton</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="makeAppointmentPage(03/02/2023, Successful Appointment, true)">
-                  </a> <!-- makeAppointmentPage(03/02/2023, Successful Appointment, true) -->
-                  <span class="method-name">makeAppointmentPage</span>
-                  <span class="parameters">(03/02/2023,Successful Appointment,true)</span>
+                  <a name="HomeButtonFromMakeAppointmentPage">
+                  </a> <!-- HomeButtonFromMakeAppointmentPage -->
+                  <span class="method-name">HomeButtonFromMakeAppointmentPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="makeAppointmentPage(05/10/1990, Unsuccessful, false)">
-                  </a> <!-- makeAppointmentPage(05/10/1990, Unsuccessful, false) -->
-                  <span class="method-name">makeAppointmentPage</span>
-                  <span class="parameters">(05/10/1990,Unsuccessful,false)</span>
+                  <a name="HomeButtonwhenLoggedInHistory">
+                  </a> <!-- HomeButtonwhenLoggedInHistory -->
+                  <span class="method-name">HomeButtonwhenLoggedInHistory</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="HomeButtonwhenLoggedInProfile">
+                  </a> <!-- HomeButtonwhenLoggedInProfile -->
+                  <span class="method-name">HomeButtonwhenLoggedInProfile</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,11 +169,7 @@
 &lt;suite name=&quot;Default Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Procyon-QAC-G1-13.10.22&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;AndreeaG.tests.tema7.CuraHealthCareLogin&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;makeAppointmentPage&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- AndreeaG.tests.tema7.CuraHealthCareLogin --&gt;
+      &lt;class name=&quot;andreeaG.tests.tema7.ReturnToHomeButton&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Procyon-QAC-G1-13.10.22 --&gt;
 &lt;/suite&gt; &lt;!-- Default Suite --&gt;
@@ -187,6 +193,22 @@
             <span class="header-content">Groups for Default Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Home Button</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">HomeButtonFromMakeAppointmentPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">HomeButtonwhenLoggedInHistory</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">HomeButtonwhenLoggedInProfile</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_Suite" class="panel">
@@ -203,20 +225,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'makeAppointmentPage')
-data.setCell(0, 2, 'AndreeaG.tests.tema7.CuraHealthCareLogin')
-data.setCell(0, 3, 1805);
+data.setCell(0, 1, 'HomeButtonwhenLoggedInHistory')
+data.setCell(0, 2, 'andreeaG.tests.tema7.ReturnToHomeButton')
+data.setCell(0, 3, 641);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'makeAppointmentPage')
-data.setCell(1, 2, 'AndreeaG.tests.tema7.CuraHealthCareLogin')
-data.setCell(1, 3, 1556);
+data.setCell(1, 1, 'HomeButtonwhenLoggedInProfile')
+data.setCell(1, 2, 'andreeaG.tests.tema7.ReturnToHomeButton')
+data.setCell(1, 3, 543);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'HomeButtonFromMakeAppointmentPage')
+data.setCell(2, 2, 'andreeaG.tests.tema7.ReturnToHomeButton')
+data.setCell(2, 3, 454);
 window.suiteTableData['Default_Suite']= { tableData: data, tableDiv: 'times-div-Default_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_Suite">
               </div> <!-- times-div-Default_Suite -->
             </div> <!-- times-div -->
@@ -231,18 +257,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">AndreeaG.tests.tema7.CuraHealthCareLogin</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">loginWithCredentials</span>
-                <br/>
-                <span class="ignored-method-name">verifyRedirectToLoginWhenUserNotLoggedIn</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_Suite" class="panel">
@@ -251,23 +268,43 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">AndreeaG.tests.tema7.CuraHealthCareLogin</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">andreeaG.tests.tema7.ReturnToHomeButton</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">initChromeBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">makeAppointmentPage(03/02/2023, Successful Appointment, true)</span>
-                <span class="method-start">4079 ms</span>
+                <span class="method-name">HomeButtonFromMakeAppointmentPage</span>
+                <span class="method-start">3840 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quitDriver</span>
+                <span class="method-start">4295 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">initChromeBrowser</span>
-                <span class="method-start">5637 ms</span>
+                <span class="method-start">4507 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">makeAppointmentPage(05/10/1990, Unsuccessful, false)</span>
-                <span class="method-start">8245 ms</span>
+                <span class="method-name">HomeButtonwhenLoggedInHistory</span>
+                <span class="method-start">7013 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quitDriver</span>
+                <span class="method-start">7655 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">initChromeBrowser</span>
+                <span class="method-start">7853 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">HomeButtonwhenLoggedInProfile</span>
+                <span class="method-start">10306 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quitDriver</span>
+                <span class="method-start">10849 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
