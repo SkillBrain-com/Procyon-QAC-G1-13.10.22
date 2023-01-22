@@ -17,7 +17,7 @@ public class BaseTest {
 
     }
 
-    @AfterMethod(groups = "redirect")
+    @AfterMethod(groups = "redirect", alwaysRun = true) //alwaysRun = true. metoda mereu da quit, chiar daca e vreo erroare
     public void quitDriver() {
         if(driver!=null) {
             driver.quit();
