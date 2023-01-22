@@ -28,11 +28,8 @@ public class HerokuBasicAjaxExamplePageTests {
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
         System.out.println("Heroku Basic Ajax Example page has been opened on desktop!");
 
-        HerokuBasicAjaxExamplePage herokuBasicAjaxExamplePage = PageFactory.initElements(driver, HerokuBasicAjaxExamplePage.class);
-//incomplet
         Select chooseCategory = new Select(driver.findElement(By.id("combo1")));
         chooseCategory.selectByValue("1");
-
 
         System.out.println("Web item has been selected!");
 
@@ -53,6 +50,7 @@ public class HerokuBasicAjaxExamplePageTests {
 
         driver.quit();
     }
+
 
     @Test(groups = "Test for mobile")
     public void getWebCategoryButtonForMobile(){
