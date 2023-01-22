@@ -8,11 +8,12 @@ import sorinfoca.Tests.Tema8.pages.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class TestPages {
+public class TestPages extends BaseTest {
+
     private static WebDriver driver;
     private static WebDriverWait wait;
 
-    @Test(groups = "desktop")
+    @Test(groups = {"desktop", "mobile"})
     public void testBasicAjax() {
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
         basicAjaxPage.get();
@@ -21,7 +22,7 @@ public class TestPages {
         assertTrue(basicAjaxPage.isOptionSelected("Option 2"));
     }
 
-    @Test(groups = "desktop")
+    @Test(groups = {"desktop", "mobile"})
     public void testJavaScriptRedirect() {
         JavaScriptRedirectPage javascriptRedirectPage = new JavaScriptRedirectPage(driver);
         javascriptRedirectPage.get();
@@ -30,14 +31,14 @@ public class TestPages {
         driver.close();
     }
 
-    @Test(groups = "desktop")
+    @Test(groups = {"desktop", "mobile"})
     public void testRefresh() {
         RefreshPage refreshPage = new RefreshPage(driver);
         refreshPage.get();
         assertTrue(refreshPage.isIdTimestamp());
     }
 
-    @Test(groups = "desktop")
+    @Test(groups = {"desktop", "mobile"})
     public void testDynamicButtonsSimple() {
         DynamicButtonsSimplePage dynamicButtonsSimplePage = new DynamicButtonsSimplePage(driver);
         dynamicButtonsSimplePage.get();
@@ -45,7 +46,7 @@ public class TestPages {
         assertEquals(dynamicButtonsSimplePage.getDisplayedMessage(), "All buttons have been clicked!");
     }
 
-    @Test(groups = "desktop")
+    @Test(groups = {"desktop", "mobile"})
     public void testDynamicButtonsDisabled() {
         DynamicButtonsDisabledPage dynamicButtonsDisabledPage = new DynamicButtonsDisabledPage(driver);
         dynamicButtonsDisabledPage.get();

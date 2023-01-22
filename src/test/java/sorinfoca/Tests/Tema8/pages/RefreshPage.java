@@ -13,7 +13,7 @@ public class RefreshPage {
         this.driver = driver;
     }
 
-    public void get() {
+    public void goToPage() {
         driver.get("https://testpages.herokuapp.com/styled/refresh");
     }
 
@@ -26,5 +26,8 @@ public class RefreshPage {
         long currentTimestamp = Instant.now().getEpochSecond();
         long delta = currentTimestamp - idTimestamp;
         return delta <= 2;
+    }
+
+    public void get() {
     }
 }

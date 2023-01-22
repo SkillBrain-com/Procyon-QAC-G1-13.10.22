@@ -3,15 +3,15 @@ package sorinfoca.Tests.Tema8.TestPage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class BaseTest {
 
-    private WebDriverWait wait;
-
-    private Object mobileEmulation() {
-        return null;
-    }
+    protected WebDriverWait wait;
 
     protected ChromeDriver driver = null;
 
@@ -22,15 +22,22 @@ public class BaseTest {
     }
 
     @BeforeMethod(groups = "desktop")
-    public void setUpDesktop() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        public void setUpDesktop() {
+           driver = new ChromeDriver();
+           driver.manage().window().maximize();
     }
 
     @BeforeMethod(groups = "mobile")
-    public void setUpMobile() {
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("mobileEmulation", mobileEmulation());
-        driver = new ChromeDriver(options);
+        public void setUpMobile() {
+            Map<String, String> mobileEmulation = new HashMap<>();
+            mobileEmulation.put("deviceName", "Nexus 5");
+            ChromeOptions options = new ChromeOptions();
+            options.setExperimentalOption("mobileEmulation", mobileEmulation);
+            driver = new ChromeDriver(options);
+        }
+
+    @AfterMethod(alwaysRun = true)
+        public void tearDown() {
+           driver.quit();
     }
 }

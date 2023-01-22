@@ -11,7 +11,7 @@ public class DynamicButtonsDisabledPage {
         this.driver = driver;
     }
 
-    public void get() {
+    public void goToPage() {
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
     }
 
@@ -21,6 +21,9 @@ public class DynamicButtonsDisabledPage {
 
     public String getDisplayedMessage() {
         return driver.findElement(By.id("message")).getText();
+    }
+
+    public void get() {
     }
 }
 

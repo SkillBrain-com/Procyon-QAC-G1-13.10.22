@@ -11,7 +11,7 @@ public class BasicAjaxPage {
         this.driver = driver;
     }
 
-    public void get() {
+    public void goToPage() {
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
     }
 
@@ -31,6 +31,9 @@ public class BasicAjaxPage {
 
     public boolean isOptionSelected(String option) {
         return getSelectedOption().equals(option);
+    }
+
+    public void get() {
     }
 }
 

@@ -1,8 +1,8 @@
-<suite name="Desktop Test Suite">
-    <test name="Desktop Test">
+<suite name="Mobile Test Suite">
+    <test name="Mobile Test">
         <groups>
             <run>
-                <exclude name="mobile"/>
+                <include name="mobile"/>
             </run>
         </groups>
         <classes>

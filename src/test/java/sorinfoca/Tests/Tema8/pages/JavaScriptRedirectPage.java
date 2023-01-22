@@ -13,7 +13,7 @@ public class JavaScriptRedirectPage {
         this.driver = driver;
     }
 
-    public void get() {
+    public void goToPage() {
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
     }
 
@@ -27,5 +27,8 @@ public class JavaScriptRedirectPage {
         handles.remove(originalHandle);
         String newTab = handles.iterator().next();
         driver.switchTo().window(newTab);
+    }
+
+    public void get() {
     }
 }

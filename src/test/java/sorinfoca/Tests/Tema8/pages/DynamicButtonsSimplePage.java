@@ -11,7 +11,7 @@ public class DynamicButtonsSimplePage {
         this.driver = driver;
     }
 
-    public void get() {
+    public void goToPage() {
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html");
     }
 
@@ -21,5 +21,8 @@ public class DynamicButtonsSimplePage {
 
     public String getDisplayedMessage() {
         return driver.findElement(By.id("message")).getText();
+    }
+
+    public void get() {
     }
 }
