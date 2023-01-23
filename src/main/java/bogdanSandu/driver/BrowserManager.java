@@ -11,6 +11,8 @@ public class BrowserManager {
 
     public static ChromeDriver createDriverAndGetPage() {
         WebDriverManager.chromedriver().setup();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("start-maximized");
         return new ChromeDriver();
     }
 
