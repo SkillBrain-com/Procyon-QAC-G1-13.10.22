@@ -8,13 +8,45 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default Suite</th></tr>
-<tr><td><a href="#t0">Procyon-QAC-G1-13.10.22</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">11,077</td><td></td><td></td></tr>
+<tr><th colspan="8">SuitaTestNG</th></tr>
+<tr><td><a href="#t0">CuraHealthTests</a></td><td class="num">10</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">38,546</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Procyon-QAC-G1-13.10.22 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">andreeaG.tests.tema7.ReturnToHomeButton</td><td><a href="#m0">HomeButtonFromMakeAppointmentPage</a></td><td rowspan="1">1674393660595</td><td rowspan="1">454</td></tr><tr class="passedeven"><td><a href="#m1">HomeButtonwhenLoggedInHistory</a></td><td rowspan="1">1674393663768</td><td rowspan="1">641</td></tr><tr class="passedeven"><td><a href="#m2">HomeButtonwhenLoggedInProfile</a></td><td rowspan="1">1674393667061</td><td rowspan="1">543</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">SuitaTestNG</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CuraHealthTests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">andreeaG.tests.tema7.CuraHealthCareLogin</td><td><a href="#m0">loginWithCredentials</a></td><td rowspan="1">1674482352880</td><td rowspan="1">35</td></tr><tr><th colspan="4">CuraHealthTests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="7">andreeaG.tests.tema7.CuraHealthCareLogin</td><td><a href="#m1">homeButtonFromMakeAppointmentPage</a></td><td rowspan="1">1674482343459</td><td rowspan="1">471</td></tr><tr class="passedeven"><td><a href="#m2">homeButtonWhenLoggedInHistory</a></td><td rowspan="1">1674482346840</td><td rowspan="1">666</td></tr><tr class="passedeven"><td><a href="#m3">homeButtonWhenLoggedInProfile</a></td><td rowspan="1">1674482350264</td><td rowspan="1">575</td></tr><tr class="passedeven"><td><a href="#m4">loginWithCredentials</a></td><td rowspan="1">1674482355544</td><td rowspan="1">1032</td></tr><tr class="passedeven"><td><a href="#m5">makeAppointmentPage</a></td><td rowspan="2">1674482359201</td><td rowspan="2">1604</td></tr><tr class="passedeven"><td><a href="#m6">makeAppointmentPage</a></td></tr><tr class="passedeven"><td><a href="#m7">verifyRedirectToLoginWhenUserNotLoggedIn</a></td><td rowspan="1">1674482367652</td><td rowspan="1">347</td></tr><tr class="passedodd"><td rowspan="3">andreeaG.tests.tema7.ReturnToHomeButton</td><td><a href="#m8">homeButtonFromMakeAppointmentPage</a></td><td rowspan="1">1674482370615</td><td rowspan="1">474</td></tr><tr class="passedodd"><td><a href="#m9">homeButtonWhenLoggedInHistory</a></td><td rowspan="1">1674482373668</td><td rowspan="1">601</td></tr><tr class="passedodd"><td><a href="#m10">homeButtonWhenLoggedInProfile</a></td><td rowspan="1">1674482376883</td><td rowspan="1">593</td></tr></tbody>
 </table>
-<h2>Procyon-QAC-G1-13.10.22</h2><h3 id="m0">andreeaG.tests.tema7.ReturnToHomeButton#HomeButtonFromMakeAppointmentPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">andreeaG.tests.tema7.ReturnToHomeButton#HomeButtonwhenLoggedInHistory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">andreeaG.tests.tema7.ReturnToHomeButton#HomeButtonwhenLoggedInProfile</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>CuraHealthTests</h2><h3 id="m0">andreeaG.tests.tema7.CuraHealthCareLogin#loginWithCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>John Doe</td><td>ThisIsNotAPassword</td><td>validCredentials</td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=108.0.5359.126)
+Build info: version: &apos;4.7.2&apos;, revision: &apos;4d4020c3b7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f32d461fb3a48205cefc3eb7f694332d, findElement {using=css selector, value=.btn-dark.btn-lg.toggle}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\redan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56009}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56009/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f32d461fb3a48205cefc3eb7f694332d
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:343)
+	at andreeaG.tests.tema7.CuraHealthCareLogin.loginWithCredentials(CuraHealthCareLogin.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">andreeaG.tests.tema7.CuraHealthCareLogin#homeButtonFromMakeAppointmentPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">andreeaG.tests.tema7.CuraHealthCareLogin#homeButtonWhenLoggedInHistory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">andreeaG.tests.tema7.CuraHealthCareLogin#homeButtonWhenLoggedInProfile</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">andreeaG.tests.tema7.CuraHealthCareLogin#loginWithCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>John Do</td><td>ThisIsNotAPassword</td><td>invalidCredentials</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">andreeaG.tests.tema7.CuraHealthCareLogin#makeAppointmentPage</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>03/02/2023</td><td>Successful Appointment</td><td>true</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">andreeaG.tests.tema7.CuraHealthCareLogin#makeAppointmentPage</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>05/10/1990</td><td>Unsuccessful</td><td>false</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">andreeaG.tests.tema7.CuraHealthCareLogin#verifyRedirectToLoginWhenUserNotLoggedIn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">andreeaG.tests.tema7.ReturnToHomeButton#homeButtonFromMakeAppointmentPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">andreeaG.tests.tema7.ReturnToHomeButton#homeButtonWhenLoggedInHistory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">andreeaG.tests.tema7.ReturnToHomeButton#homeButtonWhenLoggedInProfile</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

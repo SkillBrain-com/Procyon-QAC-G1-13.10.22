@@ -13,9 +13,20 @@
       <class name="andreeaG.tests.tema7.CuraHealthCareLogin">
         <methods>
           <include name="verifyRedirectToLoginWhenUserNotLoggedIn"/>
-          <include name="HomeButtonwhenLoggedInHistory"/>
+          <include name="homeButtonFromMakeAppointmentPage"/>
+          <include name="homeButtonWhenLoggedInHistory"/>
+          <include name="quitDriver"/>
+          <include name="homeButtonWhenLoggedInProfile"/>
         </methods>
       </class> <!-- andreeaG.tests.tema7.CuraHealthCareLogin -->
+      <class name="andreeaG.tests.tema7.ReturnToHomeButton">
+        <methods>
+          <include name="homeButtonFromMakeAppointmentPage"/>
+          <include name="homeButtonWhenLoggedInProfile"/>
+          <include name="homeButtonWhenLoggedInHistory"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- andreeaG.tests.tema7.ReturnToHomeButton -->
     </classes>
   </test> <!-- CuraHealthTests(failed) -->
 </suite> <!-- Failed suite [GroupsTestNG] -->

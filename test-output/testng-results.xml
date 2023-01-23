@@ -1,54 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="10" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-22T15:20:56 EET" name="Default Suite" finished-at="2023-01-22T15:21:07 EET" duration-ms="11077">
+  <suite started-at="2023-01-23T15:58:59 EET" name="SuitaTestNG" finished-at="2023-01-23T15:59:37 EET" duration-ms="38546">
     <groups>
+      <group name="redirect">
+        <method signature="CuraHealthCareLogin.verifyRedirectToLoginWhenUserNotLoggedIn()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" name="verifyRedirectToLoginWhenUserNotLoggedIn" class="andreeaG.tests.tema7.CuraHealthCareLogin"/>
+      </group> <!-- redirect -->
       <group name="Home Button">
-        <method signature="ReturnToHomeButton.HomeButtonFromMakeAppointmentPage()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" name="HomeButtonFromMakeAppointmentPage" class="andreeaG.tests.tema7.ReturnToHomeButton"/>
-        <method signature="ReturnToHomeButton.HomeButtonwhenLoggedInHistory()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" name="HomeButtonwhenLoggedInHistory" class="andreeaG.tests.tema7.ReturnToHomeButton"/>
-        <method signature="ReturnToHomeButton.HomeButtonwhenLoggedInProfile()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" name="HomeButtonwhenLoggedInProfile" class="andreeaG.tests.tema7.ReturnToHomeButton"/>
+        <method signature="CuraHealthCareLogin.homeButtonFromMakeAppointmentPage()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" name="homeButtonFromMakeAppointmentPage" class="andreeaG.tests.tema7.CuraHealthCareLogin"/>
+        <method signature="CuraHealthCareLogin.homeButtonWhenLoggedInHistory()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" name="homeButtonWhenLoggedInHistory" class="andreeaG.tests.tema7.CuraHealthCareLogin"/>
+        <method signature="CuraHealthCareLogin.homeButtonWhenLoggedInProfile()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" name="homeButtonWhenLoggedInProfile" class="andreeaG.tests.tema7.CuraHealthCareLogin"/>
+        <method signature="ReturnToHomeButton.homeButtonFromMakeAppointmentPage()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" name="homeButtonFromMakeAppointmentPage" class="andreeaG.tests.tema7.ReturnToHomeButton"/>
+        <method signature="ReturnToHomeButton.homeButtonWhenLoggedInHistory()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" name="homeButtonWhenLoggedInHistory" class="andreeaG.tests.tema7.ReturnToHomeButton"/>
+        <method signature="ReturnToHomeButton.homeButtonWhenLoggedInProfile()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" name="homeButtonWhenLoggedInProfile" class="andreeaG.tests.tema7.ReturnToHomeButton"/>
       </group> <!-- Home Button -->
+      <group name="login">
+        <method signature="CuraHealthCareLogin.loginWithCredentials(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" name="loginWithCredentials" class="andreeaG.tests.tema7.CuraHealthCareLogin"/>
+      </group> <!-- login -->
     </groups>
-    <test started-at="2023-01-22T15:20:56 EET" name="Procyon-QAC-G1-13.10.22" finished-at="2023-01-22T15:21:07 EET" duration-ms="11077">
+    <test started-at="2023-01-23T15:58:59 EET" name="CuraHealthTests" finished-at="2023-01-23T15:59:37 EET" duration-ms="38546">
       <class name="andreeaG.tests.tema7.ReturnToHomeButton">
-        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:20:56 EET" name="initChromeBrowser" finished-at="2023-01-22T15:21:00 EET" duration-ms="3839" status="PASS">
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:28 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:30 EET" duration-ms="2419" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initChromeBrowser -->
-        <test-method signature="HomeButtonFromMakeAppointmentPage()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:00 EET" name="HomeButtonFromMakeAppointmentPage" finished-at="2023-01-22T15:21:01 EET" duration-ms="454" status="PASS">
+        <test-method signature="homeButtonFromMakeAppointmentPage()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:30 EET" name="homeButtonFromMakeAppointmentPage" finished-at="2023-01-23T15:59:31 EET" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- HomeButtonFromMakeAppointmentPage -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:01 EET" name="quitDriver" finished-at="2023-01-22T15:21:01 EET" duration-ms="209" status="PASS">
+        </test-method> <!-- homeButtonFromMakeAppointmentPage -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:31 EET" name="quitDriver" finished-at="2023-01-23T15:59:31 EET" duration-ms="178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:01 EET" name="initChromeBrowser" finished-at="2023-01-22T15:21:03 EET" duration-ms="2506" status="PASS">
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:31 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:33 EET" duration-ms="2399" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initChromeBrowser -->
-        <test-method signature="HomeButtonwhenLoggedInHistory()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:03 EET" name="HomeButtonwhenLoggedInHistory" finished-at="2023-01-22T15:21:04 EET" duration-ms="641" status="PASS">
+        <test-method signature="homeButtonWhenLoggedInHistory()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:33 EET" name="homeButtonWhenLoggedInHistory" finished-at="2023-01-23T15:59:34 EET" duration-ms="601" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- HomeButtonwhenLoggedInHistory -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:04 EET" name="quitDriver" finished-at="2023-01-22T15:21:04 EET" duration-ms="197" status="PASS">
+        </test-method> <!-- homeButtonWhenLoggedInHistory -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:34 EET" name="quitDriver" finished-at="2023-01-23T15:59:34 EET" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:04 EET" name="initChromeBrowser" finished-at="2023-01-22T15:21:07 EET" duration-ms="2452" status="PASS">
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:34 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:36 EET" duration-ms="2425" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initChromeBrowser -->
-        <test-method signature="HomeButtonwhenLoggedInProfile()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:07 EET" name="HomeButtonwhenLoggedInProfile" finished-at="2023-01-22T15:21:07 EET" duration-ms="543" status="PASS">
+        <test-method signature="homeButtonWhenLoggedInProfile()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:36 EET" name="homeButtonWhenLoggedInProfile" finished-at="2023-01-23T15:59:37 EET" duration-ms="593" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- HomeButtonwhenLoggedInProfile -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@37918c79]" started-at="2023-01-22T15:21:07 EET" name="quitDriver" finished-at="2023-01-22T15:21:07 EET" duration-ms="180" status="PASS">
+        </test-method> <!-- homeButtonWhenLoggedInProfile -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.ReturnToHomeButton@4e91d63f]" started-at="2023-01-23T15:59:37 EET" name="quitDriver" finished-at="2023-01-23T15:59:37 EET" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
       </class> <!-- andreeaG.tests.tema7.ReturnToHomeButton -->
-    </test> <!-- Procyon-QAC-G1-13.10.22 -->
-  </suite> <!-- Default Suite -->
+      <class name="andreeaG.tests.tema7.CuraHealthCareLogin">
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:58:59 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:03 EET" duration-ms="4271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="homeButtonFromMakeAppointmentPage()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:03 EET" name="homeButtonFromMakeAppointmentPage" finished-at="2023-01-23T15:59:03 EET" duration-ms="471" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homeButtonFromMakeAppointmentPage -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:03 EET" name="quitDriver" finished-at="2023-01-23T15:59:04 EET" duration-ms="268" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:04 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:06 EET" duration-ms="2637" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="homeButtonWhenLoggedInHistory()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:06 EET" name="homeButtonWhenLoggedInHistory" finished-at="2023-01-23T15:59:07 EET" duration-ms="666" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homeButtonWhenLoggedInHistory -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:07 EET" name="quitDriver" finished-at="2023-01-23T15:59:07 EET" duration-ms="231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:07 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:10 EET" duration-ms="2526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="homeButtonWhenLoggedInProfile()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:10 EET" name="homeButtonWhenLoggedInProfile" finished-at="2023-01-23T15:59:10 EET" duration-ms="575" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homeButtonWhenLoggedInProfile -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:10 EET" name="quitDriver" finished-at="2023-01-23T15:59:11 EET" duration-ms="200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:11 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:12 EET" duration-ms="1836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="loginWithCredentials(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:12 EET" name="loginWithCredentials" data-provider="loginDataProvider" finished-at="2023-01-23T15:59:12 EET" duration-ms="35" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[John Doe]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ThisIsNotAPassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[validCredentials]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=108.0.5359.126)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f32d461fb3a48205cefc3eb7f694332d, findElement {using=css selector, value=.btn-dark.btn-lg.toggle}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\redan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56009}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56009/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f32d461fb3a48205cefc3eb7f694332d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=108.0.5359.126)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f32d461fb3a48205cefc3eb7f694332d, findElement {using=css selector, value=.btn-dark.btn-lg.toggle}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\redan\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56009}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56009/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f32d461fb3a48205cefc3eb7f694332d
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:343)
+at andreeaG.tests.tema7.CuraHealthCareLogin.loginWithCredentials(CuraHealthCareLogin.java:22)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithCredentials -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:12 EET" name="quitDriver" finished-at="2023-01-23T15:59:13 EET" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:13 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:15 EET" duration-ms="2448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="loginWithCredentials(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:15 EET" name="loginWithCredentials" data-provider="loginDataProvider" finished-at="2023-01-23T15:59:16 EET" duration-ms="1032" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[John Do]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ThisIsNotAPassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalidCredentials]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithCredentials -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:16 EET" name="quitDriver" finished-at="2023-01-23T15:59:16 EET" duration-ms="200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:16 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:19 EET" duration-ms="2423" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="makeAppointmentPage(java.lang.String,java.lang.String,boolean)[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:19 EET" name="makeAppointmentPage" data-provider="appointmentData" finished-at="2023-01-23T15:59:20 EET" duration-ms="1604" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[03/02/2023]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Successful Appointment]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makeAppointmentPage -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:20 EET" name="quitDriver" finished-at="2023-01-23T15:59:20 EET" duration-ms="193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:21 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:23 EET" duration-ms="2378" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="makeAppointmentPage(java.lang.String,java.lang.String,boolean)[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:23 EET" name="makeAppointmentPage" data-provider="appointmentData" finished-at="2023-01-23T15:59:24 EET" duration-ms="1601" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[05/10/1990]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Unsuccessful]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makeAppointmentPage -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:24 EET" name="quitDriver" finished-at="2023-01-23T15:59:25 EET" duration-ms="290" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="initChromeBrowser()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:25 EET" name="initChromeBrowser" finished-at="2023-01-23T15:59:27 EET" duration-ms="2382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initChromeBrowser -->
+        <test-method signature="verifyRedirectToLoginWhenUserNotLoggedIn()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:27 EET" name="verifyRedirectToLoginWhenUserNotLoggedIn" finished-at="2023-01-23T15:59:27 EET" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRedirectToLoginWhenUserNotLoggedIn -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:andreeaG.tests.tema7.CuraHealthCareLogin@37918c79]" started-at="2023-01-23T15:59:28 EET" name="quitDriver" finished-at="2023-01-23T15:59:28 EET" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- andreeaG.tests.tema7.CuraHealthCareLogin -->
+    </test> <!-- CuraHealthTests -->
+  </suite> <!-- SuitaTestNG -->
 </testng-results>
