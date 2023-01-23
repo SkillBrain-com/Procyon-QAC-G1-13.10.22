@@ -3,9 +3,9 @@
 <suite name="SuitaTestNGHomework7" verbose="1" >
     <test name="CuraHealthcarePageTests" >
         <classes>
-            <class name="alinaTinca.tests.Tema7.CuraHealthcareLoginTests" />
-            <class name="alinaTinca.tests.Tema7.MakeAppoitmentScenariosTests"/>
-            <class name="alinaTinca.tests.Tema7.BackToHomePageTests"/>
+            <class name="alinatinca.tests.Tema7.CuraHealthcareLoginTests" />
+            <class name="alinatinca.tests.Tema7.MakeAppoitmentScenariosTests"/>
+            <class name="alinatinca.tests.Tema7.BackToHomePageTests"/>
         </classes>
     </test>
 </suite>

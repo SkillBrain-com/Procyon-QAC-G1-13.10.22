@@ -1,4 +1,4 @@
-package alinaTinca.tests.Tema5.Demoqa.Elements;
+package alinatinca.tests.Tema5.Demoqa.Elements;
 
 import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;

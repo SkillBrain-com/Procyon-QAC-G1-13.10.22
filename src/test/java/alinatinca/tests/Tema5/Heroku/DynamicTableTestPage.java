@@ -1,4 +1,4 @@
-package alinaTinca.tests.Tema5.Heroku;
+package alinatinca.tests.Tema5.Heroku;
 
 import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;

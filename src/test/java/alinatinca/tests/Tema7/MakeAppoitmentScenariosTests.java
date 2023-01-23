@@ -1,4 +1,4 @@
-package alinaTinca.tests.Tema7;
+package alinatinca.tests.Tema7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,8 +6,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class MakeAppoitmentScenariosTests extends BaseTest{
 
