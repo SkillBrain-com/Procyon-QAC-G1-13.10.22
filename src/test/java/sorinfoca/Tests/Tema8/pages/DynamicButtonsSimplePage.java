@@ -11,11 +11,9 @@ public class DynamicButtonsSimplePage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public DynamicButtonsSimplePage(ChromeDriver driver) {
-    }
-
     public void JavaScriptRedirectPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public void goToPage() {

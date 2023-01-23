@@ -2,6 +2,7 @@ package sorinfoca.Tests.Tema8.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
 
@@ -11,6 +12,7 @@ public class JavaScriptRedirectPage {
 
     public JavaScriptRedirectPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public void goToPage() {

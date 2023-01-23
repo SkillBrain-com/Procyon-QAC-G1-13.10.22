@@ -8,12 +8,12 @@ import static org.testng.AssertJUnit.assertTrue;
 public class TestPages extends BaseTest {
 
     @Test(groups = {"desktop", "mobile"})
-    public void BasicAjaxPage() {
+    public void testBasicAjaxPage() {
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
         basicAjaxPage.goToPage();
-        basicAjaxPage.selectOption("id");
+        basicAjaxPage.selectOption("Server");
         basicAjaxPage.clickCodeItInButton();
-        assertTrue(basicAjaxPage.isOptionSelected("language_id"));
+        assertTrue(basicAjaxPage.isOptionSelected("Java"));
     }
 
     @Test(groups = {"desktop", "mobile"})

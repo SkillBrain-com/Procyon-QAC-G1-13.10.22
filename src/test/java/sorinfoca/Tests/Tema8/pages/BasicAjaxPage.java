@@ -12,6 +12,7 @@ public class BasicAjaxPage {
 
     public BasicAjaxPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public void goToPage() {
@@ -19,17 +20,17 @@ public class BasicAjaxPage {
     }
 
     public void selectOption(String option) {
-        Select select = new Select(driver.findElement(By.name("id")));
+        Select select = new Select(driver.findElement(By.name("combo1")));
         select.selectByVisibleText(option);
     }
 
     public void clickCodeItInButton() {
-        driver.findElement(By.name("language_id")).click();
+        driver.findElement(By.name("code")).click();
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector("body > div > div.centered > form > input.styled-click-button"), "#combo2 > option:nth-child(3)"));
     }
 
     public String getSelectedOption() {
-        Select select = new Select(driver.findElement(By.name("language_id")));
+        Select select = new Select(driver.findElement(By.name("combo2")));
         return select.getFirstSelectedOption().getText();
     }
 
@@ -37,4 +38,3 @@ public class BasicAjaxPage {
         return getSelectedOption().equals(option);
     }
 }
-
