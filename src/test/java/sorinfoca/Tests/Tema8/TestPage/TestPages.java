@@ -12,8 +12,9 @@ public class TestPages extends BaseTest {
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
         basicAjaxPage.goToPage();
         basicAjaxPage.selectOption("Server");
+        basicAjaxPage.selectLanguage("Java");
         basicAjaxPage.clickCodeItInButton();
-        assertTrue(basicAjaxPage.isOptionSelected("Java"));
+        assertEquals(basicAjaxPage.getSelectedOption(),"23");
     }
 
     @Test(groups = {"desktop", "mobile"})

@@ -6,7 +6,8 @@
             </run>
         </groups>
         <classes>
-            <class name="sorinfoca.Tests.Tema8.TestPage.TestPages"/>
+            <class name="sorinfoca.Tests.Tema8.TestPage.TestPages">
+            </class>
         </classes>
     </test>
 </suite>
