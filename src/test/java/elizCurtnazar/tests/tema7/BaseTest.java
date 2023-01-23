@@ -24,6 +24,4 @@ public class BaseTest {
             System.out.println("Executed after method");
         }
     }
-
-
 }

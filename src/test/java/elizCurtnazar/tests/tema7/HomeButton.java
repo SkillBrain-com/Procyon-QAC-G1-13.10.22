@@ -13,32 +13,33 @@ public class HomeButton extends BaseTest {
         menu.click();
         WebElement homeButton = driver.findElement(By.xpath("/html/body/nav/ul/li[2]/a"));
         homeButton.click();
-        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
-
+//        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
 
     @Test
     public void loginPage() {
         driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#login");
         goToTheHomePage();
-
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://katalon-demo-cura.herokuapp.com/",
+                "Nu sa accesat Home page!");
     }
 
     @Test
     public void historyPage() {
         driver.get("https://katalon-demo-cura.herokuapp.com/history.php#history");
         goToTheHomePage();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://katalon-demo-cura.herokuapp.com/",
+                "Nu sa accesat Home page!");
     }
 
     @Test
     public void profilePage() {
         driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#profile");
         goToTheHomePage();
-        Assert.assertNotEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/", "!!ERROR!!");
-
-
-
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://katalon-demo-cura.herokuapp.com/",
+                "Nu sa accesat Home page!");
     }
-
-
 }

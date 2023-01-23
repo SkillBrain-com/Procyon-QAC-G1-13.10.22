@@ -12,7 +12,7 @@ import java.util.List;
 public class MakeAppointmentScenariosTest extends BaseTest{
 
     @Test
-    public void clickMakeAppointmentButton() {
+    public void clickMakeAppointmentButton(String expectedResult, String actualResults) {
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
         makeAppointmentButton.click();
         WebElement usernameInput = driver.findElement(By.name("username"));
@@ -39,9 +39,16 @@ public class MakeAppointmentScenariosTest extends BaseTest{
         System.out.println(inputComment.getText());
         WebElement bookAppointmentButton = driver.findElement(By.cssSelector("#btn-book-appointment"));
         bookAppointmentButton.click();
-        Assert.assertEquals(driver.getCurrentUrl(),
-                    "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
-                    "Make Appointment page is failed!");
+        String url = " https://katalon-demo-cura.herokuapp.com/#appointment";
+         if(expectedResult.equals(actualResults)) {   Assert.assertTrue(driver.getCurrentUrl().equals(url),
+                    "Appointment Confirmation page is not displayed!"); }
+        } else { Assert.assertEquals(driver.getCurrentUrl(),
+                 "https://katalon-demo-cura.herokuapp.com/profile.php#login");
+
+
+//        Assert.assertEquals(driver.getCurrentUrl(),
+//                    "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
+//                    "Make Appointment page is failed!");
 
     }
 }
