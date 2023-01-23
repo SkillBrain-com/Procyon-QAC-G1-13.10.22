@@ -16,7 +16,7 @@ public class RefreshPage {
     }
 
     public void goToPage() {
-        driver.get("https://testpages.herokuapp.com/styled/refresh.html");
+        driver.get("https://testpages.herokuapp.com/styled/refresh");
     }
 
     public boolean isIdTimestamp() {
