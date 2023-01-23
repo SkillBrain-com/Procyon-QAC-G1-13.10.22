@@ -35,9 +35,9 @@ public class ElementAttributesExamples {
 
         System.out.println("The second paragraph has the following content: " + secondParagraph.getText());
 
-        WebElement AtitleFromTheSecondParagraph= driver.findElement(By.id("domattributes"));
+        WebElement atitleFromTheSecondParagraph= driver.findElement(By.id("domattributes"));
 
-        System.out.println("The title located under of the second paragraph has the following content: " + AtitleFromTheSecondParagraph.getText());
+        System.out.println("The title located under of the second paragraph has the following content: " + atitleFromTheSecondParagraph.getText());
 
         WebElement titleFromTheThirdParagraph = driver.findElement(By.xpath("//h2[text()='Dynamic JavaScript Added']"));
 

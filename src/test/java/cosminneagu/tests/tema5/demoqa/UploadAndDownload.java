@@ -17,13 +17,13 @@ public class UploadAndDownload {
 
         driver.get("https://demoqa.com/upload-download");
 
-        WebElement UploadAndDownloadSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[8]/span"));
+        WebElement uploadAndDownloadSection = driver.findElement(By.xpath("//span[text()='Upload and Download"));
 
-        UploadAndDownloadSection.click();
+        uploadAndDownloadSection.click();
 
-        WebElement DownloadButton = driver.findElement(By.cssSelector("a[id='downloadButton']"));
+        WebElement downloadButton = driver.findElement(By.cssSelector("a[id='downloadButton']"));
 
-        DownloadButton.click();
+        downloadButton.click();
 
         driver.quit();
 

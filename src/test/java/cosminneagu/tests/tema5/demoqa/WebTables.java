@@ -18,13 +18,13 @@ public class WebTables {
 
         driver.get("https://demoqa.com/webtables");
 
-        WebElement WebTablesSection = driver.findElement(By.cssSelector("#item-3"));
+        WebElement webTablesSection = driver.findElement(By.cssSelector("#item-3"));
 
-        WebTablesSection.click();
+        webTablesSection.click();
 
-        WebElement AddButton = driver.findElement(By.cssSelector("#addNewRecordButton"));
+        WebElement addButton = driver.findElement(By.cssSelector("#addNewRecordButton"));
 
-        AddButton.click();
+        addButton.click();
 
         WebElement firstNameField = driver.findElement(By.cssSelector("input[placeholder='First Name']"));
 
@@ -62,9 +62,9 @@ public class WebTables {
 
         departmentField.sendKeys(department);
 
-        WebElement SubmitButton = driver.findElement(By.cssSelector("button[id='submit']"));
+        WebElement submitButton = driver.findElement(By.cssSelector("button[id='submit']"));
 
-        SubmitButton.click();
+        submitButton.click();
 
         WebElement deleteIcon = driver.findElement(By.cssSelector(" span[id='delete-record-4']"));
 
@@ -118,17 +118,17 @@ public class WebTables {
 
         inputDepartmentField.click();
 
-        WebElement ButtonSubmit = driver.findElement(By.cssSelector("button[type='submit']"));
+        WebElement buttonSubmit = driver.findElement(By.cssSelector("button[type='submit']"));
 
-        ButtonSubmit.click();
+        buttonSubmit.click();
 
-        WebElement TypeToSearchButton = driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
+        WebElement typeToSearchButton = driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
 
-        TypeToSearchButton.click();
+        typeToSearchButton.click();
 
-        TypeToSearchButton.sendKeys("Cierra");
+        typeToSearchButton.sendKeys("Cierra");
 
-        TypeToSearchButton.sendKeys(Keys.ENTER);
+        typeToSearchButton.sendKeys(Keys.ENTER);
 
         driver.quit();
 

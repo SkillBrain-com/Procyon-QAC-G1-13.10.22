@@ -15,10 +15,10 @@ public class TextBox {
     public static void goToTheTextBoxAndCheckIt(String fullNameInput, String EmailInput, String currentAddressInput, String permanentAddressInput) {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/text-box");
-        WebElement TextBoxSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[1]"));
-        TextBoxSection.click();
+        WebElement textBoxSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[1]"));
+        textBoxSection.click();
         WebElement fullNameField = driver.findElement(By.id("userName"));
-        WebElement EmailField = driver.findElement(By.id("userEmail"));
+        WebElement emailField = driver.findElement(By.id("userEmail"));
         WebElement currentAddressField = driver.findElement(By.id("currentAddress"));
 
         WebElement permanentAddressField = driver.findElement(By.id("permanentAddress"));
@@ -31,13 +31,13 @@ public class TextBox {
 
         fullNameField.sendKeys(Keys.TAB);
 
-        EmailField.click();
+        emailField.click();
 
-        EmailField.clear();
+        emailField.clear();
 
-        EmailField.sendKeys(EmailInput);
+        emailField.sendKeys(EmailInput);
 
-        EmailField.sendKeys(Keys.TAB);
+        emailField.sendKeys(Keys.TAB);
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");

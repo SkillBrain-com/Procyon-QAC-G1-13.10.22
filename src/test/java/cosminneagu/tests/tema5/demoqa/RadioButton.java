@@ -13,8 +13,8 @@ public class RadioButton {
     public static void goToTheRadioButton(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/radio-button");
-        WebElement RadioButtonSection = driver.findElement(By.cssSelector("#item-2"));
-        RadioButtonSection.click();
+        WebElement radioButtonSection = driver.findElement(By.cssSelector("#item-2"));
+        radioButtonSection.click();
         WebElement yesRadio = driver.findElement(By.cssSelector("label[for='yesRadio']"));
         yesRadio.click();
         System.out.println("The message displayed is: " + yesRadio.getText());

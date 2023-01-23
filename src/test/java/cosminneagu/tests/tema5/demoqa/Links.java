@@ -15,10 +15,10 @@ public class Links {
         ChromeDriver driver = BrowserManager.createChromeDriver();
 
         driver.get("https://demoqa.com/links");
-        WebElement LinksSection = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[6]"));
-        LinksSection.click();
-        WebElement CreatedLink = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/p[3]/a"));
-        CreatedLink.click();
+        WebElement linksSection = driver.findElement(By.xpath("//span[text()='Links']"));
+        linksSection.click();
+        WebElement createdLink = driver.findElement(By.xpath("//a[@id='created']"));
+        createdLink.click();
         driver.get("https://demoqa.com/links");
         driver.quit();
 
