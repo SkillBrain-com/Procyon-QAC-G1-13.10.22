@@ -19,7 +19,7 @@ public class BasicAjaxPage {
     }
 
     public void selectOption(String option) {
-        Select select = new Select(driver.findElement(By.name("combo1")));
+        Select select = new Select(driver.findElement(By.id("combo1")));
         select.selectByVisibleText(option);
     }
 
