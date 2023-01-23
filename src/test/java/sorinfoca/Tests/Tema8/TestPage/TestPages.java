@@ -2,7 +2,6 @@ package sorinfoca.Tests.Tema8.TestPage;
 
 import org.testng.annotations.Test;
 import sorinfoca.Tests.Tema8.pages.*;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
