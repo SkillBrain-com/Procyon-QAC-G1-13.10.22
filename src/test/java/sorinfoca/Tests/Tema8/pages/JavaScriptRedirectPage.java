@@ -24,8 +24,5 @@ public class JavaScriptRedirectPage {
     public void switchToNewTab() {
         String originalHandle = driver.getWindowHandle();
         Set<String> handles = driver.getWindowHandles();
-        handles.remove(originalHandle);
-        String newTab = handles.iterator().next();
-        driver.switchTo().window(newTab);
     }
 }

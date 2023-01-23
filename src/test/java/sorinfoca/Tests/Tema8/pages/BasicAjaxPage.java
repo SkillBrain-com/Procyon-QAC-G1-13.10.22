@@ -19,17 +19,17 @@ public class BasicAjaxPage {
     }
 
     public void selectOption(String option) {
-        Select select = new Select(driver.findElement(By.id("combo1")));
+        Select select = new Select(driver.findElement(By.name("id")));
         select.selectByVisibleText(option);
     }
 
     public void clickCodeItInButton() {
-        driver.findElement(By.name("combo2")).click();
+        driver.findElement(By.name("language_id")).click();
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector("body > div > div.centered > form > input.styled-click-button"), "#combo2 > option:nth-child(3)"));
     }
 
     public String getSelectedOption() {
-        Select select = new Select(driver.findElement(By.name("combo2")));
+        Select select = new Select(driver.findElement(By.name("language_id")));
         return select.getFirstSelectedOption().getText();
     }
 

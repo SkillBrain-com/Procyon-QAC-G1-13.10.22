@@ -27,9 +27,7 @@ public class DynamicButtonsSimplePage {
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
     }
 
-    public void switchToNewTab() {
-        for (String winHandle : driver.getWindowHandles()) {
-            driver.switchTo().window(winHandle);
-        }
+    public String getDisplayedMessage() {
+        return null;
     }
 }
