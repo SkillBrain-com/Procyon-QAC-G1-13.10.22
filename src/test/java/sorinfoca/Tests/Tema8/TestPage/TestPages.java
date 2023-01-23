@@ -45,8 +45,8 @@ public class TestPages extends BaseTest {
     public void DynamicButtonsDisabledPage() {
         DynamicButtonsDisabledPage dynamicButtonsDisabledPage = new DynamicButtonsDisabledPage(driver);
         dynamicButtonsDisabledPage.goToPage();
-        dynamicButtonsDisabledPage.clickAllButtons();
-        assertEquals(dynamicButtonsDisabledPage.getDisplayedMessage(), "All buttons have been clicked!");
+        dynamicButtonsDisabledPage.clickButtons();
+        assertEquals(dynamicButtonsDisabledPage.setButtonMessage(),"All Buttons Clicked");
     }
 }
 
