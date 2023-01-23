@@ -11,9 +11,9 @@ public class TestPages extends BaseTest {
     public void testBasicAjax() {
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
         basicAjaxPage.goToPage();
-        basicAjaxPage.selectOption("Option 2");
+        basicAjaxPage.selectOption("Option 3");
         basicAjaxPage.clickCodeItInButton();
-        assertTrue(basicAjaxPage.isOptionSelected("Option 2"));
+        assertTrue(basicAjaxPage.isOptionSelected("Option 3"));
     }
 
     @Test(groups = {"desktop", "mobile"})

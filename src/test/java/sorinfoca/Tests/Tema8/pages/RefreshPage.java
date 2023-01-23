@@ -12,7 +12,6 @@ public class RefreshPage {
 
     public RefreshPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 10);
     }
 
     public void goToPage() {

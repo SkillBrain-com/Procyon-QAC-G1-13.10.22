@@ -12,7 +12,6 @@ public class BasicAjaxPage {
 
     public BasicAjaxPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 10);
     }
 
     public void goToPage() {
