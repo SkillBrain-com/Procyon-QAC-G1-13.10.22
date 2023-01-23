@@ -13,7 +13,7 @@ public class HomeButton extends BaseTest {
         menu.click();
         WebElement homeButton = driver.findElement(By.xpath("/html/body/nav/ul/li[2]/a"));
         homeButton.click();
-//        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
 
     @Test
