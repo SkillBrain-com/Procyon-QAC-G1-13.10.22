@@ -23,6 +23,4 @@ public class DynamicButtonsSimplePage {
         return driver.findElement(By.id("message")).getText();
     }
 
-    public void get() {
-    }
 }

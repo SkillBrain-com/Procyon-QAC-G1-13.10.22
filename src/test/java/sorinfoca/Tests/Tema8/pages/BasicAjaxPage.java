@@ -33,7 +33,5 @@ public class BasicAjaxPage {
         return getSelectedOption().equals(option);
     }
 
-    public void get() {
-    }
 }
 

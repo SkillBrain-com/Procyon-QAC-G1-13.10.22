@@ -28,7 +28,4 @@ public class JavaScriptRedirectPage {
         String newTab = handles.iterator().next();
         driver.switchTo().window(newTab);
     }
-
-    public void get() {
-    }
 }

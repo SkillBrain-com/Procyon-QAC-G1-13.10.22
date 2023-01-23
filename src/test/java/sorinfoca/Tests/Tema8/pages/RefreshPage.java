@@ -27,7 +27,4 @@ public class RefreshPage {
         long delta = currentTimestamp - idTimestamp;
         return delta <= 2;
     }
-
-    public void get() {
-    }
 }
