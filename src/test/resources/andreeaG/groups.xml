@@ -5,7 +5,7 @@
     <test name="CuraHealthTests">
         <groups>
             <run>
-                <include name="login"  />
+                <exclude name="login"  />
                 <include name="redirect"  />
                 <include name="Home Button"/>
             </run>

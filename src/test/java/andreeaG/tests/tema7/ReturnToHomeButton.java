@@ -9,7 +9,7 @@ public class ReturnToHomeButton extends BaseTest{
 
 
     @Test(groups = "Home Button")
-    public void HomeButtonwhenLoggedInHistory() {
+    public void homeButtonWhenLoggedInHistory() {
         driver.get("https://katalon-demo-cura.herokuapp.com/history.php#history");
         WebElement purpleRightButton = driver.findElement(By.id("menu-toggle"));
         purpleRightButton.click();
@@ -20,7 +20,7 @@ public class ReturnToHomeButton extends BaseTest{
     }
 
     @Test(groups = "Home Button")
-    public void HomeButtonwhenLoggedInProfile() {
+    public void homeButtonWhenLoggedInProfile() {
         driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#profile");
         WebElement purpleRightButton = driver.findElement(By.id("menu-toggle"));
         purpleRightButton.click();
@@ -32,7 +32,7 @@ public class ReturnToHomeButton extends BaseTest{
     }
 
     @Test(groups = "Home Button")
-    public void HomeButtonFromMakeAppointmentPage() {
+    public void homeButtonFromMakeAppointmentPage() {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         WebElement purpleRightButton = driver.findElement(By.id("menu-toggle"));
         purpleRightButton.click();

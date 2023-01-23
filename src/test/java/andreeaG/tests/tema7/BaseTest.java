@@ -16,7 +16,7 @@ public class BaseTest {
         System.out.println("Executed before method");
     }
 
-    @AfterMethod(groups = {"redirect", "login", "Home Button"})
+    @AfterMethod(alwaysRun=true, groups = {"redirect", "login", "Home Button"})
     public void quitDriver() {
         if (driver!=null) {
             driver.quit();
