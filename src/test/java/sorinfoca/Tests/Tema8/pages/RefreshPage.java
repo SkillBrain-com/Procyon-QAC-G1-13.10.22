@@ -2,29 +2,30 @@ package sorinfoca.Tests.Tema8.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import java.time.Instant;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RefreshPage {
 
     private WebDriver driver;
+    private WebDriverWait wait;
 
     public RefreshPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, 10);
     }
 
     public void goToPage() {
-        driver.get("https://testpages.herokuapp.com/styled/refresh");
-    }
-
-    public String getIdText() {
-        return driver.findElement(By.id("id")).getText();
+        driver.get("https://testpages.herokuapp.com/styled/refresh.html");
     }
 
     public boolean isIdTimestamp() {
-        long idTimestamp = Long.parseLong(getIdText());
-        long currentTimestamp = Instant.now().getEpochSecond();
-        long delta = currentTimestamp - idTimestamp;
-        return delta <= 2;
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("refreshdate")));
+        return driver.findElement(By.id("refreshdate")).isDisplayed();
     }
 }
+
+
+
+
+

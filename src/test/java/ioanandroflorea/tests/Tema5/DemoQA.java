@@ -1,6 +1,5 @@
 package ioanandroflorea.tests.Tema5;
 
-import ioanaandroflorea.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

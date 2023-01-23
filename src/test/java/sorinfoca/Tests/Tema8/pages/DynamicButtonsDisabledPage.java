@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.concurrent.TimeUnit;
 
 public class DynamicButtonsDisabledPage {
 
@@ -20,8 +21,9 @@ public class DynamicButtonsDisabledPage {
     }
 
     public void clickAllButtons() {
-        driver.findElements(By.className("dynamic-button-disabled")).forEach(button -> button.click());
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElements(By.id("buttons")).forEach(button -> button.click());
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
     }
 
     public String getDisplayedMessage() {

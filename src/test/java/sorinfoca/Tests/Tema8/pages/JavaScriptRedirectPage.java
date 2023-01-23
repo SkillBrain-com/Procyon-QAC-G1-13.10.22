@@ -18,7 +18,7 @@ public class JavaScriptRedirectPage {
     }
 
     public void clickRedirectButton(int index) {
-        driver.findElements(By.className("redirect")).get(index).click();
+        driver.findElements(By.id("delaygotobasic")).get(index).click();
     }
 
     public void switchToNewTab() {
