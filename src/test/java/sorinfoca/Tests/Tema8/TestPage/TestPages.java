@@ -37,8 +37,8 @@ public class TestPages extends BaseTest {
     public void DynamicButtonsSimplePage() {
         DynamicButtonsSimplePage dynamicButtonsSimplePage = new DynamicButtonsSimplePage(driver);
         dynamicButtonsSimplePage.goToPage();
-        dynamicButtonsSimplePage.clickRedirectButton();
-        assertEquals(dynamicButtonsSimplePage.getDisplayedMessage(), "All buttons have been clicked!");
+        dynamicButtonsSimplePage.selectAllButtons();
+        assertEquals(dynamicButtonsSimplePage.getSelectedOptions(),"All Buttons Clicked");
     }
 
     @Test(groups = {"desktop", "mobile"})
