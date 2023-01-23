@@ -14,6 +14,7 @@ public class HomeButton extends BaseTest {
         WebElement homeButton = driver.findElement(By.xpath("/html/body/nav/ul/li[2]/a"));
         homeButton.click();
         Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
+        System.out.println("Am navigat in Home page!");
     }
 
     @Test
@@ -23,6 +24,7 @@ public class HomeButton extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Nu sa accesat Home page!");
+        System.out.println("Am navigat in Home page din Login page!");
     }
 
     @Test
@@ -32,6 +34,7 @@ public class HomeButton extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Nu sa accesat Home page!");
+        System.out.println("Am navigat in Home page din History page!");
     }
 
     @Test
@@ -41,5 +44,6 @@ public class HomeButton extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Nu sa accesat Home page!");
+        System.out.println("Am navigat in Home page din Profile page!");
     }
 }

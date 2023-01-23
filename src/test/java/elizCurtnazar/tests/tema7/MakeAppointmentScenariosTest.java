@@ -12,16 +12,8 @@ import java.util.List;
 
 public class MakeAppointmentScenariosTest extends BaseTest {
 
-    @DataProvider(name = "clickmakeAppointmentButton")
-    public Object[][] makeAppointmentDetails(){
-        return new Object[][] {
-                {"expectedResult", "actualResult"},
-                {"expectedResult", "actualResult"},
-        };
-    }
-
-    @Test(dataProvider = "clickmakeAppointmentButton")
-    public void clickMakeAppointmentButton(String expectedResult, String actualResults) {
+    @Test
+    public void clickMakeAppointmentButton() {
         System.out.println("Aici incepe scenariul pozitiv");
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
         makeAppointmentButton.click();
@@ -49,15 +41,8 @@ public class MakeAppointmentScenariosTest extends BaseTest {
         System.out.println(inputComment.getText());
         WebElement bookAppointmentButton = driver.findElement(By.cssSelector("#btn-book-appointment"));
         bookAppointmentButton.click();
-        String url = " https://katalon-demo-cura.herokuapp.com/#appointment";
-        if (expectedResult.equals(actualResults)) {
-            Assert.assertTrue(driver.getCurrentUrl().equals(url),
-                    "Appointment Confirmation page is not displayed!");
-        } else {
-            Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertEquals(driver.getCurrentUrl(),
                     "https://katalon-demo-cura.herokuapp.com/appointment.php#summary");
-        }
-
         System.out.println("Aici se termina scenariul pozitiv");
     }
 
@@ -81,9 +66,10 @@ public class MakeAppointmentScenariosTest extends BaseTest {
         checkboxReadmission.click();
         List<WebElement> radioItemHealtcareProgram = driver.findElements(By.xpath("//*[@id=\"appointment\"]/div/div/form/div[3]/div"));
         radioItemHealtcareProgram.get(0);
+        System.out.println("Is not input data in the field of Visit Date, which is required!");
         //Visit Date is Required
 //        WebElement inputVisitDate = driver.findElement(By.id("txt_visit_date"));
-//        inputVisitDate.sendKeys("11/12/2023");
+//        inputVisitDate.sendKeys("11/12/2023"); ERA MAI BINE INAINTE .... STERGE DATA PROVIDERUL DE AICI
 //        System.out.println("Am facut programarea pe data de 11/12/2023");
         WebElement inputComment = driver.findElement(By.cssSelector("#txt_comment"));
         inputComment.click();
@@ -92,7 +78,7 @@ public class MakeAppointmentScenariosTest extends BaseTest {
         System.out.println(inputComment.getText());
         WebElement bookAppointmentButton = driver.findElement(By.cssSelector("#btn-book-appointment"));
         bookAppointmentButton.click();
-        Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertNotEquals(driver.getCurrentUrl(),
                     "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
                     "Make Appointment page is failed!");
         System.out.println("Aici se termina scenariul negativ");
