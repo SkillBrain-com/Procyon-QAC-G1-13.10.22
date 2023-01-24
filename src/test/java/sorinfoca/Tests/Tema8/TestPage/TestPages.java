@@ -34,7 +34,8 @@ public class TestPages extends BaseTest {
         refreshPage.goToPage();
         String initialTimestamp = refreshPage.getInitialTimestamp();
         driver.navigate().refresh();
-        assertNotEquals(initialTimestamp, "Timestamp did not change after refreshing the page");
+        String refreshedTimestamp = refreshPage.getInitialTimestamp();
+        assertNotEquals(initialTimestamp, refreshedTimestamp, "Timestamp did not change after refreshing the page");
     }
 
 
