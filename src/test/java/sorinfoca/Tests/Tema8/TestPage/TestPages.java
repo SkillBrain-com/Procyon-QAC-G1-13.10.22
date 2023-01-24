@@ -1,11 +1,7 @@
 package sorinfoca.Tests.Tema8.TestPage;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import sorinfoca.Tests.Tema8.pages.*;
-
-import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
@@ -26,10 +22,9 @@ public class TestPages extends BaseTest {
     public void javascriptRedirectPage() {
         JavaScriptRedirectPage javascriptRedirectPage = new JavaScriptRedirectPage(driver);
         javascriptRedirectPage.goToPage();
-        javascriptRedirectPage.clickRedirectButton(0);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.urlContains("newpage"));
-        assertEquals("New Page", driver.getTitle());
+        javascriptRedirectPage.clickRedirectButton();
+        javascriptRedirectPage.waitForRedirect();
+        assertEquals("Redirected Landing Page", driver.getTitle());
         driver.navigate().back();
     }
 

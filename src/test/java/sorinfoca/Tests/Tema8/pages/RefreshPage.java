@@ -18,7 +18,7 @@ public class RefreshPage {
     }
 
     public void goToPage() {
-        driver.get("https://testpages.herokuapp.com/styled/refresh-page.html");
+        driver.get("https://testpages.herokuapp.com/styled/refresh");
     }
 
     public String getInitialTimestamp() {
@@ -29,6 +29,6 @@ public class RefreshPage {
 
     public String getRefreshedTimestamp() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("refreshdate")));
-        return driver.findElement(By.id("refreshdate")).getText();
+        return null;
     }
 }
