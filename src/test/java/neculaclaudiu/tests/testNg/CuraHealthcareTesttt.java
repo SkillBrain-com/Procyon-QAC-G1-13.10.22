@@ -16,6 +16,15 @@ public class CuraHealthcareTesttt extends BaseTest{
         Assert.assertEquals(driver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/profile.php#login",
                 "Could not navigate to login url");
-        //48
+        WebElement usernameInput = driver.findElement(By.id("txt-username"));
+        usernameInput.sendKeys("John Doe");
+        WebElement passwordInput = driver.findElement(By.id("txt-password"));
+        passwordInput.sendKeys("ThisIsNotAPassword");
+        WebElement login = driver.findElement(By.id("btn-login"));
+        login.click();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://katalon-demo-cura.herokuapp.com/#appointment",
+                "Could not navigate to appoiment page ");
+
     }
 }
