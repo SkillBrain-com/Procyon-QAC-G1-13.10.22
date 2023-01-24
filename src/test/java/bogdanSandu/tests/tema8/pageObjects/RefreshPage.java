@@ -1,4 +1,4 @@
-package bogdanSandu.tests.Tema8.PageObjects;
+package bogdanSandu.tests.tema8.pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,16 +11,16 @@ public class RefreshPage {
         PageFactory.initElements(driver, this);
     }
 
-    public static final String StartPage = "https://testpages.herokuapp.com/styled/refresh";
+    public static final String START_PAGE_URL = "https://testpages.herokuapp.com/styled/refresh";
 
-    public static final String RefreshDateValue = "embeddedrefreshdatevalue";
+    public static final String REFRESH_DATE_VALUE = "embeddedrefreshdatevalue";
 
-    public static final String RefreshDate = "refreshdate";
+    public static final String REFRESH_DATE = "refreshdate";
 
-    @FindBy(id = RefreshDateValue)
+    @FindBy(id = REFRESH_DATE_VALUE)
     private WebElement refreshDateValue;
 
-    @FindBy(id = RefreshDate)
+    @FindBy(id = REFRESH_DATE)
     private WebElement refreshDate;
 
     public WebElement getRefreshDateValue() {

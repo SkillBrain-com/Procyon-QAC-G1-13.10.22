@@ -1,9 +1,9 @@
-package bogdanSandu.tests.Tema8.Tests;
+package bogdanSandu.tests.tema8.tests;
 
-import bogdanSandu.tests.Tema8.PageObjects.RefreshPage;
+import bogdanSandu.tests.tema8.pageObjects.RefreshPage;
 import org.testng.annotations.Test;
 
-import static bogdanSandu.tests.Tema8.PageObjects.RefreshPage.StartPage;
+import static bogdanSandu.tests.tema8.pageObjects.RefreshPage.START_PAGE_URL;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 
@@ -14,7 +14,7 @@ public class RefreshTest extends BaseTest{
         System.out.println("Refresh test Desktop");
         int nr1, nr2, nr3;
 
-        driver.get(StartPage);
+        driver.get(START_PAGE_URL);
         System.out.println("Got to 'Refresh Page Test' link");
         RefreshPage refreshPage = new RefreshPage(driver);
 
@@ -52,7 +52,7 @@ public class RefreshTest extends BaseTest{
         System.out.println("Refresh test Mobile");
         int nr1, nr2, nr3;
 
-        driver.get(StartPage);
+        driver.get(START_PAGE_URL);
         System.out.println("Got to 'Refresh Page Test' link");
         RefreshPage refreshPage = new RefreshPage(driver);
 

@@ -1,4 +1,4 @@
-package bogdanSandu.tests.Tema8.PageObjects;
+package bogdanSandu.tests.tema8.pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,31 +11,31 @@ public class DynamicButtonsDisabledPage {
         PageFactory.initElements(driver , this);
     }
 
-    public static final String StartPage = "https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html";
+    public static final String START_PAGE_URL = "https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html";
 
-    public static final String ButtonStart = "button00";
+    public static final String BUTTON_START = "button00";
 
-    public static final String ButtonOne = "button01";
+    public static final String BUTTON_ONE = "button01";
 
-    public static final String ButtonTwo = "button02";
+    public static final String BUTTON_TWO = "button02";
 
-    public static final String ButtonThree = "button03";
+    public static final String BUTTON_THREE = "button03";
 
-    public static final String Message = "buttonmessage";
+    public static final String MESSAGE = "buttonmessage";
 
-    @FindBy(id = ButtonStart)
+    @FindBy(id = BUTTON_START)
     private WebElement startButton;
 
-    @FindBy(id = ButtonOne)
+    @FindBy(id = BUTTON_ONE)
     private WebElement OneButton;
 
-    @FindBy(id = ButtonTwo)
+    @FindBy(id = BUTTON_TWO)
     private WebElement TwoButton;
 
-    @FindBy(id = ButtonThree)
+    @FindBy(id = BUTTON_THREE)
     private WebElement ThreeButton;
 
-    @FindBy(id = Message)
+    @FindBy(id = MESSAGE)
     private WebElement message;
 
     public WebElement getStartButton() {

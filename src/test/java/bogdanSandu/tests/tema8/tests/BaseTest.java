@@ -1,4 +1,4 @@
-package bogdanSandu.tests.Tema8.Tests;
+package bogdanSandu.tests.tema8.tests;
 
 import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;

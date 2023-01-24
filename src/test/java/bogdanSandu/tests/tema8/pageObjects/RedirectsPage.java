@@ -1,4 +1,4 @@
-package bogdanSandu.tests.Tema8.PageObjects;
+package bogdanSandu.tests.tema8.pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,21 +11,21 @@ public class RedirectsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public static final String StartPage = "https://testpages.herokuapp.com/styled/javascript-redirect-test.html";
+    public static final String START_PAGE_URL = "https://testpages.herokuapp.com/styled/javascript-redirect-test.html";
 
-    public static final String DelayBounce = "delaygotobounce";
+    public static final String DELAY_BOUNCE = "delaygotobounce";
 
-    public static final String BackButton = "goback";
+    public static final String BACK_BUTTON = "goback";
 
-    public static final String DelayBasic = "delaygotobasic";
+    public static final String DELAY_BASIC = "delaygotobasic";
 
-    @FindBy(id= DelayBasic)
+    @FindBy(id= DELAY_BASIC)
     private WebElement delayBasic;
 
-    @FindBy(id= BackButton)
+    @FindBy(id= BACK_BUTTON)
     private WebElement backButton;
 
-    @FindBy(id= DelayBounce)
+    @FindBy(id= DELAY_BOUNCE)
     private WebElement delayBounceBtn;
 
     public WebElement getDelayBasic() {

@@ -1,12 +1,12 @@
-package bogdanSandu.tests.Tema8.Tests;
+package bogdanSandu.tests.tema8.tests;
 
-import bogdanSandu.tests.Tema8.PageObjects.BasicAjaxPage;
+import bogdanSandu.tests.tema8.pageObjects.BasicAjaxPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static bogdanSandu.tests.Tema8.PageObjects.BasicAjaxPage.StartPage;
+import static bogdanSandu.tests.tema8.pageObjects.BasicAjaxPage.START_PAGE_URL;
 
 public class BasicAjaxPageTest extends BaseTest {
 
@@ -16,7 +16,7 @@ public class BasicAjaxPageTest extends BaseTest {
         int category = 1, language = 2;
 
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
-        driver.get(StartPage);
+        driver.get(START_PAGE_URL);
         System.out.println("Got to 'Basic Ajax Example' link");
 
         basicAjaxPage.getSelectCategory().get(category).click();
@@ -42,7 +42,7 @@ public class BasicAjaxPageTest extends BaseTest {
         int category = 1, language = 2;
 
 
-        driver.get(StartPage);
+        driver.get(START_PAGE_URL);
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
         System.out.println("Got to 'Basic Ajax Example' link");
 

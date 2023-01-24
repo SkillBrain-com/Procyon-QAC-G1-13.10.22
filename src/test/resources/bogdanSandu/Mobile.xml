@@ -8,11 +8,11 @@
             </run>
         </groups>
         <classes>
-            <class name="bogdanSandu.tests.Tema8.Tests.BasicAjaxPageTest"/>
-            <class name="bogdanSandu.tests.Tema8.Tests.RedirectTest"/>
-            <class name="bogdanSandu.tests.Tema8.Tests.RefreshTest"/>
-            <class name="bogdanSandu.tests.Tema8.Tests.DynamicButtonsSimplePageTest"/>
-            <class name="bogdanSandu.tests.Tema8.Tests.DynamicButtonsDisabledPageTest"/>
+            <class name="bogdanSandu.tests.tema8.tests.BasicAjaxPageTest"/>
+            <class name="bogdanSandu.tests.tema8.tests.RedirectTest"/>
+            <class name="bogdanSandu.tests.tema8.tests.RefreshTest"/>
+            <class name="bogdanSandu.tests.tema8.tests.DynamicButtonsSimplePageTest"/>
+            <class name="bogdanSandu.tests.tema8.tests.DynamicButtonsDisabledPageTest"/>
         </classes>
     </test>
 </suite>
