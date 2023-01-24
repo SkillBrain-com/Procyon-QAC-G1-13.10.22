@@ -8,9 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class RefreshPage {
-
     private WebDriver driver;
     private WebDriverWait wait;
+    private String initialTimestamp;
 
     public RefreshPage(WebDriver driver) {
         this.driver = driver;
@@ -18,16 +18,17 @@ public class RefreshPage {
     }
 
     public void goToPage() {
-        driver.get("https://testpages.herokuapp.com/styled/refresh");
+        driver.get("https://testpages.herokuapp.com/styled/refresh-page.html");
     }
 
-    public boolean isIdTimestamp() {
+    public String getInitialTimestamp() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("refreshdate")));
-        return driver.findElement(By.id("refreshdate")).isDisplayed();
+        initialTimestamp = driver.findElement(By.id("refreshdate")).getText();
+        return initialTimestamp;
+    }
+
+    public String getRefreshedTimestamp() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("refreshdate")));
+        return driver.findElement(By.id("refreshdate")).getText();
     }
 }
-
-
-
-
-

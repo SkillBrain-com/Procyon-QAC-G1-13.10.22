@@ -1,9 +1,14 @@
 package sorinfoca.Tests.Tema8.TestPage;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import sorinfoca.Tests.Tema8.pages.*;
+
+import java.time.Duration;
+
 import static org.testng.Assert.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.Assert.assertNotEquals;
 
 public class TestPages extends BaseTest {
 
@@ -18,23 +23,29 @@ public class TestPages extends BaseTest {
     }
 
     @Test(groups = {"desktop", "mobile"})
-    public void JavaScriptRedirectPage() {
+    public void javascriptRedirectPage() {
         JavaScriptRedirectPage javascriptRedirectPage = new JavaScriptRedirectPage(driver);
         javascriptRedirectPage.goToPage();
         javascriptRedirectPage.clickRedirectButton(0);
-        javascriptRedirectPage.switchToNewTab();
-        driver.close();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.urlContains("newpage"));
+        assertEquals("New Page", driver.getTitle());
+        driver.navigate().back();
     }
 
     @Test(groups = {"desktop", "mobile"})
-    public void RefreshPage() {
+    public void refreshPage() {
         RefreshPage refreshPage = new RefreshPage(driver);
         refreshPage.goToPage();
-        assertTrue(refreshPage.isIdTimestamp());
+        String initialTimestamp = refreshPage.getInitialTimestamp();
+        driver.navigate().refresh();
+        String refreshedTimestamp = refreshPage.getRefreshedTimestamp();
+        assertNotEquals(initialTimestamp, refreshedTimestamp, "Timestamp did not change after refreshing the page");
     }
 
+
     @Test(groups = {"desktop", "mobile"})
-    public void DynamicButtonsSimplePage() {
+    public void dynamicButtonsSimplePage() {
         DynamicButtonsSimplePage dynamicButtonsSimplePage = new DynamicButtonsSimplePage(driver);
         dynamicButtonsSimplePage.goToPage();
         dynamicButtonsSimplePage.selectAllButtons();
@@ -42,11 +53,11 @@ public class TestPages extends BaseTest {
     }
 
     @Test(groups = {"desktop", "mobile"})
-    public void DynamicButtonsDisabledPage() {
+    public void dynamicButtonsDisabledPage() {
         DynamicButtonsDisabledPage dynamicButtonsDisabledPage = new DynamicButtonsDisabledPage(driver);
         dynamicButtonsDisabledPage.goToPage();
         dynamicButtonsDisabledPage.clickButtons();
-        assertEquals(dynamicButtonsDisabledPage.setButtonMessage(),"All Buttons Clicked");
+        assertEquals(dynamicButtonsDisabledPage.getButtonMessage(),"All Buttons Clicked");
     }
 }
 

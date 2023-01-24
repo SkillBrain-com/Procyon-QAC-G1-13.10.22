@@ -29,9 +29,9 @@ public class BasicAjaxPage {
     }
 
     public void clickCodeItInButton() {
-        wait.until(ExpectedConditions.attributeToBe(By.cssSelector("body > div > div.centered > form > input.styled-click-button"), "value","Code In It"));
+        wait.until(ExpectedConditions.attributeToBe(By.cssSelector("body > div > div.centered > form > input.styled-click-button"), "value", "Code In It"));
         driver.findElement(By.name("submitbutton")).click();
-        }
+    }
 
     public String getSelectedOption() {
         WebElement language = driver.findElement(By.id("_valuelanguage_id"));
@@ -41,9 +41,5 @@ public class BasicAjaxPage {
     public void selectLanguage(String option) {
         Select select = new Select(driver.findElement(By.id("combo2")));
         select.selectByVisibleText(option);
-    }
-
-    public boolean isOptionSelected(String option) {
-        return getSelectedOption().equals(option);
     }
 }

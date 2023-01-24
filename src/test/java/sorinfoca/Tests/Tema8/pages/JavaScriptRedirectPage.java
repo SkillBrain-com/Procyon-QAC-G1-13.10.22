@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.Set;
 
 public class JavaScriptRedirectPage {
 
@@ -24,10 +23,5 @@ public class JavaScriptRedirectPage {
 
     public void clickRedirectButton(int index) {
         driver.findElements(By.id("delaygotobasic")).get(index).click();
-    }
-
-    public void switchToNewTab() {
-        String originalHandle = driver.getWindowHandle();
-        Set<String> handles = driver.getWindowHandles();
     }
 }

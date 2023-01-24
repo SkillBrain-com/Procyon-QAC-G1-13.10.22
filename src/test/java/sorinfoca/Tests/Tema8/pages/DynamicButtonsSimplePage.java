@@ -15,7 +15,7 @@ public class DynamicButtonsSimplePage {
 
     public DynamicButtonsSimplePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public void goToPage() {
@@ -24,23 +24,11 @@ public class DynamicButtonsSimplePage {
 
     public void selectAllButtons() {
         driver.findElement(By.id("button00")).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button01")));
         driver.findElement(By.id("button01")).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button02")));
         driver.findElement(By.id("button02")).click();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button03")));
         driver.findElement(By.id("button03")).click();
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("buttonmessage")));

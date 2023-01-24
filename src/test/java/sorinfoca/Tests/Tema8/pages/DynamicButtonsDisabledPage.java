@@ -39,7 +39,7 @@ public class DynamicButtonsDisabledPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("buttonmessage")));
     }
 
-    public String setButtonMessage() {
+    public String getButtonMessage() {
         WebElement message = driver.findElement(By.id("buttonmessage"));
         return message.getText();
     }
