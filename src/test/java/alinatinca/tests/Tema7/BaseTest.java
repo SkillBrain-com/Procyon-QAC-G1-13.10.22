@@ -3,7 +3,7 @@ package alinatinca.tests.Tema7;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import tincaalina.BrowserManager;
+import alinatinca.driver.BrowserManager;
 
 public class BaseTest {
 

@@ -81,7 +81,3 @@ public class CuraHealthcareLoginTests extends BaseTest {
                 //display a warning message
     }
 }
-
-
-
-
