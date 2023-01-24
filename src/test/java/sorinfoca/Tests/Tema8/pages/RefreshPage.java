@@ -26,9 +26,4 @@ public class RefreshPage {
         initialTimestamp = driver.findElement(By.id("refreshdate")).getText();
         return initialTimestamp;
     }
-
-    public String getRefreshedTimestamp() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("refreshdate")));
-        return null;
-    }
 }
