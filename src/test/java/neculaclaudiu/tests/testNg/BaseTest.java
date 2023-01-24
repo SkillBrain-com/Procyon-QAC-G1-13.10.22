@@ -13,8 +13,8 @@ public class BaseTest {
     }
     @AfterMethod
     public void quitBrowser(){
-//        if(driver != null){
-//            driver.quit();
-//        }
+        if(driver != null){
+            driver.quit();
+        }
     }
 }
