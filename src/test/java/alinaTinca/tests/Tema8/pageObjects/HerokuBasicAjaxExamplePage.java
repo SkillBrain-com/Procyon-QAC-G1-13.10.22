@@ -13,57 +13,52 @@ import java.time.Duration;
 
 public class HerokuBasicAjaxExamplePage {
 
-//0. Creezi atributele:
+    //Create the required attributes for this test case
     ChromeDriver driver;
 
     WebDriverWait wait;
 
     Wait<WebDriver> fluentWait;
 
-//1. Creezi constructorul
+    //Create the constructor that can define the required parameters for this test case
     public HerokuBasicAjaxExamplePage(ChromeDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         fluentWait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(1))
-                        .pollingEvery(Duration.ofMillis(200));
-        PageFactory.initElements(driver, this); //identifica elementele pe pagina
+                .pollingEvery(Duration.ofMillis(200));
+        PageFactory.initElements(driver, this);
     }
 
-
-//2. Identificam elementele de pe pagina cu FindBy
-
-    //pentru Categoriile de selectat
+    //Find Category element from the page
     @FindBy(id = "combo1")
     WebElement category;
 
-
-    //FindBy pt Language
+    //FindBy Language element from the page
     @FindBy (id = "combo2")
     WebElement language;
 
-    //pentru butonul CODEINIT
+    //Find the submit button from the page
     @FindBy(className = "styled-click-button")
-    WebElement codeInItButton;
+    WebElement submitButton;
 
-
-    //2. Definim metodele
+    //Create a method that select the one of the items from category
     public void selectCategory(String categoryName){
         Select category = new Select(this.category);
         category.selectByVisibleText(categoryName);
     }
 
+    //Create a method that select the one of the items from language
     public void selectLanguage(String languageName){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ajaxBusy")));
-        fluentWait.until(ExpectedCondition.invisibilityOfElementLocated(By.id("ajaxBusy")));
+        fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("ajaxBusy")));
         Select language = new Select(this.language);
         language.selectByVisibleText(languageName);
     }
 
+    //Create a method that click on the submit button
     public void clickOnCodeInIt(){
-        codeInItButton.click();
+        submitButton.click();
         System.out.println("Code In It button has been clicked!");
     }
-
 }
-
