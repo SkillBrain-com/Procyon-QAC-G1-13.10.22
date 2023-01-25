@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="DesktopTests" verbose="1" >
+    <test name="DesktopTests" >
+
+        <groups>
+            <run>
+                <exclude name="mobile"  />
+                <include name="desktop"  />
+            </run>
+        </groups>
+
+        <packages>
+            <package name="ancaMarian.tests.tema8.tests" />
+        </packages>
+
+    </test>
+
+</suite>

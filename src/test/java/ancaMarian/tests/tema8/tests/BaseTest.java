@@ -9,20 +9,20 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    protected ChromeDriver driver;
+    public ChromeDriver driver;
 
-    @BeforeMethod()
-    public void initializeChromeBrowser() {
-        driver = BrowserManager.createDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        System.out.println("Executed before method.");
+    @BeforeMethod(groups = "desktop")
+    public void setUpDesktop() {
+        driver = BrowserManager.createChromeDriverWithOptions();
+    }
+
+    @BeforeMethod(groups = "mobile")
+    public void setUpMobile() {
+        driver = BrowserManager.createChromeDriverForMobile();
     }
 
     @AfterMethod(alwaysRun = true)
-    public void quitDriver() {
-        if (driver!=null) {
-            driver.quit();
-        }
-        System.out.println("Executed after method.");
+     public void closeBrowser() {
+        driver.quit();
     }
 }

@@ -4,9 +4,9 @@ import ancaMarian.tests.tema8.pageObjects.JavaScriptRedirectPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class JavaScriptRedirectPageTest extends BaseTest{
+public class JavaScriptRedirectPageTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"mobile", "desktop"})
     public void javaScriptRedirectIn5SecondsPageTest() {
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
         JavaScriptRedirectPage javaScriptRedirectPage = new JavaScriptRedirectPage(driver);
@@ -15,7 +15,7 @@ public class JavaScriptRedirectPageTest extends BaseTest{
         Assert.assertEquals(driver.getCurrentUrl(), "https://testpages.herokuapp.com/styled/redirected.html");
     }
 
-    @Test
+    @Test(groups = {"mobile", "desktop"})
     public void javaScriptRedirectIn2SecondsPageTest() {
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
         JavaScriptRedirectPage javaScriptRedirectPage = new JavaScriptRedirectPage(driver);

@@ -10,22 +10,30 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DynamicButtonsSimplePage {
+public class DisabledDynamicButtonsPage {
 
     ChromeDriver driver;
     WebDriverWait wait;
 
-    public DynamicButtonsSimplePage(ChromeDriver driver) {
+    public DisabledDynamicButtonsPage(ChromeDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(id = "button00")
     WebElement startButton;
 
-    public void waitForStartButtonToBeVisible() {
+    @FindBy(id = "button01")
+    WebElement oneButton;
+
+    @FindBy(id = "button02")
+    WebElement twoButton;
+
+    @FindBy(id = "button03")
+    WebElement threeButton;
+
+    public void waitForStartButtonToBeClickable() {
         wait.until(ExpectedConditions.visibilityOf(startButton));
     }
 
@@ -33,12 +41,11 @@ public class DynamicButtonsSimplePage {
         startButton.click();
     }
 
-    public void waitForOneButtonToBeVisible() {
+    public void waitForOneButtonToBeClickable() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button01")));
     }
 
     public void clickOnOneButton() {
-        WebElement oneButton = driver.findElement(By.id("button01"));
         oneButton.click();
     }
 
@@ -47,12 +54,11 @@ public class DynamicButtonsSimplePage {
     }
 
     public void clickOnTwoButton() {
-        WebElement twoButton = driver.findElement(By.id("button02"));
         twoButton.click();
     }
 
     public void clickOnThreeButton() {
-        WebElement threeButton = driver.findElement(By.id("button03"));
         threeButton.click();
     }
+
 }
