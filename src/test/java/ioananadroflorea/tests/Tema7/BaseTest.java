@@ -1,6 +1,6 @@
 package ioananadroflorea.tests.Tema7;
 
-import cosminsechel.driver.BrowserManager;
+import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -11,7 +11,7 @@ public class BaseTest {
 
     @BeforeMethod(groups = "redirect")
     public void initChromeBrowser(){
-        driver = BrowserManager.createDriver();
+        driver = BrowserManager.createChromeDriver();
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         System.out.println("Executed before method.");
     }

@@ -25,7 +25,6 @@ public class TestPages extends BaseTest {
         javascriptRedirectPage.clickRedirectButton();
         javascriptRedirectPage.waitForRedirect();
         assertEquals("Redirected Landing Page", driver.getTitle());
-        driver.navigate().back();
     }
 
     @Test(groups = {"desktop", "mobile"})
