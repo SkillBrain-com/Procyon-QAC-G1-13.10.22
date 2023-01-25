@@ -1,5 +1,4 @@
 package andreeaG.driver;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BrowserManager {
-
     public static ChromeDriver createChromeDriver() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
@@ -24,9 +22,9 @@ public class BrowserManager {
         return new ChromeDriver(options);
     }
 
-    public static ChromeDriver createChromeDriverForMObile(){
+    public static ChromeDriver createChromeDriverForMobile() {
         Map<String, String> mobileEmulation = new HashMap<>();
-        //"Vulpe" -> "Rosie"
+        //"Vulpe" -> "Rosu"
         //"Urs" -> "Negru"
         //"Caine" -> "Maro"
         mobileEmulation.put("deviceName", "Galaxy S8");
@@ -36,4 +34,3 @@ public class BrowserManager {
         return new ChromeDriver(chromeOptions);
     }
 }
-
