@@ -30,9 +30,13 @@ public class DynamicButtonsSimplePage {
         driver.findElement(By.id("button02")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("button03")));
         driver.findElement(By.id("button03")).click();
-
-
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("buttonmessage")));
     }
 
-
+    public String getSelectedOptions() {
+        WebElement message = driver.findElement(By.id("buttonmessage"));
+        return message.getText();
+    }
 }
+
