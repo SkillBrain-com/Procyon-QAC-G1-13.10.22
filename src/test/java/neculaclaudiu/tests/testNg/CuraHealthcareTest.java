@@ -1,13 +1,12 @@
 package neculaclaudiu.tests.testNg;
 
-import com.beust.ah.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 @Test
-public class CuraHealthcareTesttt extends BaseTest{
+public class CuraHealthcareTest extends BaseTest{
 
     @DataProvider(name = "loginDataProvider")
     public Object[][] loginDataProvider(){
@@ -16,6 +15,7 @@ public class CuraHealthcareTesttt extends BaseTest{
                 {"Claudiu", "ThisIsAPassword", "invalidLogin"}
         };
     }
+
     @DataProvider(name = "scenario")
         public Object[][] scenario(){
         return new Object[][]{
@@ -23,6 +23,7 @@ public class CuraHealthcareTesttt extends BaseTest{
                 {"", "Negative scenario", false}
         };
     }
+
     @Test(dataProvider = "loginDataProvider")
     public void loginWithValidAndInvalidAccount(String username, String password, String type){
         driver.get("https://katalon-demo-cura.herokuapp.com/");
@@ -50,6 +51,7 @@ public class CuraHealthcareTesttt extends BaseTest{
                     "Should not navigate to appointment page");
         }
     }
+
     @Test
     public void redirectToLoginTest(){
         driver.get("https://katalon-demo-cura.herokuapp.com/");
@@ -60,6 +62,7 @@ public class CuraHealthcareTesttt extends BaseTest{
                 "Make appointment button did not redirect to login page");
 
     }
+
     @Test
     public void testHomeButton(){
         driver.get("https://katalon-demo-cura.herokuapp.com/");
@@ -72,6 +75,7 @@ public class CuraHealthcareTesttt extends BaseTest{
         homeButton.click();
         Assert.assertEquals(driver.getCurrentUrl(),"https://katalon-demo-cura.herokuapp.com/", "Home button is not working");
     }
+
     @Test(dataProvider = "scenario")
     public void positiveAndNegativeScenarioTest(String data, String comment, boolean type){
         driver.get("https://katalon-demo-cura.herokuapp.com/");
