@@ -15,7 +15,6 @@ public class JavaScriptRedirectsConfirmationPage {
     ChromeDriver driver;
     WebDriverWait wait;
     Wait<WebDriver> fluentWait;
-
     //Create the constructor that can define the required parameters for this test case
     public JavaScriptRedirectsConfirmationPage(ChromeDriver driver){
         this.driver = driver;

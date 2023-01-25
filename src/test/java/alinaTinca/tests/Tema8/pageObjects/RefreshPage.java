@@ -17,7 +17,6 @@ public class RefreshPage {
     //Create the required attributes for this test case
     ChromeDriver driver;
     WebDriverWait wait;
-    Wait<WebDriver> fluentWait;
 
     //Create the constructor that can define the required parameters for this test case
     public RefreshPage(ChromeDriver driver){

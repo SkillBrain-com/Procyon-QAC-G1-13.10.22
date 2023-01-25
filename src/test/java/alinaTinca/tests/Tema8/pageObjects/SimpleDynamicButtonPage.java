@@ -18,7 +18,6 @@ public class SimpleDynamicButtonPage {
     //Create the required attributes for this test case
     ChromeDriver driver;
     WebDriverWait wait;
-
     Wait<WebDriver> fluentWait;
 
     //Create the constructor that can define the required parameters for this test case
@@ -62,7 +61,6 @@ public class SimpleDynamicButtonPage {
 //        fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
         System.out.println("Condition has been executed!");
         secondButton.click();
-        System.out.println("The second button has been opened!");
     }
 
     //Find the third button

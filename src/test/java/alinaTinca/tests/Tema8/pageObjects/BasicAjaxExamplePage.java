@@ -8,26 +8,32 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
 
-import java.awt.*;
 import java.time.Duration;
 
-public class HerokuBasicAjaxExamplePage {
+public class BasicAjaxExamplePage {
 
     //Create the required attributes for this test case
     ChromeDriver driver;
-
     WebDriverWait wait;
-
     Wait<WebDriver> fluentWait;
 
     //Create the constructor that can define the required parameters for this test case
-    public HerokuBasicAjaxExamplePage(ChromeDriver driver){
+    public BasicAjaxExamplePage(ChromeDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         fluentWait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(1))
                 .pollingEvery(Duration.ofMillis(200));
         PageFactory.initElements(driver, this);
+    }
+
+    //Find the paragraph
+    @FindBy(className = "explanation")
+    WebElement paragraph;
+
+    //Create a method that display the message from the first paragraph
+    public String displayParagraph(){
+        return paragraph.getText();
     }
 
     //Find Category element from the page

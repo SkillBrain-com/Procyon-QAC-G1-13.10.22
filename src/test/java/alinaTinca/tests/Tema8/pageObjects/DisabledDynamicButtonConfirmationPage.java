@@ -10,13 +10,14 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-
 public class DisabledDynamicButtonConfirmationPage {
 
+    //Create the required attributes for this test case
     ChromeDriver driver;
     WebDriverWait wait;
     Wait<WebDriver> fluentWait;
 
+    //Create the constructor that can define the required parameters for this test case
     public DisabledDynamicButtonConfirmationPage(ChromeDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -28,7 +29,7 @@ public class DisabledDynamicButtonConfirmationPage {
     @FindBy(id="buttonmessage")
     WebElement text;
 
-    //Create a method that display the text before opening the all buttons
+    //Create a method that display the text before opening all buttons
     public String displayTextBeforeClickAllButtons(){
         return text.getText();
     }

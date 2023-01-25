@@ -36,6 +36,4 @@ public class SimpleDynamicButtonConfirmationPage {
     public String displayTextAfterClickAllButtons(){
         return text.getText();
     }
-
-
 }

@@ -5,24 +5,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HerokuBasicAjaxExampleConfirmationPage {
+public class BasicAjaxExampleConfirmationPage {
 
     //Create the required attributes for this test case
     ChromeDriver driver;
-
     WebDriverWait wait;
-
     Wait<WebDriver> fluentWait;
 
     //Create the constructor that can define the required parameters for this test case
-    public HerokuBasicAjaxExampleConfirmationPage(ChromeDriver driver){
+    public BasicAjaxExampleConfirmationPage(ChromeDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(1)).pollingEvery(Duration.ofMillis(200));

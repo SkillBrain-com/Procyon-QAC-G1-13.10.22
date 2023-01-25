@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BrowserManager {
-
     public static ChromeDriver createChromeDriver() {
         WebDriverManager.chromedriver().setup();
         //create and configure Chrome browser page settings

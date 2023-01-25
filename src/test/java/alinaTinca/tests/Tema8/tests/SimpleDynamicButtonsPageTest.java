@@ -7,13 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SimpleDynamicButtonsPageTest {
-
-    ChromeDriver driver;
-
+public class SimpleDynamicButtonsPageTest extends BaseTest{
     @Test(groups = {"mobile", "desktop"})
     public void checkClickOnAllButtons(){
-        driver = BrowserManager.createChromeDriverWithOptions();
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html");
         SimpleDynamicButtonConfirmationPage simpleDynamicButtonConfirmationPage = new SimpleDynamicButtonConfirmationPage(driver);
         Assert.assertEquals(simpleDynamicButtonConfirmationPage.displayTextBeforeClickAllButtons(), "Click all 4 buttons.");
@@ -25,5 +21,6 @@ public class SimpleDynamicButtonsPageTest {
         simpleDynamicButtonPage.clickOnThirdButton();
         Assert.assertEquals(simpleDynamicButtonConfirmationPage.displayTextAfterClickAllButtons(), "All Buttons Clicked");
         System.out.println("The message that appears after opening all the buttons is: " + simpleDynamicButtonConfirmationPage.displayTextAfterClickAllButtons());
+        System.out.println("Check was done successfully!");
     }
 }

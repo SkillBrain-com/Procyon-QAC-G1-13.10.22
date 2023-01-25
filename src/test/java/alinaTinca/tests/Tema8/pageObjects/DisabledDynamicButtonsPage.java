@@ -15,14 +15,16 @@ import java.time.Duration;
 
 public class DisabledDynamicButtonsPage {
 
+    //Create the required attributes for this test case
     ChromeDriver driver;
     WebDriverWait wait;
     Wait<WebDriver> fluentWait;
 
+    //Create the constructor that can define the required parameters for this test case
     public DisabledDynamicButtonsPage(ChromeDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(5)).pollingEvery(Duration.ofMillis(200));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+        fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(7)).pollingEvery(Duration.ofMillis(200));
         PageFactory.initElements(driver, this);
     }
 
@@ -32,6 +34,8 @@ public class DisabledDynamicButtonsPage {
 
     //Create a method that click on start button
     public void clickOnStartButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button00")));
+        System.out.println("Condition has been executed!");
         startButton.click();
         System.out.println("Start button has been opened!");
     }
@@ -42,12 +46,33 @@ public class DisabledDynamicButtonsPage {
 
     //Create a method that click on the one button
     public void clickOnOneButton(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button01")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button01")));
         System.out.println("Condition has been executed!");
         oneButton.click();
         System.out.println("One button has been opened!");
     }
 
     //Find the second button
+    @FindBy(id = "button02")
+    WebElement secondButton;
 
+    //Create a method that click on the second button
+    public void clickOnSecondButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button02")));
+        System.out.println("Condition has been executed!");
+        secondButton.click();
+        System.out.println("The second button has been opened!");
+    }
+
+    //Find the third button
+    @FindBy(id="button03")
+    WebElement thirdButton;
+
+    //Create a method that click on the third button
+    public void clickOnThirdButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button03")));
+        System.out.println("Condition has been executed!");
+        thirdButton.click();
+        System.out.println("The third button has been opened!");
+    }
 }

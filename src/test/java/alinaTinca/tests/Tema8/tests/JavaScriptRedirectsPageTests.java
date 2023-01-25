@@ -13,19 +13,9 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.Set;
 
-public class JavaScriptRedirectsPageTests {
-
-
-    ChromeDriver driver;
-
-//    public void getparagraph(){
-//        WebElement paragraph = driver.findElement(By.className("explanation"));
-//        System.out.println(paragraph.getText());
-//    }
-
+public class JavaScriptRedirectsPageTests extends BaseTest{
     @Test(groups = {"mobile", "desktop"})
     public void clickOnFirstButton() {
-        driver = BrowserManager.createChromeDriverWithOptions();
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
         JavaScriptRedirectsPage javaScriptRedirectsPage = new JavaScriptRedirectsPage(driver);
         System.out.println("The message in the paragraph on the first page is: " + javaScriptRedirectsPage.getParagraph());
@@ -38,10 +28,8 @@ public class JavaScriptRedirectsPageTests {
         System.out.println("Check was done successfully!");
         javaScriptRedirectsConfirmationPage.clickOnBackButton();
     }
-
     @Test(groups = {"mobile", "desktop"})
     public void clickOnSecondButton(){
-        driver = BrowserManager.createChromeDriverForMobile();
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
         JavaScriptRedirectsPage javaScriptRedirectsPage = new JavaScriptRedirectsPage(driver);
         System.out.println("The message in the paragraph on the first page is: " + javaScriptRedirectsPage.getParagraph());
