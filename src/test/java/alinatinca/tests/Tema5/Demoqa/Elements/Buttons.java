@@ -1,12 +1,9 @@
-package alinaTinca.tests.Tema5.Demoqa.Elements;
+package alinatinca.tests.Tema5.Demoqa.Elements;
 
-import AlinaTinca.BrowserManager;
-import AlinaTinca.BrowserManager;
+import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.List;
 
 
 public class Buttons {
