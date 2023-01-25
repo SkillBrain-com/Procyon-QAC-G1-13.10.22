@@ -4,6 +4,8 @@ import ancaMarian.tests.tema8.pageObjects.RefreshPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class RefreshPageTest extends BaseTest{
 
     @Test(groups = {"mobile", "desktop"})
@@ -12,6 +14,7 @@ public class RefreshPageTest extends BaseTest{
         RefreshPage refreshPage = new RefreshPage(driver);
         refreshPage.waitForIdToBeVisible();
         String timestampBeforeRefresh = refreshPage.getTimestamp();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.navigate().refresh();
         String timestampAfterRefresh = refreshPage.getTimestamp();
         Assert.assertNotEquals(timestampAfterRefresh, timestampBeforeRefresh, "Timestamp did not change after refresh.");

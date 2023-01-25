@@ -1,19 +1,16 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-
-<suite name="DesktopTests" verbose="1" >
-    <test name="DesktopTests" >
-
+<suite name="Desktop Test Suite">
+    <test name="Desktop Test">
         <groups>
             <run>
-                <exclude name="mobile"  />
-                <include name="desktop"  />
+                <include name="desktop"/>
             </run>
         </groups>
-
-        <packages>
-            <package name="ancaMarian.tests.tema8.tests" />
-        </packages>
-
+        <classes>
+            <class name="ancaMarian.tests.tema8.tests.BasicAjaxPageTest"/>
+            <class name="ancaMarian.tests.tema8.tests.RefreshPageTest"/>
+            <class name="ancaMarian.tests.tema8.tests.JavaScriptRedirectPageTest"/>
+            <class name="ancaMarian.tests.tema8.tests.DynamicButtonsSimpleTest"/>
+            <class name="ancaMarian.tests.tema8.tests.DisabledDynamicButtonsPageTest"/>
+        </classes>
     </test>
-
 </suite>
