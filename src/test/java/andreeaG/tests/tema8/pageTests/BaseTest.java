@@ -1,26 +1,26 @@
-package ioananadroflorea.tests.Tema7;
+package andreeaG.tests.tema8.pageTests;
 
-import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import andreeaG.driver.BrowserManager;
 
 public class BaseTest {
 
     protected ChromeDriver driver;
 
-    @BeforeMethod(groups = "redirect")
-    public void initChromeBrowser(){
+    @BeforeMethod()
+    public void initChromeBrowser() {
         driver = BrowserManager.createChromeDriver();
         driver.get("https://katalon-demo-cura.herokuapp.com/");
-        System.out.println("Executed before method.");
+        System.out.println("Executed before method");
     }
 
-    @AfterMethod(groups = "redirect")
-    public void quitDriver(){
-        if (driver!=null){
+    @AfterMethod(alwaysRun = true)
+    public void quitDriver() {
+        if (driver!=null) {
             driver.quit();
         }
-        System.out.println("Executed after method.");
+        System.out.println("Executed after method");
     }
 }

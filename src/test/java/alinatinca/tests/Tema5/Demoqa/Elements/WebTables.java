@@ -1,7 +1,6 @@
-package alinaTinca.tests.Tema5.Demoqa.Elements;
+package alinatinca.tests.Tema5.Demoqa.Elements;
 
-import AlinaTinca.BrowserManager;
-import AlinaTinca.BrowserManager;
+import alinatinca.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
