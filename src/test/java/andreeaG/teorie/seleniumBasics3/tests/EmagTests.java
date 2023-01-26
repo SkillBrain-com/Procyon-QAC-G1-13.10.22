@@ -4,7 +4,7 @@ package andreeaG.teorie.seleniumBasics3.tests;
 import andreeaG.driver.BrowserManager;
 import andreeaG.teorie.seleniumBasics3.pageObjects.EmagHomePage;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -14,11 +14,21 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class EmagTests {
+  // For Selenium basics 3
+    //ChromeDriver driver;
 
-    ChromeDriver driver;
+
+    //Remote ChromeDriver for Selenium Grid
+    RemoteWebDriver driver;
+
     @Test
     public void openLoginTest(){
-        driver= BrowserManager.createChromeDriverWithOptions();
+
+        //driver for Basics 3
+        //driver= BrowserManager.createChromeDriverWithOptions();
+
+        //driver for Selenium Grid
+        driver= BrowserManager.createRemoteWebDriver();
         driver.get("https://www.emag.ro/");
         System.out.println("Inainte " + LocalDateTime.now());
         // driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
