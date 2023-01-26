@@ -3,7 +3,10 @@ package elizCurtnazar.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,6 +37,15 @@ public class BrowserManager {
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);//options.addArguments
 //        WebDriverManager.chromedriver().setup(); //in caz de erroare
         return new ChromeDriver(chromeOptions);
+    }
+
+    public static RemoteWebDriver createRemoteWebDriver() {
+        try {
+            return new RemoteWebDriver(new URL("http://localhost:4444/"), new ChromeOptions());
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public static void closeChromeDriver(ChromeDriver driver){
