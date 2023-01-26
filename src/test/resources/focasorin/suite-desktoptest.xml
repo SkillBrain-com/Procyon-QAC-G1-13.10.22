@@ -1,0 +1,12 @@
+<suite name="Desktop Test Suite">
+    <test name="Desktop Test">
+        <groups>
+            <run>
+                <include name="desktop"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="sorinfoca.Tests.Tema8.TestPage.TestPages"/>
+        </classes>
+    </test>
+</suite>
