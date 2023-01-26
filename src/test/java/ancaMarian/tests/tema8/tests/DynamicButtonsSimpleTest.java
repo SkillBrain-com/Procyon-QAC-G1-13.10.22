@@ -20,7 +20,6 @@ public class DynamicButtonsSimpleTest extends BaseTest {
         dynamicButtonsSimplePage.clickOnTwoButton();
         dynamicButtonsSimplePage.waitForWaitMessageToDisappear();
         dynamicButtonsSimplePage.clickOnThreeButton();
-        WebElement confirmationMessage = driver.findElement(By.id("buttonmessage"));
-        Assert.assertEquals(confirmationMessage.getText(), "All Buttons Clicked", "Not all buttons were clicked.");
+        Assert.assertEquals(dynamicButtonsSimplePage.confirmationMessage(), "All Buttons Clicked", "Not all buttons were clicked.");
     }
 }

@@ -55,4 +55,9 @@ public class DynamicButtonsSimplePage {
         WebElement threeButton = driver.findElement(By.id("button03"));
         threeButton.click();
     }
+
+    public String confirmationMessage() {
+        WebElement confirmationMessage = driver.findElement(By.id("buttonmessage"));
+        return confirmationMessage.getText();
+    }
 }

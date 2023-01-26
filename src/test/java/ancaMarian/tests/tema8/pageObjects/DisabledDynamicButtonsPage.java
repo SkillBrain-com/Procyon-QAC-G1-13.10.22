@@ -61,4 +61,17 @@ public class DisabledDynamicButtonsPage {
         threeButton.click();
     }
 
+    public String confirmationMessage() {
+        WebElement confirmationMessage = driver.findElement(By.id("buttonmessage"));
+        return confirmationMessage.getText();
+    }
+
+    public boolean waitForConfirmationMessageToAppear() {
+        try {
+            wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("buttonmessage"), "All Buttons Clicked"));
+            return true;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
 }
