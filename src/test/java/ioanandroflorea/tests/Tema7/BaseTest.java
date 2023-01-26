@@ -1,4 +1,4 @@
-package ioananadroflorea.tests.Tema7;
+package ioanandroflorea.tests.Tema7;
 
 import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
