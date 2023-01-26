@@ -1,2 +1,4 @@
-package andreeaG.tests.tema8.pageObjects;public class Refresh {
+package andreeaG.tests.tema8.pageObjects;
+
+public class Refresh {
 }

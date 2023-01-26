@@ -1,2 +1,3 @@
-package andreeaG.tests.tema8.pageObjects;public class JavascriptRedirectButtons {
-}
+package andreeaG.tests.tema8.pageObjects;
+
+public class JavascriptRedirectButtons {

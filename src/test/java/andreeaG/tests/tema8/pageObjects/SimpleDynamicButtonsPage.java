@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 
-public class SimpleDynamicButtons{
+public class SimpleDynamicButtonsPage {
 
     ChromeDriver driver;
     WebDriverWait wait;
     Wait<WebDriver> fluentWait;
-    public SimpleDynamicButtons(ChromeDriver driver) {
+    public SimpleDynamicButtonsPage(ChromeDriver driver) {
         this.driver = driver;
         //using WebDriverWait
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
