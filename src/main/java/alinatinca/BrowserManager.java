@@ -1,4 +1,4 @@
-package AlinaTinca;
+package alinatinca;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
