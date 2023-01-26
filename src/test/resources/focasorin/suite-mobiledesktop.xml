@@ -1,0 +1,13 @@
+<suite name="Mobile Test Suite">
+    <test name="Mobile Test">
+        <groups>
+            <run>
+                <include name="mobile"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="sorinfoca.Tests.Tema8.TestPage.TestPages">
+            </class>
+        </classes>
+    </test>
+</suite>
