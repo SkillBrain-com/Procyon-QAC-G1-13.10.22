@@ -1,14 +1,25 @@
 package bogdanSandu.tests.tema8.pageObjects;
 
+import bogdanSandu.tests.tema8.tests.BaseTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class RedirectsPage {
+import static org.testng.Assert.assertEquals;
+
+public class RedirectsPage extends BaseTest {
+
+    private WebDriver driver;
+
+    String expectedURL = "https://testpages.herokuapp.com/styled/javascript-redirect-test.html";
 
     public RedirectsPage(ChromeDriver driver){
-        PageFactory.initElements(driver, this);
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
 
     public static final String START_PAGE_URL = "https://testpages.herokuapp.com/styled/javascript-redirect-test.html";
@@ -28,9 +39,6 @@ public class RedirectsPage {
     @FindBy(id= DELAY_BOUNCE)
     private WebElement delayBounceBtn;
 
-    public WebElement getDelayBasic() {
-        return delayBasic;
-    }
 
     public WebElement getBackButton() {
         return backButton;
@@ -39,4 +47,26 @@ public class RedirectsPage {
     public WebElement getDelayBounceButton() {
         return delayBounceBtn;
     }
+
+    public void goToPage() {
+        driver.get(START_PAGE_URL);
+    }
+
+    public void clickDelayBasicButton() {
+        delayBasic.click();
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(BACK_BUTTON)));
+
+    }
+
+    public void clickDelayBounceButton(){
+        delayBounceBtn.click();
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(BACK_BUTTON)));
+    }
+
+    public void backButton() {
+        backButton.click();
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(DELAY_BOUNCE)));
+        assertEquals(expectedURL, driver.getCurrentUrl(),"Not redirected to the correct page after pressing the delay basic button");
+    }
+
 }

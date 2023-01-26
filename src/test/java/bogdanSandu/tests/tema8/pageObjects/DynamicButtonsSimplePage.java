@@ -1,15 +1,24 @@
 package bogdanSandu.tests.tema8.pageObjects;
 
+import bogdanSandu.tests.tema8.tests.BaseTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class DynamicButtonsSimplePage {
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+public class DynamicButtonsSimplePage extends BaseTest {
+
+    private WebDriver driver;
 
     public DynamicButtonsSimplePage(ChromeDriver driver){
-
-        PageFactory.initElements(driver , this);
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
 
     public static final String START_PAGE_URL ="https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html";
@@ -57,5 +66,30 @@ public class DynamicButtonsSimplePage {
 
     public WebElement getMessage() {
         return message;
+    }
+
+    public void goToPage() {
+        driver.get(START_PAGE_URL);
+    }
+
+    public void clickButtons() {
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(START_BUTTON)));
+        startButton.click();
+        System.out.println("Click on start button");
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_ONE)));
+        oneButton.click();
+        System.out.println("Click on 'One' button");
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_TWO)));
+        twoButton.click();
+        System.out.println("Click on 'Two' button");
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_THREE)));
+        threeButton.click();
+        System.out.println("Click on 'Three' button");
+        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(MESSAGE)));
+    }
+
+    public void getButtonMessage() {
+        System.out.println(getMessage().getText());
+        assertEquals(getMessage().getText(),"All Buttons Clicked","The corresponding message was not displayed");
     }
 }
