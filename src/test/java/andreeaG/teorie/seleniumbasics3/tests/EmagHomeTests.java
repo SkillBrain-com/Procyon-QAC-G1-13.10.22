@@ -1,8 +1,9 @@
-package ioanandroflorea.teorie.seleniumbasics3.tests;
+package andreeaG.teorie.seleniumbasics3.tests;
 
 import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -11,11 +12,17 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class EmagTests {
-    ChromeDriver driver;
+public class EmagHomeTests {
+    //ChromeDriver for selenium basics 3
+    //ChromeDriver driver;
+    //RemoteWebDriver for selenium grid
+    RemoteWebDriver driver;
     @Test
     public void openLoginTest(){
-        driver = BrowserManager.createChromeDriverWithOptions();
+        //driver initialisation for selenium basics 3
+        //driver = BrowserManager.createChromeDriverWithOptions();
+        //driver initialisation for selenium grid
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://www.emag.ro/");
         System.out.println("Inainte" + LocalDateTime.now());
 //        WebElement acceptButton = new WebDriverWait(driver, Duration.ofSeconds(5))
@@ -36,7 +43,6 @@ public class EmagTests {
     }
     @Test
     public void openLoginTestWithPageObjects(){
-
 
     }
     @Test

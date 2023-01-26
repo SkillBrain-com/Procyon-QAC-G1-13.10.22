@@ -3,7 +3,10 @@ package ioanandroflorea.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,5 +35,12 @@ public class BrowserManager {
     }
     public static void closeBrowser(ChromeDriver driver) {
         driver.quit();
+    }
+    public static RemoteWebDriver createRemoteWebDriver() {
+        try {
+            return new RemoteWebDriver(new URL("http://localhost:4444/"), new ChromeOptions());
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
