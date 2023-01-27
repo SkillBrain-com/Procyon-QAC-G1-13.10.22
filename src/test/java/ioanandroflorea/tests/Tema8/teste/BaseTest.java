@@ -11,11 +11,14 @@ public class BaseTest {
 
     protected ChromeDriver driver;
 
-    @BeforeMethod()
-    public void initChromeBrowser() {
-        driver = BrowserManager.createChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        System.out.println("Executed before method");
+    @BeforeMethod(groups = "desktop")
+    public void createChromeDriverForDesktop(){
+        driver = BrowserManager.createChromeDriverForDesktop();
+    }
+
+    @BeforeMethod(groups = "mobile")
+    public void createChromeDriverForMobile(){
+        driver = BrowserManager.createChromeDriverForMobile();
     }
 
     @AfterMethod(alwaysRun = true)
@@ -23,6 +26,5 @@ public class BaseTest {
         if (driver!=null) {
             driver.quit();
         }
-        System.out.println("Executed after method");
     }
 }
