@@ -18,18 +18,6 @@ public class BrowserManager {
         return new ChromeDriver();
     }
 
-
-    RemoteWebDriver driver;
-
-    public static RemoteWebDriver createRemoteWebDriver() {
-
-        try {
-            return new RemoteWebDriver(new URL("http://localhost:4444/"),new ChromeOptions());
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-
-
     public static ChromeDriver createChromeDriverWithOptions() {
         //creating a ChromeOptions object
         ChromeOptions options = new ChromeOptions();
