@@ -17,6 +17,7 @@ public class JavaScriptRedirectsPageTests extends BaseTest{
     @Test(groups = {"mobile", "desktop"})
     public void clickOnFirstButton() {
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         JavaScriptRedirectsPage javaScriptRedirectsPage = new JavaScriptRedirectsPage(driver);
         System.out.println("The message in the paragraph on the first page is: " + javaScriptRedirectsPage.getParagraph());
         javaScriptRedirectsPage.clickOnFirstButton();
@@ -31,6 +32,7 @@ public class JavaScriptRedirectsPageTests extends BaseTest{
     @Test(groups = {"mobile", "desktop"})
     public void clickOnSecondButton(){
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         JavaScriptRedirectsPage javaScriptRedirectsPage = new JavaScriptRedirectsPage(driver);
         System.out.println("The message in the paragraph on the first page is: " + javaScriptRedirectsPage.getParagraph());
         javaScriptRedirectsPage.clickOnSecondButton();

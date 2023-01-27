@@ -29,15 +29,8 @@ public class RefreshPage {
     @FindBy(id ="refreshdate")
     WebElement refreshButton;
 
-    //Create a method that return the current timestamp
-    public String getCurrentTimestamp(){
-//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("refreshdate")));
-//        System.out.println("Condition has been executed!");
-        return refreshButton.getText();
-    }
-
-    //Create a method that return the refreshed timestamp
-    public String getRefreshedTimestamp(){
+    //Create a method that return the status for current timestamp
+    public String getStatusForTimestamp(){
 //        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("refreshdate")));
 //        System.out.println("Condition has been executed!");
         return refreshButton.getText();

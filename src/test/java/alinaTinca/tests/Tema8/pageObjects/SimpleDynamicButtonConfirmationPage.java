@@ -27,13 +27,8 @@ public class SimpleDynamicButtonConfirmationPage {
     @FindBy(id ="buttonmessage")
     WebElement text;
 
-    //Create a method that display the message before opening all the buttons
-    public String displayTextBeforeClickAllButtons(){
-        return text.getText();
-    }
-
-    //Create a method that display the message after opening all the buttons
-    public String displayTextAfterClickAllButtons(){
+    //Create a method that display the message for opening all the buttons
+    public String displayTextForClickAllButtons() {
         return text.getText();
     }
 }

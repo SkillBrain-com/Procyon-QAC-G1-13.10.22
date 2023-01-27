@@ -12,15 +12,15 @@ public class SimpleDynamicButtonsPageTest extends BaseTest{
     public void checkClickOnAllButtons(){
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html");
         SimpleDynamicButtonConfirmationPage simpleDynamicButtonConfirmationPage = new SimpleDynamicButtonConfirmationPage(driver);
-        Assert.assertEquals(simpleDynamicButtonConfirmationPage.displayTextBeforeClickAllButtons(), "Click all 4 buttons.");
-        System.out.println("The message that appears before openening all the buttons is: " + simpleDynamicButtonConfirmationPage.displayTextBeforeClickAllButtons());
+        Assert.assertEquals(simpleDynamicButtonConfirmationPage.displayTextForClickAllButtons(), "Click all 4 buttons.");
+        System.out.println("The message that appears before openening all the buttons is: " + simpleDynamicButtonConfirmationPage.displayTextForClickAllButtons());
         SimpleDynamicButtonPage simpleDynamicButtonPage = new SimpleDynamicButtonPage(driver);
         simpleDynamicButtonPage.clickOnStartButton();
         simpleDynamicButtonPage.clickOnOneButton();
         simpleDynamicButtonPage.clickOnSecondButton();
         simpleDynamicButtonPage.clickOnThirdButton();
-        Assert.assertEquals(simpleDynamicButtonConfirmationPage.displayTextAfterClickAllButtons(), "All Buttons Clicked");
-        System.out.println("The message that appears after opening all the buttons is: " + simpleDynamicButtonConfirmationPage.displayTextAfterClickAllButtons());
+        Assert.assertEquals(simpleDynamicButtonConfirmationPage.displayTextForClickAllButtons(), "All Buttons Clicked");
+        System.out.println("The message that appears after opening all the buttons is: " + simpleDynamicButtonConfirmationPage.displayTextForClickAllButtons());
         System.out.println("Check was done successfully!");
     }
 }
