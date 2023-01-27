@@ -49,5 +49,18 @@ public class SimpleDynamicButtonsPage {
         WebElement buttonTwo = driver.findElement(By.id("button02"));
         buttonTwo.click();
     }
+
+    public void clickOnThirdButton(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
+        WebElement buttonThree = driver.findElement(By.id("button03"));
+        buttonThree.click();
+    }
+
+    @FindBy(id = "buttonmessage")
+    WebElement allButtonsClicked;
+
+    public String getCategoryText() {
+        return allButtonsClicked.getText();
+    }
 }
 

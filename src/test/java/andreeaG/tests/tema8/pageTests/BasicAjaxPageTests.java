@@ -5,7 +5,7 @@ import andreeaG.tests.tema8.pageObjects.BasicAjaxPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BasicAjaxTests extends BaseTest {
+public class BasicAjaxPageTests extends BaseTest {
 
     @Test(groups = {"mobile","desktop"})
     public void codeItInTest() {

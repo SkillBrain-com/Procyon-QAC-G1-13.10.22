@@ -14,12 +14,12 @@ public class BaseTest {
 
     protected ChromeDriver driver;
 
-    @BeforeMethod(groups = "Desktop")
+    @BeforeMethod(groups = "desktop")
     public void desktopTest() {
         driver= BrowserManager.createChromeDriverWithOptions();
     }
 
-    @BeforeMethod(groups = "Mobile")
+    @BeforeMethod(groups = "mobile")
     public ChromeDriver mobileTest(){
         Map<String, String> mobileEmulation = new HashMap<>();
         mobileEmulation.put("deviceName", "Galaxy S8");
