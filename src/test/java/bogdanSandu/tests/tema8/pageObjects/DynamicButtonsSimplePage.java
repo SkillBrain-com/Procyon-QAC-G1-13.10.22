@@ -9,10 +9,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static bogdanSandu.utils.WaitUtils.fluentWait;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
-public class DynamicButtonsSimplePage extends BaseTest {
+public class DynamicButtonsSimplePage {
 
     private WebDriver driver;
 
@@ -73,19 +73,19 @@ public class DynamicButtonsSimplePage extends BaseTest {
     }
 
     public void clickButtons() {
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(START_BUTTON)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(START_BUTTON)));
         startButton.click();
         System.out.println("Click on start button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_ONE)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_ONE)));
         oneButton.click();
         System.out.println("Click on 'One' button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_TWO)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_TWO)));
         twoButton.click();
         System.out.println("Click on 'Two' button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_THREE)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_THREE)));
         threeButton.click();
         System.out.println("Click on 'Three' button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(MESSAGE)));
+        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(MESSAGE)));
     }
 
     public void getButtonMessage() {

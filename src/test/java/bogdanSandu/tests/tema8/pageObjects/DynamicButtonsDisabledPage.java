@@ -1,6 +1,5 @@
 package bogdanSandu.tests.tema8.pageObjects;
 
-import bogdanSandu.tests.tema8.tests.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class DynamicButtonsDisabledPage extends BaseTest {
+import static bogdanSandu.utils.WaitUtils.fluentWait;
+
+public class DynamicButtonsDisabledPage {
 
     private WebDriver driver;
 
@@ -69,23 +70,22 @@ public class DynamicButtonsDisabledPage extends BaseTest {
         driver.get(START_PAGE_URL);}
 
     public void clickButtons() {
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_START)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_START)));
         startButton.click();
         System.out.println("Click on start button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_ONE)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_ONE)));
         oneButton.click();
         System.out.println("Click on 'One' button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_TWO)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_TWO)));
         twoButton.click();
         System.out.println("Click on 'Two' button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_THREE)));
+        fluentWait(driver).until(ExpectedConditions.elementToBeClickable(By.id(BUTTON_THREE)));
         threeButton.click();
         System.out.println("Click on 'Three' button");
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(MESSAGE)));
+        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(MESSAGE)));
     }
 
     public void getButtonMessage() {
         System.out.println(message.getText());
     }
-
 }

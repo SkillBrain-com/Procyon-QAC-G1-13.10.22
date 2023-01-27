@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class DynamicButtonsSimplePageTest extends BaseTest {
 
     @Test(groups = "Desktop")
-    public void DynamicButtonsTestForDesktop(){
+    public void dynamicButtonsTestForDesktop(){
         System.out.println("Dynamic button test Desktop");
         DynamicButtonsSimplePage dynamicButtonsSimplePage = new DynamicButtonsSimplePage(driver);
         dynamicButtonsSimplePage.goToPage();
@@ -16,7 +16,7 @@ public class DynamicButtonsSimplePageTest extends BaseTest {
     }
 
     @Test(groups = "Mobile")
-    public void DynamicButtonsTestForMobile(){
+    public void dynamicButtonsTestForMobile(){
         System.out.println("Dynamic button test Mobile");
         DynamicButtonsSimplePage dynamicButtonsSimplePage = new DynamicButtonsSimplePage(driver);
         dynamicButtonsSimplePage.goToPage();

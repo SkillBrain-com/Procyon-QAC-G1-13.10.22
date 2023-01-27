@@ -1,6 +1,5 @@
 package bogdanSandu.tests.tema8.pageObjects;
 
-import bogdanSandu.tests.tema8.tests.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-public class BasicAjaxPage extends BaseTest {
+import static bogdanSandu.utils.WaitUtils.fluentWait;
+
+public class BasicAjaxPage {
 
     private WebDriver driver;
 
@@ -43,14 +44,14 @@ public class BasicAjaxPage extends BaseTest {
 
     public void clickOnButton(){
         button.click();
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id("_valueid")));
+        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.id("_valueid")));
         Assert.assertEquals(driver.getCurrentUrl(),"https://testpages.herokuapp.com/styled/the_form_processor.php?ajax=1");
     }
 
     public void selectCategory(int categoryValue) {
         Select category = new Select(selectCategory);
         category.selectByIndex(categoryValue);
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.titleIs("Test Page For Basic Ajax Example"));
+        fluentWait(driver).until(ExpectedConditions.titleIs("Test Page For Basic Ajax Example"));
     }
 
     public void selectLanguage(int languageValue) {

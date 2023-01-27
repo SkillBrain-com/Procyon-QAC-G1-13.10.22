@@ -9,9 +9,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static bogdanSandu.utils.WaitUtils.fluentWait;
 import static org.testng.Assert.assertEquals;
 
-public class RedirectsPage extends BaseTest {
+public class RedirectsPage {
 
     private WebDriver driver;
 
@@ -54,19 +55,18 @@ public class RedirectsPage extends BaseTest {
 
     public void clickDelayBasicButton() {
         delayBasic.click();
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(BACK_BUTTON)));
+        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(BACK_BUTTON)));
 
     }
 
     public void clickDelayBounceButton(){
         delayBounceBtn.click();
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(BACK_BUTTON)));
+        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(BACK_BUTTON)));
     }
 
     public void backButton() {
         backButton.click();
-        fluentWait((ChromeDriver) driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(DELAY_BOUNCE)));
+        fluentWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.id(DELAY_BOUNCE)));
         assertEquals(expectedURL, driver.getCurrentUrl(),"Not redirected to the correct page after pressing the delay basic button");
     }
-
 }
