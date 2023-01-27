@@ -1,4 +1,4 @@
-package neculaclaudiu.tests.testNg;
+package neculaclaudiu.tests.seleniumpart3.tests;
 
 import neculaclaudiu.driver.ChromeDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
