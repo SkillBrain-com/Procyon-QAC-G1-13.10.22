@@ -7,6 +7,7 @@
         </groups>
         <classes>
             <class name="sorinfoca.Tests.Tema8.TestPage.TestPages"/>
+            <class name="sorinfoca.Tests.Tema9.Tema8.TestPage.TestPages"/>
         </classes>
     </test>
 </suite>
