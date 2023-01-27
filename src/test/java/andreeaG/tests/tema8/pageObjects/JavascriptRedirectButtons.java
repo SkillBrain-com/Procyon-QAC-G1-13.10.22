@@ -47,7 +47,7 @@ public class JavascriptRedirectButtons{
     WebElement click2seconds;
     public void clickOn2seconds() {
         fluentWait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(3))
+                .withTimeout(Duration.ofSeconds(5))
                 .pollingEvery(Duration.ofMillis(200));
         click2seconds.click();
         String originalHandle = driver.getWindowHandle();
@@ -56,5 +56,6 @@ public class JavascriptRedirectButtons{
             if (!handle.equals(originalHandle)) {
                 driver.switchTo().window(handle);
                 break;
-            }   } }
+            }
+        } }
 }

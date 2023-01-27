@@ -72,9 +72,9 @@ public class DynamicTableTestPage {
         newIdInput.sendKeys(idInput);
         //introduce new data in Id field
         WebElement refreshTable = driver.findElement(By.id("refreshtable"));
-        //search the button called Refresh Table
+        //search the button called RefreshPage Table
         refreshTable.click();
-        //click on the button called Refresh Table
+        //click on the button called RefreshPage Table
         driver.quit();
         //close the Chrome browser page
     }

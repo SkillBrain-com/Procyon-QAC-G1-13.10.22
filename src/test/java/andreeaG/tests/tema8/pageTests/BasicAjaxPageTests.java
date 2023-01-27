@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BasicAjaxPageTests extends BaseTest {
-
     @Test(groups = {"mobile","desktop"})
     public void codeItInTest() {
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
