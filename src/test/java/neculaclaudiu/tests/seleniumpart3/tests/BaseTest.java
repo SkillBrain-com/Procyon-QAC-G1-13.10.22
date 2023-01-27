@@ -11,10 +11,10 @@ public class BaseTest {
 
     @BeforeMethod
     public void initChromeBrowser(){
-        driver = ChromeDriverManager.createChromeDriver();
+        driver = ChromeDriverManager.createChromeDriverWithOptions();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quitBrowser(){
         if(driver != null){
             driver.quit();

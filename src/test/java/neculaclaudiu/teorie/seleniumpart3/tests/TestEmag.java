@@ -38,9 +38,8 @@ public class TestEmag {
         driver.quit();
     }
     @Test
-    public void openMobileBrowser(){
+    public void openMobileBrowser() {
         driver = ChromeDriverManager.createChromeDriverForMobile();
         driver.get("https://www.emag.ro/");
     }
-    //3:00:00
 }
