@@ -29,13 +29,13 @@ public class DisabledDynamicButtonConfirmationPage {
     @FindBy(id="buttonmessage")
     WebElement text;
 
-    //Create a method that display the text before opening all buttons
-    public String displayTextBeforeClickAllButtons(){
+    //Create a method that display the text for opening all buttons
+    public String displayTextForClickAllButtons(){
         return text.getText();
     }
 
-    //Create a method that display the text after opening the all buttons
-    public String displayTextAfterClickAllButtons(){
-        return text.getText();
-    }
+//    //Create a method that display the text after opening the all buttons
+//    public String displayTextAfterClickAllButtons(){
+//        return text.getText();
+//    }
 }
