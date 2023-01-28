@@ -1,4 +1,4 @@
-package cosminsechel.tests.tema8.testpage;
+package ioanandroflorea.tema8.testpage;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

@@ -1,4 +1,4 @@
-package cosminsechel.tests.tema8.pages;
+package ioanandroflorea.tema8.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

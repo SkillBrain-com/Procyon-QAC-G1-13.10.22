@@ -51,6 +51,7 @@ public class BrowserManager {
     }
 
     public static void closeRemoteWebDriver(RemoteWebDriver driver) {
+        driver.quit();
     }
 }
 
