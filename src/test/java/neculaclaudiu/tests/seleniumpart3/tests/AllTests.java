@@ -19,7 +19,7 @@ public class AllTests extends BaseTest{
     }
 
     @Test(groups = {"Desktop", "Mobile"})
-    public void JavaScriptRedirectsPageTest(){
+    public void javaScriptRedirectsPageTest(){
         JavaScriptRedirectsPage page = new JavaScriptRedirectsPage(driver);
         page.clickOnFirstButton();
         page.waitForRedirect();
@@ -40,7 +40,7 @@ public class AllTests extends BaseTest{
     }
 
     @Test(groups = {"Desktop", "Mobile"})
-    public void SimpleDynamicButtonsPageTest(){
+    public void simpleDynamicButtonsPageTest(){
         SimpleDynamicButtonsPage page = new SimpleDynamicButtonsPage(driver);
         page.clickOnStartButton();
         page.clickOnOneButton();
@@ -50,7 +50,7 @@ public class AllTests extends BaseTest{
     }
 
     @Test(groups = {"Desktop", "Mobile"})
-    public void DisabledDynamicButtonsTest(){
+    public void disabledDynamicButtonsTest(){
         DisabledDynamicButtonsPage page = new DisabledDynamicButtonsPage(driver);
         page.clickOnStartButton();
         page.clickOnOneButton();
