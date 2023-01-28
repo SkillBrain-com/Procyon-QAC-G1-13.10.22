@@ -7,8 +7,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class BrowserManager {
     public static ChromeDriver createChromeDriver() {
