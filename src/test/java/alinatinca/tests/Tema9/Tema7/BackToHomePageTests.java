@@ -1,4 +1,4 @@
-package alinatinca.tests.Tema7;
+package alinatinca.tests.Tema9.Tema7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,11 +10,11 @@ public class BackToHomePageTests extends BaseTest {
 //Ex 5
     public void goToMenuButtonAndClickHomeButton(){
         //create a method that go to menu button and clik on home button
-        WebElement menuButton = driver.findElement(By.id("menu-toggle"));
+        WebElement menuButton = remoteWebDriver.findElement(By.id("menu-toggle"));
         //find the menu button
         menuButton.click();
         //click on it
-        WebElement homeButton = driver.findElement(By.xpath("//a[text()='Home']"));
+        WebElement homeButton = remoteWebDriver.findElement(By.xpath("//a[text()='Home']"));
         //find the home button
         homeButton.click();
         //click on it
@@ -26,7 +26,7 @@ public class BackToHomePageTests extends BaseTest {
         //go to menu button and clik on home button
         System.out.println("Back to home page!");
         //display the above message
-        Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertEquals(remoteWebDriver.getCurrentUrl(),
         //check if return to home page
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Back to home page!");
@@ -35,23 +35,23 @@ public class BackToHomePageTests extends BaseTest {
     //Method for precondition
     public void loginWithValidCredentials(){
         //create a method that is a precondition for login before doing any other operation
-        WebElement menuButton = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
+        WebElement menuButton = remoteWebDriver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
         //find the Home Menu button
         menuButton.click();
         //click on home button
-        WebElement loginLink = driver.findElement(By.linkText("Login"));
+        WebElement loginLink = remoteWebDriver.findElement(By.linkText("Login"));
         //find the Login button
         loginLink.click();
         //click on Login button
-        WebElement usernameInput = driver.findElement(By.name("username"));
+        WebElement usernameInput = remoteWebDriver.findElement(By.name("username"));
         //find the username filed
         usernameInput.sendKeys("John Doe");
         //fill in the username field with the above username
-        WebElement passwordInput = driver.findElement(By.name("password"));
+        WebElement passwordInput = remoteWebDriver.findElement(By.name("password"));
         //find the password field
         passwordInput.sendKeys("ThisIsNotAPassword");
         //fill in password field with the above password
-        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+        WebElement loginButton = remoteWebDriver.findElement(By.cssSelector("button[type='submit']"));
         //find the login button
         loginButton.click();
         //click on login button
@@ -65,7 +65,7 @@ public class BackToHomePageTests extends BaseTest {
         //go to menu button and clik on home button
         System.out.println("Back to home page BUT the appointment form is displayed on the home page!");
         //display the above message
-        Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertEquals(remoteWebDriver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Back to home page!");
     }
@@ -78,7 +78,7 @@ public class BackToHomePageTests extends BaseTest {
         //go to menu button and clik on home button
         System.out.println("Back to home page BUT the appointment form is displayed on the home page!");
         //display the above message
-        Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertEquals(remoteWebDriver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Back to home page!");
     }
@@ -87,11 +87,11 @@ public class BackToHomePageTests extends BaseTest {
     public void backToHomePageFromHistoryPage(){
         loginWithValidCredentials();
         //precondition for login before to navigate to history page
-        WebElement homeMenu = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
+        WebElement homeMenu = remoteWebDriver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
         //find the Home Menu button
         homeMenu.click();
         //click on home button
-        WebElement historyButton = driver.findElement(By.xpath("//a[text()='History']"));
+        WebElement historyButton = remoteWebDriver.findElement(By.xpath("//a[text()='History']"));
         //find the history button
         historyButton.click();
         //click on it
@@ -99,7 +99,7 @@ public class BackToHomePageTests extends BaseTest {
         //go to menu button and clik on home button
         System.out.println("Back to home page BUT the appointment form is displayed on the home page!");
         //display the above message
-        Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertEquals(remoteWebDriver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Back to home page!");
     }
@@ -108,11 +108,11 @@ public class BackToHomePageTests extends BaseTest {
     public void backToHomePageFromProfilePage(){
         loginWithValidCredentials();
         //precondition for login before to navigate to profile page
-        WebElement homeMenu = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
+        WebElement homeMenu = remoteWebDriver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
         //find the Home Menu button
         homeMenu.click();
         //click on home button
-        WebElement profileButton = driver.findElement(By.xpath("//a[text()='Profile']"));
+        WebElement profileButton = remoteWebDriver.findElement(By.xpath("//a[text()='Profile']"));
         //find the profile button
         profileButton.click();
         //click on it
@@ -120,7 +120,7 @@ public class BackToHomePageTests extends BaseTest {
         //go to menu button and clik on home button
         System.out.println("Back to home page BUT the appointment form is displayed on the home page!");
         //display the above message
-        Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertEquals(remoteWebDriver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Back to home page!");
     }
@@ -129,17 +129,17 @@ public class BackToHomePageTests extends BaseTest {
     public void backToHomePageFromLogoutPage(){
         loginWithValidCredentials();
         //precondition for login before to navigate to logout page
-        WebElement homeMenu = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
+        WebElement homeMenu = remoteWebDriver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));
         //find the Home Menu button
         homeMenu.click();
         //click on home button
-        WebElement logoutButton = driver.findElement(By.xpath("//a[text()='Logout']"));
+        WebElement logoutButton = remoteWebDriver.findElement(By.xpath("//a[text()='Logout']"));
         //find the logout button
         logoutButton.click();
         //click on it
         System.out.println("Back to home page BUT the appointment form is displayed on the home page!");
         //display the above message
-        Assert.assertEquals(driver.getCurrentUrl(),
+        Assert.assertEquals(remoteWebDriver.getCurrentUrl(),
                 "https://katalon-demo-cura.herokuapp.com/",
                 "Back to home page!");
     }

@@ -1,9 +1,10 @@
-package alinatinca.tests.Tema5.Demoqa.Elements;
+package alinatinca.tests.Tema9.Tema5.Demoqa.Elements;
 
 import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class CheckBox {
 
@@ -13,20 +14,19 @@ public class CheckBox {
     }
     public static void goToTheCheckBox(){
         //create a method called goToTheCheckBox that goes to this section and idetifies one element and make operation on it
-        ChromeDriver driver = BrowserManager.createChromeDriver();
+        RemoteWebDriver remoteWebDriver = BrowserManager.createRemoteWebDriver();
         //create and configure the Chome browser page settings
-        driver.get("https://demoqa.com/checkbox");
+        remoteWebDriver.get("https://demoqa.com/checkbox");
         //go to the Demoaq URL
-        WebElement checkBoxSection = driver.findElement(By.xpath("//span[text()='Check Box']"));
+        WebElement checkBoxSection = remoteWebDriver.findElement(By.xpath("//span[text()='Check Box']"));
         //find the section called Check Box
         checkBoxSection.click();
         //click on the Check Box section
-        WebElement checkBox = driver.findElement(By.cssSelector(".rct-checkbox svg[stroke='currentColor']"));
+        WebElement checkBox = remoteWebDriver.findElement(By.cssSelector(".rct-checkbox svg[stroke='currentColor']"));
         //find the box asignated to the field called Home
         checkBox.click();
         //click on that box
-        driver.quit();
+        remoteWebDriver.quit();
         //close the Chrome browser page
     }
 }
-

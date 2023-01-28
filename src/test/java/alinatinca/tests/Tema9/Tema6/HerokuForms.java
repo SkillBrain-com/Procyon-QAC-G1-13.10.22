@@ -1,4 +1,4 @@
-package alinatinca.tests.Tema6;
+package alinatinca.tests.Tema9.Tema6;
 
 import alinatinca.Utils.FileUtils;
 import alinatinca.driver.BrowserManager;
@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
 //Ex-2
 public class HerokuForms {
 
-    static ChromeDriver driver = null;
+    static RemoteWebDriver remoteWebDriver = null;
 
     public static void main(String[] args) {
 
@@ -30,10 +30,10 @@ public class HerokuForms {
             hiddenInputElement();
             //go to the hidden input element and identify the exception for it because is hidden
         }catch (NoSuchElementException e) {
-            FileUtils.takeScreenshot(driver, " New alert");
+            FileUtils.takeScreenshot(remoteWebDriver, " New alert");
             //call this method and take a screenshot for exception with the above message
         }finally {
-            driver.quit();
+            remoteWebDriver.quit();
             //close the driver instance
         }
 
@@ -47,7 +47,7 @@ public class HerokuForms {
             navigateToHerokuIndexPage();
             //go to the Heroku Index Page and identify the exception for goBackToTheForm button
         }catch (NoSuchElementException e) {
-            FileUtils.takeScreenshot(driver, "new alert");
+            FileUtils.takeScreenshot(remoteWebDriver, "new alert");
             //call this method and take the screenshot for exception with the above message
             System.out.println("It should take a screenshot for the exception identified");
             //display the above message
@@ -58,37 +58,37 @@ public class HerokuForms {
     }
 
     public static void navigateToHerokuFormsPage(){
-        driver= BrowserManager.createChromeDriver();
+        remoteWebDriver = BrowserManager.createRemoteWebDriver();
         //create the driver instance
-        driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
+        remoteWebDriver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         //go to the above URL
         System.out.println("Heroku HTML Form Example page has been opened!");
         //display the above message
     }
 
     public static void navigateToHerokuIndexPage(){
-        driver= BrowserManager.createChromeDriver();
+        remoteWebDriver = BrowserManager.createRemoteWebDriver();
         //create the driver instance
-        driver.get("https://testpages.herokuapp.com/styled/index.html");
+        remoteWebDriver.get("https://testpages.herokuapp.com/styled/index.html");
         //go to the Heroku Index Page
-        WebElement goBackToTheFormButton = driver.findElement(By.className("styled-click-button"));
+        WebElement goBackToTheFormButton = remoteWebDriver.findElement(By.className("styled-click-button"));
         //find the goBackToTheForm button
         goBackToTheFormButton.click();
         //click on this button
     }
 
     public static void firstParagraph() {
-        WebElement firstParagraph = driver.findElement(By.className("explanation"));
+        WebElement firstParagraph = remoteWebDriver.findElement(By.className("explanation"));
         //find the first paragraph
         System.out.println("The first paragraph has the following message: " + firstParagraph.getText());
         //display the message for the first paragraph
     }
 
     public static void scrollToSubmitButton() {
-        WebElement submitButton = driver.findElement(By
+        WebElement submitButton = remoteWebDriver.findElement(By
                     .xpath("//input[@type='submit']"));
         //find the submit button
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(remoteWebDriver);
         //create an object of type Actions
         actions.moveToElement(submitButton).build().perform();
         //scroll to the submit button
@@ -97,23 +97,23 @@ public class HerokuForms {
     }
 
     public static void fillFormDetails(){
-        WebElement userName = driver.findElement(By.cssSelector("input[name='username']"));
+        WebElement userName = remoteWebDriver.findElement(By.cssSelector("input[name='username']"));
         //find the Username field
-        WebElement password = driver.findElement(By.cssSelector("input[name='password']"));
+        WebElement password = remoteWebDriver.findElement(By.cssSelector("input[name='password']"));
         //find the Password field
-        WebElement textAreaComment = driver.findElement(By.cssSelector("textarea[name='comments']"));
+        WebElement textAreaComment = remoteWebDriver.findElement(By.cssSelector("textarea[name='comments']"));
         //find the TextArea Comment field
-        WebElement fileUpload = driver.findElement(By.cssSelector("input[name='filename']"));
+        WebElement fileUpload = remoteWebDriver.findElement(By.cssSelector("input[name='filename']"));
         //find the Filename field
-        List <WebElement> checkBoxes = (List<WebElement>) driver.findElements(By.name("checkboxes[]"));
+        List <WebElement> checkBoxes = (List<WebElement>) remoteWebDriver.findElements(By.name("checkboxes[]"));
         //find the list for the Checkbox Items
-        List <WebElement> radioButtons = (List<WebElement>) driver.findElements(By.name("radioval"));
+        List <WebElement> radioButtons = (List<WebElement>) remoteWebDriver.findElements(By.name("radioval"));
         //find the list for the Radio Items
-        Select multipleSelectValue = new Select(driver.findElement(By.name("multipleselect[]")));
+        Select multipleSelectValue = new Select(remoteWebDriver.findElement(By.name("multipleselect[]")));
         //find the list for Multiple Select Values
-        Select dropdown = new Select(driver.findElement(By.name("dropdown")));
+        Select dropdown = new Select(remoteWebDriver.findElement(By.name("dropdown")));
         //find the list for Dropdown
-        WebElement submitButton = driver.findElement(By.cssSelector("input[type='submit']"));
+        WebElement submitButton = remoteWebDriver.findElement(By.cssSelector("input[type='submit']"));
         //find the submit button
         userName.click();
         //click on Username field
@@ -154,9 +154,9 @@ public class HerokuForms {
         //click on submit button
         System.out.println("The submit button has been opened!");
         //display the above message
-        WebElement goBackToTheFormButton = driver.findElement(By.className("styled-click-button"));
+        WebElement goBackToTheFormButton = remoteWebDriver.findElement(By.className("styled-click-button"));
         //find the goBackToTheForm button
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(remoteWebDriver);
         //create an object of type Actions
         actions.moveToElement(goBackToTheFormButton).build().perform();
         //scroll to the goBackToTheForm button
@@ -169,18 +169,18 @@ public class HerokuForms {
     }
 
     public static void hiddenInputElement(){
-        driver= BrowserManager.createChromeDriver();
+        remoteWebDriver = BrowserManager.createChromeDriver();
         //create the driver instance
-        driver.get("https://testpages.herokuapp.com/styled/the_form_processor.php");
+        remoteWebDriver.get("https://testpages.herokuapp.com/styled/the_form_processor.php");
         //go to the Heroku Index Page
-        WebElement hiddenInput = driver.findElement(By.xpath("//strong[text()='hiddenField']"));
+        WebElement hiddenInput = remoteWebDriver.findElement(By.xpath("//strong[text()='hiddenField']"));
         //find the hiddenInput element
         System.out.println(hiddenInput.getAttribute("value"));
         //get attribute by value for the hiddenInput element
     }
 
      public static void closeBrowser() {
-        driver.quit();
+         remoteWebDriver.quit();
         //close the driver instance
          System.out.println("The driver instance has been closed!");
          //display the above message

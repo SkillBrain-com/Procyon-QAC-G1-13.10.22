@@ -1,4 +1,4 @@
-package alinatinca.tests.Tema5.Demoqa.Elements;
+package alinatinca.tests.Tema9.Tema5.Demoqa.Elements;
 
 import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;
@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class UploadAndDownload {
 
@@ -16,26 +17,26 @@ public class UploadAndDownload {
 
     public static void goToTheUploadAndDownload(){
         //create a method called goToTheUploadAndDownload that identifies a element and makes operation on it
-        ChromeDriver driver = BrowserManager.createChromeDriver();
+        RemoteWebDriver remoteWebDriver = BrowserManager.createRemoteWebDriver();
         //create and configure the Chrome browser page settings
-        driver.get("https://demoqa.com/upload-download");
+        remoteWebDriver.get("https://demoqa.com/upload-download");
         //go to this URL
-        WebElement uploadAndDownloadSection = driver.findElement(By.xpath("//span[text()='Upload and Download']"));
+        WebElement uploadAndDownloadSection = remoteWebDriver.findElement(By.xpath("//span[text()='Upload and Download']"));
         //find the section called Upload and Download
-        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        JavascriptExecutor js1 = (JavascriptExecutor) remoteWebDriver;
         js1.executeScript("arguments[0].scrollIntoView();", uploadAndDownloadSection);
         //scroll to the Upload and Download Section
         uploadAndDownloadSection.click();
         //click on this button
-        WebElement downloadButton = driver.findElement(By.cssSelector("a[id='downloadButton']"));
+        WebElement downloadButton = remoteWebDriver.findElement(By.cssSelector("a[id='downloadButton']"));
         //find the Download button
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(remoteWebDriver);
         //create an object of type Actions that takes as parameter the driver instance
         actions.moveToElement(downloadButton).build().perform();
         //scroll to the download button
         downloadButton.click();
         //click on this button
-        driver.quit();
+        remoteWebDriver.quit();
         //close the Chrome browser page
     }
 }
