@@ -27,7 +27,6 @@ public class BaseTest {
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(chromeOptions);
-
     }
 
     @AfterMethod(alwaysRun = true)
