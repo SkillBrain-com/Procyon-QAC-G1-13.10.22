@@ -1,6 +1,5 @@
 package cosminsechel.tests.tema8.testpage;
 
-import ioanandroflorea.tema8.pages.*;
 import org.testng.annotations.Test;
 import cosminsechel.tests.tema8.pages.*;
 
