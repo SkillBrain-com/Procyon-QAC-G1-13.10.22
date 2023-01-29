@@ -13,6 +13,6 @@ public class RefreshTests extends BaseTest{
         driver.get("https://testpages.herokuapp.com/styled/refresh");
         RefreshPage refreshPage = new RefreshPage(driver);
         driver.navigate().refresh();
-        Assert.assertEquals(refreshPage.getCurrentTime(), refreshPage.getRefreshedTime(), "Time has been changed!");
+        Assert.assertEquals(refreshPage.getCurrentTimestamp(), refreshPage.getRefreshedTimestamp(), "Timestamp has been changed!");
     }
 }
