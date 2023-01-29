@@ -13,7 +13,7 @@ public class SelectRadioButton {
     }
 
     public static void selectRadioButton() {
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/elements");
         WebElement radioButton = driver.findElement(By.id("item-2"));
         radioButton.click();

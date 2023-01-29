@@ -14,7 +14,7 @@ public class UpdateTextField {
     }
 
     public static void updateTextField() {
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/text-box");
         WebElement fullName = driver.findElement(By.id("userName"));
         fullName.click();

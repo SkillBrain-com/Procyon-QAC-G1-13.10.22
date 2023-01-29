@@ -13,7 +13,7 @@ public class GetInformation {
     }
 
     public static void getInfo(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/text-box");
         WebElement getInfo = driver.findElement(By.cssSelector("#output > div"));
         System.out.println("Info: " + getInfo.getText());

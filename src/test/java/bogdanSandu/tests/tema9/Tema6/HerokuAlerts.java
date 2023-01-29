@@ -4,7 +4,6 @@ package bogdanSandu.tests.tema9.Tema6;
 import bogdanSandu.driver.BrowserManager;
 import bogdanSandu.utils.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -43,7 +42,7 @@ public class HerokuAlerts {
     }
 
     public static void navigateToHerokuPage(){
-        driver = BrowserManager.creatRemoteWebDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         driver.manage().window().maximize();
         System.out.println("Am deschis Heroku index app!");

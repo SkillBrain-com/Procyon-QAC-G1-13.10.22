@@ -15,7 +15,7 @@ public class GetInfoForTable {
     }
 
     public static void getInfoForTable(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/tag/table.html");
         WebElement fourthLinkTable = driver.findElement(By.id("tablehere"));
         List<WebElement> tableRows = driver.findElements(By.cssSelector("#tablehere table tr"));

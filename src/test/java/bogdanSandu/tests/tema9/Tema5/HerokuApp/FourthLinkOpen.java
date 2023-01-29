@@ -13,7 +13,7 @@ public class FourthLinkOpen {
     }
 
     public static void fourthLinkOpen(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement fourthLink = driver.findElement(By.id("tablestest"));
         fourthLink.click();

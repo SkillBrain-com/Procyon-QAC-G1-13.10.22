@@ -14,7 +14,7 @@ public class SelectTextBox {
     }
 
     public static void selectTextBox() {
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/elements");
         WebElement textBox = driver.findElement(By.cssSelector("#item-0"));
         textBox.click();

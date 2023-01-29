@@ -35,9 +35,9 @@ public class BrowserManager {
         return new ChromeDriver(chromeOptions);
     }
 
-    public static RemoteWebDriver creatRemoteWebDriver(){
+    public static RemoteWebDriver createRemoteWebDriver(){
         try {
-            return new RemoteWebDriver(new URL("http://localhost:4444/ui"), new ChromeOptions());
+            return new RemoteWebDriver(new URL("http://localhost:4444/"), new ChromeOptions());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

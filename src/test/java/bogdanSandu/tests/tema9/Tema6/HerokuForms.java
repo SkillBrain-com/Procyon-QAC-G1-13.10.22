@@ -5,7 +5,6 @@ import bogdanSandu.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -33,7 +32,7 @@ public class HerokuForms {
     }
 
     public static void navigateToHerokuFormsPage () {
-        driver = BrowserManager.creatRemoteWebDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         driver.manage().window().maximize();
         System.out.println("Am deschis Heroku Forms page!");

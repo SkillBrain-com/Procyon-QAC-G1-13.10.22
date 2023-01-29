@@ -4,7 +4,6 @@ import bogdanSandu.driver.BrowserManager;
 import bogdanSandu.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.NoSuchElementException;
@@ -28,7 +27,7 @@ public class DemoQaWindow {
     }
 
     public static void navigateToDemoQAWindowPage() {
-        driver = BrowserManager.creatRemoteWebDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/browser-windows");
         driver.manage().window().maximize();
         System.out.println("Am deschis Demo QA window page!");

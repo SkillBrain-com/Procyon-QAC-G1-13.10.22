@@ -13,7 +13,7 @@ public class GetSecondLinkTitle {
     }
 
     public static void getSecondLinkTitle(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement secondPageTitle = driver.findElement(By.id("elementattributestest"));
         System.out.println("Second link title is: " + secondPageTitle.getText());

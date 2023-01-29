@@ -13,7 +13,7 @@ public class GetFourthLinkTitle {
     }
 
     public static void getFourthLinkTitle(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement fourthLinkPageTitle = driver.findElement(By.cssSelector("div h1"));
         System.out.println("Fourth link title is: \"" + fourthLinkPageTitle.getText() + "\"");

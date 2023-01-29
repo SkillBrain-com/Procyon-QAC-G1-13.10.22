@@ -13,7 +13,7 @@ public class UpdateTextTables {
     }
 
     public static void updateTextTables() {
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/webtables");
         WebElement addButton = driver.findElement(By.id("addNewRecordButton"));
         addButton.click();

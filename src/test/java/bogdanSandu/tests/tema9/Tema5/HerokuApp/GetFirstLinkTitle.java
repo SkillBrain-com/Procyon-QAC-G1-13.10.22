@@ -13,7 +13,7 @@ public class GetFirstLinkTitle {
     }
 
     public static void getFirstLinkTitle(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement linkTitle = driver.findElement(By.xpath("//*[@id=\'basicpagetest\']"));
         System.out.println("First link title is: \"" + linkTitle.getText() + "\"");

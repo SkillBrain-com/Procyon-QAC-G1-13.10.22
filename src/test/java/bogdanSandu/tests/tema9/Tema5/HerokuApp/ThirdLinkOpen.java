@@ -13,7 +13,7 @@ public class ThirdLinkOpen {
     }
 
     public static void thirdLinkOpen(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement thirdLink = driver.findElement(By.id("findbytest"));
         thirdLink.click();

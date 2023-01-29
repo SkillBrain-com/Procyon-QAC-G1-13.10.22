@@ -13,7 +13,7 @@ public class SelectWebTables {
     }
 
     public static void selectWebTables() {
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/elements");
         WebElement webTables = driver.findElement(By.id("item-3"));
         webTables.click();

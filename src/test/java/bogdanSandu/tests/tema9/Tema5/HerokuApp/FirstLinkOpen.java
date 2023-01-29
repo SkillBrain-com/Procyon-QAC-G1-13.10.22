@@ -13,7 +13,7 @@ public class FirstLinkOpen {
     }
 
     public static void firstLinkOpen(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement firstLink = driver.findElement(By.id("basicpagetest"));
         firstLink.click();

@@ -13,7 +13,7 @@ public class SecondLinkOpen {
     }
 
     public static void secondLinkOpen(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement secondLink = driver.findElement(By.id("elementattributestest"));
         secondLink.click();

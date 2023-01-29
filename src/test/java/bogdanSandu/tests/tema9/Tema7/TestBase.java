@@ -12,7 +12,7 @@ public abstract class TestBase {
     @BeforeMethod
     public void openCURAHealthPage() {
         //open home page
-        driver = BrowserManager.creatRemoteWebDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         driver.manage().window().maximize();
         System.out.println("Am deschis CURA Healthcare Service page");

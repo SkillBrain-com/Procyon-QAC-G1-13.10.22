@@ -15,7 +15,7 @@ public class GetLinksFromList {
     }
 
     public static void getLinksFromList() {
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/find-by-playground-test.html");
         List<WebElement> allLinks = driver.findElements(By.tagName("li"));
         System.out.println("Number of Links in the Page is: " + allLinks.size());

@@ -13,7 +13,7 @@ public class GetFisrtLinkFirstParagraph {
     }
 
     public static void getFirstParagraph(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/basic-web-page-test.html");
         WebElement paragraph = driver.findElement(By.id("para1"));
         System.out.println("First paragraph is: \"" + paragraph.getText() + "\"");

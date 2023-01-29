@@ -13,7 +13,7 @@ public class GetSecondLinkText {
     }
 
     public static void getSecondtLinkText(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/attributes-test.html");
         WebElement linkText = driver.findElement(By.cssSelector("body > div > div.explanation > p"));
         System.out.println("Second link text is: \"" + linkText.getText() + "\"");

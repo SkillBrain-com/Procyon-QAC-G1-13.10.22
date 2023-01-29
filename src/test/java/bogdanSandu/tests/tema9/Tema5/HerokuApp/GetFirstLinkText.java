@@ -13,7 +13,7 @@ public class GetFirstLinkText {
     }
 
     public static void getFirstLinkText(){
-        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
+        RemoteWebDriver driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/basic-web-page-test.html");
         WebElement linkText = driver.findElement(By.cssSelector("body > div > div.explanation"));
         System.out.println("First text is: \"" + linkText.getText() + "\"");
