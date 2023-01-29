@@ -3,7 +3,7 @@ package bogdanSandu.tests.tema9.Tema5.HerokuApp;
 import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SecondLinkOpen {
 
@@ -13,7 +13,7 @@ public class SecondLinkOpen {
     }
 
     public static void secondLinkOpen(){
-        ChromeDriver driver = BrowserManager.createDriverAndGetPage();
+        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement secondLink = driver.findElement(By.id("elementattributestest"));
         secondLink.click();

@@ -3,7 +3,7 @@ package bogdanSandu.tests.tema9.Tema5.DemoQa;
 import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class GetInformation {
 
@@ -13,7 +13,7 @@ public class GetInformation {
     }
 
     public static void getInfo(){
-        ChromeDriver driver = BrowserManager.createDriverAndGetPage();
+        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
         driver.get("https://demoqa.com/text-box");
         WebElement getInfo = driver.findElement(By.cssSelector("#output > div"));
         System.out.println("Info: " + getInfo.getText());

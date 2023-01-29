@@ -3,7 +3,7 @@ package bogdanSandu.tests.tema9.Tema5.DemoQa;
 import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SelectCheckBox {
 
@@ -11,8 +11,9 @@ public class SelectCheckBox {
 
         selectCheckBox();
     }
+
     public static void selectCheckBox() {
-        ChromeDriver driver = BrowserManager.createDriverAndGetPage();
+        RemoteWebDriver driver = BrowserManager.createDriverAndGetPage();
         driver.get("https://demoqa.com/elements");
         WebElement checkBox = driver.findElement(By.id("item-1"));
         checkBox.click();

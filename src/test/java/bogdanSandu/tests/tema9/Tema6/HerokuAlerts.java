@@ -6,12 +6,13 @@ import bogdanSandu.utils.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 
 public class HerokuAlerts {
 
-    static ChromeDriver driver = null;
+    static RemoteWebDriver driver;
 
     public static void main(String[] args) throws IOException {
 
@@ -42,7 +43,7 @@ public class HerokuAlerts {
     }
 
     public static void navigateToHerokuPage(){
-        driver = BrowserManager.createDriverAndGetPage();
+        driver = BrowserManager.creatRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         driver.manage().window().maximize();
         System.out.println("Am deschis Heroku index app!");

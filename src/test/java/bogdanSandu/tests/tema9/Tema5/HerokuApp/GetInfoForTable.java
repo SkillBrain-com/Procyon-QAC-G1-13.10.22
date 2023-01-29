@@ -3,7 +3,7 @@ package bogdanSandu.tests.tema9.Tema5.HerokuApp;
 import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class GetInfoForTable {
     }
 
     public static void getInfoForTable(){
-        ChromeDriver driver = BrowserManager.createDriverAndGetPage();
+        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/tag/table.html");
         WebElement fourthLinkTable = driver.findElement(By.id("tablehere"));
         List<WebElement> tableRows = driver.findElements(By.cssSelector("#tablehere table tr"));

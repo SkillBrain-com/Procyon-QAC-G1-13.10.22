@@ -3,7 +3,7 @@ package bogdanSandu.tests.tema9.Tema5.HerokuApp;
 import bogdanSandu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class GetFourthLinkTitle {
 
@@ -13,7 +13,7 @@ public class GetFourthLinkTitle {
     }
 
     public static void getFourthLinkTitle(){
-        ChromeDriver driver = BrowserManager.createDriverAndGetPage();
+        RemoteWebDriver driver = BrowserManager.creatRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement fourthLinkPageTitle = driver.findElement(By.cssSelector("div h1"));
         System.out.println("Fourth link title is: \"" + fourthLinkPageTitle.getText() + "\"");
