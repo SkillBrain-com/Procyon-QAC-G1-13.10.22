@@ -41,7 +41,6 @@ public class SimpleDynamicButtonsPage {
         WebElement buttonOne = driver.findElement(By.id("button01"));
         buttonOne.click();
     }
-
     public void clickOnSecondButton() {
         //use either first option with WebDriverWait
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
@@ -49,5 +48,17 @@ public class SimpleDynamicButtonsPage {
         fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
         WebElement buttonTwo = driver.findElement(By.id("button02"));
         buttonTwo.click();
+    }
+    public void clickOnThirdButton() {
+        //use either first option with WebDriverWait
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
+        //or second option with FluentWait
+        fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
+        WebElement buttonThree = driver.findElement(By.id("button03"));
+        buttonThree.click();
+    }
+    public String confirmationMessage() {
+        WebElement confirmationMessage = driver.findElement(By.id("buttonmessage"));
+        return confirmationMessage.getText();
     }
 }

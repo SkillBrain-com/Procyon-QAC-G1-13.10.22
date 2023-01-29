@@ -15,6 +15,7 @@ public class SimpleDynamicButtonsTests extends BaseTest {
         simpleDynamicButtonsPage.clickOnStartButton();
         simpleDynamicButtonsPage.clickOnOneButton();
         simpleDynamicButtonsPage.clickOnSecondButton();
-        //Assert message All Buttons Clicked appear at the end
+        simpleDynamicButtonsPage.clickOnThirdButton();
+        Assert.assertEquals(simpleDynamicButtonsPage.confirmationMessage(), "All Buttons Clicked", "Not all buttons were clicekd.");
     }
 }

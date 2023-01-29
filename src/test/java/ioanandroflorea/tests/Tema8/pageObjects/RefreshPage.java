@@ -23,10 +23,7 @@ public class RefreshPage {
     }
     @FindBy(id ="refreshdate")
     WebElement refreshButton;
-    public String getCurrentTimestamp(){
-        return refreshButton.getText();
-    }
-    public String getRefreshedTimestamp(){
+    public String getTimestamp(){
         return refreshButton.getText();
     }
 }
