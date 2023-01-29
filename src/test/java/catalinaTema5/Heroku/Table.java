@@ -1,5 +1,6 @@
-package catalinaTema5;
+package catalinaTema5.Heroku;
 
+import catalinaTema5.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,9 +12,9 @@ public class Table {
 
     }
 
-    public static ChromeDriver Table() {
-        BrowserManager WebdriverManager = null;
-        ChromeDriver driver = WebdriverManager.createChromeDriver();
+    public static void Table() {
+
+        ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/tag/table.html");
 
 
