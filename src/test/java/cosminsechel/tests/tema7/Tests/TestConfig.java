@@ -1,12 +1,13 @@
 package cosminsechel.tests.tema7.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 import cosminsechel.driver.BrowserManager;
 
 public class TestConfig {
 
-    protected ChromeDriver driver = null;
+    protected RemoteWebDriver driver;
     private static String baseUrl = "https://katalon-demo-cura.herokuapp.com/";
 
     public static String getBaseUrl() {
@@ -37,12 +38,12 @@ public class TestConfig {
     @BeforeMethod
     public void setup() {
         System.out.println("Before method");
-        driver = BrowserManager.createDriver();
+        driver = BrowserManager.createRemoteWebDriver();
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("After method");
-        BrowserManager.closeChromeDriver(driver);
+        BrowserManager.closeRemoteWebDriver(driver);
     }
 }
