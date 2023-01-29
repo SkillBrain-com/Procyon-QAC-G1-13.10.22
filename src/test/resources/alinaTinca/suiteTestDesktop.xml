@@ -6,11 +6,11 @@
             </run>
         </groups>
         <classes>
-            <class name="alinatinca.tests.Tema8.tests.BasicAjaxExamplePageTests" />
-            <class name="alinatinca.tests.Tema8.tests.JavaScriptRedirectsPageTests"/>
-            <class name="alinatinca.tests.Tema8.tests.RefreshPageTest"/>
-            <class name="alinatinca.tests.Tema8.tests.SimpleDynamicButtonsPageTest"/>
-            <class name="alinatinca.tests.Tema8.tests.DisabledDynamicButtonsPageTest"/>
+            <class name="alinatinca.tests.Tema9.Tema8.tests.BasicAjaxExamplePageTests" />
+            <class name="alinatinca.tests.Tema9.Tema8.tests.JavaScriptRedirectsPageTests"/>
+            <class name="alinatinca.tests.Tema9.Tema8.tests.RefreshPageTest"/>
+            <class name="alinatinca.tests.Tema9.Tema8.tests.SimpleDynamicButtonsPageTest"/>
+            <class name="alinatinca.tests.Tema9.Tema8.tests.DisabledDynamicButtonsPageTest"/>
         </classes>
     </test>
 </suite>
