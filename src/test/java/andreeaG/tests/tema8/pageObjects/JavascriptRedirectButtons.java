@@ -43,6 +43,7 @@ public class JavascriptRedirectButtons{
                 break;
             }   }
     }
+
     @FindBy (id="delaygotobounce")
     WebElement click2seconds;
     public void clickOn2seconds() {
