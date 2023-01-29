@@ -5,6 +5,7 @@
     <test name="DemoTests">
         <classes>
             <class name="sorinfoca.Tests.Tema7.MyTests"/>
+            <class name="sorinfoca.Tests.Tema9.Tema7.MyTests"/>
         </classes>
     </test>
 </suite>

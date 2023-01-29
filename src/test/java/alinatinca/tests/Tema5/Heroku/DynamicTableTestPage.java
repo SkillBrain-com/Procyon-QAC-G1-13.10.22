@@ -1,6 +1,6 @@
 package alinatinca.tests.Tema5.Heroku;
 
-import alinatinca.BrowserManager;
+import alinatinca.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -72,9 +72,9 @@ public class DynamicTableTestPage {
         newIdInput.sendKeys(idInput);
         //introduce new data in Id field
         WebElement refreshTable = driver.findElement(By.id("refreshtable"));
-        //search the button called RefreshPage Table
+        //search the button called Refresh Table
         refreshTable.click();
-        //click on the button called RefreshPage Table
+        //click on the button called Refresh Table
         driver.quit();
         //close the Chrome browser page
     }
