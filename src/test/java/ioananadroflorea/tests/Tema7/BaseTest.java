@@ -1,6 +1,6 @@
 package ioananadroflorea.tests.Tema7;
 
-import ioanaandroflorea.driver.BrowserManager;
+import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
