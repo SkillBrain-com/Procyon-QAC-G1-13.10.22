@@ -1,20 +1,18 @@
-package alinatinca.tests.Tema8.tests;
+package alinatinca.tests.Tema9.Tema8.tests;
 
-import alinatinca.driver.BrowserManager;
-import alinatinca.tests.Tema8.pageObjects.DisabledDynamicButtonConfirmationPage;
-import alinatinca.tests.Tema8.pageObjects.DisabledDynamicButtonsPage;
-import org.openqa.selenium.chrome.ChromeDriver;
+import alinatinca.tests.Tema9.Tema8.pageObjects.DisabledDynamicButtonConfirmationPage;
+import alinatinca.tests.Tema9.Tema8.pageObjects.DisabledDynamicButtonsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DisabledDynamicButtonsPageTest extends BaseTest {
     @Test(groups = {"mobile", "desktop"})
     public void clickOnAllButtons() {
-        driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
-        DisabledDynamicButtonConfirmationPage disabledDynamicButtonConfirmationPage = new DisabledDynamicButtonConfirmationPage(driver);
+        remoteWebDriver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
+        DisabledDynamicButtonConfirmationPage disabledDynamicButtonConfirmationPage = new DisabledDynamicButtonConfirmationPage(remoteWebDriver);
         Assert.assertEquals(disabledDynamicButtonConfirmationPage.displayTextForClickAllButtons(), "Click Buttons In Order");
         System.out.println("The message that appears before openening all the buttons is: " + disabledDynamicButtonConfirmationPage.displayTextForClickAllButtons());
-        DisabledDynamicButtonsPage disabledDynamicButtonsPage = new DisabledDynamicButtonsPage(driver);
+        DisabledDynamicButtonsPage disabledDynamicButtonsPage = new DisabledDynamicButtonsPage(remoteWebDriver);
         disabledDynamicButtonsPage.clickOnStartButton();
         disabledDynamicButtonsPage.clickOnOneButton();
         disabledDynamicButtonsPage.clickOnSecondButton();

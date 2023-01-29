@@ -1,9 +1,10 @@
-package alinatinca.tests.Tema8.pageObjects;
+package alinatinca.tests.Tema9.Tema8.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,14 +16,14 @@ import java.time.Duration;
 public class RefreshPage {
 
     //Create the required attributes for this test case
-    ChromeDriver driver;
+    RemoteWebDriver remoteWebDriver;
     WebDriverWait wait;
 
     //Create the constructor that can define the required parameters for this test case
-    public RefreshPage(ChromeDriver driver){
-        this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        PageFactory.initElements(driver,this);
+    public RefreshPage(RemoteWebDriver remoteWebDriver){
+        this.remoteWebDriver = remoteWebDriver;
+        wait = new WebDriverWait(remoteWebDriver, Duration.ofSeconds(5));
+        PageFactory.initElements(remoteWebDriver,this);
     }
 
     //Find the refresh button on the page
