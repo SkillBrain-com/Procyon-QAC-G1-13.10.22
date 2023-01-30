@@ -17,7 +17,7 @@ public class DisabledDynamicButtonsPage {
 
     public DisabledDynamicButtonsPage(ChromeDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(7));
         PageFactory.initElements(driver, this);
     }
 
@@ -42,7 +42,7 @@ public class DisabledDynamicButtonsPage {
     }
 
     public void waitForOneButtonToBeClickable() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button01")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button01")));
     }
 
     public void clickOnOneButton() {

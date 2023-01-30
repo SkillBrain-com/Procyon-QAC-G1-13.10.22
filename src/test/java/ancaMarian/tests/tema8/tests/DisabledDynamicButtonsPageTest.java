@@ -22,8 +22,7 @@ public class DisabledDynamicButtonsPageTest extends BaseTest {
         disabledDynamicButtonsPage.clickOnTwoButton();
         disabledDynamicButtonsPage.waitForWaitMessageToDisappear();
         disabledDynamicButtonsPage.clickOnThreeButton();
-        if (disabledDynamicButtonsPage.waitForConfirmationMessageToAppear()) {
-            System.out.println("All buttons were clicked");
-        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(100));
+        Assert.assertTrue(disabledDynamicButtonsPage.waitForConfirmationMessageToAppear());
     }
 }
