@@ -36,9 +36,5 @@ public class Links {
         notFoundLink.click();
         driver.close();
         driver.quit();
-
-
-
-
-    }
+ }
 }
