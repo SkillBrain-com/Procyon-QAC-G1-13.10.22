@@ -8,8 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Links {
     public static void main(String[] args) {
         goToLInksPage();
-
-    }
+        }
 
     public static void  goToLInksPage(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
