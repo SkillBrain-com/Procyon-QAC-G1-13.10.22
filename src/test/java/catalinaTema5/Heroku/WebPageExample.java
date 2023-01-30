@@ -22,7 +22,6 @@ public class WebPageExample {
         System.out.println("Another paragraph is:" + anotherParagraph.getText());
         WebElement indexButton = driver.findElement(By.className("index.html"));
         indexButton.click();
-
         driver.quit();
    }
  }
