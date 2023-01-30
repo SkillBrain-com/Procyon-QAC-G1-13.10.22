@@ -7,28 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Table {
 
-    public static void main(String[] args) {
-        Table();
-
-    }
-
-    public static void Table() {
+     public static void Table() {
 
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/tag/table.html");
 
 
-        WebElement tableLink = driver.findElement(By.id("tablestest"));
-        System.out.println(tableLink.getText());
-        tableLink.click();
-
-        WebElement addButton = driver.findElement(By.id("addNewRecordButton"));
-        addButton.click();
-
-        WebElement doubleClick = driver.findElement(By.id("doubleClickButton"));
-        doubleClick.click();
-
+        WebElement titleTableTag = driver.findElement(By.tagName("h1"));
+        Systen.out.println("Title displays:" + titleTableTag.getText()); 
+        WebElement exampleTable = driver.findElement(By.tagName("p"));
+        System.out.println("Text displays:" + exampleTable.getText());
+        WebElement captionText = driver.findElement(By.tagName("caption"));
+        System.out.println("Up of table ttext is:" + captionText.getText());
         driver.quit();
-
-    }
+        }
 }
