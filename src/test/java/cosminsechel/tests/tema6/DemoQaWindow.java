@@ -3,15 +3,15 @@ package cosminsechel.tests.tema6;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import cosminsechel.utils.FileUtils;
 import cosminsechel.driver.BrowserManager;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.util.Set;
 public class DemoQaWindow {
-    static ChromeDriver driver = null;
+    static RemoteWebDriver driver;
     public static void main(String[] args) {
         navigateToDemoQaWindowPage();
         try {
@@ -21,12 +21,12 @@ public class DemoQaWindow {
             FileUtils.takeScreenshot(driver, "window");
             System.out.println("No alert present");
         } finally {
-            BrowserManager.closeChromeDriver(driver);
+            BrowserManager.closeRemoteWebDriver(driver);
         }
     }
 
     public static void navigateToDemoQaWindowPage() {
-        driver = BrowserManager.createDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://demoqa.com/browser-windows");
         System.out.println("Navigated to Demo QA window page");
     }
