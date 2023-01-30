@@ -8,7 +8,7 @@ import ioanandroflorea.tests.Tema8.pageObjects.SimpleDynamicButtonsPage;
 
 public class SimpleDynamicButtonsTests extends BaseTest {
 
-    @Test
+    @Test(groups = {"mobile", "desktop"})
     public void verifyClickOnAllButtons() {
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html");
         SimpleDynamicButtonsPage simpleDynamicButtonsPage = new SimpleDynamicButtonsPage(driver);

@@ -11,7 +11,7 @@ public class BasicAjaxTests extends BaseTest {
     public void codeItInTest() {
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
-        basicAjaxPage.selectCategory("Desktop.xml");
+        basicAjaxPage.selectCategory("Desktop");
         basicAjaxPage.selectLanguage("Assembler");
         basicAjaxPage.clickOnSubmitButton();
         BasicAjaxConfirmationPage basicAjaxConfirmationPage = new BasicAjaxConfirmationPage(driver);

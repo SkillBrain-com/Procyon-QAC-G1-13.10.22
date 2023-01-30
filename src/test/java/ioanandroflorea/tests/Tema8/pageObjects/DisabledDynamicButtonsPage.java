@@ -41,7 +41,7 @@ public class DisabledDynamicButtonsPage {
     }
 
     public void waitForOneButtonToBeClickable() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button01")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button01")));
     }
 
     public void clickOnOneButton() {
