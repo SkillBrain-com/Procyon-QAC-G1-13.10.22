@@ -28,8 +28,11 @@ public class RefreshPage {
         return refresh.getText();
     }
 
+
+   /*@FindBy (id="refreshdisplay")
+    WebElement refreshdisplay;
     public String afterRefreshTimestamp(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("refreshdate")));
-        return refresh.getText();
-    }
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("refreshdisplay")));
+        return refreshdisplay.getText();
+    } */
 }
