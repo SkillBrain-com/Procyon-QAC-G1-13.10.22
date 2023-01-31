@@ -1,4 +1,4 @@
-package teofilursan.seleniumpart2.tests.seleniumpart1;
+package teofilursan.tests.seleniumpart1;
 
 import teofilursan.driver.BrowserManager;
 import org.openqa.selenium.By;

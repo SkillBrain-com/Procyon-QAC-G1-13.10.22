@@ -42,8 +42,5 @@ public class WebTabels {
         WebElement deleteRow = driver.findElement(By.cssSelector("rt-tr -even"));
         deleteRow.click();
         driver.quit();
-
-
-
     }
 }

@@ -10,7 +10,6 @@ public class Links {
         goToLInksPage();
 
     }
-
     public static void  goToLInksPage(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/links");
@@ -37,9 +36,5 @@ public class Links {
         notFoundLink.click();
         driver.close();
         driver.quit();
-
-
-
-
     }
 }

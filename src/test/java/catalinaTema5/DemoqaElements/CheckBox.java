@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class CheckBox {
     public static void main(String[] args) {
         goToCheckBoxPage();
-
     }
     public static void  goToCheckBoxPage(){
         ChromeDriver driver = BrowserManager.createChromeDriver();
