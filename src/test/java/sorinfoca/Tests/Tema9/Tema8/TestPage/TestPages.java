@@ -1,6 +1,6 @@
-package andreeaG.sorinfoca.Tests.Tema9.Tema8.TestPage;
+package sorinfoca.Tests.Tema9.Tema8.TestPage;
 
-import andreeaG.sorinfoca.Tests.Tema9.Tema8.pages.*;
+import sorinfoca.Tests.Tema9.Tema8.pages.*;
 import org.testng.annotations.Test;
 import sorinfoca.Tests.Tema9.Tema8.pages.*;
 

@@ -1,6 +1,6 @@
-package andreeaG.sorinfoca.teorie.seleniumbasics3.tests;
+package sorinfoca.teorie.seleniumbasics3.tests;
 
-import andreeaG.sorinfoca.teorie.seleniumbasics3.pageObjects.EmagHomePage;
+import sorinfoca.teorie.seleniumbasics3.pageObjects.EmagHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

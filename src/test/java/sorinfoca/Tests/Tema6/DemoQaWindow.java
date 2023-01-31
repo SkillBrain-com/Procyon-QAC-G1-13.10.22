@@ -1,4 +1,4 @@
-package andreeaG.sorinfoca.Tests.Tema6;
+package sorinfoca.Tests.Tema6;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;

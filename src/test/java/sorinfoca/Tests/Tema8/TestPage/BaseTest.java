@@ -1,4 +1,4 @@
-package andreeaG.sorinfoca.Tests.Tema8.TestPage;
+package sorinfoca.Tests.Tema8.TestPage;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
