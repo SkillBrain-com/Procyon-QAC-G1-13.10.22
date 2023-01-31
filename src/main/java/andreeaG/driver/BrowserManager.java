@@ -29,7 +29,7 @@ public class BrowserManager {
         //"Vulpe" -> "Rosu"
         //"Urs" -> "Negru"
         //"Caine" -> "Maro"
-        mobileEmulation.put("deviceName", "Galaxy S8");
+        mobileEmulation.put("deviceName", "Galaxy Fold");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         WebDriverManager.chromedriver().setup();

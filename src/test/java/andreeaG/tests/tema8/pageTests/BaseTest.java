@@ -13,16 +13,17 @@ import java.util.Map;
 public class BaseTest {
 
     protected ChromeDriver driver;
+    private Object onlyForGroups;
 
-    @BeforeMethod(groups = "desktop")
+    @BeforeMethod(onlyForGroups = "desktop", groups = {"desktop"})
     public void desktopTest() {
         driver= BrowserManager.createChromeDriverWithOptions();
     }
 
-    @BeforeMethod(groups = "mobile")
+    @BeforeMethod(onlyForGroups = "mobile", groups = {"mobile"})
     public ChromeDriver mobileTest(){
         Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Galaxy S8");
+        mobileEmulation.put("deviceName", "Galaxy Fold");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         WebDriverManager.chromedriver().setup();

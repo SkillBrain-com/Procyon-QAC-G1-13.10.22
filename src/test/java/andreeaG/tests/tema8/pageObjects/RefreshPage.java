@@ -17,7 +17,7 @@ public class RefreshPage {
 
     public RefreshPage(ChromeDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(19));
         PageFactory.initElements(driver, this);
     }
 
