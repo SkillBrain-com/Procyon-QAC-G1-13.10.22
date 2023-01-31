@@ -6,8 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Table {
+   
+       public static void main(String[] args){
+           table();
+       }
 
-     public static void Table() {
+       public static void table() {
 
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/tag/table.html");
