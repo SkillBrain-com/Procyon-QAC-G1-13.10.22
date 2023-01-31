@@ -19,7 +19,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
         WebElement firstPharagraph = driver.findElement(By.className("explanation"));
         System.out.println("Primul pharagraf are textul:" + firstPharagraph.getText());
         WebElement indexButton = driver.findElement(By.xPath("/html/body/div[1]/div[1]/a"));
-        indexButton.click;
+        indexButton.click();
         driver.quit();
    }
 }
