@@ -12,7 +12,7 @@ public class TextBox {
   }
   public static void goToTextBoxPage() {
       ChromeDriver driver = BrowserManager.createChromeDriver();
-      driver.get("https://demoqa.com/elements");
+      driver.get("https://demoqa.com/text-box");
       WebElement email = driver.findElement(By.id("userEmail"));
       email.click();
       email.sendKeys("catalina@mail.com");
@@ -26,5 +26,4 @@ public class TextBox {
       permanentAddress.sendKeys("Winterfeld");
       driver.quit();
   }
-
 }

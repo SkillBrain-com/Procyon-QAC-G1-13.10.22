@@ -6,14 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebTabels {
+public class WebTables {
     public static void main(String[] args) {
-        goToWebTabelsPage();
+        goToWebTablesPage();
 
     }
-    public static void goToWebTabelsPage() {
+    public static void goToWebTablesPage() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
-        driver.get("https://demoqa.com/elements");
+        driver.get("https://demoqa.com/webtables");
         WebElement searchButton = driver.findElement(By.id("basic-addon2"));
         searchButton.click();
         searchButton.sendKeys("Harry Potter");
@@ -42,5 +42,5 @@ public class WebTabels {
         WebElement deleteRow = driver.findElement(By.cssSelector("rt-tr -even"));
         deleteRow.click();
         driver.quit();
-    }
+  }
 }

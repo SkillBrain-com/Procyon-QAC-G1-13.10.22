@@ -11,7 +11,7 @@ public class WebPageExample {
         driver.get("https://testpages.herokuapp.com/styled/basic-web-page-test.html");
 
 
-        WebElement firstLink = driver.findElement(By.id("stylesheet"));
+        WebElement firstLink = driver.findElement(By.id("basicpagetest"));
         System.out.println( "First Link is:" + firstLink.getText());
         firstLink.click();
         WebElement firstText = driver.findElement(By.className("explanation"));
@@ -22,9 +22,8 @@ public class WebPageExample {
         System.out.println("Another paragraph is:" + anotherParagraph.getText());
         WebElement indexButton = driver.findElement(By.className("index.html"));
         indexButton.click();
-
         driver.quit();
-    }
+   }
  }
 
 
