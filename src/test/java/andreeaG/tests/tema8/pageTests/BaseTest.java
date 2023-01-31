@@ -1,14 +1,9 @@
 package andreeaG.tests.tema8.pageTests;
 
 import andreeaG.driver.BrowserManager;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class BaseTest {
 
@@ -19,17 +14,10 @@ public class BaseTest {
     public void desktopTest() {
         driver= BrowserManager.createChromeDriverWithOptions();
     }
-
     @BeforeMethod(onlyForGroups = "mobile")
-    public ChromeDriver mobileTest(){
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Galaxy Fold");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver(chromeOptions);
+    public void mobileTest(){
+        driver =BrowserManager.createChromeDriverForMobile();
     }
-
     @AfterMethod(alwaysRun = true)
     public void quitDriver() {
         if (driver!=null) {
