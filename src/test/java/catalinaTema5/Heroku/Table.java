@@ -18,7 +18,7 @@ public class Table {
 
 
         WebElement titleTableTag = driver.findElement(By.tagName("h1"));
-        Systen.out.println("Title displays:" + titleTableTag.getText());
+        System.out.println("Title displays:" + titleTableTag.getText());
         WebElement exampleTable = driver.findElement(By.tagName("p"));
         System.out.println("Text displays:" + exampleTable.getText());
         WebElement captionText = driver.findElement(By.tagName("caption"));
