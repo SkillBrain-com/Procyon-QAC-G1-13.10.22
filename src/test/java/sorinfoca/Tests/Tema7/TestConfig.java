@@ -1,4 +1,4 @@
-package sorinfoca.Tests.Tema7;
+package andreeaG.sorinfoca.Tests.Tema7;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;

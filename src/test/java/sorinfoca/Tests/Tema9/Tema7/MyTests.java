@@ -1,4 +1,4 @@
-package sorinfoca.Tests.Tema9.Tema7;
+package andreeaG.sorinfoca.Tests.Tema9.Tema7;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;

@@ -1,4 +1,4 @@
-package sorinfoca.Tests.Tema9.Tema8.pages;
+package andreeaG.sorinfoca.Tests.Tema9.Tema8.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

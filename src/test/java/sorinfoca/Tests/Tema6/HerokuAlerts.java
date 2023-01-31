@@ -1,4 +1,4 @@
-package sorinfoca.Tests.Tema6;
+package andreeaG.sorinfoca.Tests.Tema6;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
