@@ -14,7 +14,7 @@ import java.io.IOException;
 
               //checked exceptions
               static void checkedExceptions() throws IOException {
-                  FileReader fileReader = new FileReader((System.getProperty(user.dir")+"\src\test\java\catalinazoldi\teorie\selenium2\text.txt")
+                  FileReader fileReader = new FileReader((System.getProperty(user.dir")+"\\src\\test\\java\\catalinazoldi\\teorie\\selenium2\\text.txt"));
                   BufferedReader bufferedReader = new BufferedReader(fileReader);
                   System.out.println(bufferedReader.readLine());
                   fileReader.close();
