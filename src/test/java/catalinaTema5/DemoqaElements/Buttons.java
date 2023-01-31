@@ -17,7 +17,7 @@ public class Buttons {
         doubleClickMe.click();
         WebElement rightClickMe = driver.findElement(By.id("rightClickBtn"));
         rightClickMe.click();
-        WebElement clickMe = driver.findElement(By.cSSSelector("btn btn-primary));
+        WebElement clickMe = driver.findElement(By.cSSSelector(".btn btn-primary));
         clickMe.click();
         driver.quit();
     }
