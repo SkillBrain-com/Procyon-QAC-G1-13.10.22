@@ -1,4 +1,4 @@
-package ioananadroflorea.tests.Tema7;
+package ioanandroflorea.tests.Tema7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
