@@ -13,7 +13,7 @@ public class RadioButtons {
     public static  void goToRadioButtonsPage() {
      ChromeDriver driver = BrowserManager.createChromeDriver();
      driver.get("https://demoqa.com/radio-button");
-        WebElement radioButtonYes = driver.findElement(By.xpath("//label[@class='custom-control-label disabled' and @for='yesRadio']"));
+        WebElement radioButtonYes = driver.findElement(By.cssSelector("label.custom-control-label"));
         radioButtonYes.click();
         WebElement radioButtonImpressive =driver.findElement(By.xpath("//label[@class='custom-control-label' and @for='impressiveRadio']"));
         radioButtonImpressive.click();

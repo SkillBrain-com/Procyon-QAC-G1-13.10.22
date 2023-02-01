@@ -2,6 +2,7 @@ package catalinaTema5.DemoqaElements;
 
 import catalinaTema5.BrowserManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,11 +15,12 @@ public class WebTables {
     public static void goToWebTablesPage() {
         ChromeDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://demoqa.com/webtables");
-        WebElement searchButton = driver.findElement(By.id("basic-addon2"));
-        searchButton.click();
-        searchButton.sendKeys("Harry Potter");
-        WebElement AddButton = driver.findElement(By.id("addNewRecordButton"));
-        AddButton.click();
+        WebElement typeToSearchButton = driver.findElement(By.cssSelector("input[placeholder='Type to search']"));
+        typeToSearchButton.click();
+        typeToSearchButton.sendKeys("Alden");
+        typeToSearchButton.sendKeys(Keys.ENTER);
+        WebElement addButton = driver.findElement(By.id("addNewRecordButton"));
+        addButton.click();
         WebElement firstName = driver.findElement(By.cssSelector("input[placeholder='First Name']"));
          firstName.click();
         firstName.sendKeys("Harry");
@@ -28,19 +30,18 @@ public class WebTables {
         WebElement fullAge = driver.findElement(By.cssSelector("input[placeholder='Age']"));
         fullAge.click();
         fullAge.sendKeys("25");
-        WebElement eMail = driver.findElement(By.cssSelector("input[placeholder='Email']"));
+        WebElement eMail = driver.findElement(By.cssSelector("input[placeholder='name@example.com']"));
         eMail.click();
         eMail.sendKeys("potter@mail.com");
         WebElement salary = driver.findElement(By.cssSelector("input[placeholder='Salary']"));
         salary.click();
         salary.sendKeys("40000");
-        WebElement departament = driver.findElement(By.cssSelector("input[placeholder='Departament']"));
+        WebElement departament = driver.findElement(By.cssSelector("input[id='department']"));
         departament.click();
         departament.sendKeys("ofMysteries");
-        WebElement deleteIcon = driver.findElement(By.cssSelector("span[id='delete-record-5"));
-        deleteIcon.click();
-        WebElement deleteRow = driver.findElement(By.cssSelector("rt-tr -even"));
-        deleteRow.click();
+        WebElement submitButton = driver.findElement(By.cssSelector("button[id='submit']"));
+        submitButton.click();
         driver.quit();
+        System.out.println("Am rulat testul!");
   }
 }

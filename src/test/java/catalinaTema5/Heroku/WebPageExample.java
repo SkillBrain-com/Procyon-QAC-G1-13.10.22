@@ -8,11 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WebPageExample {
     public static void main(String[] args) {
         ChromeDriver driver = BrowserManager.createChromeDriver();
-        driver.get("https://testpages.herokuapp.com/styled/basic-web-page-test.html");
+        driver.get("https://testpages.herokuapp.com/styled/index.html");
 
 
-        WebElement firstLink = driver.findElement(By.id("basicpagetest"));
-        System.out.println( "First Link is:" + firstLink.getText());
+        WebElement firstLink = driver.findElement(By.cssSelector("a[id='basicpagetest']"));
+        System.out.println("The first link has content: " + firstLink.getText());
         firstLink.click();
         WebElement firstText = driver.findElement(By.className("explanation"));
         System.out.println("First text:" + firstText.getText());
@@ -20,9 +20,10 @@ public class WebPageExample {
         System.out.println("Paragraph is:" + middleParagraph.getText());
         WebElement anotherParagraph = driver.findElement(By.id("para2"));
         System.out.println("Another paragraph is:" + anotherParagraph.getText());
-        WebElement indexButton = driver.findElement(By.className("index.html"));
+        WebElement indexButton = driver.findElement(By.xpath("/html/body/div/div[1]/a"));
         indexButton.click();
         driver.quit();
+        System.out.println("Testul a fost rulat!");
    }
  }
 
