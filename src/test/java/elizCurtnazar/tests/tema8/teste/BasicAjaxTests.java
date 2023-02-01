@@ -19,7 +19,6 @@ public class BasicAjaxTests extends BaseTest {
 
     //astaarficapsvm
 
-
 //    @Test
 //    public void basicAjaxExample() {
 //

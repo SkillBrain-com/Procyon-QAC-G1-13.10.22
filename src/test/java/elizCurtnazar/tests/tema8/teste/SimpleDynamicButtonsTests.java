@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class SimpleDynamicButtonsTests extends BaseTest {
 
-    @Test
+    @Test(groups = {"mobile","desktop"})
     public void verifyClickOnAllButtons() {
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html");
         SimpleDynamicButtonsPage simpleDynamicButtonsPage = new SimpleDynamicButtonsPage(driver);
@@ -22,6 +22,5 @@ public class SimpleDynamicButtonsTests extends BaseTest {
         Assert.assertEquals(simpleDynamicButtonsPage.getButtonMessage(),"Click all 4 buttons.");
         simpleDynamicButtonsPage.clickOnThirdButton();
         Assert.assertEquals(simpleDynamicButtonsPage.getButtonMessage(),"All Buttons Clicked");
-
     }
 }

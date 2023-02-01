@@ -20,10 +20,11 @@ public class DisableDynamicButtonsPage {
     ChromeDriver driver;
     WebDriverWait wait;
     Wait<WebDriver> fluentWait;
+
     public DisableDynamicButtonsPage(ChromeDriver driver) {
         this.driver = driver;
         //using WebDriverWait
-        wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(9));
         //using FluentWait
         fluentWait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(1))
@@ -34,37 +35,44 @@ public class DisableDynamicButtonsPage {
     @FindBy(id = "buttonmessage")
     WebElement buttonMessage;
 
-   public void clickButtons() {
-       List<WebElement> listButtons = driver.findElements(By.cssSelector("button[id*='button']"));
-       Assert.assertEquals(buttonMessage.getText(), "Click Buttons In Order");
-       listButtons.get(0).click();
-        wait.until(ExpectedConditions.invisibilityOfAllElements(listButtons));
-   }
+    @FindBy(id = "button00")
+    WebElement startButton;
+
+    @FindBy(id = "button01")
+    WebElement buttonOne;
+
+    @FindBy(id = "button02")
+    WebElement buttonTwo;
+
+    @FindBy(id = "button03")
+    WebElement buttonThree;
+
+    public void clickButtons() {
+        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button00")));
+        startButton.click();
+        System.out.println("Start button is clicked!");
+
+        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button01")));
+        buttonOne.click();
+        System.out.println("One button is clicked!");
+
+        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button02")));
+        buttonTwo.click();
+        System.out.println("Two button is clicked!");
+
+        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("button03")));
+        buttonThree.click();
+        System.out.println("Three button is clicked!");
+        Assert.assertEquals(getMessage(), "All Buttons Clicked");
+    }
+
+    public String getMessage() {
+        return buttonMessage.getText();
+    }
 }
-
-
-
-
-
-
-
-//       Assert.assertEquals(buttonMessage.getText(), "Click Buttons In Order");
-//       System.out.println("Start button of Disable Dynamic Buttons page clicked!");
-//       listButtons.get(1).click();
-////       wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
-//
-//       Assert.assertEquals(buttonMessage.getText(), "Click Buttons In Order");
-//       System.out.println("One button of Disable Dynamic Buttons page clicked!");
-//       Assert.assertEquals(buttonMessage.getText(), "Click Buttons In Order");
-//       listButtons.get(2).click();
-       //       wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
-
-//       System.out.println("Two button of Disable Dynamic Buttons page clicked!");
-//       Assert.assertEquals(buttonMessage.getText(), "Click Buttons In Order");
-//       listButtons.get(3).click();
-       //       wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
-
-//       System.out.println("Three button of Disable Dynamic Buttons page clicked!");
-//       Assert.assertEquals(buttonMessage.getText(), "All Clicked Buttons");
 
 

@@ -1,10 +1,8 @@
 package alinatinca.tests.Tema5.Heroku;
 
-<<<<<<< HEAD
-import alinatinca.BrowserManager;
-=======
+
 import alinatinca.driver.BrowserManager;
->>>>>>> main
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -27,7 +27,6 @@ public class SimpleDynamicButtonsPage {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(id = "button00")
     WebElement startButton;
 
@@ -69,6 +68,7 @@ public class SimpleDynamicButtonsPage {
     }
 
     public String getButtonMessage() {
+
         return buttonMessage.getText();
     }
 }
