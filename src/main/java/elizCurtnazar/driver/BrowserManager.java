@@ -43,7 +43,7 @@ public class BrowserManager {
         try {
             return new RemoteWebDriver(new URL("http://localhost:4444/"), new ChromeOptions());
         } catch (MalformedURLException e) {
-            throw new RuntimeException(e);eliz
+            throw new RuntimeException(e);
         }
 
     }
