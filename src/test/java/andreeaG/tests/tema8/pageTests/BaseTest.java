@@ -7,14 +7,14 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
-    protected ChromeDriver driver;
+    public ChromeDriver driver;
 
 
-    @BeforeMethod(onlyForGroups = "desktop")
+    @BeforeMethod(groups ="desktop")
     public void desktopTest() {
         driver= BrowserManager.createChromeDriverWithOptions();
     }
-    @BeforeMethod(onlyForGroups = "mobile")
+    @BeforeMethod(groups = "mobile")
     public void mobileTest(){
         driver =BrowserManager.createChromeDriverForMobile();
     }

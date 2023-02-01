@@ -13,7 +13,6 @@
             <class name="andreeaG.tests.tema8.pageTests.JavascriptRedirectButtonsTest"/>
             <class name="andreeaG.tests.tema8.pageTests.RefreshPageTest"/>
             <class name="andreeaG.tests.tema8.pageTests.SimpleDynamicButtonsTest"/>
-
         </classes>
     </test>
 </suite>

@@ -14,7 +14,6 @@ public class DisabledDynamicButtonsTest extends BaseTest {
         disabledDynamicButtonsPage.clickOnOneButton();
         disabledDynamicButtonsPage.clickOnSecondButton();
         disabledDynamicButtonsPage.clickOnThirdButton();
-        Assert.assertEquals(disabledDynamicButtonsPage.messageDisplay(), "Click Buttons In Order");
-
+        Assert.assertEquals(disabledDynamicButtonsPage.messageDisplay(), "All Buttons Clicked");
     }
 }

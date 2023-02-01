@@ -24,7 +24,7 @@ public class DisabledDynamicButtonsPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         //using FluentWait
         fluentWait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(10))
+                .withTimeout(Duration.ofSeconds(15))
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoSuchElementException.class);
 
@@ -50,13 +50,13 @@ public class DisabledDynamicButtonsPage {
 
     public void clickOnSecondButton() {
         // second option with FluentWait
-        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("waitmessage")));
+        fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
         WebElement buttonTwo = driver.findElement(By.id("button02"));
         buttonTwo.click();
     }
 
     public void clickOnThirdButton(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("waitmessage")));
+        fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("waitmessage")));
         WebElement buttonThree = driver.findElement(By.id("button03"));
         buttonThree.click();
     }
