@@ -20,10 +20,17 @@ public class TextBox {
       fullName.click();
       fullName.clear();
       fullName.sendKeys("Jon Snow");
+      WebElement currentAddress = driver.findElement(By.id("currentAddress"));
+      currentAddress.click();
+      currentAddress.clear();
+      currentAddress.sendKeys("Black Castle");
       WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
       permanentAddress.click();
       permanentAddress.clear();
-      permanentAddress.sendKeys("Winterfeld");
+      permanentAddress.sendKeys("Winterfell");
+      WebElement submitButton = driver.findElement(By.cssSelector(".btn.btn-primary"));
+      submitButton.click();
       driver.quit();
+      System.out.println("Test rulat cu success");
   }
 }

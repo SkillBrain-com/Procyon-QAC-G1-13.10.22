@@ -36,5 +36,6 @@ public class Links {
         notFoundLink.click();
         driver.close();
         driver.quit();
+        System.out.println("Testul s-a rulat!");
     }
 }
