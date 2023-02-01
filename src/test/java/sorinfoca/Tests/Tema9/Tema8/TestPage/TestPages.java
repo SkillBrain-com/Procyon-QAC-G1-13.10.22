@@ -1,5 +1,6 @@
 package sorinfoca.Tests.Tema9.Tema8.TestPage;
 
+import sorinfoca.Tests.Tema9.Tema8.pages.*;
 import org.testng.annotations.Test;
 import sorinfoca.Tests.Tema9.Tema8.pages.*;
 

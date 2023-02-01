@@ -1,5 +1,6 @@
 package sorinfoca.teorie.seleniumbasics3.tests;
 
+import sorinfoca.teorie.seleniumbasics3.pageObjects.EmagHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,7 +8,6 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.Test;
 import sorinfoca.driver.BrowserManager;
-import sorinfoca.teorie.seleniumbasics3.pageObjects.EmagHomePage;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

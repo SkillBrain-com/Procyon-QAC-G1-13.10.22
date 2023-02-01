@@ -2,12 +2,13 @@ package neculaclaudiu.utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.IOException;
 
 public class FileUtils {
-    public static void takeScreenshot(ChromeDriver driver, String fileName){
+    public static void takeScreenshot(RemoteWebDriver  driver, String fileName){
         File source = driver.getScreenshotAs(OutputType.FILE);
         String destinationFile = System.getProperty("user.dir") + String.format("/Logs/%s.png",fileName);
         try {
