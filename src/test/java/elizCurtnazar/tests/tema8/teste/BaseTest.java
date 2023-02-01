@@ -16,14 +16,15 @@ public class BaseTest {
 
     @BeforeMethod(groups = "desktop")
     public void initChromeBrowser() {
-        driver = BrowserManager.createChromeDriver();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         System.out.println("Executed before method");
 
+
     }
     @BeforeMethod(groups = "mobile")
-    public void initChromeBrowserForMobile() {
+    public void  createChromeDriverForMobile() {
+
         Map<String, String> mobileEmulation = new HashMap<>();
         mobileEmulation.put("deviceName", "Galaxy S8");
         ChromeOptions options = new ChromeOptions();

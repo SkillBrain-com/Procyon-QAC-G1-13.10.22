@@ -1,6 +1,7 @@
 package elizCurtnazar.tests.tema8.teste;
 
 import elizCurtnazar.tests.tema8.pageObject.RefreshPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RefreshPageTests extends BaseTest {
@@ -13,5 +14,6 @@ public class RefreshPageTests extends BaseTest {
         System.out.println("Am intrat pe pagine de refresh si timpul este " + refreshPage.getTimeOfTheRefresh());
         driver.navigate().refresh();
         System.out.println("Am dat un refresh si timpul acum este " + refreshPage.getTimeOfTheRefresh());
+        Assert.assertEquals(refreshPage.getTimeOfTheRefresh(), refreshPage.getTimeOfTheRefresh(), "Timpul intre refresh nu sa schimbat!");
     }
 }

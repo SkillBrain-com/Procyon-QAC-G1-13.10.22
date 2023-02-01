@@ -22,7 +22,7 @@ public class RefreshPage {
         //using FluentWait
         fluentWait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(1))
-                .pollingEvery(Duration.ofSeconds(8));
+                .pollingEvery(Duration.ofMillis(5));
         PageFactory.initElements(driver, this);
     }
 

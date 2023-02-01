@@ -22,8 +22,8 @@ public class SimpleDynamicButtonsPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         //using FluentWait
         fluentWait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(1))
-                .pollingEvery(Duration.ofSeconds(8));
+                .withTimeout(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofSeconds(1));
         PageFactory.initElements(driver, this);
     }
 

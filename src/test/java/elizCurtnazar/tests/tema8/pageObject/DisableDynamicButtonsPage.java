@@ -28,7 +28,7 @@ public class DisableDynamicButtonsPage {
         //using FluentWait
         fluentWait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(1))
-                .pollingEvery(Duration.ofSeconds(8));
+                .pollingEvery(Duration.ofMillis(8));
         PageFactory.initElements(driver, this);
     }
 
@@ -47,29 +47,29 @@ public class DisableDynamicButtonsPage {
     @FindBy(id = "button03")
     WebElement buttonThree;
 
-    public void clickButtons() {
-        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+    public void clickStartButton() {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("button00")));
         startButton.click();
         System.out.println("Start button is clicked!");
+    }
 
-        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+    public void clickButtonOne() {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("button01")));
         buttonOne.click();
         System.out.println("One button is clicked!");
 
-        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+    }
+    public void clickButtonsTwo() {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("button02")));
         buttonTwo.click();
         System.out.println("Two button is clicked!");
 
-        Assert.assertEquals(getMessage(), "Click Buttons In Order");
+    }
+    public void clickButtonThree() {
         wait.until(ExpectedConditions.elementToBeClickable(By.id("button03")));
         buttonThree.click();
         System.out.println("Three button is clicked!");
-        Assert.assertEquals(getMessage(), "All Buttons Clicked");
     }
-
     public String getMessage() {
         return buttonMessage.getText();
     }

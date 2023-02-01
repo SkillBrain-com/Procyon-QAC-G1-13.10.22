@@ -10,6 +10,14 @@ public class DisableDynamicButtonsTests extends BaseTest {
     public void runDisableDynamicButtonsPage() {
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
         DisableDynamicButtonsPage disableDynamicButtonsPage = new DisableDynamicButtonsPage(driver);
-        disableDynamicButtonsPage.clickButtons();
+        Assert.assertEquals(disableDynamicButtonsPage.getMessage(), "Click Buttons In Order");
+        disableDynamicButtonsPage.clickStartButton();
+        Assert.assertEquals(disableDynamicButtonsPage.getMessage(), "Click Buttons In Order");
+        disableDynamicButtonsPage.clickButtonOne();
+        Assert.assertEquals(disableDynamicButtonsPage.getMessage(), "Click Buttons In Order");
+        disableDynamicButtonsPage.clickButtonsTwo();
+        Assert.assertEquals(disableDynamicButtonsPage.getMessage(), "Click Buttons In Order");
+        disableDynamicButtonsPage.clickButtonThree();
+        Assert.assertEquals(disableDynamicButtonsPage.getMessage(), "All Buttons Clicked");
     }
 }

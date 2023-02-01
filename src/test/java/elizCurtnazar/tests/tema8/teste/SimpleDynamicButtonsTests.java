@@ -3,9 +3,6 @@ package elizCurtnazar.tests.tema8.teste;
 import elizCurtnazar.tests.tema8.pageObject.SimpleDynamicButtonsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-//import teofilursan.tests.tema8.pageobjects.BasicAjaxConfirmationPage;
-//import teofilursan.tests.tema8.pageobjects.BasicAjaxPage;
-//import teofilursan.tests.tema8.pageobjects.SimpleDynamicButtonsPage;
 
 public class SimpleDynamicButtonsTests extends BaseTest {
 

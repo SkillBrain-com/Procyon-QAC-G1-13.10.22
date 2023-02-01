@@ -59,6 +59,8 @@ public class BasicAjaxTests extends BaseTest {
         basicAjaxPage.clickOnSubmitButton();
         BasicAjaxConfirmationPage basicAjaxConfirmationPage = new BasicAjaxConfirmationPage(driver);
         System.out.println(basicAjaxConfirmationPage.getLanguageType());
+        Assert.assertEquals(basicAjaxConfirmationPage.getCategoryText(), "1");
+        Assert.assertEquals(basicAjaxConfirmationPage.getLanguageType(), "3");
     }
 }
 
