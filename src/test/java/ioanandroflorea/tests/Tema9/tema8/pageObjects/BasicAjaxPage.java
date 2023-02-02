@@ -26,8 +26,6 @@ public class BasicAjaxPage {
                 .pollingEvery(Duration.ofMillis(200));
         PageFactory.initElements(driver, this);
     }
-
-    Wait<WebDriver> fluentWait;
     public BasicAjaxPage(RemoteWebDriver driver) {
         this.remoteWebDriver = driver;
         //using WebDriverWait

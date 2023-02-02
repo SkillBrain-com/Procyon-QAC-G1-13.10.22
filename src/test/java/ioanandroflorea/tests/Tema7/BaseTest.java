@@ -2,16 +2,17 @@ package ioanandroflorea.tests.Tema7;
 
 import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
-    protected ChromeDriver driver;
+    protected RemoteWebDriver driver;
 
     @BeforeMethod(groups = "redirect")
-    public void initChromeBrowser(){
-        driver = BrowserManager.createChromeDriver();
+    public void initRemoteWebDriverBrowser(){
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         System.out.println("Executed before method.");
     }

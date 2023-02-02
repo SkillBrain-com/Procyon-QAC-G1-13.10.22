@@ -1,10 +1,9 @@
 package ioanandroflorea.tests.Tema9.tema8.teste;
 
-import ioanandroflorea.tests.Tema8.teste.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import ioanandroflorea.tests.Tema8.pageObjects.BasicAjaxConfirmationPage;
-import ioanandroflorea.tests.Tema8.pageObjects.BasicAjaxPage;
+import ioanandroflorea.tests.Tema9.tema8.pageObjects.BasicAjaxConfirmationPage;
+import ioanandroflorea.tests.Tema9.tema8.pageObjects.BasicAjaxPage;
 
 public class BasicAjaxTests extends BaseTest {
 
