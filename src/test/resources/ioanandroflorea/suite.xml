@@ -4,7 +4,7 @@
 
     <test name="CuraHealthTests">
         <classes>
-            <class name="ioananadroflorea.tests.Tema7.CuraHealthcareLoginTests"/>
+            <class name="ioanandroflorea.tests.Tema7.CuraHealthcareLoginTests"/>
         </classes>
     </test>
 </suite>

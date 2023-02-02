@@ -2,6 +2,7 @@ package cosminsechel.tests.tema8.testpage;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -10,7 +11,7 @@ import java.util.Map;
 
 public class BaseTest {
 
-    protected ChromeDriver driver = null;
+    protected RemoteWebDriver driver;
 
     private static String baseUrl = "https://testpages.herokuapp.com/";
 

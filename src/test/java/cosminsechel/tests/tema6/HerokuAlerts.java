@@ -4,11 +4,13 @@ import cosminsechel.driver.BrowserManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import cosminsechel.utils.FileUtils;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.io.IOException;
 
 public class HerokuAlerts {
 
-    static ChromeDriver driver = null;
+    static RemoteWebDriver driver;
 
     public static void main(String[] args) throws IOException {
         navigateToHerokuHomePage();
@@ -29,12 +31,12 @@ public class HerokuAlerts {
             FileUtils.takeScreenshot(driver, "nonexistent_element");
             System.out.println("Could not find the element with id 'nonexistent-element'");
         } finally {
-            BrowserManager.closeChromeDriver(driver);
+            BrowserManager.closeRemoteWebDriver(driver);
         }
     }
 
-    public static void navigateToHerokuHomePage() {
-        driver = BrowserManager.createDriver();
+        public static void navigateToHerokuHomePage() {
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         System.out.println("Opened Heroku index page");
     }
