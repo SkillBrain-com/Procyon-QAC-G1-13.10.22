@@ -1,10 +1,10 @@
 package elizCurtnazar.tests.tema8.teste;
 
+import elizCurtnazar.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import teofilursan.driver.BrowserManager;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -16,20 +16,13 @@ public class BaseTest {
 
     @BeforeMethod(groups = "desktop")
     public void initChromeBrowser() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        System.out.println("Executed before method");
-
+        driver = BrowserManager.createChromeDriverWithOptions();
 
     }
     @BeforeMethod(groups = "mobile")
     public void  createChromeDriverForMobile() {
 
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Galaxy S8");
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("mobileEmulation", mobileEmulation);
-        driver = new ChromeDriver(options);
+        driver = BrowserManager.createChromeDriverForMobile();
     }
     @AfterMethod(alwaysRun = true, groups = {"mobile","desktop"})
     public void quitDriver() {
