@@ -1,9 +1,8 @@
-package catalinaTema5.DemoqaElements;
+package catalinazoldi.tests.Tema5.DemoqaElements;
 
-import catalinaTema5.BrowserManager;
+import catalinazoldi.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 

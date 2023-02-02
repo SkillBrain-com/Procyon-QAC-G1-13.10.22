@@ -1,6 +1,6 @@
-package catalinaTema5.Heroku;
+package catalinazoldi.tests.Tema5.Heroku;
 
-import catalinaTema5.BrowserManager;
+import catalinazoldi.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
