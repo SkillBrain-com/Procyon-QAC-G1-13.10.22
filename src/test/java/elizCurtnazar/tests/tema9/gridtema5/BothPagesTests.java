@@ -31,7 +31,7 @@ public class BothPagesTests {
         // cand metoda este void putem returna direct in metoda. numai trebuia afisat si pe clasa de test.
         //cand are return afisam in clasa de test.
 
-        BrowserManager.closeRemoteWebdriver(remoteWebDriver);
+        BrowserManager.closeRemoteWebDriver(remoteWebDriver);
 
     }
 }
