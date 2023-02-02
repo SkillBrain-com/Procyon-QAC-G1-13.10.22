@@ -30,7 +30,7 @@ public class BooksStoreForScreenshot {
 //            System.out.println("Da click pe al 6 lea card");
 //
 //            File file = driver.getScreenshotAs(OutputType.FILE);
-//            File destFile = new File("\\src\\test\\java\\alinatinca\\teorie\\ProiectTimeea\\Demoqa\\Screenshot");
+//            File destFile = new File("\\src\\test\\java\\alinatinca\\teorie\\ProiectTimeea\\Demoqa\\Screenshot1.png");
 //            FileUtils.copyFile(file, destFile);
 //            System.out.println("Ne-a creat un screenshot pentru testul pe care l-am rulat!");
 //            // Nu ne-a stocat nicaieri screenshotul facut desi testul s-a executat!
@@ -64,7 +64,8 @@ public class BooksStoreForScreenshot {
         } catch (Exception e) {
             if( driver != null) {
                 File file = driver.getScreenshotAs(OutputType.FILE);
-                File destFile = new File("\\src\\test\\java\\alinatinca\\teorie\\ProiectTimeea\\Demoqa\\Screenshot");
+                //System.getProperty("user.dir") + String.format("/Logs/%s.png", fileName);
+                File destFile = new File(System.getProperty("user.dir") + "\\src\\test\\java\\alinatinca\\teorie\\ProiectTimeea\\Demoqa\\Screenshot1.png.png");
                 FileUtils.copyFile(file, destFile);
                 System.out.println("Ne-a creat un screenshot pentru testul pe care l-am rulat!");
                 System.out.println("In plus, pentru ca ne-a aruncat exceptia NoSuchElementException, ea a fost prinsa si tratata!"); }
