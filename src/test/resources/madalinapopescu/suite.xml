@@ -5,6 +5,7 @@
     <test name="CuraHealthcareLoghinTests">
         <classes>
             <class name="madalinapopescu.tests.tema7.CuraHealthcareLoghinTests"/>
+            <class name="madalinapopescu.tests.tema7.CuraHealthcareMakeAppointmentTest"/>
         </classes>
     </test>
 </suite>
