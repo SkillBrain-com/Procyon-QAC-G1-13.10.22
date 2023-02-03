@@ -1,4 +1,4 @@
-package ioanandroflorea.tests.Tema7;
+package ioanandroflorea.tests.Tema9.tema7;
 
 import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +11,7 @@ public class BaseTest {
     protected RemoteWebDriver driver;
 
     @BeforeMethod(groups = "redirect")
-    public void initRemoteWebDriverBrowser(){
+    public void initChromeBrowser(){
         driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         System.out.println("Executed before method.");

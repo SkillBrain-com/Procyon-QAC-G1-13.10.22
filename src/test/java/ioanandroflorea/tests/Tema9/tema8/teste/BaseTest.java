@@ -1,4 +1,4 @@
-package ioanandroflorea.tests.Tema8.teste;
+package ioanandroflorea.tests.Tema9.tema8.teste;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -10,16 +10,16 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    protected ChromeDriver driver;
+    protected RemoteWebDriver driver;
 
     @BeforeMethod(groups = "desktop")
-    public void createChromeDriverForDesktop(){
-        driver = BrowserManager.createChromeDriverForDesktop();
+    public void createRemoteWebDriverForDesktop(){
+        driver = BrowserManager.createRemoteWebDriverForDesktop();
     }
 
     @BeforeMethod(groups = "mobile")
-    public void createChromeDriverForMobile(){
-        driver = BrowserManager.createChromeDriverForMobile();
+    public void createRemoteWebDriverForMobile(){
+        driver = BrowserManager.createRemoteWebDriverForMobile();
     }
 
     @AfterMethod(alwaysRun = true)
