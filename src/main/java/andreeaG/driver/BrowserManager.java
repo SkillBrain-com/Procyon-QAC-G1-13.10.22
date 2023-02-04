@@ -45,5 +45,20 @@ public class BrowserManager {
             throw new RuntimeException(e);
         }
     }
+
+    public static RemoteWebDriver createRemoteWebDriverForDesktop() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+        WebDriverManager.chromedriver().setup();
+        return new RemoteWebDriver(options);
+    }
+
+    public static RemoteWebDriver createRemoteWebDriverForMobile() {
+        Map<String, String> mobileEmulation = new HashMap<>();
+        mobileEmulation.put("deviceName", "Galaxy Fold");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+        return new RemoteWebDriver(chromeOptions);
+    }
 }
 
