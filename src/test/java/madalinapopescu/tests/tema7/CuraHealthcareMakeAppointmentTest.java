@@ -18,6 +18,7 @@ public class CuraHealthcareMakeAppointmentTest extends BaseTest{
                 {"01.2023","Programarea mea","invalidCredentials"},
         };
     }
+
     public void loghinToMakeAppointment(){
         driver.findElement(By.id("txt-username")).sendKeys("John Doe");
         driver.findElement(By.id("txt-password")).sendKeys("ThisIsNotAPassword");

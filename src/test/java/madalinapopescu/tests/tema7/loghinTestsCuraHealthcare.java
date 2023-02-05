@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-public class CuraHealthcareLoghinTests extends BaseTest{
+public class loghinTestsCuraHealthcare extends BaseTest{
     @DataProvider(name = "loginDataProvider")
     public Object[][] loginDataProvider() {
         return new Object[][]{
@@ -13,6 +13,7 @@ public class CuraHealthcareLoghinTests extends BaseTest{
                 {"John Do", "ThisIsNotAPassword", "invalidCredentials"}
         };
     }
+
     @Test(dataProvider = "loginDataProvider", groups = "login")
     public void loginWithCredentials(String username, String password, String credentialsType) {
         WebElement menu = driver.findElement(By.cssSelector(".btn-dark.btn-lg.toggle"));

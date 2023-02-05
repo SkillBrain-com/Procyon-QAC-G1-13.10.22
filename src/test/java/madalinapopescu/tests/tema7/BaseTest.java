@@ -12,6 +12,7 @@ public class BaseTest {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         System.out.println("Executed before method");
     }
+
     @AfterMethod(groups = "redirect")
     public void quitDriver() {
         if (driver!=null) {
