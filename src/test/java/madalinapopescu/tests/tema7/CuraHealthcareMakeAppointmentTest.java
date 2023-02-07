@@ -50,7 +50,7 @@ public class CuraHealthcareMakeAppointmentTest extends BaseTest{
         }
     }
 
-    @Testgit
+    @Test
     public void homeButton() {
         WebElement menuButton = driver.findElement(By.id("menu-toggle"));
         menuButton.click();
