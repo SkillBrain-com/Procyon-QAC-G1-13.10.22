@@ -1,4 +1,4 @@
-package catalinazoldi;
+package catalinazoldi.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
