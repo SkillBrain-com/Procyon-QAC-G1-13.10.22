@@ -11,6 +11,7 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class CuraHealthcareMakeAppointmentTest extends BaseTest{
+
     @DataProvider(name = "appointmentData")
     public Object [][] appointmentInfo(){
         return new Object[][]{
@@ -24,6 +25,7 @@ public class CuraHealthcareMakeAppointmentTest extends BaseTest{
         driver.findElement(By.id("txt-password")).sendKeys("ThisIsNotAPassword");
         driver.findElement(By.id("btn-login")).click();
     }
+
     @Test(dataProvider = "appointmentData")
     public void makeAppointment(String data, String comment, String credentialsType){
         WebElement appointment = driver.findElement(By.id("btn-make-appointment"));
@@ -47,7 +49,8 @@ public class CuraHealthcareMakeAppointmentTest extends BaseTest{
             assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary",driver.getCurrentUrl());
         }
     }
-    @Test
+
+    @Testgit
     public void homeButton() {
         WebElement menuButton = driver.findElement(By.id("menu-toggle"));
         menuButton.click();
