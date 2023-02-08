@@ -11,5 +11,7 @@
         </groups>
         <classes>
             <class name="madalinapopescu.tests.tema7.LoghinTestsCuraHealthcare"/>
+            <class name="madalinapopescu.tests.tema7.CuraHealthcareMakeAppointmentTest"/>
         </classes>
     </test>
+</suite>
