@@ -10,6 +10,6 @@
             </run>
         </groups>
         <classes>
-            <class name="madalinapopescu.tests.tema7.loghinTestsCuraHealthcare"/>
+            <class name="madalinapopescu.tests.tema7.LoghinTestsCuraHealthcare"/>
         </classes>
     </test>

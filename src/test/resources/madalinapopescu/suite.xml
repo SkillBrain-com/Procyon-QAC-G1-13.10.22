@@ -4,7 +4,7 @@
 
     <test name="CuraHealthcareLoghinTests">
         <classes>
-            <class name="madalinapopescu.tests.tema7.loghinTestsCuraHealthcare"/>
+            <class name="madalinapopescu.tests.tema7.LoghinTestsCuraHealthcare"/>
             <class name="madalinapopescu.tests.tema7.CuraHealthcareMakeAppointmentTest"/>
         </classes>
     </test>

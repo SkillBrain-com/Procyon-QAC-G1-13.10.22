@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-public class loghinTestsCuraHealthcare extends BaseTest{
+public class LoghinTestsCuraHealthcare extends BaseTest{
     @DataProvider(name = "loginDataProvider")
     public Object[][] loginDataProvider() {
         return new Object[][]{
@@ -40,6 +40,7 @@ public class loghinTestsCuraHealthcare extends BaseTest{
                     "Shouldn't navigate to appointment page!");
         }
     }
+
     @Test(groups = "redirect")
     public void verifyRedirectToLoginWhenUserNotLoggedIn() {
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
