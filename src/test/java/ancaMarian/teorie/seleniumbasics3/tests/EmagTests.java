@@ -4,6 +4,7 @@ import ancaMarian.driver.BrowserManager;
 import ancaMarian.teorie.seleniumbasics3.pageObject.EmagHomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -16,11 +17,14 @@ import java.util.concurrent.TimeUnit;
 
 public class EmagTests {
 
-    ChromeDriver driver;
+//    ChromeDriver driver;
+
+    RemoteWebDriver driver;
 
     @Test
     public void openLoginTest1() { //explicit WebDriverWait
-        driver = BrowserManager.createChromeDriverWithOptions();
+        driver = BrowserManager.createRemoteWebDriver();
+//        driver = BrowserManager.createChromeDriverWithOptions();
         driver.get("https://www.emag.ro/");
         System.out.println("Inainte "+ LocalDateTime.now());
         WebElement acceptButton = new WebDriverWait(driver, Duration.ofSeconds(5)) .until(ExpectedConditions.
