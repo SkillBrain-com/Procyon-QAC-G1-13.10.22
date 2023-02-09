@@ -1,4 +1,4 @@
-package ancaMarian.tests.tema6;
+package ancaMarian.tests.tema9.tema6;
 
 import ancaMarian.driver.BrowserManager;
 import ancaMarian.utils.FileUtils;
@@ -12,11 +12,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class HerokuForms {
 
-    static ChromeDriver driver = null;
+    static RemoteWebDriver driver = null;
 
     public static void main(String[] args) throws InterruptedException {
         navigateToHerokuHomePage();
-        BrowserManager.maximizeWindow(driver);
+        BrowserManager.maximizeRemoteWebDriverWindow(driver);
         navigateToHerokuFormsPage();
         inputUsername();
         inputPassword();
@@ -29,19 +29,19 @@ public class HerokuForms {
         selectFromMultipleValues();
         selectFromDropdownList();
         scrollToSubmitButton();
-        FileUtils.takeScreenshot(driver, "form");
+        FileUtils.takeScreenshotRemoteWebDriver(driver, "form");
         goBackToFormPage();
         try {
             goBackToFormPage();
         } catch (NoSuchElementException e) {
-            FileUtils.takeScreenshot(driver, "ElementNotFound");
+            FileUtils.takeScreenshotRemoteWebDriver(driver, "ElementNotFound");
             System.out.println("Nu s-a gasit elementul pe pagina. S-a salvat un screenshot cu denumirea ElementNotFound.");
         } finally {
-            BrowserManager.closeChromeDriver(driver);}
+            BrowserManager.closeRemoteWebDriver(driver);}
     }
 
     public static void navigateToHerokuHomePage(){
-        driver = BrowserManager.createDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         System.out.println("Am deschis Heroku index page.");
     }
