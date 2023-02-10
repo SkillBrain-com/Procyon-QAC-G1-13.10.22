@@ -1,10 +1,11 @@
 package elizCurtnazar.tests.tema9.gridtema6;
 
+import elizCurtnazar.driver.BrowserManager;
 import elizCurtnazar.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import teofilursan.driver.BrowserManager;
+
 
 import java.io.IOException;
 import java.util.Set;
@@ -38,7 +39,7 @@ public class DemoQaWindow {
     }
 
     public static void navigateToDemoQAWindowPage() {
-        remoteWebDriver = BrowserManager.createChromeDriver();
+        remoteWebDriver = BrowserManager.createDriver();
         remoteWebDriver.get("https://demoqa.com/browser-windows");
         System.out.println("Am deschis Demo QA window page!");
     }

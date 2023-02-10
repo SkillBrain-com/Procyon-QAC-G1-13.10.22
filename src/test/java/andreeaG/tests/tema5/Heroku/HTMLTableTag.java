@@ -1,9 +1,10 @@
 package andreeaG.tests.tema5.Heroku;
 
+import andreeaG.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import teofilursan.driver.BrowserManager;
+
 
 import java.util.List;
 

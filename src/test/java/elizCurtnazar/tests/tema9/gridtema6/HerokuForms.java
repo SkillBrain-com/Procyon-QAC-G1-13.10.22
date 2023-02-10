@@ -1,12 +1,13 @@
 package elizCurtnazar.tests.tema9.gridtema6;
 
+import elizCurtnazar.driver.BrowserManager;
 import elizCurtnazar.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
-import teofilursan.driver.BrowserManager;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -53,7 +54,7 @@ public class HerokuForms {
     }
 
     public static void navigateToHerokuFormsPage(){
-        remoteWebDriver = BrowserManager.createChromeDriver();
+        remoteWebDriver = BrowserManager.createDriver();
         remoteWebDriver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         System.out.println("Am deschis pagina Heroku forms page");
     }

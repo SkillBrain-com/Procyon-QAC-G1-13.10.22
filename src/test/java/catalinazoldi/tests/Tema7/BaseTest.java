@@ -1,26 +1,26 @@
 package catalinazoldi.tests.Tema7;
 
+
+import catalinazoldi.driver.BrowserManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import tema7catalinaz.driver.BrowserManager;
 
 public class BaseTest {
-
     protected ChromeDriver driver;
 
-
-    @BeforeMethod(groups = "redirect")
-    public void initChromeBrowser() {
-        driver = BrowserManager.createChromeDriver();
+    @BeforeMethod
+    public void openCURAHealthPage() {
+        driver = BrowserManager.createDriverAndGetPage();
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+        driver.manage().window().maximize();
+        System.out.println("Am deschis pagina CURA Healthcare. ");
 
     }
-    @AfterMethod(groups = "redirect")
-    public void quitDriver(){
-        if(driver !=null) {
-            driver.quit();
-        }
-        System.out.println("Executed after method");
 
+   @AfterMethod(alwaysRun = true)
+    public void closeBrowser() {
+        driver.quit();
+        System.out.println(" Browserul a fost inchis!");
     }
 }

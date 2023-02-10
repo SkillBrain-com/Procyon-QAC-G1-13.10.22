@@ -1,17 +1,18 @@
 package elizCurtnazar.teorie;
 
+import elizCurtnazar.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import teofilursan.driver.BrowserManager;
+
 
 public class DemoQaInputs {
     ChromeDriver driver;
 
     @Test
     public void test1(){
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         driver.get("https://demoqa.com/text-box");
         writeFullName();
         writeEmail();

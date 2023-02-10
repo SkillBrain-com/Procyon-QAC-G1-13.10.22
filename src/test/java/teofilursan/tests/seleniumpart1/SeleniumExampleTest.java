@@ -1,9 +1,10 @@
 package teofilursan.tests.seleniumpart1;
 
+import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import teofilursan.driver.BrowserManager;
+
 
 public class SeleniumExampleTest {
 

@@ -1,9 +1,10 @@
 package andreeaG.tests.tema5.Demoqa;
 
+import catalinazoldi.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import teofilursan.driver.BrowserManager;
+
 
 public class CheckBox {
     public static void main(String[] args) {

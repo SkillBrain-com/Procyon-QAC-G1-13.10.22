@@ -10,7 +10,7 @@
             </run>
         </groups>
         <classes>
-            <class name="catalinazoldi.tests.Tema7.CuraHealthcareTests"/>
+            <class name="catalinazoldi.teorie.TestNg.CuraHealthcareTests"/>
         </classes>
     </test>
 </suite>

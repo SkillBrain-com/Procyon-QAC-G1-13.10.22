@@ -1,10 +1,11 @@
 package cosminneagu.teorie.seleniumbasicspart2;
 
+import cosminneagu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import teofilursan.driver.BrowserManager;
+
 
     class ActionsExample {
 

@@ -1,5 +1,6 @@
 package elizCurtnazar.tests.tema6;
 
+import elizCurtnazar.driver.BrowserManager;
 import elizCurtnazar.utils.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
@@ -7,7 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import teofilursan.driver.BrowserManager;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -42,7 +43,7 @@ public class DemoQaWindow {
     }
 
     public static void navigateToDemoQAWindowPage() {
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createDriver();
         driver.get("https://demoqa.com/browser-windows");
         System.out.println("Am deschis Demo QA window page!");
     }
