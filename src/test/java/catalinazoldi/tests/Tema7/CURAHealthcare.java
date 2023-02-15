@@ -10,8 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.AssertJUnit.*;
 
 public class CURAHealthcare extends BaseTest {
 
@@ -45,6 +44,7 @@ public class CURAHealthcare extends BaseTest {
         } else
             wait.until(ExpectedConditions.presenceOfElementLocated(
                     By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")));
+       // assertEquals(driver.findElement(By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")).isDisplayed());
     }
 
     @DataProvider(name = "appointmentData")
@@ -56,9 +56,9 @@ public class CURAHealthcare extends BaseTest {
     }
 
     public void completeDetailsForAppointment() {
-        WebElement firstField = driver.findElement(By.xpath("//*[@id=\"login\"]/div/div/div[2]/form/div[1]/div[1]/div/div/input"));
+        WebElement firstField = driver.findElement(By.id("txt-username"));
         firstField.sendKeys("John Doe");
-        WebElement secondField = driver.findElement(By.xpath("//*[@id=\"login\"]/div/div/div[2]/form/div[1]/div[2]/div/div/input"));
+        WebElement secondField = driver.findElement(By.id("txt-password"));
         secondField.sendKeys("ThisIsNotAPassword");
         driver.findElement(By.id("btn-login")).click();
     }
@@ -94,7 +94,6 @@ public class CURAHealthcare extends BaseTest {
             assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary", driver.getCurrentUrl());
         }
     }
-
     @Test
     public void redirectToLogin() {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
@@ -102,7 +101,6 @@ public class CURAHealthcare extends BaseTest {
         makeAppoinntmentButton.click();
         assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login", driver.getCurrentUrl());
     }
-
     @Test
     public void homeButton() {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
