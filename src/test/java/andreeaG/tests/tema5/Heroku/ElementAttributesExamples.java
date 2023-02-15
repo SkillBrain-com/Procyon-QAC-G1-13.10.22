@@ -1,6 +1,7 @@
 package andreeaG.tests.tema5.Heroku;
 
-import catalinazoldi.driver.BrowserManager;
+
+import andreeaG.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

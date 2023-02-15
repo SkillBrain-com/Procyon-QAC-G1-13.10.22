@@ -1,9 +1,10 @@
 package teofilursan.tests.seleniumpart1;
 
-import ioanandroflorea.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import teofilursan.driver.BrowserManager;
 
 
 public class SeleniumExampleTest {
@@ -13,7 +14,7 @@ public class SeleniumExampleTest {
     }
 
     public static void basicPageTest() {
-        WebDriver driver = BrowserManager.createChromeDriver();
+        WebDriver driver = ChromeDriver.BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement firstLink = driver.findElement(By.id("basicpagetest"));
         firstLink.click();
