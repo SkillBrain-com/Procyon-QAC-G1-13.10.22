@@ -14,7 +14,7 @@ public class SeleniumExampleTest {
     }
 
     public static void basicPageTest() {
-        WebDriver driver = ChromeDriver.BrowserManager.createChromeDriver();
+        WebDriver driver = BrowserManager.createChromeDriver();
         driver.get("https://testpages.herokuapp.com/styled/index.html");
         WebElement firstLink = driver.findElement(By.id("basicpagetest"));
         firstLink.click();

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -22,9 +23,7 @@ public class CURAHealthcare extends BaseTest {
                 {"invalid", "John Do", "ThisIsNotAPassword",}
         };
     }
-
-
-   @Test(dataProvider = "data-set")
+    @Test(dataProvider = "data-set")
     public void login(String type, String username, String password) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         WebElement menuButton = driver.findElement(By.id("menu-toggle"));
@@ -41,12 +40,12 @@ public class CURAHealthcare extends BaseTest {
             wait.until(ExpectedConditions.presenceOfElementLocated(
                     By.cssSelector("#appointment > div > div > div > h2")));
             driver.getCurrentUrl();
+            assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
         } else
             wait.until(ExpectedConditions.presenceOfElementLocated(
                     By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")));
-       // assertEquals(driver.findElement(By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")).isDisplayed());
+           assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login", driver.getCurrentUrl());
     }
-
     @DataProvider(name = "appointmentData")
     public Object[][] appointmentInfo() {
         return new Object[][]{
@@ -54,7 +53,6 @@ public class CURAHealthcare extends BaseTest {
                 {"08.02", "Test", false},
         };
     }
-
     public void completeDetailsForAppointment() {
         WebElement firstField = driver.findElement(By.id("txt-username"));
         firstField.sendKeys("John Doe");
@@ -62,8 +60,6 @@ public class CURAHealthcare extends BaseTest {
         secondField.sendKeys("ThisIsNotAPassword");
         driver.findElement(By.id("btn-login")).click();
     }
-
-
     @Test(dataProvider = "appointmentData")
     public void makeAppointment(String data, String comment, boolean pass) {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
@@ -71,7 +67,7 @@ public class CURAHealthcare extends BaseTest {
         appointment.click();
         completeDetailsForAppointment();
         Select facility = new Select(driver.findElement(By.id("combo_facility")));
-        facility.selectByVisibleText("Tokyo CURAHealthcare Center");
+        facility.selectByVisibleText("Tokyo CURA Healthcare Center");
         System.out.println("Am selectat facility");
         WebElement applyForHospitalReadmission = driver.findElement(By.id("chk_hospotal_readmission"));
         applyForHospitalReadmission.click();
