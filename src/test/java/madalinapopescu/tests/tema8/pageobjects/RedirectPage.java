@@ -32,17 +32,13 @@ public class RedirectPage {
     WebElement firstButton;
     public void clickOnFirstButton(){
         firstButton.click();
-        System.out.println("The first button has been clicked!");
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("delaygotobasic")));
-        System.out.println("Condition has been executed!");
     }
     @FindBy (id = "delaygotobounce")
     WebElement secondButton;
     public void clickOnSecondButton(){
         secondButton.click();
-        System.out.println("The second button has been clicked!");
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("delaygotobounce")));
-        System.out.println("Condition has been executed!");
     }
     @FindBy (xpath = "//div[@class='explanation']/p")
     WebElement text;

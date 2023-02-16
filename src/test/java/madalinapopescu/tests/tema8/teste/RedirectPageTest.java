@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class RedirectPageTest extends BaseTest {
-    @Test()
+    @Test(groups = {"mobile", "desktop"})
     public void clickOnFirstButton() {
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -20,7 +20,7 @@ public class RedirectPageTest extends BaseTest {
                 "https://testpages.herokuapp.com/styled/redirected.html");
         redirectPage.clickOnBackButton();
     }
-    @Test()
+    @Test(groups = {"mobile", "desktop"})
     public void clickOnSecondButton(){
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));

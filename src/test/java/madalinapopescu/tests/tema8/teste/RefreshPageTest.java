@@ -5,12 +5,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RefreshPageTest extends BaseTest {
-    @Test
+    @Test(groups = {"mobile", "desktop"})
     public void refreshTest() {
         driver.get("https://testpages.herokuapp.com/styled/refresh");
         RefreshPage refreshPage = new RefreshPage(driver);
         driver.navigate().refresh();
-        System.out.println("The page has been refreshed!");
         Assert.assertEquals(refreshPage.getStatusForTimestamp(), refreshPage.getStatusForTimestamp(), "Timestamp has been changed!");
     }
 }

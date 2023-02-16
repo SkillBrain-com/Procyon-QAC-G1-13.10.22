@@ -11,9 +11,16 @@ public class BaseTest {
 
     protected ChromeDriver driver;
 
-    @BeforeMethod()
-    public void initChromeBrowser() {
-        driver = BrowserManager.createChromeDriver();
+    @BeforeMethod(groups = "desktop")
+    public void initChromeBrowserDesktop() {
+        driver = BrowserManager.createChromeDriverWhithOption();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
+        System.out.println("Executed before method");
+    }
+    @BeforeMethod(groups = "mobile")
+    public void initChromeBrowserMobile() {
+        driver = BrowserManager.createChromeDriverForMobile();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //        driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
         System.out.println("Executed before method");
