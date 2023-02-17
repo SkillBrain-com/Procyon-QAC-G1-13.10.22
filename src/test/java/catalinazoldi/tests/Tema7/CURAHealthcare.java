@@ -41,18 +41,21 @@ public class CURAHealthcare extends BaseTest {
                     By.cssSelector("#appointment > div > div > div > h2")));
             driver.getCurrentUrl();
             assertEquals("https://katalon-demo-cura.herokuapp.com/#appointment", driver.getCurrentUrl());
-        } else
+        } else {
             wait.until(ExpectedConditions.presenceOfElementLocated(
                     By.cssSelector("#login > div > div > div.col-sm-12.text-center > p.lead.text-danger")));
-           assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login", driver.getCurrentUrl());
+            assertEquals("https://katalon-demo-cura.herokuapp.com/profile.php#login", driver.getCurrentUrl());
+        }
     }
-    @DataProvider(name = "appointmentData")
-    public Object[][] appointmentInfo() {
-        return new Object[][]{
-                {"08.02.2023", "Test", true},
-                {"08.02", "Test", false},
-        };
-    }
+
+        @DataProvider(name = "appointmentData")
+        public Object[][] appointmentInfo () {
+            return new Object[][]{
+                    {"08.02.2023", "Test", true},
+                    {"08.02", "Test", false},
+            };
+        }
+
     public void completeDetailsForAppointment() {
         WebElement firstField = driver.findElement(By.id("txt-username"));
         firstField.sendKeys("John Doe");
