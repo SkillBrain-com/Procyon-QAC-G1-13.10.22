@@ -57,4 +57,11 @@ public class SimpleDynamicButtonPage {
         WebElement buttonThree = driver.findElement(By.id("button03"));
         buttonThree.click();
     }
+
+    @FindBy(id ="buttonmessage")
+    WebElement text;
+
+    public String displayTextAfterAllButtons() {
+        return text.getText();
+    }
 }

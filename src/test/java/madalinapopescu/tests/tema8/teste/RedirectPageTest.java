@@ -20,6 +20,7 @@ public class RedirectPageTest extends BaseTest {
                 "https://testpages.herokuapp.com/styled/redirected.html");
         redirectPage.clickOnBackButton();
     }
+
     @Test(groups = {"mobile", "desktop"})
     public void clickOnSecondButton(){
         driver.get("https://testpages.herokuapp.com/styled/javascript-redirect-test.html");
@@ -29,5 +30,4 @@ public class RedirectPageTest extends BaseTest {
         Assert.assertEquals(redirectPage.displayText(), "You have been successfully redirected.");
         redirectPage.clickOnBackButton();
     }
-
 }

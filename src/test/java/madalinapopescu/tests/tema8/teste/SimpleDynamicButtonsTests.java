@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SimpleDynamicButtonsTests extends BaseTest{
+
     @Test(groups = {"mobile", "desktop"})
     public void verifyClickOnAllButtons(){
         driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html");
@@ -15,6 +16,6 @@ public class SimpleDynamicButtonsTests extends BaseTest{
         simpleDynamicButtonPages.clickOnOneButton();
         simpleDynamicButtonPages.clickOnSecondButton();
         simpleDynamicButtonPages.clickOnThertButton();
-//        Assert message All Buttons Clicked apper at the end
+        Assert.assertEquals(simpleDynamicButtonPages.displayTextAfterAllButtons(), "All Buttons Clicked");
     }
 }
