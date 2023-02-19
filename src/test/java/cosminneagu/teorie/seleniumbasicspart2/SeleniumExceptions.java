@@ -1,10 +1,11 @@
 package cosminneagu.teorie.seleniumbasicspart2;
 
+import cosminneagu.driver.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import teofilursan.driver.BrowserManager;
+
 
 public class SeleniumExceptions {
 
