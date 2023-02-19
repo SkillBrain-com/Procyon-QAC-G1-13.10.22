@@ -7,10 +7,11 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 public class HerokuForms {
-    static ChromeDriver driver = null;
+    static RemoteWebDriver driver;
 
     public static void main(String[] args) throws InterruptedException {
         navigateToHerokuHomePage();
@@ -22,12 +23,12 @@ public class HerokuForms {
             FileUtils.takeScreenshot(driver, "alert");
             System.out.println("No alert present");
         } finally {
-            BrowserManager.closeChromeDriver(driver);
+            BrowserManager.closeRemoteWebDriver(driver);
         }
     }
 
     public static void navigateToHerokuHomePage() {
-        driver = BrowserManager.createDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
         System.out.println("Am deschis Heroku Forms page");
     }
