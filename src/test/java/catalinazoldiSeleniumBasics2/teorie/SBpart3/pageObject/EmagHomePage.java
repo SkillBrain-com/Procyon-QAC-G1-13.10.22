@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class EmagHomePage {
+
+    public ChromeDriver chromeDriver;
     ChromeDriver driver;
 
 
@@ -15,12 +17,13 @@ public class EmagHomePage {
         PageFactory.initElements(driver, this);
     }
 
-
-   // WebElement acceptButton = driver.findElement(By.ClassName("js-accept));
-   // @FindBy(className = "js-accept")
-   // WebElement acceptButton;
-
+    //WebElement acceptButton = driver.findElement(By.className("js-accept"));
+    @FindBy(className = "js-accept")
+    WebElement acceptButton;
     public void clickOnAcceptButton() {
-        acceptButton();
+        acceptButton.click();
     }
 }
+
+
+

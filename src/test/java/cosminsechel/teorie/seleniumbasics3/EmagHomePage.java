@@ -25,6 +25,7 @@ public class EmagHomePage {
     WebElement acceptButton;
 
     public void clickOnAcceptButton() {
+
         acceptButton.click();
     }
 }
