@@ -1,4 +1,4 @@
-package catalinazoldiSeleniumBasics2.teorie.SBpart3.pageObject;
+package catalinazoldi.teorie.SBpart3.pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

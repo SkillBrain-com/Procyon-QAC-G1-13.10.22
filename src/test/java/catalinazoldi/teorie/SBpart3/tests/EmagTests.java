@@ -1,18 +1,16 @@
-package catalinazoldiSeleniumBasics2.teorie.SBpart3.tests;
-import catalinazoldiSeleniumBasics2.driver.BrowserManager;
-import catalinazoldiSeleniumBasics2.teorie.SBpart3.pageObject.EmagHomePage;
+package catalinazoldi.teorie.SBpart3.tests;
+import catalinazoldi.teorie.SBpart3.pageObject.EmagHomePage;
+import catalinazoldi.teorie.driver.BrowserManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.concurrent.TimeUnit;
 
 public class EmagTests {
     ChromeDriver driver;
