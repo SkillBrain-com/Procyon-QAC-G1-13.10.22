@@ -1,4 +1,4 @@
-package catalinazoldi.driver;
+package catalinazoldi.teorie.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,34 +8,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BrowserManager {
-    public static ChromeDriver createDriverAndGetPage() {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized");
-        return new ChromeDriver();
-    }
-
     public static ChromeDriver createChromeDriver() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
-
     }
 
-    public static ChromeDriver createChromeDriverForMobile() {
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Galaxy S8");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-        return new ChromeDriver(chromeOptions);
-    }
+
     public static ChromeDriver createChromeDriverWithOptions() {
+
+        //creating a ChromeOptions object
         ChromeOptions options = new ChromeOptions();
+
+        //set fullscreen option
         options.addArguments("start-maximized");
+
+        //initialise driver with options defined above
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(options);
     }
 
-    public static void closeChromeDriver(ChromeDriver driver) {
-        driver.quit();
+    public static ChromeDriver createChromeDriverForMobile() {
+
+
+        Map<String, String> mobileEmulation = new HashMap<>();
+       // "Vulpe" -> "Rosie"
+        // "Urs" -> "Maro"
+        // "Iepure" -> "Alb"
+
+        mobileEmulation.put("deviceName", "Galaxy S8");
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+
+        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+
+        WebDriverManager.chromedriver().setup();
+
+        return new ChromeDriver(chromeOptions);
     }
 }

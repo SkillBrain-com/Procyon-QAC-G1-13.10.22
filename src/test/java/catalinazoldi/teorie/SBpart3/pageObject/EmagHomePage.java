@@ -1,31 +1,29 @@
-package cosminsechel.teorie.seleniumbasics3;
+package catalinazoldi.teorie.SBpart3.pageObject;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class EmagHomePage {
 
-    ChromeDriver chromeDriver;
-    RemoteWebDriver remoteWebDriver;
+    public ChromeDriver chromeDriver;
+    ChromeDriver driver;
 
-    public EmagHomePage(RemoteWebDriver driver) {
-        this.remoteWebDriver = driver;
+
+    public  EmagHomePage(ChromeDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public EmagHomePage(ChromeDriver driver) {
-        this.chromeDriver = driver;
-        PageFactory.initElements(driver, this);
-    }
+
     //WebElement acceptButton = driver.findElement(By.className("js-accept"));
     @FindBy(className = "js-accept")
     WebElement acceptButton;
-
     public void clickOnAcceptButton() {
-
         acceptButton.click();
     }
 }
+
+
+
