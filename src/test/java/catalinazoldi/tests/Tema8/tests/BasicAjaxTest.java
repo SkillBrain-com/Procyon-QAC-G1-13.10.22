@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class BasicAjaxTest extends BaseTest {
 
-    @Test(groups = "Desktop")
+    @Test(groups = "desktop")
     public void codeItInTestForDesktop() {
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
@@ -19,7 +19,7 @@ public class BasicAjaxTest extends BaseTest {
         basicAjaxPage.clickOnButton();
     }
 
-    @Test(groups = "Mobile")
+    @Test(groups = "mobile")
     public void codeItInTestForMobile() {
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
         BasicAjaxPage basicAjaxPage = new BasicAjaxPage(driver);
