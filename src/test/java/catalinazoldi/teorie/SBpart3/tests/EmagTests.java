@@ -27,14 +27,14 @@ public class EmagTests {
     @Test
     public void openLoginTest() {
         //creaza obiectul ChromeOptions
-       // ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         //set fullscreen option
-        //options.addArguments("start-maximized");
+        options.addArguments("start-maximized");
 
            //driver initialisation for SBpart3
-        driver = BrowserManager.createChromeDriverWithOptions();
+       // driver = BrowserManager.createChromeDriverWithOptions();
         //driver initialisation for selenium grid
-        driver =  BrowserManager.createRemoteWebDriver();
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://www.emag.ro/");
         System.out.println("Inainte" + LocalDateTime.now());
         //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -59,7 +59,7 @@ public class EmagTests {
     @Test
     public void openLoginTestWithPageObject() {
         driver = BrowserManager.createChromeDriverWithOptions();
-        driver.get("https://emag.ro/");
+        driver.get("https://www.emag.ro/");
         EmagHomePage emagHomePage = new EmagHomePage(driver);
         emagHomePage.clickOnAcceptButton();
         driver.quit();

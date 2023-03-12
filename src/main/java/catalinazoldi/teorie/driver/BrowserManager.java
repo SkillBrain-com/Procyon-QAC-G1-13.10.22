@@ -10,10 +10,10 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BrowserManager {
+  public class BrowserManager {
     public static ChromeDriver createChromeDriver() {
         WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
+       return new ChromeDriver();
     }
 
 

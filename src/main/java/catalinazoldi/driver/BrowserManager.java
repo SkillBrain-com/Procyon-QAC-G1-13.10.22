@@ -3,6 +3,7 @@ package catalinazoldi.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,4 +39,7 @@ public class BrowserManager {
     public static void closeChromeDriver(ChromeDriver driver) {
         driver.quit();
     }
+
+
+
 }
