@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Procyon-QAC-G1-13.10.22(failed)">
     <classes>
-      <class name="andreeaG.Teorie.timeaSB.TimeaSB">
+      <class name="AndreeaG.recap.test.BuyItemT">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="AfterMethod"/>
-          <include name="dataProviderTest" invocation-numbers="0 1"/>
+          <include name="quitChromeDriver"/>
+          <include name="buyItemTest"/>
+          <include name="createChromeDriver"/>
         </methods>
-      </class> <!-- andreeaG.Teorie.timeaSB.TimeaSB -->
+      </class> <!-- AndreeaG.recap.test.BuyItemT -->
     </classes>
   </test> <!-- Procyon-QAC-G1-13.10.22(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
