@@ -1,6 +1,6 @@
 package catalinazoldi.tests.Tema9.Tema8.tests;
 
-import ancaMarian.tests.tema8.pageObjects.RefreshPage;
+import catalinazoldi.tests.Tema9.Tema8.pageObjects.RefreshPage;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -1,6 +1,6 @@
 package catalinazoldi.tests.Tema9.Tema8.tests;
 
-import catalinazoldi.tests.Tema8.pageObjects.DynamicButtonsSimplePage;
+import catalinazoldi.tests.Tema9.Tema8.pageObjects.DynamicButtonsSimplePage;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;

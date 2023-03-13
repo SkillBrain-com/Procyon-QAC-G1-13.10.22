@@ -1,7 +1,7 @@
 package catalinazoldi.tests.Tema9.Tema8.tests;
 
 
-import catalinazoldi.tests.Tema8.pageObjects.BasicAjaxPage;
+import catalinazoldi.tests.Tema9.Tema8.pageObjects.BasicAjaxPage;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 

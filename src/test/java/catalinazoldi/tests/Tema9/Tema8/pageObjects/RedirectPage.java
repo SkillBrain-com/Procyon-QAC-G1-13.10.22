@@ -30,5 +30,16 @@ public class RedirectPage {
     public void waitForRedirect() {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("javascript_countdown_time")));
     }
+
+    public void clickOnRedirectIn5SecondsButton() {
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+
+    public void clickOnRedirectIn2SecondsButton() {
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+    }
 }
+
 

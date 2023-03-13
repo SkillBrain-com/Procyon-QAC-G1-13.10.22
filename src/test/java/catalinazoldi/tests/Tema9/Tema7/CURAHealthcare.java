@@ -1,6 +1,6 @@
 package catalinazoldi.tests.Tema9.Tema7;
 
-import catalinazoldi.tests.Tema7.BaseTest;
+import catalinazoldi.tests.Tema9.Tema7.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
