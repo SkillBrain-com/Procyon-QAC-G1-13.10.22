@@ -4,6 +4,7 @@ import catalinazoldi.teorie.driver.BrowserManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -13,7 +14,15 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class EmagTests {
-    ChromeDriver driver;
+
+
+    //ChromeDriver for SBpart3
+    // ChromeDriver driver;
+
+
+
+     //RemoteWebDriver for selenium grid
+    RemoteWebDriver driver;
 
     @Test
     public void openLoginTest() {
@@ -22,13 +31,16 @@ public class EmagTests {
         //set fullscreen option
         options.addArguments("start-maximized");
 
-        driver = new ChromeDriver();
+           //driver initialisation for SBpart3
+       // driver = BrowserManager.createChromeDriverWithOptions();
+        //driver initialisation for selenium grid
+        driver = BrowserManager.createRemoteWebDriver();
         driver.get("https://www.emag.ro/");
         System.out.println("Inainte" + LocalDateTime.now());
         //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-//        WebElement acceptButton = new WebDriverWait(driver, Duration.ofSeconds(5))
-//                .until(ExpectedConditions
-//                        .elementToBeClickable(By.className("js-accept")));
+       // WebElement acceptButton = new WebDriverWait(driver, Duration.ofSeconds(5))
+        //        .until(ExpectedConditions
+           //             .elementToBeClickable(By.className("js-accept")));
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
@@ -47,7 +59,7 @@ public class EmagTests {
     @Test
     public void openLoginTestWithPageObject() {
         driver = BrowserManager.createChromeDriverWithOptions();
-        driver.get("https://emag.ro/");
+        driver.get("https://www.emag.ro/");
         EmagHomePage emagHomePage = new EmagHomePage(driver);
         emagHomePage.clickOnAcceptButton();
         driver.quit();
