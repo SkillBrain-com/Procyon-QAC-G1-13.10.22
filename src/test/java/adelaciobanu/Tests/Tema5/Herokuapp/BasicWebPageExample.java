@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasicWebPageExample {
-}
+
     public static void main(String[] args) {
         goToBasicWebPage();}
     public static void goToBasicWebPage() {

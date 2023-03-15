@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TableTestPage {
-}
+
     public static void main(String[] args) {
         goToTableTestPage();
     }
