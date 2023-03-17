@@ -1,11 +1,10 @@
-package alinatinca.recap.tests;
+package alinatinca.recap.SauceDemoCom.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import teofilursan.driver.BrowserManager;
 
 public class LoginPageT extends BaseTests {
 

@@ -1,11 +1,10 @@
-package alinatinca.recap.tests;
+package alinatinca.recap.SauceDemoCom.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.rmi.server.ExportException;
 import java.util.Set;
 
 public class BuyFirstItem extends BaseTests {

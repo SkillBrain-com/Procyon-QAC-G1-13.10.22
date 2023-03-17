@@ -1,4 +1,4 @@
-package AlinaTinca.Teorie;
+package alinatinca.teorie;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -35,7 +35,7 @@ public class DemoQaInputs {
 
     @Test
     public void test1(){
-        driver = BrowserManager.createChromeDriver();
+        driver = BrowserManager.createChromeDriverWithOptions();
         driver.get("https://demoqa.com/text-box");
         writeFullName();
         writeEmail();
