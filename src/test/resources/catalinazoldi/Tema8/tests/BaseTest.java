@@ -1,4 +1,4 @@
-package alinatinca.tests.Tema9.Tema8.tests;
+package catalinazoldi.Tema8.tests;
 
 import alinatinca.driver.BrowserManager;
 import io.github.bonigarcia.wdm.WebDriverManager;

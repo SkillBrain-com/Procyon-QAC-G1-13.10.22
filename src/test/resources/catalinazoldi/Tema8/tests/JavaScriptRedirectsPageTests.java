@@ -1,4 +1,4 @@
-package alinatinca.tests.Tema9.Tema8.tests;
+package catalinazoldi.Tema8.tests;
 
 import alinatinca.tests.Tema9.Tema8.pageObjects.JavaScriptRedirectsConfirmationPage;
 import alinatinca.tests.Tema9.Tema8.pageObjects.JavaScriptRedirectsPage;
