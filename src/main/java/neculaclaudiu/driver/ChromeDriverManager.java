@@ -19,6 +19,7 @@ public class ChromeDriverManager {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
+        options.addArguments("--remote-allow-origins=*");
         return new ChromeDriver(options);
     }
     public static ChromeDriver createChromeDriverForMobile(){
