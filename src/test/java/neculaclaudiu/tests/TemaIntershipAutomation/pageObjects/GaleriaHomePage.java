@@ -28,7 +28,26 @@ public class GaleriaHomePage {
     public void scrollDown(String pixels){
         js.executeScript("window.scrollBy(0, "+pixels+");");
     }
+
+    public boolean checkIfTheStickyBarIsVisible(){
+        return stickyBar.isDisplayed();
+    }
+
+    public void clickOnStickyBar(){
+        stickyBar.click();
+    }
+
+    public void clickLanguageButton(){
+        languageBtn.click();
+    };
+
     @FindBy(css = "header.relative")
     WebElement header;
+
+    @FindBy(css = "p.flex")
+    WebElement stickyBar;
+
+    @FindBy(css = "button[name =\"language-toggle\"] ")
+    WebElement languageBtn;
 
 }
