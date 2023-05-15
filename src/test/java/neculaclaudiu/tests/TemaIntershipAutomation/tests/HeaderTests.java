@@ -2,6 +2,7 @@ package neculaclaudiu.tests.TemaIntershipAutomation.tests;
 
 import neculaclaudiu.tests.TemaIntershipAutomation.pageObjects.GaleriaHomePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,5 +43,13 @@ public class HeaderTests extends BaseTest{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.urlToBe("https://pl-galeria-warminska-uat.azurewebsites.net/"));
         Assert.assertEquals(driver.getCurrentUrl(),"https://pl-galeria-warminska-uat.azurewebsites.net/");
+    }
+    @Test
+    public void checkIfTheSearchBarIsWorking(){
+        GaleriaHomePage page = new GaleriaHomePage(driver);
+        page.clickOnSearchBoxButton();
+        WebElement searchBoxInput = driver.findElement(By.cssSelector("input[name=\"search\"]"));
+        searchBoxInput.sendKeys("test");
+        Assert.assertEquals(searchBoxInput.getAttribute("value"), "test");
     }
 }
